@@ -104,12 +104,12 @@ export default {
     position: absolute;
     right: 0;
     top: 1em;
-    // padding: 0;
     background: inherit;
+    .asd20-icon:hover {
+      background: rgba(255, 255, 255, 0.5)
+    }
   }
-  .asd20-button:hover {
-    color: #ffffff;
-  }
+
 }
 .asd20-notification {
   position: relative;
@@ -147,6 +147,7 @@ export default {
     padding-right: 0.5em;
     right: 0;
     bottom: 0;
+    color: initial;
   }
 }
 .asd20-notification--floating {

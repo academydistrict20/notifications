@@ -48,10 +48,11 @@ export default {
   button {
     background: transparent;
     border: none;
+    .asd20-icon:hover {
+      background: rgba(255, 255, 255, 0.5)
+    }
   }
-  button:hover {
-    color: #ffffff;
-  }
+
   button:focus {
     outline: none;
     border: none;
