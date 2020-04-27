@@ -7,6 +7,7 @@
         :messageGroups="mappedMessageGroups"
         @dismiss="dismissMessage($event)"
       />
+      <dismissed-notifications :dismissed="dismissedCookies.length" />
     </div>
   </div>
 </template>
@@ -14,6 +15,7 @@
 <script>
 import { getMessage } from '@/services/axios.js'
 import NotificationGroup from '@/components/organisms/NotificationGroup'
+import DismissedNotifications from '@/components/molecules/DismissedNotifications'
 import { setCookie, getCookie } from '@/services/cookieRecipe.js'
 
 export default {
@@ -25,7 +27,8 @@ export default {
     }
   },
   components: {
-    NotificationGroup
+    NotificationGroup,
+    DismissedNotifications
   },
   data() {
     return {
@@ -37,7 +40,8 @@ export default {
   async created() {
     try {
       this.messages = await getMessage(['SPED', 'Outage'])
-      this.dismissedCookies = (await getCookie(this.cookieLabel)) || []
+      // this.dismissedCookies = (await getCookie(this.cookieLabel)) || []
+      this.getDimissed()
     } catch (err) {
       this.error = `something went wrong ${err}`
     }
@@ -87,6 +91,14 @@ export default {
 
       setCookie(this.cookieLabel, this.dismissedCookies, today)
       this.messages = this.messages.filter(m => m.id != messageId)
+    },
+    async getDimissed() {
+      this.dismissedCookies =
+        (await getCookie(this.cookieLabel)).filter(cook => {
+          const messageIds = this.messages.map(c => c.id)
+          // console.log('messgaes', messageIds)
+          return messageIds.includes(cook)
+        }) || []
     }
   }
 }

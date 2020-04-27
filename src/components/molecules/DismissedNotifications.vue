@@ -1,5 +1,9 @@
 <template>
   <div>
+    <p>
+      <span v-if="dismissed > 0">{{ dismissed }}</span
+      >{{ label }}
+    </p>
     <asd20-icon :name="iconName" />
   </div>
 </template>
@@ -15,6 +19,13 @@ export default {
     iconName: {
       type: String,
       default: 'bell'
+    },
+    label: {
+      type: String,
+      default: 'Dismissed'
+    },
+    dismissed: {
+      type: Number
     }
   }
 }
