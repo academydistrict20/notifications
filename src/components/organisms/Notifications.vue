@@ -85,25 +85,25 @@ export default {
   flex-direction: row;
   align-items: flex-start;
   max-width: 85%;
-  .asd20-icon {
-    margin: 0.5em;
+  .heading .asd20-icon {
+    margin: 1em 0.5em;
   }
   .body {
-    // display: flex;
-    // flex-direction: column;
+    display: flex;
+    flex-direction: column;
     margin: 0 0 2em 0.5em;
     h4 {
       margin-bottom: 0.5em;
     }
     p {
-      margin: 0 0 1em 0;
+      margin: 0 0 0.5em 0;
     }
   }
 
   .asd20-button {
     position: absolute;
     right: 0;
-    top: 0.5em;
+    top: 1em;
     background: inherit;
     .asd20-icon:hover {
       background: rgba(255, 255, 255, 0.5)
@@ -144,7 +144,6 @@ export default {
   }
   .notification-controls {
     position: absolute;
-    padding-right: 0.5em;
     right: 0;
     bottom: 0;
     color: initial;
@@ -156,11 +155,11 @@ export default {
 
 @media (min-width: 1024px) {
   .asd20-notification-container {
-    .asd20-icon {
+    .heading .asd20-icon {
       margin: 1em;
     }
     .asd20-button {
-      top: 1em;
+      right: 0.5em;
     }
   }
 }
