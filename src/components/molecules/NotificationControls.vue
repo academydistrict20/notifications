@@ -49,5 +49,12 @@ export default {
     background: transparent;
     border: none;
   }
+  button:hover {
+    color: #ffffff;
+  }
+  button:focus {
+    outline: none;
+    border: none;
+  }
 }
 </style>

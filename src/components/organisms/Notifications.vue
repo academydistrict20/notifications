@@ -104,7 +104,11 @@ export default {
     position: absolute;
     right: 0;
     top: 1em;
+    // padding: 0;
     background: inherit;
+  }
+  .asd20-button:hover {
+    color: #ffffff;
   }
 }
 .asd20-notification {
@@ -116,19 +120,18 @@ export default {
   }
   &--banner {
     background: red;
-    &::v-deep .asd20-icon {
-      --fill-color: red;
+    .heading {
+      .asd20-icon g {
+        color: red;
+      }
     }
   }
   &--urgent {
     background: #f7e06e;
-    & > .asd20-icon {
-      --line-color: #{asd20-swatch('success', -2)};
-      --fill-color: #f7e06e;
-    }
   }
   .notification-controls {
     position: absolute;
+    padding-right: 0.5em;
     right: 0;
     bottom: 0;
   }
