@@ -43,7 +43,11 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  min-width: 180px;
+  // min-width: 180px;
   align-self: start;
+  button {
+    background: transparent;
+    border: none;
+  }
 }
 </style>

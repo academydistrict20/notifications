@@ -10,12 +10,16 @@
         @decreaseValue="previousMessage()"
       />
       <div v-if="messages" role="alert" class="asd20-notification-container">
-        <asd20-icon v-if="icon" :name="icon" size="sm" />
-        <h4>{{ messages[displayedMessageIndex].title }}</h4>
-        <p>{{ messages[displayedMessageIndex].summary }}</p>
+        <div class="heading">
+          <asd20-icon v-if="icon" :name="icon" size="lg" />
+        </div>
+        <div class="body">
+          <h4>{{ messages[displayedMessageIndex].title }}</h4>
+          <p>{{ messages[displayedMessageIndex].summary }}</p>
+        </div>
         <asd20-button
           transparent
-          size="xs"
+          size="sm"
           icon="close"
           label="Dismiss"
           hide-label
@@ -74,31 +78,63 @@ export default {
 .asd20-notification-batch {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  // align-items: center;
 }
 .asd20-notification-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  max-width: 90%;
+  .asd20-icon {
+    margin: 1em;
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5em;
+    h4 {
+      margin-bottom: 0.5em;
+    }
+    p {
+      margin: 0 0 1em 0;
+    }
+  }
 
   .asd20-button {
-    align-self: flex-start;
+    position: absolute;
+    right: 0;
+    top: 1em;
     background: inherit;
   }
 }
 .asd20-notification {
+  position: relative;
   width: 100%;
+  min-height: 7em;
   &--inline {
     background: cadetblue;
   }
   &--banner {
     background: red;
+    &::v-deep .asd20-icon {
+      --fill-color: red;
+    }
   }
   &--urgent {
-    background: orangered;
+    background: #f7e06e;
+    & > .asd20-icon {
+      --line-color: #{asd20-swatch('success', -2)};
+      --fill-color: #f7e06e;
+    }
+  }
+  .notification-controls {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 .asd20-notification--floating {
   background: orange;
 }
+
 </style>
