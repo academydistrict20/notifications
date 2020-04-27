@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "display-message." + ({}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "notification-component." + ({}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -187,7 +187,7 @@
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
-/******/ 	var jsonpArray = window["displayMessage_jsonp"] = window["displayMessage_jsonp"] || [];
+/******/ 	var jsonpArray = window["notificationComponent_jsonp"] = window["notificationComponent_jsonp"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
 /******/ 	jsonpArray.push = webpackJsonpCallback;
 /******/ 	jsonpArray = jsonpArray.slice();
@@ -3500,12 +3500,12 @@ var addStylesShadow = __webpack_require__("35d6");
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DisplayMessage.vue?vue&type=template&id=6298904d&scoped=true&shadow
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.error)?_c('p',[_vm._v(_vm._s(_vm.error))]):_c('div',{attrs:{"data-testid":"messages"}},[_c('NotificationGroup',{attrs:{"type":['Information', 'Emergency', 'Urgent'],"messageGroups":_vm.mappedMessageGroups},on:{"dismiss":function($event){return _vm.dismissMessage($event)}}}),_c('dismissed-notifications',{attrs:{"dismissed":_vm.dismissedCookies.length}})],1)])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NotificationComponent.vue?vue&type=template&id=27d92b5d&scoped=true&shadow
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.error)?_c('p',[_vm._v(_vm._s(_vm.error))]):_c('div',{attrs:{"data-testid":"messages"}},[_c('NotificationGroup',{attrs:{"type":_vm.notificationStyles,"messageGroups":_vm.mappedMessageGroups},on:{"dismiss":function($event){return _vm.dismissMessage($event)}}}),_c('dismissed-notifications',{attrs:{"dismissed":_vm.dismissedCookies.length}})],1)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/DisplayMessage.vue?vue&type=template&id=6298904d&scoped=true&shadow
+// CONCATENATED MODULE: ./src/components/NotificationComponent.vue?vue&type=template&id=27d92b5d&scoped=true&shadow
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.filter.js
 var es_array_filter = __webpack_require__("4de4");
@@ -3774,8 +3774,10 @@ var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
 
 
 var defaultSubscriptionLocations = ['District Wide', 'Test Subscription Location'];
-var defaultSubscriptionCategories = ['Weather', 'Emergency', 'Urgent'];
+var defaultSubscriptionCategories = []; // ['Weather', 'Emergency', 'Urgent']
+
 function getMessage(subscribedCategories, subscribedLocations) {
+  var apiEndpoint = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'https://asd20-search-dev.search.windows.net/indexes/messages-index/docs/search';
   // const now = new Date().toISOString()
   var allLocations = [];
 
@@ -3801,7 +3803,7 @@ function getMessage(subscribedCategories, subscribedLocations) {
     allCategories = defaultSubscriptionCategories;
   }
 
-  return axios_default.a.post('https://asd20-search-dev.search.windows.net/indexes/messages-index/docs/search', {
+  return axios_default.a.post(apiEndpoint, {
     filter: // GOOD QUERY
     // `publishDateTime le ${now} and expireDateTime gt ${now} and messageSubscriptionLocations/any(l: search.in(l, '${allLocations.join(
     //   '|'
@@ -4564,7 +4566,7 @@ function getCookie(label) {
   var results = findCookie && response ? JSON.parse(response) : null;
   return results;
 }
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DisplayMessage.vue?vue&type=script&lang=js&shadow
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/NotificationComponent.vue?vue&type=script&lang=js&shadow
 
 
 
@@ -4594,12 +4596,21 @@ function getCookie(label) {
 
 
 
-/* harmony default export */ var DisplayMessagevue_type_script_lang_js_shadow = ({
+/* harmony default export */ var NotificationComponentvue_type_script_lang_js_shadow = ({
   name: 'DisplayMessage',
   props: {
-    cookieLabel: {
-      type: String,
-      default: 'exampleCookie'
+    categories: {
+      type: [Array, String]
+    },
+    locations: {
+      type: Array
+    },
+    apiEndpoint: {
+      type: String
+    },
+    notificationStyles: {
+      type: [Array, String],
+      default: () => ['Information', 'Emergency', 'Urgent']
     }
   },
   components: {
@@ -4625,12 +4636,11 @@ function getCookie(label) {
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return getMessage(['SPED', 'Outage']);
+              return getMessage(_this.categories, _this.locations, _this.ApiEndpoint);
 
             case 3:
               _this.messages = _context.sent;
 
-              // this.dismissedCookies = (await getCookie(this.cookieLabel)) || []
               _this.getDimissed();
 
               _context.next = 10;
@@ -4701,7 +4711,7 @@ function getCookie(label) {
       var today = new Date();
       var oneMonth = today.getMonth() + 1;
       today.setMonth(oneMonth);
-      setCookie(this.cookieLabel, this.dismissedCookies, today);
+      setCookie('notification-component', this.dismissedCookies, today);
       this.messages = this.messages.filter(m => m.id != messageId);
     },
 
@@ -4714,7 +4724,7 @@ function getCookie(label) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return getCookie(_this3.cookieLabel);
+                return getCookie('notification-component');
 
               case 2:
                 _context2.t1 = _context2.sent;
@@ -4755,31 +4765,31 @@ function getCookie(label) {
 
   }
 });
-// CONCATENATED MODULE: ./src/components/DisplayMessage.vue?vue&type=script&lang=js&shadow
- /* harmony default export */ var components_DisplayMessagevue_type_script_lang_js_shadow = (DisplayMessagevue_type_script_lang_js_shadow); 
-// CONCATENATED MODULE: ./src/components/DisplayMessage.vue?shadow
+// CONCATENATED MODULE: ./src/components/NotificationComponent.vue?vue&type=script&lang=js&shadow
+ /* harmony default export */ var components_NotificationComponentvue_type_script_lang_js_shadow = (NotificationComponentvue_type_script_lang_js_shadow); 
+// CONCATENATED MODULE: ./src/components/NotificationComponent.vue?shadow
 
 
 
-function DisplayMessageshadow_injectStyles (context) {
+function NotificationComponentshadow_injectStyles (context) {
   
   
 }
 
 /* normalize component */
 
-var DisplayMessageshadow_component = Object(componentNormalizer["a" /* default */])(
-  components_DisplayMessagevue_type_script_lang_js_shadow,
+var NotificationComponentshadow_component = Object(componentNormalizer["a" /* default */])(
+  components_NotificationComponentvue_type_script_lang_js_shadow,
   render,
   staticRenderFns,
   false,
-  DisplayMessageshadow_injectStyles,
-  "6298904d",
+  NotificationComponentshadow_injectStyles,
+  "27d92b5d",
   null
   ,true
 )
 
-/* harmony default export */ var DisplayMessageshadow = (DisplayMessageshadow_component.exports);
+/* harmony default export */ var NotificationComponentshadow = (NotificationComponentshadow_component.exports);
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-wc.js
 
 
@@ -4791,7 +4801,7 @@ var DisplayMessageshadow_component = Object(componentNormalizer["a" /* default *
 
 
 
-window.customElements.define('display-message', vue_wc_wrapper(external_Vue_default.a, DisplayMessageshadow))
+window.customElements.define('notification-component', vue_wc_wrapper(external_Vue_default.a, NotificationComponentshadow))
 
 /***/ }),
 
@@ -11146,4 +11156,4 @@ module.exports = isSymbol;
 /***/ })
 
 /******/ });
-//# sourceMappingURL=display-message.js.map
+//# sourceMappingURL=notification-component.js.map

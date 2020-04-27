@@ -4,9 +4,14 @@ let defaultSubscriptionLocations = [
   'District Wide',
   'Test Subscription Location'
 ]
-let defaultSubscriptionCategories = ['Weather', 'Emergency', 'Urgent']
+let defaultSubscriptionCategories = []
+// ['Weather', 'Emergency', 'Urgent']
 
-export function getMessage(subscribedCategories, subscribedLocations) {
+export function getMessage(
+  subscribedCategories,
+  subscribedLocations,
+  apiEndpoint = 'https://asd20-search-dev.search.windows.net/indexes/messages-index/docs/search'
+) {
   // const now = new Date().toISOString()
 
   let allLocations = []
@@ -31,7 +36,7 @@ export function getMessage(subscribedCategories, subscribedLocations) {
   }
   return axios
     .post(
-      'https://asd20-search-dev.search.windows.net/indexes/messages-index/docs/search',
+      apiEndpoint,
       {
         filter:
           // GOOD QUERY

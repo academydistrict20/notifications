@@ -1,4 +1,4 @@
-(window["displayMessage_jsonp"] = window["displayMessage_jsonp"] || []).push([[1],{
+(window["notificationComponent_jsonp"] = window["notificationComponent_jsonp"] || []).push([[1],{
 
 /***/ "4532":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -40,4 +40,4 @@ var component = Object(componentNormalizer["a" /* default */])(
 /***/ })
 
 }]);
-//# sourceMappingURL=display-message.1.js.map
+//# sourceMappingURL=notification-component.1.js.map
