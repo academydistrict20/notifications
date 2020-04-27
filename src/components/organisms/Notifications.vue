@@ -84,19 +84,19 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  max-width: 90%;
-  .asd20-icon {
-    margin: 1em;
+  max-width: 85%;
+  .heading .asd20-icon {
+    margin: 1em 0.5em;
   }
   .body {
     display: flex;
     flex-direction: column;
-    margin-left: 0.5em;
+    margin: 0 0 2em 0.5em;
     h4 {
       margin-bottom: 0.5em;
     }
     p {
-      margin: 0 0 1em 0;
+      margin: 0 0 0.5em 0;
     }
   }
 
@@ -144,7 +144,6 @@ export default {
   }
   .notification-controls {
     position: absolute;
-    padding-right: 0.5em;
     right: 0;
     bottom: 0;
     color: initial;
@@ -154,4 +153,14 @@ export default {
   background: orange;
 }
 
+@media (min-width: 1024px) {
+  .asd20-notification-container {
+    .heading .asd20-icon {
+      margin: 1em;
+    }
+    .asd20-button {
+      right: 0.5em;
+    }
+  }
+}
 </style>
