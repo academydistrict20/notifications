@@ -117,17 +117,30 @@ export default {
   min-height: 7em;
   &--inline {
     background: cadetblue;
+    color: #ffffff;
+    .heading {
+      .asd20-icon g {
+        color: #ffffff;
+      }
+    }
   }
   &--banner {
     background: red;
+    color: #ffffff;
     .heading {
       .asd20-icon g {
-        color: red;
+        color: #ffffff;
       }
     }
   }
   &--urgent {
-    background: #f7e06e;
+    background: #dabe35;
+    color: #ffffff;
+    .heading {
+      .asd20-icon g {
+        color: #ffffff;
+      }
+    }
   }
   .notification-controls {
     position: absolute;
