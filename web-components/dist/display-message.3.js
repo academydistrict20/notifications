@@ -1,4 +1,4 @@
-(window["myComponent_jsonp"] = window["myComponent_jsonp"] || []).push([[3],{
+(window["displayMessage_jsonp"] = window["displayMessage_jsonp"] || []).push([[3],{
 
 /***/ "2476":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -40,4 +40,4 @@ var component = Object(componentNormalizer["a" /* default */])(
 /***/ })
 
 }]);
-//# sourceMappingURL=my-component.3.js.map
+//# sourceMappingURL=display-message.3.js.map

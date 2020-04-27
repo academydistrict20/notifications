@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "serve:wc": "serve ./web-components",
-    "build:wc": "vue-cli-service build --target wc --name my-component ./src/components/organisms/NotificationGroup.vue --dest ./web-components/dist"
+    "build:wc": "vue-cli-service build --target wc --name display-message ./src/components/DisplayMessage.vue --dest ./web-components/dist"
   },
   "dependencies": {
     "axios": "^0.19.2",
