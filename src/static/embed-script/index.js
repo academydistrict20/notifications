@@ -1,5 +1,6 @@
 import getMessage from '@/services/axios.js'
 
+console.log('loaded')
 async function init() {
   try {
     let messages = await getMessage()

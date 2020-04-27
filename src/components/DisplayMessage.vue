@@ -94,7 +94,7 @@ export default {
     },
     async getDimissed() {
       this.dismissedCookies =
-        (await getCookie(this.cookieLabel)).filter(cook => {
+        ((await getCookie(this.cookieLabel)) || []).filter(cook => {
           const messageIds = this.messages.map(c => c.id)
           // console.log('messgaes', messageIds)
           return messageIds.includes(cook)
