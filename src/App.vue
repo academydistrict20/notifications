@@ -1,14 +1,19 @@
 <template>
   <div id="app">
     <display-message />
+    <!-- <notification-component /> -->
   </div>
 </template>
 
 <script>
 import DisplayMessage from '@/components/DisplayMessage.vue'
+// import NotificationComponent from '@/components/organisms/NotificationComponent.vue'
 export default {
   name: 'app',
-  components: { DisplayMessage }
+  components: {
+    DisplayMessage
+    // NotificationComponent
+  }
 }
 </script>
 <style>

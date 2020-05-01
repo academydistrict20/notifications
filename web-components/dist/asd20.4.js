@@ -1,4 +1,4 @@
-(window["notificationComponent_jsonp"] = window["notificationComponent_jsonp"] || []).push([[4],{
+(window["asd20_jsonp"] = window["asd20_jsonp"] || []).push([[4],{
 
 /***/ "24f7":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -40,4 +40,4 @@ var component = Object(componentNormalizer["a" /* default */])(
 /***/ })
 
 }]);
-//# sourceMappingURL=notification-component.4.js.map
+//# sourceMappingURL=asd20.4.js.map

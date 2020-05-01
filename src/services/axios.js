@@ -7,7 +7,7 @@ let defaultSubscriptionLocations = [
 let defaultSubscriptionCategories = []
 // ['Weather', 'Emergency', 'Urgent']
 
-export function getMessage(
+export function getNotification(
   subscribedCategories,
   subscribedLocations,
   apiEndpoint = 'https://asd20-search-dev.search.windows.net/indexes/messages-index/docs/search'

@@ -1,11 +1,11 @@
 <template>
   <div>
     <p v-if="error">{{ error }}</p>
-    <div v-else data-testid="messages">
-      <NotificationGroup
-        :type="['Information', 'Emergency', 'Urgent']"
-        :messageGroups="mappedMessageGroups"
-        @dismiss="dismissMessage($event)"
+    <div v-else data-testid="notifications">
+      <NotificationGroupOfGroups
+        style="Banner"
+        :notificationGroups="mappedNotificationGroups"
+        @dismiss="dismissNotification($event)"
       />
       <dismissed-notifications :dismissed="dismissedCookies.length" />
     </div>
@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import { getMessage } from '@/services/axios.js'
-import NotificationGroup from '@/components/organisms/NotificationGroup'
-import DismissedNotifications from '@/components/molecules/DismissedNotifications'
+import { getNotification } from '@/services/axios.js'
+import NotificationGroupOfGroups from '@/components/organisms/NotificationGroupOfGroups'
+import DismissedNotifications from '@/components/organisms/DismissedNotifications'
 import { setCookie, getCookie } from '@/services/cookieRecipe.js'
 
 export default {
-  name: 'DisplayMessage',
+  name: 'DisplayNotification',
   props: {
     cookieLabel: {
       type: String,
@@ -27,19 +27,19 @@ export default {
     }
   },
   components: {
-    NotificationGroup,
+    NotificationGroupOfGroups,
     DismissedNotifications
   },
   data() {
     return {
-      messages: null,
+      notifications: null,
       error: null,
       dismissedCookies: []
     }
   },
   async created() {
     try {
-      this.messages = await getMessage(['SPED', 'Outage'])
+      this.notifications = await getNotification(['SPED', 'Outage'])
       // this.dismissedCookies = (await getCookie(this.cookieLabel)) || []
       this.getDimissed()
     } catch (err) {
@@ -47,8 +47,8 @@ export default {
     }
   },
   computed: {
-    mappedMessages() {
-      return (this.messages || [])
+    mappedNotifications() {
+      return (this.notifications || [])
         .map(m => {
           let notificationStyle = m.categories.includes('Emergency')
             ? 'Emergency'
@@ -66,38 +66,42 @@ export default {
           }
         })
     },
-    mappedMessageGroups() {
-      let notificationStyles = this.mappedMessages.reduce(
+    mappedNotificationGroups() {
+      let notificationStyles = this.mappedNotifications.reduce(
         (a, c) =>
           a.includes(c.notificationStyle) ? a : [...a, c.notificationStyle],
         []
       )
-      let messagesByCategory = []
+      let notificationsByGroupStyleCategory = []
       for (let key of notificationStyles) {
-        messagesByCategory.push({
+        notificationsByGroupStyleCategory.push({
           type: key,
-          messages: this.mappedMessages.filter(m => m.notificationStyle === key)
+          notifications: this.mappedNotifications.filter(
+            m => m.notificationStyle === key
+          )
         })
       }
-      return messagesByCategory
+      return notificationsByGroupStyleCategory
     }
   },
   methods: {
-    dismissMessage(messageId) {
-      this.dismissedCookies.push(messageId)
+    dismissNotification(notificationId) {
+      this.dismissedCookies.push(notificationId)
       const today = new Date()
       const oneMonth = today.getMonth() + 1
       today.setMonth(oneMonth)
 
       setCookie(this.cookieLabel, this.dismissedCookies, today)
-      this.messages = this.messages.filter(m => m.id != messageId)
+      this.notifications = this.notifications.filter(
+        m => m.id != notificationId
+      )
     },
     async getDimissed() {
       this.dismissedCookies =
         ((await getCookie(this.cookieLabel)) || []).filter(cook => {
-          const messageIds = this.messages.map(c => c.id)
-          // console.log('messgaes', messageIds)
-          return messageIds.includes(cook)
+          const notificationIds = this.notifications.map(c => c.id)
+          // console.log('messgaes', notificationIds)
+          return notificationIds.includes(cook)
         }) || []
     }
   }
