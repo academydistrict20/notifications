@@ -1,8 +1,22 @@
 <template>
-  <div id="header">
+  <div>
     <p v-if="error">{{ error }}</p>
     <div v-else data-testid="notifications">
-      <dismissed-notifications :dismissed="dismissedCookies.length" />
+      <portal
+        :key="index"
+        v-for="(notifications, index) in filterEmbedLocations"
+        :selector="notifications.el"
+      >
+        <notification-group
+          @dismiss="dismissNotification"
+          :notificationStyles="style"
+          :notifications="notifications.notifications"
+        />
+      </portal>
+      <dismissed-notifications
+        v-if="dismissedCookies.length > 0"
+        :dismissed="dismissedCookies.length"
+      />
     </div>
   </div>
 </template>
@@ -10,7 +24,9 @@
 <script>
 import { getNotification } from '@/services/axios.js'
 import DismissedNotifications from '@/components/organisms/DismissedNotifications'
+import NotificationGroup from '@/components/organisms/NotificationGroup'
 import { setCookie, getCookie } from '@/services/cookieRecipe.js'
+import { Portal } from '@linusborg/vue-simple-portal'
 
 export default {
   name: 'NotificationComponent',
@@ -26,11 +42,7 @@ export default {
     },
     embedLocations: {
       type: [Array, String],
-      default: () => [
-        // { el: '#header', style: 'Banner' },
-        // { el: '#footer', style: 'Inline' },
-        // { el: 'aside', style: 'Floating' }
-      ]
+      default: () => []
     },
     notificationsGroups: {
       type: Array,
@@ -38,8 +50,9 @@ export default {
     }
   },
   components: {
-    // Notifications,
-    DismissedNotifications
+    NotificationGroup,
+    DismissedNotifications,
+    Portal
   },
   data() {
     return {
@@ -50,16 +63,16 @@ export default {
   },
   created() {
     this.fetchNotifications()
-    this.mountComponent()
+    // this.mountComponent()
   },
 
-  watch: {
-    notifications(newValue, oldValue) {
-      if (newValue !== oldValue) {
-        this.mountComponent()
-      }
-    }
-  },
+  // watch: {
+  // notifications(newValue, oldValue) {
+  //   if (newValue !== oldValue) {
+  //     this.mountComponent()
+  //   }
+  // }
+  // },
   computed: {
     mappednotifications() {
       return (this.notifications || [])
@@ -94,6 +107,14 @@ export default {
       return this.mappednotifications.filter(
         m => m.notificationStyle === 'Urgent'
       )
+    },
+    filterEmbedLocations() {
+      return this.embedLocations.map(c => ({
+        ...c,
+        notifications: c.notifications.filter(
+          n => !this.dismissedCookies.includes(n.id)
+        )
+      }))
     }
     // mappedNotificationGroups() {
     //   let notificationStyles = this.mappednotifications.reduce(
@@ -133,6 +154,9 @@ export default {
       today.setMonth(oneMonth)
 
       setCookie('notification-component', this.dismissedCookies, today)
+      // if (this.embedLocations) {
+      //   this.embedLocaions.filter(n => n.id !== messageId)
+      // }
       this.notifications = this.notifications.filter(m => m.id != messageId)
     },
     async getDimissed() {
@@ -154,6 +178,20 @@ export default {
       } catch (err) {
         this.error = `something went wrong ${err}`
       }
+      // this.$emit('loaded', [
+      //   {
+      //     type: 'Emergency',
+      //     notifications: this.mappedEmergencyNotifications
+      //   },
+      //   {
+      //     type: 'Informational',
+      //     notifications: this.mappedInformationalNotifications
+      //   },
+      //   { type: 'Urgent', notifications: this.mappedUrgentNotifications }
+      // ])
+      this.fireEvent()
+    },
+    fireEvent() {
       this.$emit('loaded', [
         {
           type: 'Emergency',
@@ -184,5 +222,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped></style>

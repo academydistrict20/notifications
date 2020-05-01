@@ -3526,7 +3526,7 @@ var addStylesShadow = __webpack_require__("35d6");
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/DismissedNotifications.vue?vue&type=template&id=213d79e0&scoped=true&shadow
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"62ba72be-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/DismissedNotifications.vue?vue&type=template&id=213d79e0&scoped=true&shadow
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('p',[(_vm.dismissed > 0)?_c('span',[_vm._v(_vm._s(_vm.dismissed))]):_vm._e(),_vm._v(_vm._s(_vm.label)+" ")]),_c('asd20-icon',{attrs:{"name":_vm.iconName}})],1)}
 var staticRenderFns = []
 
@@ -3536,7 +3536,7 @@ var staticRenderFns = []
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.number.constructor.js
 var es_number_constructor = __webpack_require__("a9e3");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/atoms/Asd20Icon.vue?vue&type=template&id=367320d9&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"62ba72be-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/atoms/Asd20Icon.vue?vue&type=template&id=367320d9&scoped=true&
 var Asd20Iconvue_type_template_id_367320d9_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{class:_vm.classes,style:(_vm.cssVariables),attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 32 32","aria-labelledby":_vm.labeledByPropRender,"aria-hidden":_vm.hidden,"role":_vm.roleImg}},[(!_vm.hidden)?_c('title',{attrs:{"id":_vm.uniqueId,"lang":"en"}},[_vm._v(_vm._s(_vm.title)+" icon")]):_vm._e(),_c(_vm.iconTemplate,{tag:"component"})],1)}
 var Asd20Iconvue_type_template_id_367320d9_scoped_true_staticRenderFns = []
 
@@ -3762,12 +3762,12 @@ var DismissedNotificationsshadow_component = Object(componentNormalizer["a" /* d
 )
 
 /* harmony default export */ var DismissedNotificationsshadow = (DismissedNotificationsshadow_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationComponent.vue?vue&type=template&id=73d4708a&scoped=true&shadow
-var NotificationComponentvue_type_template_id_73d4708a_scoped_true_shadow_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"header"}},[(_vm.error)?_c('p',[_vm._v(_vm._s(_vm.error))]):_c('div',{attrs:{"data-testid":"notifications"}},[_c('dismissed-notifications',{attrs:{"dismissed":_vm.dismissedCookies.length}})],1)])}
-var NotificationComponentvue_type_template_id_73d4708a_scoped_true_shadow_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"62ba72be-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationComponent.vue?vue&type=template&id=7f9388d4&shadow
+var NotificationComponentvue_type_template_id_7f9388d4_shadow_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"'asd20-notification--floating"},[(_vm.error)?_c('p',[_vm._v(_vm._s(_vm.error))]):_c('div',{attrs:{"data-testid":"notifications"}},[_vm._l((_vm.filterEmbedLocations),function(notifications,index){return _c('portal',{key:index,attrs:{"selector":notifications.el}},[_c('notification-group',{attrs:{"notificationStyles":_vm.style,"notifications":notifications.notifications},on:{"dismiss":_vm.dismissNotification}})],1)}),(_vm.dismissedCookies.length > 0)?_c('dismissed-notifications',{attrs:{"dismissed":_vm.dismissedCookies.length}}):_vm._e()],2)])}
+var NotificationComponentvue_type_template_id_7f9388d4_shadow_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/organisms/NotificationComponent.vue?vue&type=template&id=73d4708a&scoped=true&shadow
+// CONCATENATED MODULE: ./src/components/organisms/NotificationComponent.vue?vue&type=template&id=7f9388d4&shadow
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.filter.js
 var es_array_filter = __webpack_require__("4de4");
@@ -4073,7 +4073,7 @@ function getNotification(subscribedCategories, subscribedLocations) {
     return response.data.value;
   });
 }
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/DismissedNotifications.vue?vue&type=template&id=a718f9f6&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"62ba72be-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/DismissedNotifications.vue?vue&type=template&id=a718f9f6&scoped=true&
 var DismissedNotificationsvue_type_template_id_a718f9f6_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('p',[(_vm.dismissed > 0)?_c('span',[_vm._v(_vm._s(_vm.dismissed))]):_vm._e(),_vm._v(_vm._s(_vm.label)+" ")]),_c('asd20-icon',{attrs:{"name":_vm.iconName}})],1)}
 var DismissedNotificationsvue_type_template_id_a718f9f6_scoped_true_staticRenderFns = []
 
@@ -4137,345 +4137,14 @@ var DismissedNotifications_component = Object(componentNormalizer["a" /* default
 )
 
 /* harmony default export */ var DismissedNotifications = (DismissedNotifications_component.exports);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.find.js
-var es_array_find = __webpack_require__("7db0");
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"62ba72be-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationGroup.vue?vue&type=template&id=e436dffe&
+var NotificationGroupvue_type_template_id_e436dffe_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"asd20-notification-batch",class:_vm.classes},[(_vm.notifications.length > 0)?_c('notification-controls',{attrs:{"count":_vm.notifications.length,"number":_vm.displayedNotificationIndex + 1},on:{"increaseValue":function($event){return _vm.nextNotification()},"decreaseValue":function($event){return _vm.previousNotification()}}}):_vm._e(),(_vm.notifications.length > 0)?_c('div',{staticClass:"asd20-notification-container",attrs:{"role":"alert"}},[_c('div',{staticClass:"heading"},[(_vm.icon)?_c('asd20-icon',{attrs:{"name":_vm.icon,"size":"lg"}}):_vm._e()],1),_c('div',{staticClass:"body"},[_c('h4',[_vm._v(" "+_vm._s(_vm.notifications[_vm.displayedNotificationIndex].title)+" ")]),_c('p',[_vm._v(" "+_vm._s(_vm.notifications[_vm.displayedNotificationIndex].summary)+" ")])]),_c('asd20-button',{attrs:{"transparent":"","size":"sm","icon":"close","label":"Dismiss","hide-label":""},nativeOn:{"click":function($event){return _vm.$emit('dismiss', _vm.notifications[_vm.displayedNotificationIndex].id)}}})],1):_vm._e()],1)])}
+var NotificationGroupvue_type_template_id_e436dffe_staticRenderFns = []
 
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.trim.js
-var es_string_trim = __webpack_require__("498a");
 
-// CONCATENATED MODULE: ./src/services/cookieRecipe.js
+// CONCATENATED MODULE: ./src/components/organisms/NotificationGroup.vue?vue&type=template&id=e436dffe&
 
-
-
-
-
-
-var cookieRecipe_today = new Date();
-var expirationOneYear = cookieRecipe_today.getFullYear() + 10;
-cookieRecipe_today.setFullYear(expirationOneYear);
-function setCookie(label, value) {
-  var expiration = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : cookieRecipe_today;
-  document.cookie = `${label}= ${JSON.stringify(value)}; expires=${JSON.stringify(expiration.toUTCString())}; samesite=strict;`;
-}
-function getCookie(label) {
-  var findCookie = document.cookie ? document.cookie.split(';').find(c => c.includes(label)) : null;
-  var asd20Cookie = findCookie ? findCookie.trim() : null;
-  var response = findCookie ? asd20Cookie.replace(`${label}=`, '') : null;
-  var results = findCookie && response ? JSON.parse(response) : null;
-  return results;
-}
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationComponent.vue?vue&type=script&lang=js&shadow
-
-
-
-
-
-
-
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ var NotificationComponentvue_type_script_lang_js_shadow = ({
-  name: 'NotificationComponent',
-  props: {
-    categories: {
-      type: Array
-    },
-    locations: {
-      type: String
-    },
-    apiEndpoint: {
-      type: String
-    },
-    embedLocations: {
-      type: [Array, String],
-      default: () => [// { el: '#header', style: 'Banner' },
-        // { el: '#footer', style: 'Inline' },
-        // { el: 'aside', style: 'Floating' }
-      ]
-    },
-    notificationsGroups: {
-      type: Array,
-      default: () => []
-    }
-  },
-  components: {
-    // Notifications,
-    DismissedNotifications: DismissedNotifications
-  },
-
-  data() {
-    return {
-      notifications: null,
-      error: null,
-      dismissedCookies: []
-    };
-  },
-
-  created() {
-    this.fetchNotifications();
-    this.mountComponent();
-  },
-
-  watch: {
-    notifications(newValue, oldValue) {
-      if (newValue !== oldValue) {
-        this.mountComponent();
-      }
-    }
-
-  },
-  computed: {
-    mappednotifications() {
-      return (this.notifications || []).map(m => {
-        var notificationStyle = m.categories.includes('Emergency') ? 'Emergency' : m.categories.includes('Weather') ? 'Urgent' : 'Information';
-        return _objectSpread2({}, m, {
-          notificationStyle: notificationStyle
-        });
-      }).filter(m => {
-        if (!this.dismissedCookies.includes(m.id)) {
-          return m;
-        }
-      });
-    },
-
-    mappedInformationalNotifications() {
-      return this.mappednotifications.filter(m => m.notificationStyle === 'Information');
-    },
-
-    mappedEmergencyNotifications() {
-      return this.mappednotifications.filter(m => m.notificationStyle === 'Emergency');
-    },
-
-    mappedUrgentNotifications() {
-      return this.mappednotifications.filter(m => m.notificationStyle === 'Urgent');
-    } // mappedNotificationGroups() {
-    //   let notificationStyles = this.mappednotifications.reduce(
-    //     (a, c) =>
-    //       a.includes(c.notificationStyle) ? a : [...a, c.notificationStyle],
-    //     []
-    //   )
-    //   let messagesByCategory = []
-    //   for (let key of notificationStyles) {
-    //     messagesByCategory.push({
-    //       type: key,
-    //       messages: this.mappedNotifications.filter(
-    //         m => m.notificationStyle === key
-    //       )
-    //     })
-    //   }
-    //   return messagesByCategory
-    // }
-
-
-  },
-  methods: {
-    mountComponent() {
-      var _iterator = _createForOfIteratorHelper(this.embedLocations),
-          _step;
-
-      try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var n = _step.value;
-          var location = document.querySelector(n.el);
-          var notificationComponent = document.createElement('asd20-notification-group');
-          notificationComponent.setAttribute('notification-styles', n.style); // notificationComponent.notificationStyles = n.style
-          // notificationComponent.setAttribute('notifications', n.notifications)
-
-          location.appendChild(notificationComponent);
-          notificationComponent.notifications = n.notifications;
-          console.log('notification component', location);
-        }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
-      }
-    },
-
-    dismissNotification(messageId) {
-      this.dismissedCookies.push(messageId);
-      var today = new Date();
-      var oneMonth = today.getMonth() + 1;
-      today.setMonth(oneMonth);
-      setCookie('notification-component', this.dismissedCookies, today);
-      this.notifications = this.notifications.filter(m => m.id != messageId);
-    },
-
-    getDimissed() {
-      var _this = this;
-
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return getCookie('notification-component');
-
-              case 2:
-                _context.t1 = _context.sent;
-
-                if (_context.t1) {
-                  _context.next = 5;
-                  break;
-                }
-
-                _context.t1 = [];
-
-              case 5:
-                _context.t0 = _context.t1.filter(cook => {
-                  var notificationIds = _this.notifications.map(c => c.id); // console.log('messgaes', notificationIds)
-
-
-                  return notificationIds.includes(cook);
-                });
-
-                if (_context.t0) {
-                  _context.next = 8;
-                  break;
-                }
-
-                _context.t0 = [];
-
-              case 8:
-                _this.dismissedCookies = _context.t0;
-
-              case 9:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }))();
-    },
-
-    fetchNotifications() {
-      var _this2 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.prev = 0;
-                _context2.next = 3;
-                return getNotification(_this2.categories ? _this2.categories.split(',') : '', _this2.locations ? _this2.locations.split(',') : '', _this2.ApiEndpoint);
-
-              case 3:
-                _this2.notifications = _context2.sent;
-
-                _this2.getDimissed();
-
-                _context2.next = 10;
-                break;
-
-              case 7:
-                _context2.prev = 7;
-                _context2.t0 = _context2["catch"](0);
-                _this2.error = `something went wrong ${_context2.t0}`;
-
-              case 10:
-                _this2.$emit('loaded', [{
-                  type: 'Emergency',
-                  notifications: _this2.mappedEmergencyNotifications
-                }, {
-                  type: 'Informational',
-                  notifications: _this2.mappedInformationalNotifications
-                }, {
-                  type: 'Urgent',
-                  notifications: _this2.mappedUrgentNotifications
-                }]);
-
-              case 11:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, null, [[0, 7]]);
-      }))();
-    },
-
-    bubbleNotifications() {
-      var _this3 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                _context3.next = 2;
-                return _this3.notifications;
-
-              case 2:
-                console.log('bubbled');
-
-                _this3.$emit('loaded', [{
-                  nType: 'Emergency',
-                  notifications: _this3.mappedEmergencyNotifications
-                }, {
-                  nType: 'Informational',
-                  notifications: _this3.mappedInformationalNotifications
-                }, {
-                  nType: 'Urgent',
-                  notifications: _this3.mappedUrgentNotifications
-                }]);
-
-              case 4:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3);
-      }))();
-    }
-
-  }
-});
-// CONCATENATED MODULE: ./src/components/organisms/NotificationComponent.vue?vue&type=script&lang=js&shadow
- /* harmony default export */ var organisms_NotificationComponentvue_type_script_lang_js_shadow = (NotificationComponentvue_type_script_lang_js_shadow); 
-// CONCATENATED MODULE: ./src/components/organisms/NotificationComponent.vue?shadow
-
-
-
-function NotificationComponentshadow_injectStyles (context) {
-  
-  
-}
-
-/* normalize component */
-
-var NotificationComponentshadow_component = Object(componentNormalizer["a" /* default */])(
-  organisms_NotificationComponentvue_type_script_lang_js_shadow,
-  NotificationComponentvue_type_template_id_73d4708a_scoped_true_shadow_render,
-  NotificationComponentvue_type_template_id_73d4708a_scoped_true_shadow_staticRenderFns,
-  false,
-  NotificationComponentshadow_injectStyles,
-  "73d4708a",
-  null
-  ,true
-)
-
-/* harmony default export */ var NotificationComponentshadow = (NotificationComponentshadow_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationGroup.vue?vue&type=template&id=44f97e54&shadow
-var NotificationGroupvue_type_template_id_44f97e54_shadow_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"asd20-notification-batch",class:_vm.classes},[(_vm.notifications.length > 0)?_c('notification-controls',{attrs:{"count":_vm.notifications.length,"number":_vm.displayedNotificationIndex + 1},on:{"increaseValue":function($event){return _vm.nextNotification()},"decreaseValue":function($event){return _vm.previousNotification()}}}):_vm._e(),(_vm.notifications.length > 0)?_c('div',{staticClass:"asd20-notification-container",attrs:{"role":"alert"}},[_c('div',{staticClass:"heading"},[(_vm.icon)?_c('asd20-icon',{attrs:{"name":_vm.icon,"size":"lg"}}):_vm._e()],1),_c('div',{staticClass:"body"},[_c('h4',[_vm._v(" "+_vm._s(_vm.notifications[_vm.displayedNotificationIndex].title)+" ")]),_c('p',[_vm._v(" "+_vm._s(_vm.notifications[_vm.displayedNotificationIndex].summary)+" ")])]),_c('asd20-button',{attrs:{"transparent":"","size":"sm","icon":"close","label":"Dismiss","hide-label":""},nativeOn:{"click":function($event){return _vm.$emit('dismiss', _vm.notifications[_vm.displayedNotificationIndex].id)}}})],1):_vm._e()],1)])}
-var NotificationGroupvue_type_template_id_44f97e54_shadow_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/organisms/NotificationGroup.vue?vue&type=template&id=44f97e54&shadow
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/molecules/NotificationControls.vue?vue&type=template&id=c2d64472&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"62ba72be-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/molecules/NotificationControls.vue?vue&type=template&id=c2d64472&scoped=true&
 var NotificationControlsvue_type_template_id_c2d64472_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"notification-controls"},[_c('button',{on:{"click":_vm.decreaseValue}},[_c('asd20-icon',{staticStyle:{"transform":"rotate(-90deg)"},attrs:{"name":"chevron","size":"sm"}})],1),_c('p',[_vm._v(_vm._s(_vm.number)+" of "+_vm._s(_vm.count))]),_c('button',{on:{"click":_vm.increaseValue}},[_c('asd20-icon',{staticStyle:{"transform":"rotate(90deg)"},attrs:{"name":"chevron","size":"sm"}})],1)])}
 var NotificationControlsvue_type_template_id_c2d64472_scoped_true_staticRenderFns = []
 
@@ -4550,7 +4219,7 @@ var NotificationControls_component = Object(componentNormalizer["a" /* default *
 )
 
 /* harmony default export */ var NotificationControls = (NotificationControls_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/molecules/Asd20Button.vue?vue&type=template&id=28e0aa68&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"62ba72be-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/molecules/Asd20Button.vue?vue&type=template&id=28e0aa68&scoped=true&
 var Asd20Buttonvue_type_template_id_28e0aa68_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (!!_vm.link)?_c('a',{class:_vm.classes,attrs:{"href":_vm.link || '#',"aria-label":_vm.hideLabel ? _vm.label : false,"target":_vm.openNewWindow}},[(_vm.icon)?_c('asd20-icon',{style:(("transform: rotate(" + _vm.iconAngle + "deg)")),attrs:{"name":_vm.icon,"size":_vm.size}}):_vm._e(),((_vm.label && !_vm.hideLabel) || _vm.$slots.default)?_c('span',{staticClass:"asd20-button__label",domProps:{"innerHTML":_vm._s(_vm.label)}}):_vm._e(),_vm._t("default")],2):_c('button',{class:_vm.classes,attrs:{"aria-label":_vm.hideLabel ? _vm.label : ''}},[(_vm.icon)?_c('asd20-icon',{style:(("transform: rotate(" + _vm.iconAngle + "deg)")),attrs:{"name":_vm.icon,"size":_vm.size}}):_vm._e(),((_vm.label && !_vm.hideLabel) || _vm.$slots.default)?_c('span',{staticClass:"asd20-button__label"},[_vm._v(_vm._s(_vm.label))]):_vm._e(),_vm._t("default")],2)}
 var Asd20Buttonvue_type_template_id_28e0aa68_scoped_true_staticRenderFns = []
 
@@ -4743,151 +4412,6 @@ var Asd20Button_component = Object(componentNormalizer["a" /* default */])(
 
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationGroup.vue?vue&type=script&lang=js&shadow
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-/* harmony default export */ var NotificationGroupvue_type_script_lang_js_shadow = ({
-  name: 'NotificationGroup',
-  mixins: [NotificationControlsMixin],
-  components: {
-    NotificationControls: NotificationControls,
-    Asd20Button: Asd20Button,
-    Asd20Icon: Asd20Icon
-  },
-  props: {
-    notifications: {
-      type: [Array, String],
-      default: () => []
-    },
-    icon: {
-      type: String,
-      default: 'alert'
-    },
-    notificationStyles: {
-      type: String,
-      default: 'Banner'
-    }
-  },
-
-  data() {
-    return {
-      notificationStyle: ''
-    };
-  },
-
-  computed: {
-    classes() {
-      // let classes = {}
-      // for (const m of this.notifications) {
-      //   if (m.notificationStyle) {
-      //     classes = {
-      //       'asd20-notification': true,
-      //       'asd20-notification--banner':
-      //         m.notificationStyle.toLowerCase() === 'banner',
-      //       'asd20-notification--floating':
-      //         m.notificationStyle.toLowerCase() === 'floating',
-      //       'asd20-notification--inline':
-      //         m.notificationStyle.toLowerCase() === 'inline',
-      //       'asd20-notification--urgent':
-      //         m.notificationStyle.toLowerCase() === 'urgent'
-      //     }
-      //   }
-      // }
-      return {
-        'asd20-notification': true,
-        'asd20-notification--banner': this.notificationStyles.toLowerCase() === 'banner',
-        'asd20-notification--floating': this.notificationStyles.toLowerCase() === 'floating',
-        'asd20-notification--inline': this.notificationStyles.toLowerCase() === 'inline',
-        'asd20-notification--urgent': this.notificationStyles.toLowerCase() === 'urgent'
-      };
-    }
-
-  }
-});
-// CONCATENATED MODULE: ./src/components/organisms/NotificationGroup.vue?vue&type=script&lang=js&shadow
- /* harmony default export */ var organisms_NotificationGroupvue_type_script_lang_js_shadow = (NotificationGroupvue_type_script_lang_js_shadow); 
-// CONCATENATED MODULE: ./src/components/organisms/NotificationGroup.vue?shadow
-
-
-
-function NotificationGroupshadow_injectStyles (context) {
-  
-  var style0 = __webpack_require__("c69c")
-if (style0.__inject__) style0.__inject__(context)
-
-}
-
-/* normalize component */
-
-var NotificationGroupshadow_component = Object(componentNormalizer["a" /* default */])(
-  organisms_NotificationGroupvue_type_script_lang_js_shadow,
-  NotificationGroupvue_type_template_id_44f97e54_shadow_render,
-  NotificationGroupvue_type_template_id_44f97e54_shadow_staticRenderFns,
-  false,
-  NotificationGroupshadow_injectStyles,
-  null,
-  null
-  ,true
-)
-
-/* harmony default export */ var NotificationGroupshadow = (NotificationGroupshadow_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationGroupOfGroups.vue?vue&type=template&id=4203bedc&scoped=true&shadow
-var NotificationGroupOfGroupsvue_type_template_id_4203bedc_scoped_true_shadow_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',_vm._l((_vm.filteredNotifications),function(notificationGroup,index){return _c('notification-group',{key:index,class:_vm.classes,attrs:{"notifications":notificationGroup.notifications},on:{"dismiss":function($event){return _vm.$emit('dismiss', $event)}}},[_vm._t("default")],2)}),1)}
-var NotificationGroupOfGroupsvue_type_template_id_4203bedc_scoped_true_shadow_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/organisms/NotificationGroupOfGroups.vue?vue&type=template&id=4203bedc&scoped=true&shadow
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationGroup.vue?vue&type=template&id=e436dffe&
-var NotificationGroupvue_type_template_id_e436dffe_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"asd20-notification-batch",class:_vm.classes},[(_vm.notifications.length > 0)?_c('notification-controls',{attrs:{"count":_vm.notifications.length,"number":_vm.displayedNotificationIndex + 1},on:{"increaseValue":function($event){return _vm.nextNotification()},"decreaseValue":function($event){return _vm.previousNotification()}}}):_vm._e(),(_vm.notifications.length > 0)?_c('div',{staticClass:"asd20-notification-container",attrs:{"role":"alert"}},[_c('div',{staticClass:"heading"},[(_vm.icon)?_c('asd20-icon',{attrs:{"name":_vm.icon,"size":"lg"}}):_vm._e()],1),_c('div',{staticClass:"body"},[_c('h4',[_vm._v(" "+_vm._s(_vm.notifications[_vm.displayedNotificationIndex].title)+" ")]),_c('p',[_vm._v(" "+_vm._s(_vm.notifications[_vm.displayedNotificationIndex].summary)+" ")])]),_c('asd20-button',{attrs:{"transparent":"","size":"sm","icon":"close","label":"Dismiss","hide-label":""},nativeOn:{"click":function($event){return _vm.$emit('dismiss', _vm.notifications[_vm.displayedNotificationIndex].id)}}})],1):_vm._e()],1)])}
-var NotificationGroupvue_type_template_id_e436dffe_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/organisms/NotificationGroup.vue?vue&type=template&id=e436dffe&
-
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationGroup.vue?vue&type=script&lang=js&
 //
 //
@@ -5019,6 +4543,693 @@ var NotificationGroup_component = Object(componentNormalizer["a" /* default */])
 )
 
 /* harmony default export */ var NotificationGroup = (NotificationGroup_component.exports);
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.find.js
+var es_array_find = __webpack_require__("7db0");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.trim.js
+var es_string_trim = __webpack_require__("498a");
+
+// CONCATENATED MODULE: ./src/services/cookieRecipe.js
+
+
+
+
+
+
+var cookieRecipe_today = new Date();
+var expirationOneYear = cookieRecipe_today.getFullYear() + 10;
+cookieRecipe_today.setFullYear(expirationOneYear);
+function setCookie(label, value) {
+  var expiration = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : cookieRecipe_today;
+  document.cookie = `${label}= ${JSON.stringify(value)}; expires=${JSON.stringify(expiration.toUTCString())}; samesite=strict;`;
+}
+function getCookie(label) {
+  var findCookie = document.cookie ? document.cookie.split(';').find(c => c.includes(label)) : null;
+  var asd20Cookie = findCookie ? findCookie.trim() : null;
+  var response = findCookie ? asd20Cookie.replace(`${label}=`, '') : null;
+  var results = findCookie && response ? JSON.parse(response) : null;
+  return results;
+}
+// EXTERNAL MODULE: ./node_modules/nanoid/non-secure/index.js
+var non_secure = __webpack_require__("ee2b");
+
+// CONCATENATED MODULE: ./node_modules/@linusborg/vue-simple-portal/dist/index.mjs
+
+/**
+ * vue-simple-portal
+ * version: 0.1.4,
+ * (c) Thorsten Lünborg, 2019
+ * LICENCE: Apache-2.0
+ * http://github.com/linusborg/vue-simple-portal
+*/
+
+
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function (obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function (obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+var config = {
+  selector: "vue-portal-target-".concat(non_secure())
+};
+var setSelector = function setSelector(selector) {
+  return config.selector = selector;
+};
+var isBrowser = typeof window !== 'undefined' && (typeof document === "undefined" ? "undefined" : _typeof(document)) !== undefined;
+
+var TargetContainer = external_Vue_.extend({
+  // as an abstract component, it doesn't appear in
+  // the $parent chain of components.
+  // which means the next parent of any component rendered inside of this oen
+  // will be the parent from which is was portal'd
+  abstract: true,
+  name: 'PortalOutlet',
+  props: ['nodes', 'tag'],
+  data: function data(vm) {
+    return {
+      updatedNodes: vm.nodes
+    };
+  },
+  render: function render(h) {
+    var nodes = this.updatedNodes && this.updatedNodes();
+    if (!nodes) return h();
+    return nodes.length < 2 && !nodes[0].text ? nodes : h(this.tag || 'DIV', nodes);
+  },
+  destroyed: function destroyed() {
+    var el = this.$el;
+    el.parentNode.removeChild(el);
+  }
+});
+
+var Portal = external_Vue_.extend({
+  name: 'VueSimplePortal',
+  props: {
+    disabled: {
+      type: Boolean
+    },
+    prepend: {
+      type: Boolean
+    },
+    selector: {
+      type: String,
+      default: function _default() {
+        return "#".concat(config.selector);
+      }
+    },
+    tag: {
+      type: String,
+      default: 'DIV'
+    }
+  },
+  render: function render(h) {
+    if (this.disabled) {
+      var nodes = this.$scopedSlots && this.$scopedSlots.default();
+      if (!nodes) return h();
+      return nodes.length < 2 && !nodes[0].text ? nodes : h(this.tag, nodes);
+    }
+
+    return h();
+  },
+  created: function created() {
+    if (!this.getTargetEl()) {
+      this.insertTargetEl();
+    }
+  },
+  updated: function updated() {
+    var _this = this;
+
+    // We only update the target container component
+    // if the scoped slot function is a fresh one
+    // The new slot syntax (since Vue 2.6) can cache unchanged slot functions
+    // and we want to respect that here.
+    this.$nextTick(function () {
+      if (!_this.disabled && _this.slotFn !== _this.$scopedSlots.default) {
+        _this.container.updatedNodes = _this.$scopedSlots.default;
+      }
+
+      _this.slotFn = _this.$scopedSlots.default;
+    });
+  },
+  beforeDestroy: function beforeDestroy() {
+    this.unmount();
+  },
+  watch: {
+    disabled: {
+      immediate: true,
+      handler: function handler(disabled) {
+        disabled ? this.unmount() : this.$nextTick(this.mount);
+      }
+    }
+  },
+  methods: {
+    // This returns the element into which the content should be mounted.
+    getTargetEl: function getTargetEl() {
+      if (!isBrowser) return;
+      return document.querySelector(this.selector);
+    },
+    insertTargetEl: function insertTargetEl() {
+      if (!isBrowser) return;
+      var parent = document.querySelector('body');
+      var child = document.createElement(this.tag);
+      child.id = this.selector.substring(1);
+      parent.appendChild(child);
+    },
+    mount: function mount() {
+      var targetEl = this.getTargetEl();
+      var el = document.createElement('DIV');
+
+      if (this.prepend && targetEl.firstChild) {
+        targetEl.insertBefore(el, targetEl.firstChild);
+      } else {
+        targetEl.appendChild(el);
+      }
+
+      this.container = new TargetContainer({
+        el: el,
+        parent: this,
+        propsData: {
+          tag: this.tag,
+          nodes: this.$scopedSlots.default
+        }
+      });
+    },
+    unmount: function unmount() {
+      if (this.container) {
+        this.container.$destroy();
+        delete this.container;
+      }
+    }
+  }
+});
+
+function install(_Vue) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  _Vue.component(options.name || 'portal', Portal);
+
+  if (options.defaultSelector) {
+    setSelector(options.defaultSelector);
+  }
+}
+
+if (typeof window !== 'undefined' && window.Vue && window.Vue === external_Vue_) {
+  // plugin was inlcuded directly in a browser
+  external_Vue_.use(install);
+}
+
+/* harmony default export */ var dist = (install);
+
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationComponent.vue?vue&type=script&lang=js&shadow
+
+
+
+
+
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ var NotificationComponentvue_type_script_lang_js_shadow = ({
+  name: 'NotificationComponent',
+  props: {
+    categories: {
+      type: Array
+    },
+    locations: {
+      type: String
+    },
+    apiEndpoint: {
+      type: String
+    },
+    embedLocations: {
+      type: [Array, String],
+      default: () => []
+    },
+    notificationsGroups: {
+      type: Array,
+      default: () => []
+    }
+  },
+  components: {
+    NotificationGroup: NotificationGroup,
+    DismissedNotifications: DismissedNotifications,
+    Portal: Portal
+  },
+
+  data() {
+    return {
+      notifications: null,
+      error: null,
+      dismissedCookies: []
+    };
+  },
+
+  created() {
+    this.fetchNotifications(); // this.mountComponent()
+  },
+
+  // watch: {
+  // notifications(newValue, oldValue) {
+  //   if (newValue !== oldValue) {
+  //     this.mountComponent()
+  //   }
+  // }
+  // },
+  computed: {
+    mappednotifications() {
+      return (this.notifications || []).map(m => {
+        var notificationStyle = m.categories.includes('Emergency') ? 'Emergency' : m.categories.includes('Weather') ? 'Urgent' : 'Information';
+        return _objectSpread2({}, m, {
+          notificationStyle: notificationStyle
+        });
+      }).filter(m => {
+        if (!this.dismissedCookies.includes(m.id)) {
+          return m;
+        }
+      });
+    },
+
+    mappedInformationalNotifications() {
+      return this.mappednotifications.filter(m => m.notificationStyle === 'Information');
+    },
+
+    mappedEmergencyNotifications() {
+      return this.mappednotifications.filter(m => m.notificationStyle === 'Emergency');
+    },
+
+    mappedUrgentNotifications() {
+      return this.mappednotifications.filter(m => m.notificationStyle === 'Urgent');
+    },
+
+    filterEmbedLocations() {
+      return this.embedLocations.map(c => _objectSpread2({}, c, {
+        notifications: c.notifications.filter(n => !this.dismissedCookies.includes(n.id))
+      }));
+    } // mappedNotificationGroups() {
+    //   let notificationStyles = this.mappednotifications.reduce(
+    //     (a, c) =>
+    //       a.includes(c.notificationStyle) ? a : [...a, c.notificationStyle],
+    //     []
+    //   )
+    //   let messagesByCategory = []
+    //   for (let key of notificationStyles) {
+    //     messagesByCategory.push({
+    //       type: key,
+    //       messages: this.mappedNotifications.filter(
+    //         m => m.notificationStyle === key
+    //       )
+    //     })
+    //   }
+    //   return messagesByCategory
+    // }
+
+
+  },
+  methods: {
+    mountComponent() {
+      var _iterator = _createForOfIteratorHelper(this.embedLocations),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var n = _step.value;
+          var location = document.querySelector(n.el);
+          var notificationComponent = document.createElement('asd20-notification-group');
+          notificationComponent.setAttribute('notification-styles', n.style);
+          location.appendChild(notificationComponent);
+          notificationComponent.notifications = n.notifications;
+          console.log('notification component', location);
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    },
+
+    dismissNotification(messageId) {
+      this.dismissedCookies.push(messageId);
+      var today = new Date();
+      var oneMonth = today.getMonth() + 1;
+      today.setMonth(oneMonth);
+      setCookie('notification-component', this.dismissedCookies, today); // if (this.embedLocations) {
+      //   this.embedLocaions.filter(n => n.id !== messageId)
+      // }
+
+      this.notifications = this.notifications.filter(m => m.id != messageId);
+    },
+
+    getDimissed() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return getCookie('notification-component');
+
+              case 2:
+                _context.t1 = _context.sent;
+
+                if (_context.t1) {
+                  _context.next = 5;
+                  break;
+                }
+
+                _context.t1 = [];
+
+              case 5:
+                _context.t0 = _context.t1.filter(cook => {
+                  var notificationIds = _this.notifications.map(c => c.id); // console.log('messgaes', notificationIds)
+
+
+                  return notificationIds.includes(cook);
+                });
+
+                if (_context.t0) {
+                  _context.next = 8;
+                  break;
+                }
+
+                _context.t0 = [];
+
+              case 8:
+                _this.dismissedCookies = _context.t0;
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+
+    fetchNotifications() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return getNotification(_this2.categories ? _this2.categories.split(',') : '', _this2.locations ? _this2.locations.split(',') : '', _this2.ApiEndpoint);
+
+              case 3:
+                _this2.notifications = _context2.sent;
+
+                _this2.getDimissed();
+
+                _context2.next = 10;
+                break;
+
+              case 7:
+                _context2.prev = 7;
+                _context2.t0 = _context2["catch"](0);
+                _this2.error = `something went wrong ${_context2.t0}`;
+
+              case 10:
+                // this.$emit('loaded', [
+                //   {
+                //     type: 'Emergency',
+                //     notifications: this.mappedEmergencyNotifications
+                //   },
+                //   {
+                //     type: 'Informational',
+                //     notifications: this.mappedInformationalNotifications
+                //   },
+                //   { type: 'Urgent', notifications: this.mappedUrgentNotifications }
+                // ])
+                _this2.fireEvent();
+
+              case 11:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 7]]);
+      }))();
+    },
+
+    fireEvent() {
+      this.$emit('loaded', [{
+        type: 'Emergency',
+        notifications: this.mappedEmergencyNotifications
+      }, {
+        type: 'Informational',
+        notifications: this.mappedInformationalNotifications
+      }, {
+        type: 'Urgent',
+        notifications: this.mappedUrgentNotifications
+      }]);
+    },
+
+    bubbleNotifications() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return _this3.notifications;
+
+              case 2:
+                console.log('bubbled');
+
+                _this3.$emit('loaded', [{
+                  nType: 'Emergency',
+                  notifications: _this3.mappedEmergencyNotifications
+                }, {
+                  nType: 'Informational',
+                  notifications: _this3.mappedInformationalNotifications
+                }, {
+                  nType: 'Urgent',
+                  notifications: _this3.mappedUrgentNotifications
+                }]);
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    }
+
+  }
+});
+// CONCATENATED MODULE: ./src/components/organisms/NotificationComponent.vue?vue&type=script&lang=js&shadow
+ /* harmony default export */ var organisms_NotificationComponentvue_type_script_lang_js_shadow = (NotificationComponentvue_type_script_lang_js_shadow); 
+// CONCATENATED MODULE: ./src/components/organisms/NotificationComponent.vue?shadow
+
+
+
+
+
+/* normalize component */
+
+var NotificationComponentshadow_component = Object(componentNormalizer["a" /* default */])(
+  organisms_NotificationComponentvue_type_script_lang_js_shadow,
+  NotificationComponentvue_type_template_id_7f9388d4_shadow_render,
+  NotificationComponentvue_type_template_id_7f9388d4_shadow_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  ,true
+)
+
+/* harmony default export */ var NotificationComponentshadow = (NotificationComponentshadow_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"62ba72be-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationGroup.vue?vue&type=template&id=44f97e54&shadow
+var NotificationGroupvue_type_template_id_44f97e54_shadow_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"asd20-notification-batch",class:_vm.classes},[(_vm.notifications.length > 0)?_c('notification-controls',{attrs:{"count":_vm.notifications.length,"number":_vm.displayedNotificationIndex + 1},on:{"increaseValue":function($event){return _vm.nextNotification()},"decreaseValue":function($event){return _vm.previousNotification()}}}):_vm._e(),(_vm.notifications.length > 0)?_c('div',{staticClass:"asd20-notification-container",attrs:{"role":"alert"}},[_c('div',{staticClass:"heading"},[(_vm.icon)?_c('asd20-icon',{attrs:{"name":_vm.icon,"size":"lg"}}):_vm._e()],1),_c('div',{staticClass:"body"},[_c('h4',[_vm._v(" "+_vm._s(_vm.notifications[_vm.displayedNotificationIndex].title)+" ")]),_c('p',[_vm._v(" "+_vm._s(_vm.notifications[_vm.displayedNotificationIndex].summary)+" ")])]),_c('asd20-button',{attrs:{"transparent":"","size":"sm","icon":"close","label":"Dismiss","hide-label":""},nativeOn:{"click":function($event){return _vm.$emit('dismiss', _vm.notifications[_vm.displayedNotificationIndex].id)}}})],1):_vm._e()],1)])}
+var NotificationGroupvue_type_template_id_44f97e54_shadow_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/organisms/NotificationGroup.vue?vue&type=template&id=44f97e54&shadow
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationGroup.vue?vue&type=script&lang=js&shadow
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ var NotificationGroupvue_type_script_lang_js_shadow = ({
+  name: 'NotificationGroup',
+  mixins: [NotificationControlsMixin],
+  components: {
+    NotificationControls: NotificationControls,
+    Asd20Button: Asd20Button,
+    Asd20Icon: Asd20Icon
+  },
+  props: {
+    notifications: {
+      type: [Array, String],
+      default: () => []
+    },
+    icon: {
+      type: String,
+      default: 'alert'
+    },
+    notificationStyles: {
+      type: String,
+      default: 'Banner'
+    }
+  },
+
+  data() {
+    return {
+      notificationStyle: ''
+    };
+  },
+
+  computed: {
+    classes() {
+      // let classes = {}
+      // for (const m of this.notifications) {
+      //   if (m.notificationStyle) {
+      //     classes = {
+      //       'asd20-notification': true,
+      //       'asd20-notification--banner':
+      //         m.notificationStyle.toLowerCase() === 'banner',
+      //       'asd20-notification--floating':
+      //         m.notificationStyle.toLowerCase() === 'floating',
+      //       'asd20-notification--inline':
+      //         m.notificationStyle.toLowerCase() === 'inline',
+      //       'asd20-notification--urgent':
+      //         m.notificationStyle.toLowerCase() === 'urgent'
+      //     }
+      //   }
+      // }
+      return {
+        'asd20-notification': true,
+        'asd20-notification--banner': this.notificationStyles.toLowerCase() === 'banner',
+        'asd20-notification--floating': this.notificationStyles.toLowerCase() === 'floating',
+        'asd20-notification--inline': this.notificationStyles.toLowerCase() === 'inline',
+        'asd20-notification--urgent': this.notificationStyles.toLowerCase() === 'urgent'
+      };
+    }
+
+  }
+});
+// CONCATENATED MODULE: ./src/components/organisms/NotificationGroup.vue?vue&type=script&lang=js&shadow
+ /* harmony default export */ var organisms_NotificationGroupvue_type_script_lang_js_shadow = (NotificationGroupvue_type_script_lang_js_shadow); 
+// CONCATENATED MODULE: ./src/components/organisms/NotificationGroup.vue?shadow
+
+
+
+function NotificationGroupshadow_injectStyles (context) {
+  
+  var style0 = __webpack_require__("c69c")
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var NotificationGroupshadow_component = Object(componentNormalizer["a" /* default */])(
+  organisms_NotificationGroupvue_type_script_lang_js_shadow,
+  NotificationGroupvue_type_template_id_44f97e54_shadow_render,
+  NotificationGroupvue_type_template_id_44f97e54_shadow_staticRenderFns,
+  false,
+  NotificationGroupshadow_injectStyles,
+  null,
+  null
+  ,true
+)
+
+/* harmony default export */ var NotificationGroupshadow = (NotificationGroupshadow_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"62ba72be-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationGroupOfGroups.vue?vue&type=template&id=4203bedc&scoped=true&shadow
+var NotificationGroupOfGroupsvue_type_template_id_4203bedc_scoped_true_shadow_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',_vm._l((_vm.filteredNotifications),function(notificationGroup,index){return _c('notification-group',{key:index,class:_vm.classes,attrs:{"notifications":notificationGroup.notifications},on:{"dismiss":function($event){return _vm.$emit('dismiss', $event)}}},[_vm._t("default")],2)}),1)}
+var NotificationGroupOfGroupsvue_type_template_id_4203bedc_scoped_true_shadow_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/organisms/NotificationGroupOfGroups.vue?vue&type=template&id=4203bedc&scoped=true&shadow
+
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationGroupOfGroups.vue?vue&type=script&lang=js&shadow
 
 
@@ -11140,6 +11351,55 @@ function words(string, pattern, guard) {
 }
 
 module.exports = words;
+
+
+/***/ }),
+
+/***/ "ee2b":
+/***/ (function(module, exports) {
+
+// This alphabet uses a-z A-Z 0-9 _- symbols.
+// Symbols are generated for smaller size.
+// -_zyxwvutsrqponmlkjihgfedcba9876543210ZYXWVUTSRQPONMLKJIHGFEDCBA
+var url = '-_'
+// Loop from 36 to 0 (from z to a and 9 to 0 in Base36).
+var i = 36
+while (i--) {
+  // 36 is radix. Number.prototype.toString(36) returns number
+  // in Base36 representation. Base36 is like hex, but it uses 0–9 and a-z.
+  url += i.toString(36)
+}
+// Loop from 36 to 10 (from Z to A in Base36).
+i = 36
+while (i-- - 10) {
+  url += i.toString(36).toUpperCase()
+}
+
+/**
+ * Generate URL-friendly unique ID. This method use non-secure predictable
+ * random generator with bigger collision probability.
+ *
+ * @param {number} [size=21] The number of symbols in ID.
+ *
+ * @return {string} Random string.
+ *
+ * @example
+ * const nanoid = require('nanoid/non-secure')
+ * model.id = nanoid() //=> "Uakgb_J5m9g-0JDMbcJqL"
+ *
+ * @name nonSecure
+ * @function
+ */
+module.exports = function (size) {
+  var id = ''
+  i = size || 21
+  // Compact alternative for `for (var i = 0; i < size; i++)`
+  while (i--) {
+    // `| 0` is compact and faster alternative for `Math.floor()`
+    id += url[Math.random() * 64 | 0]
+  }
+  return id
+}
 
 
 /***/ }),
