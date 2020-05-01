@@ -27,9 +27,9 @@ export default {
     embedLocations: {
       type: [Array, String],
       default: () => [
-        { el: '#header', style: 'Banner' },
-        { el: '#footer', style: 'Inline' },
-        { el: 'aside', style: 'Floating' }
+        // { el: '#header', style: 'Banner' },
+        // { el: '#footer', style: 'Inline' },
+        // { el: 'aside', style: 'Floating' }
       ]
     },
     notificationsGroups: {
@@ -48,13 +48,18 @@ export default {
       dismissedCookies: []
     }
   },
-  async created() {
-    this.mountComponent()
+  created() {
     this.fetchNotifications()
+    this.mountComponent()
   },
-  // mounted() {
-  //   this.bubbleNotifications()
-  // },
+
+  watch: {
+    notifications(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.mountComponent()
+      }
+    }
+  },
   computed: {
     mappednotifications() {
       return (this.notifications || [])
@@ -116,10 +121,8 @@ export default {
           'asd20-notification-group'
         )
         notificationComponent.setAttribute('notification-styles', n.style)
-        // notificationComponent.notificationStyles = n.style
-        notificationComponent.setAttribute('notifications', n.notifications)
-        // notificationComponent.notifications = n.notifications
         location.appendChild(notificationComponent)
+        notificationComponent.notifications = n.notifications
         console.log('notification component', location)
       }
     },

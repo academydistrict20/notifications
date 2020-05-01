@@ -3762,12 +3762,12 @@ var DismissedNotificationsshadow_component = Object(componentNormalizer["a" /* d
 )
 
 /* harmony default export */ var DismissedNotificationsshadow = (DismissedNotificationsshadow_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationComponent.vue?vue&type=template&id=b7d6ae2c&scoped=true&shadow
-var NotificationComponentvue_type_template_id_b7d6ae2c_scoped_true_shadow_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"header"}},[(_vm.error)?_c('p',[_vm._v(_vm._s(_vm.error))]):_c('div',{attrs:{"data-testid":"notifications"}},[_c('dismissed-notifications',{attrs:{"dismissed":_vm.dismissedCookies.length}})],1)])}
-var NotificationComponentvue_type_template_id_b7d6ae2c_scoped_true_shadow_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2291231a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/organisms/NotificationComponent.vue?vue&type=template&id=73d4708a&scoped=true&shadow
+var NotificationComponentvue_type_template_id_73d4708a_scoped_true_shadow_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"header"}},[(_vm.error)?_c('p',[_vm._v(_vm._s(_vm.error))]):_c('div',{attrs:{"data-testid":"notifications"}},[_c('dismissed-notifications',{attrs:{"dismissed":_vm.dismissedCookies.length}})],1)])}
+var NotificationComponentvue_type_template_id_73d4708a_scoped_true_shadow_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/organisms/NotificationComponent.vue?vue&type=template&id=b7d6ae2c&scoped=true&shadow
+// CONCATENATED MODULE: ./src/components/organisms/NotificationComponent.vue?vue&type=template&id=73d4708a&scoped=true&shadow
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.filter.js
 var es_array_filter = __webpack_require__("4de4");
@@ -3778,6 +3778,48 @@ var es_array_map = __webpack_require__("d81d");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.split.js
 var es_string_split = __webpack_require__("1276");
 
+// EXTERNAL MODULE: ./node_modules/regenerator-runtime/runtime.js
+var runtime = __webpack_require__("96cf");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.js
 var es_symbol = __webpack_require__("a4d3");
 
@@ -3966,48 +4008,6 @@ function _objectSpread2(target) {
   }
 
   return target;
-}
-// EXTERNAL MODULE: ./node_modules/regenerator-runtime/runtime.js
-var runtime = __webpack_require__("96cf");
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
-
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
-  }
-}
-
-function _asyncToGenerator(fn) {
-  return function () {
-    var self = this,
-        args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
-
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
-
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-
-      _next(undefined);
-    });
-  };
 }
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.concat.js
 var es_array_concat = __webpack_require__("99af");
@@ -4200,16 +4200,10 @@ function getCookie(label) {
     },
     embedLocations: {
       type: [Array, String],
-      default: () => [{
-        el: '#header',
-        style: 'Banner'
-      }, {
-        el: '#footer',
-        style: 'Inline'
-      }, {
-        el: 'aside',
-        style: 'Floating'
-      }]
+      default: () => [// { el: '#header', style: 'Banner' },
+        // { el: '#footer', style: 'Inline' },
+        // { el: 'aside', style: 'Floating' }
+      ]
     },
     notificationsGroups: {
       type: Array,
@@ -4230,29 +4224,18 @@ function getCookie(label) {
   },
 
   created() {
-    var _this = this;
-
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _this.mountComponent();
-
-              _this.fetchNotifications();
-
-            case 2:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }))();
+    this.fetchNotifications();
+    this.mountComponent();
   },
 
-  // mounted() {
-  //   this.bubbleNotifications()
-  // },
+  watch: {
+    notifications(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.mountComponent();
+      }
+    }
+
+  },
   computed: {
     mappednotifications() {
       return (this.notifications || []).map(m => {
@@ -4308,10 +4291,10 @@ function getCookie(label) {
           var location = document.querySelector(n.el);
           var notificationComponent = document.createElement('asd20-notification-group');
           notificationComponent.setAttribute('notification-styles', n.style); // notificationComponent.notificationStyles = n.style
-
-          notificationComponent.setAttribute('notifications', n.notifications); // notificationComponent.notifications = n.notifications
+          // notificationComponent.setAttribute('notifications', n.notifications)
 
           location.appendChild(notificationComponent);
+          notificationComponent.notifications = n.notifications;
           console.log('notification component', location);
         }
       } catch (err) {
@@ -4331,6 +4314,54 @@ function getCookie(label) {
     },
 
     getDimissed() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return getCookie('notification-component');
+
+              case 2:
+                _context.t1 = _context.sent;
+
+                if (_context.t1) {
+                  _context.next = 5;
+                  break;
+                }
+
+                _context.t1 = [];
+
+              case 5:
+                _context.t0 = _context.t1.filter(cook => {
+                  var notificationIds = _this.notifications.map(c => c.id); // console.log('messgaes', notificationIds)
+
+
+                  return notificationIds.includes(cook);
+                });
+
+                if (_context.t0) {
+                  _context.next = 8;
+                  break;
+                }
+
+                _context.t0 = [];
+
+              case 8:
+                _this.dismissedCookies = _context.t0;
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+
+    fetchNotifications() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
@@ -4338,47 +4369,45 @@ function getCookie(label) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
-                return getCookie('notification-component');
+                _context2.prev = 0;
+                _context2.next = 3;
+                return getNotification(_this2.categories ? _this2.categories.split(',') : '', _this2.locations ? _this2.locations.split(',') : '', _this2.ApiEndpoint);
 
-              case 2:
-                _context2.t1 = _context2.sent;
+              case 3:
+                _this2.notifications = _context2.sent;
 
-                if (_context2.t1) {
-                  _context2.next = 5;
-                  break;
-                }
+                _this2.getDimissed();
 
-                _context2.t1 = [];
+                _context2.next = 10;
+                break;
 
-              case 5:
-                _context2.t0 = _context2.t1.filter(cook => {
-                  var notificationIds = _this2.notifications.map(c => c.id); // console.log('messgaes', notificationIds)
+              case 7:
+                _context2.prev = 7;
+                _context2.t0 = _context2["catch"](0);
+                _this2.error = `something went wrong ${_context2.t0}`;
 
+              case 10:
+                _this2.$emit('loaded', [{
+                  type: 'Emergency',
+                  notifications: _this2.mappedEmergencyNotifications
+                }, {
+                  type: 'Informational',
+                  notifications: _this2.mappedInformationalNotifications
+                }, {
+                  type: 'Urgent',
+                  notifications: _this2.mappedUrgentNotifications
+                }]);
 
-                  return notificationIds.includes(cook);
-                });
-
-                if (_context2.t0) {
-                  _context2.next = 8;
-                  break;
-                }
-
-                _context2.t0 = [];
-
-              case 8:
-                _this2.dismissedCookies = _context2.t0;
-
-              case 9:
+              case 11:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2);
+        }, _callee2, null, [[0, 7]]);
       }))();
     },
 
-    fetchNotifications() {
+    bubbleNotifications() {
       var _this3 = this;
 
       return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
@@ -4386,75 +4415,29 @@ function getCookie(label) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _context3.prev = 0;
-                _context3.next = 3;
-                return getNotification(_this3.categories ? _this3.categories.split(',') : '', _this3.locations ? _this3.locations.split(',') : '', _this3.ApiEndpoint);
-
-              case 3:
-                _this3.notifications = _context3.sent;
-
-                _this3.getDimissed();
-
-                _context3.next = 10;
-                break;
-
-              case 7:
-                _context3.prev = 7;
-                _context3.t0 = _context3["catch"](0);
-                _this3.error = `something went wrong ${_context3.t0}`;
-
-              case 10:
-                _this3.$emit('loaded', [{
-                  type: 'Emergency',
-                  notifications: _this3.mappedEmergencyNotifications
-                }, {
-                  type: 'Informational',
-                  notifications: _this3.mappedInformationalNotifications
-                }, {
-                  type: 'Urgent',
-                  notifications: _this3.mappedUrgentNotifications
-                }]);
-
-              case 11:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3, null, [[0, 7]]);
-      }))();
-    },
-
-    bubbleNotifications() {
-      var _this4 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                _context4.next = 2;
-                return _this4.notifications;
+                _context3.next = 2;
+                return _this3.notifications;
 
               case 2:
                 console.log('bubbled');
 
-                _this4.$emit('loaded', [{
+                _this3.$emit('loaded', [{
                   nType: 'Emergency',
-                  notifications: _this4.mappedEmergencyNotifications
+                  notifications: _this3.mappedEmergencyNotifications
                 }, {
                   nType: 'Informational',
-                  notifications: _this4.mappedInformationalNotifications
+                  notifications: _this3.mappedInformationalNotifications
                 }, {
                   nType: 'Urgent',
-                  notifications: _this4.mappedUrgentNotifications
+                  notifications: _this3.mappedUrgentNotifications
                 }]);
 
               case 4:
               case "end":
-                return _context4.stop();
+                return _context3.stop();
             }
           }
-        }, _callee4);
+        }, _callee3);
       }))();
     }
 
@@ -4475,11 +4458,11 @@ function NotificationComponentshadow_injectStyles (context) {
 
 var NotificationComponentshadow_component = Object(componentNormalizer["a" /* default */])(
   organisms_NotificationComponentvue_type_script_lang_js_shadow,
-  NotificationComponentvue_type_template_id_b7d6ae2c_scoped_true_shadow_render,
-  NotificationComponentvue_type_template_id_b7d6ae2c_scoped_true_shadow_staticRenderFns,
+  NotificationComponentvue_type_template_id_73d4708a_scoped_true_shadow_render,
+  NotificationComponentvue_type_template_id_73d4708a_scoped_true_shadow_staticRenderFns,
   false,
   NotificationComponentshadow_injectStyles,
-  "b7d6ae2c",
+  "73d4708a",
   null
   ,true
 )
