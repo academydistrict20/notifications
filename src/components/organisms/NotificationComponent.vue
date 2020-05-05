@@ -4,7 +4,8 @@
     <div v-else data-testid="notifications">
       <portal
         :key="index"
-        v-for="(notifications, index) in filterEmbedLocations"
+        v-for="(notifications, index) in filterEmbedLocations ||
+          mappednotifications"
         :selector="notifications.el"
       >
         <notification-group

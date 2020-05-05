@@ -20,11 +20,11 @@ export default {
   components: { NotificationGroup },
   props: {
     notificationGroups: { type: Array, default: () => [] },
-    style: { type: [String, Array] }
+    notificationStyle: { type: [String, Array] }
   },
   computed: {
     filteredNotifications() {
-      let isArray = Array.isArray(this.style)
+      let isArray = Array.isArray(this.notificationStyle)
       return isArray
         ? this.notificationGroups.filter(m => {
             let found = ''

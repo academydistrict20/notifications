@@ -2,19 +2,32 @@
   <div>
     <p v-if="error">{{ error }}</p>
     <div v-else data-testid="notifications">
-      <NotificationGroupOfGroups
-        style="Banner"
-        :notificationGroups="mappedNotificationGroups"
-        @dismiss="dismissNotification($event)"
+      <notification-group
+        :notifications="mappedNotifications"
+        notificationStyles="banner"
+        @dismiss="dismissNotification"
       />
-      <dismissed-notifications :dismissed="dismissedCookies.length" />
+      <notification-group
+        :notifications="mappedInformationalNotifications"
+        notificationStyles="inline"
+        @dismiss="dismissNotification"
+      />
+      <notification-group
+        :notifications="mappedUrgentNotifications"
+        notificationStyles="floating"
+        @dismiss="dismissNotification"
+      />
+      <dismissed-notifications
+        v-if="dismissedCookies.length > 0"
+        :dismissed="dismissedCookies.length"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import { getNotification } from '@/services/axios.js'
-import NotificationGroupOfGroups from '@/components/organisms/NotificationGroupOfGroups'
+import NotificationGroup from '@/components/organisms/NotificationGroup'
 import DismissedNotifications from '@/components/organisms/DismissedNotifications'
 import { setCookie, getCookie } from '@/services/cookieRecipe.js'
 
@@ -27,7 +40,7 @@ export default {
     }
   },
   components: {
-    NotificationGroupOfGroups,
+    NotificationGroup,
     DismissedNotifications
   },
   data() {
@@ -75,13 +88,28 @@ export default {
       let notificationsByGroupStyleCategory = []
       for (let key of notificationStyles) {
         notificationsByGroupStyleCategory.push({
-          type: key,
+          notificationsStyles: key,
           notifications: this.mappedNotifications.filter(
             m => m.notificationStyle === key
           )
         })
       }
       return notificationsByGroupStyleCategory
+    },
+    mappedInformationalNotifications() {
+      return this.mappedNotifications.filter(
+        m => m.notificationStyle === 'Information'
+      )
+    },
+    mappedEmergencyNotifications() {
+      return this.mappedNotifications.filter(
+        m => m.notificationStyle === 'Emergency'
+      )
+    },
+    mappedUrgentNotifications() {
+      return this.mappedNotifications.filter(
+        m => m.notificationStyle === 'Urgent'
+      )
     }
   },
   methods: {
