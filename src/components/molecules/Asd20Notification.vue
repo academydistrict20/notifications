@@ -17,8 +17,8 @@
         :label="callToActionLabel || callToActionUrl"
         :link="callToActionUrl"
       />
+      <!-- class="asd20-notification__dismiss" -->
       <asd20-button
-        class="asd20-notification__dismiss"
         v-if="dismissible"
         transparent
         size="xs"
@@ -53,7 +53,24 @@ export default {
     notificationStyle: { type: String, default: '' },
     importance: { type: String, default: 'info' }
   },
-
+  // data() {
+  //   return {
+  //     observer: null,
+  //     isIntersecting: false
+  //   }
+  // },
+  // mounted() {
+  //   this.observer = new IntersectionObserver(entries =>
+  //     entries.forEach(e => {
+  //       if (e.isIntersecting) {
+  //         this.isObserved = true
+  //         this.$emit('found', e.target.__vue__.id)
+  //         console.log(e.target.__vue__.title)
+  //       }
+  //     })
+  //   )
+  //   this.observer.observe(this.$el)
+  // },
   computed: {
     classes() {
       let classes = {
@@ -112,6 +129,7 @@ export default {
   align-items: flex-start;
   box-shadow: 0 0 0 1px var(--color__tertiary);
   color: var(--website-card__reverse-background-color);
+  padding: 2em;
 
   &__content {
     display: flex;

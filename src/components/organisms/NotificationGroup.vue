@@ -1,25 +1,26 @@
 <template>
-  <div>
-    <div :class="classes">
-      <notification-controls
-        class="notification-controls"
-        v-if="notifications.length > 0"
-        :count="notifications.length"
-        @increaseValue="nextNotification()"
-        @decreaseValue="previousNotification()"
-      />
-      <!-- :number="displayedNotificationIndex + 1" -->
-      <asd20-notification
-        v-for="notification in notifications"
-        :key="notification.id"
-        :title="notification.title"
-        :description="notification.summary"
-        :id="notification.id"
-        :importance="notification.notificationStyle"
-        @dismiss="$emit('dismiss', $event)"
-        v-model="currentNotification"
-      />
-    </div>
+  <div :class="classes">
+    <!-- how can I know the current visible notification so I can navigate to the next or previous. Should I be looking at something like Intersection Observer API?  -->
+    <notification-controls
+      class="notification-controls"
+      v-if="notifications.length > 0"
+      :count="notifications.length"
+      @increaseValue="nextNotification()"
+      @decreaseValue="previousNotification()"
+    />
+    <!-- :number="displayedNotificationIndex + 1" -->
+
+    <asd20-notification
+      class="observer-window"
+      v-for="notification of notificationsFromIndex"
+      :key="notification.id"
+      :title="notification.title"
+      :description="notification.summary"
+      :id="notification.id"
+      :importance="notification.notificationStyle"
+      @dismiss="$emit('dismiss', $event)"
+      @found="setVisible($event)"
+    />
   </div>
 </template>
 
@@ -43,7 +44,34 @@ export default {
   data() {
     return {
       notificationStyle: '',
-      currentNotification: {}
+      // observer: null,
+      // isObserved: false,
+      // currentNotification: null,
+      notificationsFromIndex: [],
+      index: 0,
+      enterActiveClass: 'stack-in',
+      leaveActiveClass: 'stack-out'
+    }
+  },
+  // mounted() {
+  //   this.observer = new IntersectionObserver(entries =>
+  //     entries.forEach(e => {
+  //       if (e.isIntersecting) {
+  //         this.isObserved = true
+  //         console.log(e)
+  //       }
+  //     })
+  //   )
+  //   let el = document.querySelector('.observer-window')
+  //   this.observer.observe(el)
+  // this.observer.observe(this.$el)
+  // },
+  created() {
+    this.initNotifications()
+  },
+  watch: {
+    notifications: function(value) {
+      this.initNotifications(value)
     }
   },
   computed: {
@@ -63,7 +91,36 @@ export default {
     }
   },
   methods: {
-    nextNotification() {}
+    initNotifications(value) {
+      this.notificationsFromIndex = (value || []).map(n => ({
+        ...n,
+        key: Math.random()
+          .toString(36)
+          .substr(2, 9)
+      }))
+    },
+    // setVisible(id) {
+    //   let found = this.notifications.find(n => n.id === id)
+    //   this.currentNotification = found
+    // },
+    nextNotification() {
+      const newIndex =
+        this.index < this.notifications.length - 1 ? this.index + 1 : 0
+      const topItem = this.notificationsFromIndex[0]
+
+      topItem.key = Math.random()
+        .toString(36)
+        .substr(2, 9)
+
+      this.enterActiveClass = ''
+      this.leaveActiveClass = 'stack-out'
+
+      // remove top item
+      this.notificationsFromIndex.splice(0, 1)
+
+      // Update the Index
+      this.index = newIndex
+    }
   }
 }
 </script>
