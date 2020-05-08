@@ -1,6 +1,6 @@
 # Introduction
 
-Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Cras mattis consectetur purus sit amet fermentum.
+Use as a dependency to build into your project, or use the CDN and webcomponents to embed directly into an application. 
 
 ## How It Works
 
