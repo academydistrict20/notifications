@@ -15,7 +15,7 @@ features:
   details: Scripts and tools to allow for easy integration with any web-based application or website
 - title: Backend services and APIs
   details: All the necessary backend services and infrastructure to support a notification system
-footer: MIT Licensed | Copyright © 2020-present Academy District 20
+footer: MIT Licensed | Copyright © 2020-present Luke Harris, Paul Hollendorfer, David Hayes
 ---
 
 ### Core Contributors
