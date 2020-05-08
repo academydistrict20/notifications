@@ -1,15 +1,17 @@
 ---
 home: true
+heroImage: ./logo.png
+heroText: Notifications
+tagline: UI components, utility functions and client libraries for the web-based notifications system of asd20.org.
 title: Home
-description: UI components, utility functions and client javaScript
-             for creating a web-based notifications system.
 actionText: Get Started →
 actionLink: /guide/
 footer: MIT Licensed | Copyright © 2020-present Academy District 20
 ---
 
-::: warning UNDER DEVELOPMENT
-Do NOT use this in production.
+::: warning PRE-RELEASE
+Under heavy development.
+**Do NOT use this in production.**
 :::
 
-<small><center>Authored by [Academy District 20](https://asd20.org).</center></small>
+<small><center>Authored by the fine folks at [Academy District 20](https://asd20.org).</center></small>
