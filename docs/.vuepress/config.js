@@ -1,5 +1,6 @@
 module.exports = {
   title: 'Notifications',
+  base: '/notifications/',
   themeConfig: {
     lastUpdated: true,
     displayAllHeaders: true,
