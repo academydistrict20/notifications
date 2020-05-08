@@ -1,0 +1,24 @@
+{
+  "name": "@academydistrict20/notifications-docs",
+  "version": "0.1.0",
+  "description": "Documentation for @academydistrict20/notifications",
+  "scripts": {
+    "dev": "vuepress dev .",
+    "build": "vuepress build ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/academydistrict20/notifications.gi.git"
+  },
+  "author": "Academy District 20 <socialmedia@asd20.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/academydistrict20/notifications.gi/issues"
+  },
+  "homepage": "https://github.com/academydistrict20/notifications.gi#readme",
+  "devDependencies": {
+    "vuepress": "^1.4.1",
+    "hash-sum": "^2.0.0",
+    "vue": "^2.6.11"
+  }
+}
