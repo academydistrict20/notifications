@@ -1,6 +1,20 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": false,
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
   "conventionalCommits.scopes": [
     "project",
-    "shared"
+    "shared",
+    "release",
+    "client",
+    "ui",
+    "embed",
+    "services",
+    "infrastructure",
+    "examples"
   ]
 }
