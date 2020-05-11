@@ -8,12 +8,12 @@
   },
   "conventionalCommits.scopes": [
     "project",
+    "shared",
     "release",
     "client",
     "ui",
     "embed",
     "services",
-    "helpers",
     "infrastructure",
     "examples"
   ]

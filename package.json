@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Tools for notifications",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "jest",
     "release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo"
