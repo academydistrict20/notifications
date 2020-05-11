@@ -1,6 +1,6 @@
 # Scaffolding
 
-[hygen](https://www.hygen.io/) is used in the project to for generating files based on tempalates (scaffolding). These templates live in the `/_templates` directory.
+[hygen](https://www.hygen.io/) is used in the project to for generating files based on templates (scaffolding). These templates live in the `/_templates` directory.
 
 ## Using the generators
 
