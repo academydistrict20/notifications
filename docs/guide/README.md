@@ -11,3 +11,7 @@ Use as a dependency to build into your project, or use the CDN and webcomponents
 * [Feature A](../guide/README.md)
 * [Feature B](../guide/README.md)
 * [Feature C](../guide/README.md)
+
+## Contributing
+
+* [Scaffolding](../guide/scaffolding.md)
