@@ -7,7 +7,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "jest",
+    "test": "lerna run test",
     "release": "auto shipit"
   },
   "repository": {

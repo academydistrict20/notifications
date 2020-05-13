@@ -43,8 +43,8 @@ to: packages/<%= h.changeCase.snake(pkg) %>/package.json
     ]
   },
   "scripts": {
-    "test": "jest --collect-coverage",
-    "test:watch": "jest --watch-all --collect-coverage",
+    "test": "jest --collect-coverage --passWithNoTests",
+    "test:watch": "jest --watch-all --collect-coverage -passWithNoTests",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "prepublish": "npm run build",
     "build": "npm run build:esm && npm run build:esm:min && npm run build:cjs && npm run build:cjs:min && npm run build:umd && npm run build:umd:min",
