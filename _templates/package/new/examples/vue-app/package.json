@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/examples/vue-app/package.json
+to: "<%= useVueComponents ? `packages/${h.changeCase.snake(pkg)}/examples/vue-app/package.json` : null %>"
 ---
 {
   "name": "vue-app",

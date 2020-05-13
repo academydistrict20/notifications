@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/examples/web-app/index.html
+to: "<%= useVueComponents ? `packages/${h.changeCase.snake(pkg)}/examples/web-app/index.html` : null %>"
 ---
 <!DOCTYPE html>
 <html lang="en">
