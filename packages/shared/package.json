@@ -5,6 +5,9 @@
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
   "homepage": "https://github.com/academydistrict20/notifications#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/academydistrict20/notifications.git"
