@@ -2,7 +2,7 @@
 to: packages/<%= h.changeCase.snake(pkg) %>/package.json
 ---
 {
-  "name": "@academydistrict20/notifications-<%= h.changeCase.snake(pkg) %>",
+  "name": "@asd20/notifications-<%= h.changeCase.snake(pkg) %>",
   "version": "0.1.0",
   "description": "<%= desc %>",
   "author": "Academy District 20 <socialmedia@asd20.org>",

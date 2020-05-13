@@ -14,7 +14,7 @@ to: packages/<%= h.changeCase.snake(pkg) %>/examples/vue-app/package.json
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@academydistrict20/notifications-<%= h.changeCase.snake(pkg) %>": "file:../..",
+    "@asd20/notifications-<%= h.changeCase.snake(pkg) %>": "file:../..",
     "vue": "^2.6.11"
   },
   "devDependencies": {
