@@ -1,3 +1,19 @@
+# v0.3.1 (Wed May 13 2020)
+
+#### 🐛 Bug Fix
+
+- Merge branch 'master' into altitudems-patch-1 ([@altitudems](https://github.com/altitudems))
+- ci(templates): add access public default [#14](https://github.com/academydistrict20/notifications/pull/14) ([@altitudems](https://github.com/altitudems))
+- Merge remote-tracking branch 'origin/master' into chore/npm-publishing ([@altitudems](https://github.com/altitudems))
+- Merge branch 'master' into altitudems-patch-1 ([@Lukeharris30](https://github.com/Lukeharris30))
+
+#### Authors: 2
+
+- [@Lukeharris30](https://github.com/Lukeharris30)
+- David Hayes ([@altitudems](https://github.com/altitudems))
+
+---
+
 # v0.2.0 (Wed May 13 2020)
 
 ### Release Notes

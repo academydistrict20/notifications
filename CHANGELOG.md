@@ -1,3 +1,18 @@
+# v0.3.1 (Wed May 13 2020)
+
+#### 🐛 Bug Fix
+
+- refactor(templates): add prompts and help to package generator [#15](https://github.com/academydistrict20/notifications/pull/15) (david.hayes@asd20.org)
+- fix (docs): spelling [#7](https://github.com/academydistrict20/notifications/pull/7) (david.hayes@asd20.org [@Lukeharris30](https://github.com/Lukeharris30))
+- ci(templates): add access public default [#14](https://github.com/academydistrict20/notifications/pull/14) (david.hayes@asd20.org)
+
+#### Authors: 2
+
+- [@Lukeharris30](https://github.com/Lukeharris30)
+- David Hayes ([@altitudems](https://github.com/altitudems))
+
+---
+
 # v1.3.0 (Wed May 13 2020)
 
 ### Release Notes
