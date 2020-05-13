@@ -1,3 +1,71 @@
+# v1.3.0 (Wed May 13 2020)
+
+### Release Notes
+
+_From #8_
+
+`auto shipit` will only ship to `latest` on the base branch ([which is configurable]()). If ran locally or from a PR it will create a `canary` release that doesn't interfere with your `latest` release.
+
+---
+
+#### 🚀 Enhancement
+
+- feat(project): add hygen templating/scaffodling for packages [#6](https://github.com/academydistrict20/notifications/pull/6) (david.hayes@asd20.org)
+- feat(project): :art: added helpers package functionality (luke.haris@asd20.org)
+- `@asd20/notifications-shared`
+  - feat(shared): implement shared library [#5](https://github.com/academydistrict20/notifications/pull/5) (david.hayes@asd20.org)
+
+#### 🐛 Bug Fix
+
+- fix(release): allow npm to publish scoped package in the public (david.hayes@asd20.org)
+- docs: :pencil: Adding a How to Contribute section [#4](https://github.com/academydistrict20/notifications/pull/4) ([@Hollendorfer](https://github.com/Hollendorfer))
+- Fixed docs overview [#3](https://github.com/academydistrict20/notifications/pull/3) ([@Lukeharris30](https://github.com/Lukeharris30))
+- docs(project): :sparkles: add basic documentation [#1](https://github.com/academydistrict20/notifications/pull/1) (david.hayes@asd20.org [@Lukeharris30](https://github.com/Lukeharris30))
+- chore(project): :pencil: cleanup project files, add license, readme, issue templates [#2](https://github.com/academydistrict20/notifications/pull/2) (david.hayes@asd20.org)
+- `@asd20/notifications-shared`
+  - ci(shared): update access [#11](https://github.com/academydistrict20/notifications/pull/11) (david.hayes@asd20.org)
+- `@asd20/notifications-shared`
+  - refactor(shared): refactor to match more closely with template [#10](https://github.com/academydistrict20/notifications/pull/10) (david.hayes@asd20.org)
+- `@asd20/notifications-shared`
+  - ci(release): add access config [#9](https://github.com/academydistrict20/notifications/pull/9) (david.hayes@asd20.org)
+- `@asd20/notifications-shared`
+  - ci(release): update npm publishing [#8](https://github.com/academydistrict20/notifications/pull/8) (david.hayes@asd20.org)
+
+#### ⚠️  Pushed to `master`
+
+- chore(project): :arrow_up: setup lerna for mono repocomplete rewrite (luke.haris@asd20.org)
+- fixed broken code (luke.haris@asd20.org)
+- commit broken code (luke.haris@asd20.org)
+- notification refactor (luke.haris@asd20.org)
+- Portal implementation (luke.haris@asd20.org)
+- setting props works the hard way (luke.haris@asd20.org)
+- renaming (luke.haris@asd20.org)
+- Merge branch 'master' of https://github.com/academydistrict20/notifications (luke.haris@asd20.org)
+- wc component props initial (luke.haris@asd20.org)
+- Finish mobile styles ([@Hollendorfer](https://github.com/Hollendorfer))
+- Merge branch 'master' of https://github.com/academydistrict20/notifications ([@Hollendorfer](https://github.com/Hollendorfer))
+- Mobile css ([@Hollendorfer](https://github.com/Hollendorfer))
+- fetch cookie null fix (luke.haris@asd20.org)
+- updated web component (luke.haris@asd20.org)
+- Yes, that's right, even more css changes ([@Hollendorfer](https://github.com/Hollendorfer))
+- Additional css changes ([@Hollendorfer](https://github.com/Hollendorfer))
+- Additional changes to css ([@Hollendorfer](https://github.com/Hollendorfer))
+- basic build serve web component (luke.haris@asd20.org)
+- Added css to notifications ([@Hollendorfer](https://github.com/Hollendorfer))
+- added dismised cookies (luke.haris@asd20.org)
+- intitail commit (luke.haris@asd20.org)
+- init (luke.haris@asd20.org)
+
+#### Authors: 5
+
+- [@Lukeharris30](https://github.com/Lukeharris30)
+- David Hayes ([@altitudems](https://github.com/altitudems))
+- Luke Harris (luke.haris@asd20.org)
+- Luke Harris (luke.harris@lukes-mac.lan)
+- Paul Hollendorfer ([@Hollendorfer](https://github.com/Hollendorfer))
+
+---
+
 # (Wed May 13 2020)
 
 #### 🚀 Enhancement
