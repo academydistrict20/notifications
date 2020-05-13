@@ -1,12 +1,14 @@
 {
-  "version": "1.2.1",
+  "version": "0.2.0",
   "npmClient": "npm",
   "packages": [
     "packages/*"
   ],
   "command": {
     "publish": {
-      "ignoreChanges": ["./docs/**/*"]
+      "ignoreChanges": [
+        "./docs/**/*"
+      ]
     }
   }
 }
