@@ -1,5 +1,13 @@
 name: release
 
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
 jobs:
   release:
     runs-on: ubuntu-latest
