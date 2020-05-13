@@ -1,7 +1,7 @@
 {
-  "name": "@academydistrict20/notifications-docs",
+  "name": "@asd20/notifications-docs",
   "version": "0.1.0",
-  "description": "Documentation for @academydistrict20/notifications",
+  "description": "Documentation for @asd20/notifications",
   "scripts": {
     "dev": "vuepress dev .",
     "build": "vuepress build ."
