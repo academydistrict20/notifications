@@ -43,8 +43,10 @@
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
     "rollup-plugin-typescript2": "^0.27.0",
+    "rollup-plugin-vue": "^5.0.0",
     "ts-jest": "^25.4.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "vue-template-compiler": "^2.6.11"
   },
   "husky": {
     "hooks": {
@@ -52,7 +54,7 @@
     }
   },
   "dependencies": {
-    "@asd20/notifications-helpers": "file:packages/shared"
+    "@asd20/notifications-shared": "file:packages/shared"
   },
   "auto": {
     "plugins": [
