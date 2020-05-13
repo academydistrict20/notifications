@@ -32,9 +32,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          registry-url: 'https://npm.pkg.github.com'
-          scope: 'academydistrict20'
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
+          registry-url: 'https://registry.npmjs.org'
+          scope: 'asd20'
 
       - name: Publish To GitHub Package Registry
         if: steps.semantic.outputs.new_release_published == 'true'
