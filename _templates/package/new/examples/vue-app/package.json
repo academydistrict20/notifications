@@ -1,5 +1,5 @@
 ---
-to: "<%= useVueComponents ? `packages/${h.changeCase.snake(pkg)}/examples/vue-app/package.json` : null %>"
+to: "<%= useVueComponents ? `packages/${h.changeCase.param(pkg)}/examples/vue-app/package.json` : null %>"
 ---
 {
   "name": "vue-app",
@@ -14,7 +14,7 @@ to: "<%= useVueComponents ? `packages/${h.changeCase.snake(pkg)}/examples/vue-ap
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@asd20/notifications-<%= h.changeCase.snake(pkg) %>": "file:../..",
+    "@asd20/notifications-<%= h.changeCase.param(pkg) %>": "file:../..",
     "vue": "^2.6.11"
   },
   "devDependencies": {

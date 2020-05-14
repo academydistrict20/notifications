@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/.gitignore
+to: packages/<%= h.changeCase.param(pkg) %>/.gitignore
 ---
 coverage
 node_modules

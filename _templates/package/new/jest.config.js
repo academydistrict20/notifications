@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/jest.config.js
+to: packages/<%= h.changeCase.param(pkg) %>/jest.config.js
 ---
 module.exports = {
   roots: ['./src'],

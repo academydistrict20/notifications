@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/.eslintrc.js
+to: packages/<%= h.changeCase.param(pkg) %>/.eslintrc.js
 ---
 module.exports = {
   parser: "@typescript-eslint/parser", // Specifies the ESLint parser

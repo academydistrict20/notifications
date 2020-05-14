@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/tsconfig.json
+to: packages/<%= h.changeCase.param(pkg) %>/tsconfig.json
 ---
 {
   "compilerOptions": {

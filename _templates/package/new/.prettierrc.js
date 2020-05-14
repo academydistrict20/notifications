@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/.prettierrc.js
+to: packages/<%= h.changeCase.param(pkg) %>/.prettierrc.js
 ---
 module.exports = {
   semi: false,

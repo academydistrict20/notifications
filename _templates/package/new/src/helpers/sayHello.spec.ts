@@ -1,5 +1,5 @@
 ---
-to: "<%= useHelperFunctions ? `packages/${h.changeCase.snake(pkg)}/src/helpers/sayHello.spec.ts` : null %>"
+to: "<%= useHelperFunctions ? `packages/${h.changeCase.param(pkg)}/src/helpers/sayHello.spec.ts` : null %>"
 ---
 import sayHello from './sayHello'
 
