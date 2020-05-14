@@ -1,6 +1,6 @@
 {
   "name": "@asd20/notifications-shared",
-  "version": "0.1.0",
+  "version": "0.3.1",
   "description": "Utility functions and other code",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
@@ -8,6 +8,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/academydistrict20/notifications.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "bugs": {
     "url": "https://github.com/academydistrict20/notifications/issues"

@@ -12,6 +12,9 @@ to: packages/<%= h.changeCase.snake(pkg) %>/package.json
     "type": "git",
     "url": "git+https://github.com/academydistrict20/notifications.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/academydistrict20/notifications/issues"
   },
@@ -55,6 +58,7 @@ to: packages/<%= h.changeCase.snake(pkg) %>/package.json
     "build:umd": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20Notifications<%= h.changeCase.title(pkg) %> --file-name asd20-notification-<%= h.changeCase.snake(pkg) %>.umd.js",
     "build:umd:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20Notifications<%= h.changeCase.title(pkg) %> --minify --file-name asd20-notification-<%= h.changeCase.snake(pkg) %>.umd.min.js"
   },
+<% if(locals.useVueComponents){ -%>
   "devDependencies": {
     "rollup-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.11"
@@ -65,6 +69,7 @@ to: packages/<%= h.changeCase.snake(pkg) %>/package.json
   "dependencies": {
     "@vue/web-component-wrapper": "^1.2.0"
   },
+<% } -%>
   "husky": {
     "hooks": {
       "pre-commit": "npx tsc --noEmit && lint-staged",
