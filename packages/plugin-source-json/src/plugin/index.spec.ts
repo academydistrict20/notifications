@@ -52,7 +52,7 @@ describe('mapSourceItemToNotification', () => {
 describe('groupNotificationIntoTypes', () => {
   it('places notifications in the correct type', () => {
     const notifications = sourceItems.map(jsonSourcePlugin.mapSourceItemToNotification)
-    const notificationsByType = jsonSourcePlugin.groupNotificationIntoTypes(notifications)
+    const notificationsByType = jsonSourcePlugin.groupNotificationsByType(notifications)
     expect(notificationsByType.banner).toBeDefined()
     expect(notificationsByType.banner).toHaveLength(1)
     expect(notificationsByType.floating).toBeDefined()

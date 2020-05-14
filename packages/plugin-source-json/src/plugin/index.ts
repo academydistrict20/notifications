@@ -27,7 +27,7 @@ const jsonSourcePlugin = {
       categories: sourceItem.categories,
     }
   },
-  groupNotificationIntoTypes(notifications: Notification[]): NotificationsByType {
+  groupNotificationsByType(notifications: Notification[]): NotificationsByType {
     return {
       banner: notifications.filter((n) => n.categories.includes('Emergency')),
       floating: notifications.filter((n) => !n.categories.includes('Emergency')),
