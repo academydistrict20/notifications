@@ -55,8 +55,8 @@ to: packages/<%= h.changeCase.param(pkg) %>/package.json
     "build:esm:min": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --minify --file-name asd20-notification-<%= h.changeCase.param(pkg) %>.esm.min.js",
     "build:cjs": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --file-name asd20-notification-<%= h.changeCase.param(pkg) %>.cjs.js",
     "build:cjs:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --minify --file-name asd20-notification-<%= h.changeCase.param(pkg) %>.cjs.min.js",
-    "build:umd": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20Notifications<%= h.changeCase.title(pkg) %> --file-name asd20-notification-<%= h.changeCase.param(pkg) %>.umd.js",
-    "build:umd:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20Notifications<%= h.changeCase.title(pkg) %> --minify --file-name asd20-notification-<%= h.changeCase.param(pkg) %>.umd.min.js"
+    "build:umd": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20Notifications<%= h.changeCase.pascal(pkg) %> --file-name asd20-notification-<%= h.changeCase.param(pkg) %>.umd.js",
+    "build:umd:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20Notifications<%= h.changeCase.pascal(pkg) %> --minify --file-name asd20-notification-<%= h.changeCase.param(pkg) %>.umd.min.js"
   },
 <% if(locals.useVueComponents){ -%>
   "devDependencies": {
