@@ -16,6 +16,18 @@
     "services",
     "infrastructure",
     "examples",
-    "templates"
-  ]
+    "templates",
+    "plugins"
+  ],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/_templates": true,
+    "**/coverage": true,
+    "**/dist": true,
+  }
 }

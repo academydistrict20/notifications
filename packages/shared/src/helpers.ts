@@ -1,22 +1,22 @@
-/**
- * Helper function for creating HTTP POST requests
- *
- * @export
- * @param {string} url
- * @param {({ params: object | undefined; data: object | undefined; headers: object | undefined })} options
- * @returns {(Promise<any>)}
- */
-export async function post(
-  url: string,
-  options: { params: object | undefined; data: object | undefined; headers: object | undefined },
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-): Promise<any> {
-  const _url = new URL(url)
-  const fetchOptions: RequestInit = { method: 'POST' }
+import get from 'lodash/get'
+import { Notification, notificationFactory } from './types'
 
-  if (options.params) Object.entries(options.params).forEach(([k, v]) => _url.searchParams.append(k, v))
-  if (options.data) fetchOptions.body = JSON.stringify(options.data)
-  if (options.headers) fetchOptions.headers = options.headers as Headers
+export function mapObjectToNotification(
+  source: object,
+  propertyMap?: { [P in keyof Notification]?: string },
+): Notification {
+  // Create new notification with default values
+  const notification: Notification = notificationFactory(source)
 
-  return (await fetch(url, fetchOptions)).json()
+  // Using any available propertyMaps, set values
+  if (propertyMap) {
+    for (const property in propertyMap) {
+      const value = get(source, propertyMap[property as never])
+      if (value) {
+        notification[property as never] = value
+      }
+    }
+  }
+
+  return notification
 }

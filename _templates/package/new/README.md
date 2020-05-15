@@ -1,7 +1,7 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/README.md
+to: packages/<%= h.changeCase.param(pkg) %>/README.md
 ---
-# @asd20/notifications-<%= h.changeCase.snake(pkg) %>
+# @asd20/notifications-<%= h.changeCase.param(pkg) %>
 
 <%= desc %>
 

@@ -1,6 +1,3 @@
----
-to: packages/<%= h.changeCase.param(pkg) %>/bili.config.js
----
 module.exports = {
   output: {
     extractCSS: false,

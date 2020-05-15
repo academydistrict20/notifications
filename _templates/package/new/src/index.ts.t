@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/src/index.ts
+to: packages/<%= h.changeCase.param(pkg) %>/src/index.ts
 ---
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 
