@@ -59,6 +59,7 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.151",
     "@vue/web-component-wrapper": "^1.2.0",
     "cookie-storage": "^6.0.0",
     "lodash": "^4.17.15"
