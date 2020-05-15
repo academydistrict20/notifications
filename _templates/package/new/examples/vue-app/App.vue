@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/examples/vue-app/App.vue
+to: "<%= useVueComponents ? `packages/${h.changeCase.param(pkg)}/examples/vue-app/App.vue` : null %>"
 ---
 <template>
   <div>
@@ -12,7 +12,7 @@ to: packages/<%= h.changeCase.snake(pkg) %>/examples/vue-app/App.vue
 </template>
 
 <script>
-import {sayHello, Asd20SayHello} from '@academydistrict20/notifications-<%= h.changeCase.snake(pkg) %>'
+import {sayHello, Asd20SayHello} from '@asd20/notifications-<%= h.changeCase.param(pkg) %>'
 
 export default {
   name: 'MyExampleVueApp',

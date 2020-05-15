@@ -1,3 +1,5 @@
-# @academydistrict20/notifications-helpers
+# @asd20/notifications-shared
 
-Internal utility functions and constants shared across `@academydistrict20/notifications-*` packages.
+Utility functions and other code
+
+Part of `@asd20/notifications-*` packages.

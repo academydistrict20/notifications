@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/commitlint.config.js
+to: packages/<%= h.changeCase.param(pkg) %>/commitlint.config.js
 ---
 module.exports = {
   parserPreset: 'conventional-changelog-conventionalcommits',
