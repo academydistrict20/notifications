@@ -1,4 +1,5 @@
 import { getNotifications } from './api'
-import { get, post } from './helpers'
+import { request } from './http'
+import { mapObjectToNotification } from './helpers'
 
-export { getNotifications, get, post }
+export { getNotifications, request, mapObjectToNotification }
