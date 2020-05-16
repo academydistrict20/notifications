@@ -1,17 +1,15 @@
 # Introduction
 
-Use as a dependency to build into your project, or use the CDN and webcomponents to embed directly into an application. 
+Use as a dependency to build into your project, or use a CDN and web components to embed directly into an application.
 
-## How It Works
+## Using in your project
 
-## Features
+- Using the client
 
-### Feature Category
+- [Using plugins](../plugins/README.md) - add new data sources and extend functionality
 
-* [Feature A](../guide/README.md)
-* [Feature B](../guide/README.md)
-* [Feature C](../guide/README.md)
+- UI Components
 
-## Contributing
+- Embedding
 
-* [Scaffolding](../guide/scaffolding.md)
+> Interested in helping? Read the [contribution guide](../contributing/README.md).
