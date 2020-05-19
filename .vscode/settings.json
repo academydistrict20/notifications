@@ -28,6 +28,6 @@
     "**/node_modules": true,
     "**/_templates": true,
     "**/coverage": true,
-    "**/dist": true,
+    "**/dist": false,
   }
 }

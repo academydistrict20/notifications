@@ -6,6 +6,13 @@
   <title>Example Web App</title>
 </head>
 <body>
+  <div id="header">
+    Header
+  </div>
+  <div id="body">
+    Body Here
+  </div>
+
   <!-- Load Vue -->
   <script src="https://unpkg.com/vue"></script>
   <!-- Load the library -->
@@ -14,13 +21,22 @@
   <script src="https://unpkg.com/asd20-notification-embed"></script>
   -->
 
-  <!-- Example #1: Using a UMD package with global scope -->
-  <script>
-    console.log(Asd20NotificationsEmbed.sayHello('from global scope'))
-  </script>
+  <asd20-notifications-embed id="my-embed" />
 
-  <!-- Example #2: Using a web component -->
-  <asd20-say-hello name="from Web Component"/>
-  
+  <script>
+    const el = document.getElementById('my-embed')
+    el.config = {}
+    el.groups = {
+      banner: {
+        selector: `#header`,
+      },
+      floating: {
+        selector: `#header`,
+      },
+      inline: {
+        selector: `#body`,
+      }
+    }    
+  </script>
 </body>
 </html>

@@ -15,16 +15,16 @@ export default {
 
     },
     groups: {
-        banner: {
-          selector: `#header`,
-        },
-        floating: {
-          selector: `#header`,
-        },
-        inline: {
-          selector: `#body`,
-        }
+      banner: {
+        selector: `#header`,
+      },
+      floating: {
+        selector: `#header`,
+      },
+      inline: {
+        selector: `#body`,
       }
+    }
   }),
 
   components: { Asd20NotificationsEmbed }
