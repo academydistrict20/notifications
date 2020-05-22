@@ -107,18 +107,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../design/_variables.scss';
-@import '../../../design/_mixins.scss';
+// @import '../../../design/_variables.scss';
+// @import '../../../design/_mixins.scss';
 
 .asd20-notification {
   --background-color: white;
+  --background-alt: #e3e6e8;
+  --background-dark: #062137;
   position: relative;
   display: flex;
   flex-direction: row;
   padding: space(0.5);
   background: white;
-  box-shadow: 0 0 0 1px asd20-swatch('background-alt');
-  color: asd20-swatch('background-dark');
+  box-shadow: 0 0 0 1px var(--background-alt);
+  color: var(--background-dark);
 
   &__content {
     display: flex;
@@ -127,14 +129,15 @@ export default {
   }
 
   &__title {
+    --primary: #0e2c6c;
     font-weight: bold;
     font-size: 1.0625rem;
-    color: asd20-swatch('primary');
+    color: var(--primary);
   }
 
   &__description {
     font-size: 0.875rem;
-    margin-top: space(0.25);
+    margin-top: 0.25rem;
   }
 
   &__dismiss {
@@ -144,46 +147,50 @@ export default {
   }
 
   &__content > a.asd20-notification__cta {
+    --accent-one: #70b4c2;
     font-size: 0.875rem !important;
-    margin-top: space(0.25);
+    margin-top: 0.25rem;
     padding: 0;
-    box-shadow: 0 -1px 0 0 asd20-swatch('accent-one') inset !important;
+    box-shadow: 0 -1px 0 0 var(--accent-one) inset !important;
   }
 
   & > .asd20-icon {
-    margin-right: space(0.25);
+    margin-right: 0.25rem;
   }
 
   &--emergency {
+    --emergency: #da2e0b;
     .asd20-notification__title,
     .asd20-notification__cta {
-      color: asd20-swatch('emergency');
+      color: var(--emergency);
     }
     & > .asd20-icon {
-      --line-color: #{asd20-swatch('emergency', -2)};
-      --fill-color: #{asd20-swatch('emergency', 8)};
+      --line-color: #{var(--emergency, -2)};
+      --fill-color: #{var(--emergency, 8)};
     }
   }
 
   &--alert {
+    --warning: #f7e06e;
     .asd20-notification__title,
     .asd20-notification__cta {
-      color: asd20-swatch('warning', -5);
+      color: var(--warning, -5);
     }
     & > .asd20-icon {
-      --line-color: #{asd20-swatch('warning', -5)};
-      --fill-color: #{asd20-swatch('warning', 8)};
+      --line-color: #{var(--warning, -5)};
+      --fill-color: #{var(--warning, 8)};
     }
   }
 
   &--success {
     .asd20-notification__title,
     .asd20-notification__cta {
-      color: asd20-swatch('success');
+      --success: #4d7d36;
+      color: var(--success);
     }
     & > .asd20-icon {
-      --line-color: #{asd20-swatch('success', -2)};
-      --fill-color: #{asd20-swatch('success', 8)};
+      --line-color: #{var(--success, -2)};
+      --fill-color: #{var(--success, 8)};
     }
   }
 
@@ -204,7 +211,7 @@ export default {
 
   &.asd20-notification--status {
     box-shadow: none;
-    padding: space(0);
+    padding: 0;
     background: transparent;
     .asd20-notification__content {
       display: flex;
@@ -229,7 +236,7 @@ export default {
     }
     .asd20-notification__description {
       color: var(--background-color);
-      margin: 0 0 0 space(0.25);
+      margin: 0 0 0 0.25rem;
     }
     .asd20-notification__dismiss {
       position: relative;
@@ -241,14 +248,14 @@ export default {
   }
 
   &.asd20-notification--sticky {
-    --background-color: #{asd20-swatch('accent-one', -2)};
-    padding: space(0.5);
+    --background-color: #{var(--accent-one, -2)};
+    padding: 0.5rem;
     background: var(--background-color);
     color: white;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.125);
 
     &.asd20-notification--dismissible {
-      transform: translateX(calc(100% - #{space(2.5)}));
+      transform: translateX(calc(100% - #{2.5rem}));
       transition: transform 0.2s $anim-easing;
       &:hover {
         transform: translateX(0);
@@ -273,48 +280,48 @@ export default {
       --line-color: white;
       --fill-color: rgba(255, 255, 255, 0.25);
       // align-self: center;
-      width: space(1.5);
-      height: space(1.5);
+      width: 1.5rem;
+      height: 1.5rem;
       // outline: 1px solid red;
-      margin-right: space(0.5);
+      margin-right: 0.5rem;
       // margin-top: space(-0.25);
       // margin-left: space(-0.25);
     }
   }
   &--info.asd20-notification--sticky {
-    background: asd20-swatch('accent-one', -2);
+    background: var(--accent-one, -2);
   }
   &--emergency.asd20-notification--sticky {
-    background: asd20-swatch('emergency');
+    background: var(--emergency);
   }
   &--alert.asd20-notification--sticky {
-    background: asd20-swatch('warning');
-    color: asd20-swatch('warning', -8);
+    background: var(--warning);
+    color: var(--warning, -8);
     .asd20-notification__title {
-      color: asd20-swatch('warning', -10);
+      color: var(--warning, -10);
     }
     & /deep/ a.asd20-notification__cta {
-      color: asd20-swatch('warning', -10);
-      box-shadow: 0 -1px 0 0 #{asd20-swatch('warning', -5)} inset !important;
+      color: var(--warning, -10);
+      box-shadow: 0 -1px 0 0 #{var(--warning, -5)} inset !important;
     }
     .asd20-notification__dismiss .asd20-icon {
-      --line-color: #{asd20-swatch('warning', -8)};
-      --fill-color: #{asd20-swatch('warning', -8)};
+      --line-color: #{var(--warning, -8)};
+      --fill-color: #{var(--warning, -8)};
     }
 
     & > .asd20-icon {
-      --line-color: #{asd20-swatch('warning', -8)};
-      --fill-color: #{asd20-swatch('warning', -2)};
+      --line-color: #{var(--warning, -8)};
+      --fill-color: #{var(--warning, -2)};
     }
   }
 
   &--success.asd20-notification--sticky {
-    background: asd20-swatch('success');
+    background: var(--success);
   }
 
   &.asd20-notification--banner {
-    padding: space(0.5);
-    background: asd20-swatch('accent-one', -3.5);
+    padding: 0.5rem;
+    background: var(--accent-one, -3.5);
     color: white;
     .asd20-notification__title {
       font-size: 1.25rem;
@@ -329,13 +336,13 @@ export default {
     }
     & > .asd20-icon {
       --line-color: white;
-      --fill-color: #{asd20-swatch('accent-one', -6)};
-      margin-right: space(0.5);
+      --fill-color: #{var(--accent-one, -6)};
+      margin-right: 0.5rem;
     }
   }
 
   &--emergency.asd20-notification--banner {
-    background: asd20-swatch('emergency');
+    background: var(--emergency);
     color: white;
     .asd20-notification__title,
     .asd20-notification__cta {
@@ -343,29 +350,29 @@ export default {
     }
     & > .asd20-icon {
       --line-color: white;
-      --fill-color: #{asd20-swatch('emergency', -3)};
+      --fill-color: #{var(--emergency, -3)};
     }
   }
   &--alert.asd20-notification--banner {
-    background: asd20-swatch('warning');
-    color: asd20-swatch('warning', -8);
+    background: var(--warning);
+    color: var(--warning, -8);
     .asd20-notification__title,
     .asd20-notification__cta {
-      color: asd20-swatch('warning', -8);
+      color: var(--warning, -8);
     }
     .asd20-notification__dismiss .asd20-icon {
-      --line-color: #{asd20-swatch('warning', -8)};
-      --fill-color: #{asd20-swatch('warning', -8)};
+      --line-color: #{var(--warning, -8)};
+      --fill-color: #{var(--warning, -8)};
     }
 
     & > .asd20-icon {
-      --line-color: #{asd20-swatch('warning', -8)};
-      --fill-color: #{asd20-swatch('warning', -2)};
+      --line-color: #{var(--warning, -8)};
+      --fill-color: #{var(--warning, -2)};
     }
   }
 
   &--success.asd20-notification--banner {
-    background: asd20-swatch('success');
+    background: var(--success);
     color: white;
     .asd20-notification__title,
     .asd20-notification__cta {
@@ -373,7 +380,7 @@ export default {
     }
     & > .asd20-icon {
       --line-color: white;
-      --fill-color: #{asd20-swatch('success', -4)};
+      --fill-color: #{var(--success, -4)};
     }
   }
 }
