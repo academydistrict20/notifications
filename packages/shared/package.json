@@ -75,8 +75,5 @@
       "eslint --cache --fix",
       "git add"
     ]
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.151"
   }
 }

@@ -63,8 +63,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../design/_variables.scss';
-@import '../../../design/_mixins.scss';
+// @import '../../../design/_variables.scss';
+// @import '../../../design/_mixins.scss';
 
 .asd20-notification-group {
   position: relative;
@@ -89,7 +89,7 @@ export default {
 
 .asd20-notification-group--inline {
   .asd20-notification:not(:last-child) {
-    margin-bottom: space(0.5);
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -99,15 +99,15 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0 space(0.5);
+  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   .asd20-notification {
-    margin-bottom: space(0.5);
+    margin-bottom: 0.5rem;
   }
   & > .asd20-button {
     margin-left: auto;
-    margin-bottom: space(0.5);
+    margin-bottom: 0.5rem;
     // right: space(0.5);
     background: white;
     border-radius: 50%;
@@ -127,7 +127,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  padding: space(0.5);
+  padding: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -144,7 +144,7 @@ export default {
     position: absolute;
     order: inherit;
     left: auto;
-    right: space(2.5);
+    right: 2.5rem;
     background: transparent;
   }
 }
@@ -163,7 +163,7 @@ export default {
   // }
   & > .asd20-button {
     margin-left: auto;
-    margin-bottom: space(0.5);
+    margin-bottom: 0.5rem;
     // right: space(0.5);
     background: white;
     border-radius: 50%;

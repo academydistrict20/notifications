@@ -1,0 +1,21 @@
+{
+  "name": "vue-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@asd20/notifications-embed": "file:../..",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "vue-hot-reload-api": "^2.3.4"
+  }
+}
