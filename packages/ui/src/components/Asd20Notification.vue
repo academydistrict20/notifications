@@ -4,7 +4,9 @@
     role="alert"
     :style="{ '--background-color': this.color }"
   >
-    <asd20-icon v-if="iconName" :name="iconName" :size="iconSize" />
+    <asd20-icon v-if="iconName" :name="iconName" :size="iconSize"></asd20-icon>
+    <!-- <pre>{{ $props }}</pre> -->
+    <!-- HELLO -->
     <div class="asd20-notification__content">
       <div class="asd20-notification__title" v-if="title" v-html="title"></div>
       <div
@@ -20,7 +22,7 @@
         size="xs"
         :label="callToActionLabel || callToActionUrl"
         :link="callToActionUrl"
-      />
+      ></asd20-button>
       <asd20-button
         class="asd20-notification__dismiss"
         v-if="dismissible"
@@ -30,15 +32,15 @@
         label="Dismiss"
         hide-label
         @click.native="$emit('dismiss')"
-      />
-      <slot />
+      ></asd20-button>
+      <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
-import Asd20Icon from '../Asd20Icon'
-import Asd20Button from '../Asd20Button'
+import Asd20Icon from './Asd20Icon.vue'
+import Asd20Button from './Asd20Button.vue'
 
 export default {
   name: 'Asd20Notification',
@@ -106,7 +108,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 // @import '../../../design/_variables.scss';
 // @import '../../../design/_mixins.scss';
 
@@ -117,10 +119,13 @@ export default {
   position: relative;
   display: flex;
   flex-direction: row;
-  padding: space(0.5);
+  padding: 0.5rem;
   background: white;
   box-shadow: 0 0 0 1px var(--background-alt);
   color: var(--background-dark);
+
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
 
   &__content {
     display: flex;
@@ -154,7 +159,7 @@ export default {
     box-shadow: 0 -1px 0 0 var(--accent-one) inset !important;
   }
 
-  & > .asd20-icon {
+  .asd20-icon {
     margin-right: 0.25rem;
   }
 
@@ -164,7 +169,7 @@ export default {
     .asd20-notification__cta {
       color: var(--emergency);
     }
-    & > .asd20-icon {
+    .asd20-icon {
       --line-color: #{var(--emergency, -2)};
       --fill-color: #{var(--emergency, 8)};
     }
@@ -176,7 +181,7 @@ export default {
     .asd20-notification__cta {
       color: var(--warning, -5);
     }
-    & > .asd20-icon {
+    .asd20-icon {
       --line-color: #{var(--warning, -5)};
       --fill-color: #{var(--warning, 8)};
     }
@@ -188,7 +193,7 @@ export default {
       --success: #4d7d36;
       color: var(--success);
     }
-    & > .asd20-icon {
+    .asd20-icon {
       --line-color: #{var(--success, -2)};
       --fill-color: #{var(--success, 8)};
     }
@@ -204,7 +209,7 @@ export default {
     //   font-size: 0.875rem;
     // }
 
-    // & /deep/ a.asd20-notification__cta {
+    // & > a.asd20-notification__cta {
     //   font-size: 0.875rem !important;
     // }
   }
@@ -220,10 +225,10 @@ export default {
       flex-wrap: none;
       align-items: center;
     }
-    & > .asd20-icon {
+    .asd20-icon {
       --line-color: var(--background-color);
       --fill-color: var(--background-color);
-      & /deep/ .fill {
+      .fill {
         opacity: 0.25;
       }
     }
@@ -256,7 +261,7 @@ export default {
 
     &.asd20-notification--dismissible {
       transform: translateX(calc(100% - #{2.5rem}));
-      transition: transform 0.2s $anim-easing;
+      transition: transform 0.2s ease-in-out;
       &:hover {
         transform: translateX(0);
       }
@@ -268,15 +273,15 @@ export default {
     .asd20-notification__dismiss {
       display: none;
     }
-    & /deep/ a.asd20-notification__cta {
+    a.asd20-notification__cta {
       color: white;
       box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.5) inset !important;
     }
-    & /deep/ .asd20-notification__dismiss .asd20-icon {
+    .asd20-notification__dismiss .asd20-icon {
       --line-color: white;
       --fill-color: white;
     }
-    & > .asd20-icon {
+    .asd20-icon {
       --line-color: white;
       --fill-color: rgba(255, 255, 255, 0.25);
       // align-self: center;
@@ -300,7 +305,7 @@ export default {
     .asd20-notification__title {
       color: var(--warning, -10);
     }
-    & /deep/ a.asd20-notification__cta {
+    a.asd20-notification__cta {
       color: var(--warning, -10);
       box-shadow: 0 -1px 0 0 #{var(--warning, -5)} inset !important;
     }
@@ -309,7 +314,7 @@ export default {
       --fill-color: #{var(--warning, -8)};
     }
 
-    & > .asd20-icon {
+    .asd20-icon {
       --line-color: #{var(--warning, -8)};
       --fill-color: #{var(--warning, -2)};
     }
@@ -330,11 +335,11 @@ export default {
     .asd20-notification__cta {
       color: white;
     }
-    & /deep/ .asd20-notification__dismiss .asd20-icon {
+    .asd20-notification__dismiss .asd20-icon {
       --line-color: white;
       --fill-color: white;
     }
-    & > .asd20-icon {
+    .asd20-icon {
       --line-color: white;
       --fill-color: #{var(--accent-one, -6)};
       margin-right: 0.5rem;
@@ -348,7 +353,7 @@ export default {
     .asd20-notification__cta {
       color: white;
     }
-    & > .asd20-icon {
+    .asd20-icon {
       --line-color: white;
       --fill-color: #{var(--emergency, -3)};
     }
@@ -365,7 +370,7 @@ export default {
       --fill-color: #{var(--warning, -8)};
     }
 
-    & > .asd20-icon {
+    .asd20-icon {
       --line-color: #{var(--warning, -8)};
       --fill-color: #{var(--warning, -2)};
     }
@@ -378,7 +383,7 @@ export default {
     .asd20-notification__cta {
       color: white;
     }
-    & > .asd20-icon {
+    .asd20-icon {
       --line-color: white;
       --fill-color: #{var(--success, -4)};
     }

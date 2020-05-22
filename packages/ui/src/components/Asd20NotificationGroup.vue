@@ -6,15 +6,15 @@
         :key="notification.id"
         v-bind="notification"
         @dismiss="$emit('dismiss', notification)"
-      />
-      <slot />
+      ></asd20-notification>
+      <slot></slot>
     </transition-group>
-    <slot name="bottom" />
+    <slot name="bottom"></slot>
   </div>
 </template>
 
 <script>
-import Asd20Notification from '../../atoms/Asd20Notification'
+import Asd20Notification from './Asd20Notification.vue'
 
 export default {
   name: 'Asd20NotificationGroup',
@@ -39,7 +39,7 @@ export default {
     },
     computedNotifications() {
       let notifications = this.notifications
-        .filter(n => n.style.toLowerCase() === this.type.toLowerCase())
+        .filter(n => (n.notificationStyle || n.style).toLowerCase() === this.type.toLowerCase())
         .map(n => ({
           id: n.id,
           title: n.title,
@@ -47,7 +47,7 @@ export default {
           callToActionUrl: n.callToActionUrl,
           callToActionLabel: n.callToActionLabel,
           dismissible: n.dismissible,
-          notificationStyle: n.style,
+          notificationStyle: n.notificationStyle || n.style,
           importance: n.importance,
           color: n.color || '',
           icon: n.icon || '',
@@ -62,9 +62,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-// @import '../../../design/_variables.scss';
-// @import '../../../design/_mixins.scss';
+<style lang="scss" >
 
 .asd20-notification-group {
   position: relative;
@@ -105,7 +103,7 @@ export default {
   .asd20-notification {
     margin-bottom: 0.5rem;
   }
-  & > .asd20-button {
+  .asd20-button {
     margin-left: auto;
     margin-bottom: 0.5rem;
     // right: space(0.5);
@@ -161,7 +159,7 @@ export default {
   // .asd20-notification {
   //   margin-bottom: space(0.5);
   // }
-  & > .asd20-button {
+  .asd20-button {
     margin-left: auto;
     margin-bottom: 0.5rem;
     // right: space(0.5);
