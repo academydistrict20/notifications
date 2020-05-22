@@ -1,6 +1,7 @@
 // @ts-ignore
-import Asd20SayHello from './components/Asd20SayHello.vue'
+import Asd20Notifications from './components/Asd20Notifications.vue'
 import sayHello from './functions/sayHello'
+import {notifications, init } from './functions/initPlugins'
 // @ts-ignore
 import wrap from '@vue/web-component-wrapper'
 
@@ -9,7 +10,7 @@ import wrap from '@vue/web-component-wrapper'
   const w:any = (typeof window !== undefined) ? window : undefined
   if (typeof w !== undefined) {
     if (typeof w.Vue !== undefined) {
-      window.customElements.define('asd20-say-hello', wrap(w.Vue, Asd20SayHello))
+      window.customElements.define('asd20-notifications', wrap(w.Vue, Asd20Notifications))
     } else {
       console.error('Cannot install web components, Vue is not in global namespace')
     }
@@ -17,6 +18,8 @@ import wrap from '@vue/web-component-wrapper'
 })()
 
 export {
+  init,
+  notifications,
   sayHello,
-  Asd20SayHello
+  Asd20Notifications
 }

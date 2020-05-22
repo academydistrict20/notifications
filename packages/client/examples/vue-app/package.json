@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@academydistrict20/notifications-client": "file:../..",
+    "@asd20/notifications-client": "file:../..",
     "vue": "^2.6.11"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 {
-  "name": "@academydistrict20/notifications-client",
+  "name": "@asd20/notifications-client",
   "version": "0.1.0",
   "description": "Client implementation of notifications, ideal for apps",
   "author": "Academy District 20 <socialmedia@asd20.org>",
@@ -81,6 +81,7 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
+    "@asd20/notifications-helpers": "file:../shared",
     "@vue/web-component-wrapper": "^1.2.0"
   },
   "husky": {

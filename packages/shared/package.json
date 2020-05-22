@@ -1,7 +1,7 @@
 {
-  "name": "@asd20/notifications-shared",
-  "version": "0.3.1",
-  "description": "Utility functions and other code",
+  "name": "@asd20/notifications-helpers",
+  "version": "0.1.0",
+  "description": "Utility functions for notifications",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
   "homepage": "https://github.com/academydistrict20/notifications#readme",
