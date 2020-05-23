@@ -34,7 +34,7 @@ const Client = function (config?: Partial<NotificationsClientConfig>): Notificat
   }
 
   // Private state variables
-  const notifications: Notification[] = []
+  let notifications: Notification[] = []
   let dismissedNotificationIds: string[] = []
 
   // Private Functions
@@ -48,18 +48,17 @@ const Client = function (config?: Partial<NotificationsClientConfig>): Notificat
     }
   }
 
-  // async function loadNotifications(): Promise<Notification[]> {
-  //   // For every plugin, get notifications
-  //   // Add them together
-  //   const combinedNotifications = []
+  async function loadNotifications(): Promise<Notification[]> {
+    // For every plugin, get notifications
+    // Add them together
+    const combinedNotifications: Notification[] = []
+    for (const plugin of _config.plugins || []) {
+      const pluginNotifications: Notification[] = await plugin.load()
+      combinedNotifications.concat(pluginNotifications)
+    }
 
-  //   _config.plugins || [] as NotificationsPlugin[]).forEach(plugin: NotificationsPlugin => {
-  //     const pluginNotifications = await plugin.load()
-  //     combinedNotifications = combinedNotifications.concat(pluginNotifications)
-  //   })
-
-  //   return combinedNotifications
-  // }
+    return combinedNotifications
+  }
 
   // Return public client instance
   const instance: NotificationsClient = {
@@ -77,8 +76,7 @@ const Client = function (config?: Partial<NotificationsClientConfig>): Notificat
       return {
         banner: activeNotifications.filter((n) => n.categories.includes('Emergency')),
         floating: activeNotifications.filter((n) => n.categories.includes('Urgent')),
-        // TODO: Add inline to type definition
-        // inline: activeNotifications.filter((n) => n.categories.includes('Informational')),
+        inline: activeNotifications.filter((n) => !n.categories.includes('Emergency' || 'Urgent')),
       }
     },
 
@@ -119,12 +117,12 @@ const Client = function (config?: Partial<NotificationsClientConfig>): Notificat
   dismissedNotificationIds = JSON.parse(_config.storage.getItem(_config.storageKey) || '[]')
 
   // Load all notifications
-  // loadNotifications().then((notifications) => {
-  //   notifications = notifications
-  //   // When the client is initialied, we need to trigger an update
-  //   // or send data to the consumer code
-  //   callUpdateHandler(instance)
-  // })
+  loadNotifications().then((updatedNotifications) => {
+    notifications = updatedNotifications
+    // When the client is initialied, we need to trigger an update
+    // or send data to the consumer code
+    callUpdateHandler(instance)
+  })
 
   return instance
 }
