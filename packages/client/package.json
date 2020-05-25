@@ -53,6 +53,11 @@
     "build:umd": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsClient --file-name asd20-notification-client.umd.js",
     "build:umd:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsClient --minify --file-name asd20-notification-client.umd.min.js"
   },
+
+  "jest": {
+    "testEnvironment": "node"
+  },
+
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
@@ -67,14 +72,15 @@
     "eslint-plugin-prettier": "^3.1.3",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
+    "jest-localstorage-mock": "^2.4.2",
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
     "rollup-plugin-typescript2": "^0.27.0",
+    "rollup-plugin-vue": "^5.0.0",
     "semantic-release": "^17.0.7",
     "semantic-release-monorepo": "^7.0.2",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3",
-    "rollup-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
