@@ -1,4 +1,4 @@
-import { post } from './helpers'
+import { request, FetchMethod } from './http'
 import { DEFAULT_SUBSCRIPTION_LOCATIONS, DEFAULT_SUBSCRIPTION_CATEGORIES } from './constants'
 
 export async function getNotifications(
@@ -13,7 +13,8 @@ export async function getNotifications(
   const allLocations = [...Array.from(new Set(DEFAULT_SUBSCRIPTION_LOCATIONS.concat(subscribedLocations)))]
   const allCategories = [...Array.from(new Set(DEFAULT_SUBSCRIPTION_CATEGORIES.concat(subscribedCategories)))]
 
-  const data = await post(apiEndpoint, {
+  const data = await request(apiEndpoint, {
+    method: FetchMethod.POST,
     params: {
       'api-version': apiVersion,
     },

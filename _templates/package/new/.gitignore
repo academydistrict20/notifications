@@ -1,6 +1,0 @@
----
-to: packages/<%= h.changeCase.snake(pkg) %>/.gitignore
----
-coverage
-node_modules
-.eslintcache

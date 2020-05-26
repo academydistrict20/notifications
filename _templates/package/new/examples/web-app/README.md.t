@@ -1,0 +1,13 @@
+---
+to: "<%= useVueComponents ? `packages/${h.changeCase.param(pkg)}/examples/web-app/README.md` : null %>"
+---
+# Example Web App
+
+Open the `index.html` file in your browser, or use a local dev server:
+
+```bash
+# 1. Run dev server
+npx serve ../../
+
+# Open the example page in your browser: http://localhost:5000/examples/web-app/
+```

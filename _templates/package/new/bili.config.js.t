@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.changeCase.snake(pkg) %>/bili.config.js
+to: packages/<%= h.changeCase.param(pkg) %>/bili.config.js
 ---
 module.exports = {
   output: {
