@@ -53,8 +53,8 @@
     "build:umd:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsUi --minify --file-name asd20-notification-ui.umd.min.js"
   },
   "devDependencies": {
-    "rollup-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "rollup-plugin-vue": "5.1.7",
+    "vue-template-compiler": "2.6.11"
   },
   "peerDependencies": {
     "vue": "^2.6.11"
