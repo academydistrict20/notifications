@@ -56,6 +56,8 @@
     "vue": "^2.6.0"
   },
   "dependencies": {
+    "@asd20/notifications-client": "file:../client",
+    "@asd20/notifications-plugin-json": "file:../plugin-json",
     "@vue/web-component-wrapper": "^1.2.0",
     "portal-vue": "^2.1.7"
   },
