@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/academydistrict20/notifications.gi#readme",
   "devDependencies": {
-    "vuepress": "^1.4.1",
-    "hash-sum": "^2.0.0",
-    "vue": "^2.6.11"
+    "vuepress": "1.4.1",
+    "hash-sum": "2.0.0",
+    "vue": "2.6.11"
   }
 }
