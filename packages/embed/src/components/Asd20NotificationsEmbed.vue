@@ -24,7 +24,8 @@
 <script>
 import { MountingPortal } from 'portal-vue'
 // TODO: Use real client
-import client from '../fakeClient'
+import NotificationClient from '@asd20/notifications-client'
+import JsonPlugin from '@asd20/notifications-plugin-json'
 
 export default {
   name: 'Asd20NotificationsEmbed',
@@ -60,7 +61,7 @@ export default {
     client: null,
     // Where we will reactively keep track
     // of notifiction data sent from client
-    activeNotificationsByGroup: {
+    activeNotificationsByType: {
       banner: [],
       inline: [],
       floating: [],
@@ -77,7 +78,7 @@ export default {
         outputGroups.push({
           type: key,
           selector: this.groups[key].selector,
-          notifications: this.activeNotificationsByGroup[key]
+          notifications: this.activeNotificationsByType[key]
         })
       }
       return outputGroups
@@ -87,13 +88,11 @@ export default {
   mounted() {
     // Create a new client instance
     // Pass config, groups, and update callback
-    this.client = Client(
+    this.client = new NotificationClient(
       // Pass in config object
       {
         // First, include any config from the embed component props
         ...this.config,
-        // Pass groups seperately
-        groups: this.groups,
         // Ask the client to call a function
         // whenever notifications data changes
         // so that the we can update the UI reactively
@@ -111,8 +110,8 @@ export default {
     },
     // Responds to the client updating the notifications
     // e.g. After new notificaitons are loaded, or dismissed
-    onUpdate({ activeNotificationsByGroup }) {
-      this.activeNotificationsByGroup = activeNotificationsByGroup
+    onUpdate({ activeNotificationsByType }) {
+      this.activeNotificationsByType = activeNotificationsByType
     },
     // Asks the client to undismiss all notifications
     clear() {
