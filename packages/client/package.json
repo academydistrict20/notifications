@@ -60,8 +60,8 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
-    "@asd20/notifications-shared": "file:../shared",
     "@asd20/notifications-plugin-json": "file:../plugin-json",
+    "@asd20/notifications-shared": "file:../shared",
     "@vue/web-component-wrapper": "^1.2.0"
   },
   "husky": {
@@ -75,5 +75,8 @@
       "eslint --cache --fix",
       "git add"
     ]
+  },
+  "devDependencies": {
+    "jest-localstorage-mock": "^2.4.2"
   }
 }

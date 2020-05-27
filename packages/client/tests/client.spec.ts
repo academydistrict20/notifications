@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
-import { Notification } from './../../shared/src/types'
-import { NotificationsPlugin } from './../../shared/dist/plugin.d'
-import NotificationsClient from './client'
+import { Notification } from '../../shared/src/types'
+import { NotificationsPlugin } from '../../shared/src/plugin'
+import NotificationsClient from '../src/client'
 
 const notifications: Notification[] = [
   {

@@ -1,8 +1,11 @@
+const base = require('../../jest.config.base.js')
+const pack = require('./package')
+
 module.exports = {
-  roots: ['./src'],
-  testMatch: ['**/__tests__/**/*.+(ts|tsx|js)', '**/?(*.)+(spec|test).+(ts|tsx|js)'],
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
-  },
+  ...base,
+  displayName: 'client',
+  name: pack.name,
+  rootDir: '../..',
+  testMatch: [`<rootDir>/packages/client/**/*.spec.ts`],
   setupFiles: ['jest-localstorage-mock'],
 }

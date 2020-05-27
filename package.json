@@ -29,6 +29,8 @@
     "@babel/core": "7.9.6",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-typescript": "^3.1.1",
     "@types/jest": "25.2.3",
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "2.33.0",
@@ -60,8 +62,8 @@
   "dependencies": {
     "@asd20/notifications-client": "file:packages/client",
     "@asd20/notifications-embed": "file:packages/embed",
-    "@asd20/notifications-helpers": "file:packages/shared",
     "@asd20/notifications-plugin-json": "file:packages/plugin-json",
+    "@asd20/notifications-shared": "file:packages/shared",
     "@asd20/notifications-ui": "file:packages/ui"
   },
   "auto": {
