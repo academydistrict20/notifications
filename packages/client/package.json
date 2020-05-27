@@ -60,7 +60,7 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
-    "@asd20/notifications-helpers": "file:../shared",
+    "@asd20/notifications-shared": "file:../shared",
     "@asd20/notifications-plugin-json": "file:../plugin-json",
     "@vue/web-component-wrapper": "^1.2.0"
   },
