@@ -7,10 +7,10 @@ module.exports = {
     vue: {
       isWebComponent: true,
       template: { isProduction: true },
-      css: true
-    }
+      css: true,
+    },
   },
 
   externals: ['vue'],
-  globals: ['Vue']
+  globals: ['Vue'],
 }

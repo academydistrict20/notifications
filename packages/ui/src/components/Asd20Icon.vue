@@ -9,12 +9,30 @@
     :role="roleImg"
   >
     <title v-if="!hidden" :id="uniqueId" lang="en">{{ title }} icon</title>
-    <component :is="iconTemplate"></component>
+    <component :is="component"></component>
   </svg>
 </template>
 
 <script>
 import camelCase from 'lodash-es/camelCase'
+import alert from './icons/Asd20AlertSvg.vue'
+import chevron from './icons/Asd20ChevronSvg.vue'
+import danger from './icons/Asd20DangerSvg.vue'
+import info from './icons/Asd20InfoSvg.vue'
+import close from './icons/Asd20CloseSvg.vue'
+import weatherSnow from './icons/Asd20WeatherSnowSvg.vue'
+import weatherSun from './icons/Asd20WeatherSunSvg.vue'
+
+const icons = {
+  alert,
+  chevron,
+  danger,
+  info,
+  close,
+  'weather-snow': weatherSnow,
+  'weather-sun': weatherSun,
+}
+
 export default {
   props: {
     name: { type: String, default: 'search' },
@@ -30,16 +48,14 @@ export default {
       },
     },
   },
-  data: () => ({
-    iconTemplate: '',
-  }),
   computed: {
-    loader() {
-      let firstLetterUpperCase = this.name.charAt(0).toUpperCase()
-      let capitalizedName = `${firstLetterUpperCase}${camelCase(
-        this.name
-      ).slice(1)}`
-      return () => import(`../../atoms/icons/Asd20${capitalizedName}Svg`)
+    component() {
+      // let firstLetterUpperCase = this.name.charAt(0).toUpperCase()
+      // let capitalizedName = `${firstLetterUpperCase}${camelCase(
+      //   this.name
+      // ).slice(1)}`
+      // return () => import(`./icons/Asd20${capitalizedName}Svg`)
+      return icons[this.name]
     },
     cssVariables() {
       return { '--line-color': this.lineColor, '--fill-color': this.fillColor }
@@ -69,26 +85,11 @@ export default {
     uniqueId() {
       return `${this.name}-${this._uid}`
     },
-  },
-  mounted() {
-    this.loader().then(() => {
-      this.iconTemplate = () => this.loader()
-    })
-  },
+  }
 }
 </script>
 
-<style lang="scss" scoped>
-// @import '../../../design/_mixins.scss';
-// @import '../../../design/_variables.scss';
-$icon-sizes: (
-  xs: 16px,
-  sm: 24px,
-  md: 32px,
-  lg: 48px,
-  xl: 64px,
-  xxl: 128px,
-);
+<style lang="scss" >
 .asd20-icon {
   --primary: #0e2c6c;
   --accent-one: #70b4c2;
@@ -101,10 +102,34 @@ $icon-sizes: (
 
   flex-shrink: 0;
 }
-@each $key, $val in $icon-sizes {
-  .asd20-icon--#{$key} {
-    height: $val;
-    width: $val;
-  }
+
+.asd20-icon--xs {
+  height: 16px;
+  width: 16px;
 }
+
+.asd20-icon--sm {
+  height: 24px;
+  width: 24px;
+}
+
+.asd20-icon--md {
+  height: 32px;
+  width: 32px;
+}
+
+.asd20-icon--lg {
+  height: 48px;
+  width: 48px;
+}
+
+.asd20-icon--xl {
+  height: 64px;
+  width: 64px;
+}
+.asd20-icon--xxl {
+  height: 128px;
+  width: 128px;
+}
+
 </style>

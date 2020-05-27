@@ -3,7 +3,7 @@
     <div v-if="visible" :class="classes" class="asd20-badge">
       <div v-if="!!$slots.default || value" class="asd20-badge__content">
         {{ value }}
-        <slot />
+        <slot></slot>
       </div>
     </div>
   </transition>
@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 // @import '../../../design/_variables.scss';
 // @import '../../../design/_mixins.scss';
 

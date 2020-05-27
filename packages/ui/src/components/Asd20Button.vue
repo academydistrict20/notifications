@@ -11,13 +11,13 @@
       :name="icon"
       :size="size"
       :style="`transform: rotate(${iconAngle}deg)`"
-    />
+    ></asd20-icon>
     <span
       v-if="(label && !hideLabel) || $slots.default"
       class="asd20-button__label"
       v-html="label"
     ></span>
-    <slot />
+    <slot></slot>
   </a>
   <button v-else :class="classes" :aria-label="hideLabel ? label : ''">
     <asd20-icon
@@ -25,20 +25,20 @@
       :name="icon"
       :size="size"
       :style="`transform: rotate(${iconAngle}deg)`"
-    />
+    ></asd20-icon>
     <span
       v-if="(label && !hideLabel) || $slots.default"
       class="asd20-button__label"
       >{{ label }}</span
     >
-    <asd20-badge v-if="badge" :value="badge" />
-    <slot />
+    <asd20-badge v-if="badge" :value="badge" ></asd20-badge>
+    <slot ></slot>
   </button>
 </template>
 
 <script>
-import Asd20Badge from '../Asd20Badge'
-import Asd20Icon from '../Asd20Icon'
+import Asd20Badge from './Asd20Badge.vue'
+import Asd20Icon from './Asd20Icon.vue'
 
 export default {
   name: 'Asd20Button',
@@ -91,7 +91,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 // @import '../../../design/_variables.scss';
 // @import '../../../design/_mixins.scss';
 
@@ -162,7 +162,7 @@ $button-reversed-text-color: var(--accent-one, 10);
   &:hover,
   &:focus {
     background-color: $button-background-color-hover;
-    & /deep/ use {
+    & > use {
       --fill-color: #{$button-accent-color};
     }
   }
@@ -176,7 +176,7 @@ $button-reversed-text-color: var(--accent-one, 10);
     justify-content: flex-start;
     text-align: left;
     // text-align: left;
-    & /deep/ .asd20-button__label:not(:first-child) {
+    & > .asd20-button__label:not(:first-child) {
       margin-left: 0.25rem;
     }
   }
@@ -194,12 +194,12 @@ $button-reversed-text-color: var(--accent-one, 10);
     background: $button-reversed-background-color;
     color: $button-reversed-text-color;
 
-    & /deep/ g {
+    g {
       --line-color: #{$button-reversed-border-color};
       --fill-color: #{$button-reversed-accent-color};
     }
 
-    &.asd20-button--bordered {
+    .asd20-button--bordered {
       box-shadow: 0 0 0 $button-border-width $button-reversed-accent-color inset;
     }
 
@@ -213,8 +213,8 @@ $button-reversed-text-color: var(--accent-one, 10);
     &:focus {
       box-shadow: 0 0 0 $button-border-width $button-reversed-border-color inset;
     }
-    &.asd20-button--transparent:hover,
-    &.asd20-button--transparent:focus {
+    .asd20-button--transparent:hover,
+    .asd20-button--transparent:focus {
       background-color: rgba(black, 0.25);
     }
   }

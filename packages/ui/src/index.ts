@@ -1,13 +1,11 @@
-// @ts-ignore
+// @ts-nocheck
 import Asd20Notification from './components/Asd20Notification.vue'
-// @ts-ignore
 import Asd20NotificationGroup from './components/Asd20NotificationGroup.vue'
-// @ts-ignore
 import wrap from '@vue/web-component-wrapper'
 
 // Install the web component
-(async function() {
-  const w:any = (typeof window !== undefined) ? window : undefined
+;(async function (): Promise<void> {
+  const w: never = typeof window !== undefined ? window : undefined
   if (typeof w !== undefined) {
     if (typeof w.Vue !== undefined) {
       window.customElements.define('asd20-notification-group', wrap(w.Vue, Asd20NotificationGroup))
@@ -18,7 +16,4 @@ import wrap from '@vue/web-component-wrapper'
   }
 })()
 
-export {
-  Asd20Notification,
-  Asd20NotificationGroup
-}
+export { Asd20Notification, Asd20NotificationGroup }

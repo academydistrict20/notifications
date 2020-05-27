@@ -1,0 +1,88 @@
+<template>
+  <g>
+    <circle class="fill" cx="16" cy="16" r="6" ></circle>
+
+    <path
+      class="line"
+      fill="currentColor"
+      d="M16,8a8,8,0,1,0,8,8A8,8,0,0,0,16,8Zm0,15a7,7,0,1,1,7-7A7,7,0,0,1,16,23Z"
+    >
+    </path>
+    <rect
+      class="line"
+      fill="currentColor"
+      x="15.5"
+      y="4"
+      width="1"
+      height="3"
+    >
+    </rect>
+    <rect
+      class="line"
+      fill="currentColor"
+      x="15.5"
+      y="25"
+      width="1"
+      height="3"
+    >
+    </rect>
+    <rect
+      class="line"
+      fill="currentColor"
+      x="25"
+      y="15.5"
+      width="3"
+      height="1"
+    >
+    </rect>
+    <rect
+      class="line"
+      fill="currentColor"
+      x="4"
+      y="15.5"
+      width="3"
+      height="1"
+    >
+    </rect>
+    <rect
+      class="line"
+      fill="currentColor"
+      x="21.92"
+      y="8.08"
+      width="3"
+      height="1"
+      transform="translate(0.8 19.08) rotate(-45)"
+    >
+    </rect>
+    <rect
+      class="line"
+      fill="currentColor"
+      x="7.08"
+      y="22.92"
+      width="3"
+      height="1"
+      transform="translate(-14.05 12.92) rotate(-45)"
+    >
+    </rect>
+    <rect
+      class="line"
+      fill="currentColor"
+      x="22.92"
+      y="21.92"
+      width="1"
+      height="3"
+      transform="translate(-9.7 23.42) rotate(-44.99)"
+    >
+    </rect>
+    <rect
+      class="line"
+      fill="currentColor"
+      x="8.08"
+      y="7.08"
+      width="1"
+      height="3"
+      transform="translate(-3.55 8.57) rotate(-44.99)"
+    >
+    </rect>
+  </g>
+</template>
