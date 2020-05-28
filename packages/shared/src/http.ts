@@ -12,6 +12,25 @@ export const enum FetchMethod {
 }
 
 /**
+ * Parses request response, and handles non-ok http error codes.
+ *
+ * @param {Response} response
+ * @returns {(Promise<string | object | object[]>)}
+ */
+function handleResponse(response: Response): Promise<string | object | object[]> {
+  return response.text().then((text: string) => {
+    const data = text && JSON.parse(text)
+
+    if (!response.ok) {
+      const error = response.status + ': ' + ((data && data.message) || response.statusText)
+      return Promise.reject(error)
+    }
+
+    return data
+  })
+}
+
+/**
  * Options for this request
  *
  * @export
@@ -21,7 +40,6 @@ export interface FetchRequestOptions {
   params?: { [key: string]: string }
   headers?: { [key: string]: string }
   data?: object
-  format?: string
   method?: FetchMethod
 }
 
@@ -48,7 +66,7 @@ export async function request(
   if (options) {
     // Force uppercase method if present
     if (options.method) fetchOptions.method = options.method.toUpperCase()
-    // Turn params objectt into url params
+    // Turn params object into url params
     if (options.params) Object.entries(options.params).forEach(([k, v]) => _url.searchParams.append(k, v))
     // If method is not GET add data to body
     if (options.method && options.method.toUpperCase() !== FetchMethod.GET && options.data)
@@ -58,12 +76,7 @@ export async function request(
   }
 
   // Execute the request using resolved url and fetch options
-  const result = await fetch(_url.toString(), fetchOptions)
-
-  // Depending on the format, return appropriate format
-  if (!options?.format || options.format === 'json') {
-    return result.json()
-  } else {
-    return result.text()
-  }
+  const response = await fetch(_url.toString(), fetchOptions)
+  const parsedResponse = await handleResponse(response)
+  return parsedResponse
 }
