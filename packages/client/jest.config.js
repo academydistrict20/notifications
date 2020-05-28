@@ -7,5 +7,5 @@ module.exports = {
   name: pack.name,
   rootDir: '../..',
   testMatch: [`<rootDir>/packages/client/**/*.spec.ts`],
-  setupFiles: ['jest-localstorage-mock'],
+  setupFiles: ['<rootDir>/packages/client/tests/localStorage.js'],
 }
