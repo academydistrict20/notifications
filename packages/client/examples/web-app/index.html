@@ -8,18 +8,48 @@
 <body>
   <!-- Load Vue -->
   <script src="https://unpkg.com/vue"></script>
-  <!-- Load the library -->
-  <script src="../../dist/asd20-notification-client.umd.js"></script>
-  <!-- Note: In production, you can use a CDN url
-  <script src="https://unpkg.com/asd20-notification-client"></script>
-  -->
-
-  <!-- Example #2: Using a web component -->
-  <!-- <asd20-notifications name="from Web Component"/> -->
-  <!-- Example #1: Using a UMD package with global scope -->
+  <!-- Load the client library -->
+  <script src="../../dist/asd20-notification-client.umd.js "></script>
+  <!-- load plugin library -->
+  <script src="../../../plugin-json/dist/asd20-notification-plugin-json.umd.js"></script>
   <script>
-    console.log(Asd20NotificationsClient.sayHello('from global scope'))
-    Asd20NotificationsClient.init()
+    
+
+    const config = {
+      onUpdate(payload) {
+        console.log('update', payload)
+      },
+      plugins: [Asd20NotificationsPluginJson.Create({endpoint: '', 
+      requestOptions: {
+            method: 'POST',
+            data: {
+              filter: '',
+            },
+            params: {
+              'api-version': '',
+            },
+            headers: {
+              'content-type': 'application/json',
+              'api-key': '',
+            },
+          },
+          dataTransformer(data) {
+            return data.value.map((d) => ({
+              id: d.id,
+              title: d.title,
+              summary: d.description,
+              description: d.description,
+              startDateTime: d.startDateTime,
+              endDateTime: d.endDateTime,
+              categories: d.categories,
+            }))
+          },
+        }
+      )],
+      
+    }
+    const myClient = new Asd20NotificationsClient(config)
+ 
   </script>
 
   

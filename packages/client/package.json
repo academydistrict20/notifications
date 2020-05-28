@@ -59,6 +59,7 @@
   "dependencies": {
     "@asd20/notifications-plugin-json": "file:../plugin-json",
     "@asd20/notifications-shared": "file:../shared",
+    "@asd20/notifications-ui": "file:../ui",
     "@vue/web-component-wrapper": "^1.2.0"
   },
   "husky": {

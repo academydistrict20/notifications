@@ -12,11 +12,11 @@ export interface NotificationsClientConfig {
   storage: Storage
   plugins?: NotificationsPlugin[]
   onUpdate?(payload: NotificationsUpdatePayload): void
-  autoLoad: boolean
+  autoLoad: boolean,
 }
 
 /**
- * Manages notifdication state, plugins,
+ * Manages notification state, plugins,
  * and persistence user interactions.
  *
  * @class NotificationsClient
@@ -29,6 +29,7 @@ class NotificationsClient {
     plugins: [],
     autoLoad: true,
   }
+  public loading: boolean = false
 
   private _notifications: Notification[] = []
   private get notifications(): Notification[] {
@@ -104,7 +105,7 @@ class NotificationsClient {
           // Fixes TS complaining about key type
           const key: keyof NotificationsByType = property as keyof NotificationsByType
 
-          // Get current types nofifications
+          // Get current types notifications
           const existingNotifications = types[key] || []
 
           // Combine new array with with existing array for each type
@@ -115,7 +116,7 @@ class NotificationsClient {
             ...(result[key] || [])
               // Reduce to notifications not already present by id
               .reduce((a, n) => {
-                // Try and locate a matching notification by id to determine it exists
+                // Try and locate a matching notification by id to determine if it exists
                 const existing = existingNotifications.find((n2) => n2.id === n.id)
                 // If not found, add it to the accumulator/result
                 if (!existing) a.push(n)
@@ -157,6 +158,7 @@ class NotificationsClient {
    * @memberof NotificationsClient
    */
   async load(): Promise<Notification[]> {
+    this.loading = true
     const plugins = this.config.plugins || []
 
     // For every plugin, get notifications in parralel
@@ -165,7 +167,7 @@ class NotificationsClient {
     // Store the combined results
     // This will trigger update()
     this.notifications = results.flat()
-
+    this.loading = false
     // return the results
     return results.flat()
   }
@@ -197,6 +199,7 @@ class NotificationsClient {
    *
    */
   clearDismissions(): void {
+    // should we also reset storage?
     this.dismissedNotificationIds = []
   }
 
@@ -223,18 +226,19 @@ class NotificationsClient {
   dismiss(notification: Notification): boolean {
     if (!notification || !notification.id) return false
     const plugins = this.config.plugins || []
-    let shouldDimiss = true
+    // Does shouldDismiss need to be derived from the plugin or config?
+    let shouldDismiss = true
 
     // Loop through each plugin
     for (const plugin of plugins) {
       // If a should dismiss && beforeDismiss guard exists, let plugin decide
       // This way a plugin can prevent dismissal
-      if (shouldDimiss && typeof plugin.beforeDismiss === 'function') {
-        shouldDimiss = plugin.beforeDismiss(notification)
+      if (shouldDismiss && typeof plugin.beforeDismiss === 'function') {
+        shouldDismiss = plugin.beforeDismiss(notification)
       }
     }
 
-    if (shouldDimiss) {
+    if (shouldDismiss) {
       // Add id to array, trigger update() from getter
       this.dismissedNotificationIds = [...this.dismissedNotificationIds, notification.id]
 
@@ -246,7 +250,7 @@ class NotificationsClient {
       }
     }
 
-    return shouldDimiss
+    return shouldDismiss
   }
 }
 
