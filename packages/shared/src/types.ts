@@ -25,6 +25,8 @@ export function notificationFactory(source: Partial<Notification>): Notification
 export interface NotificationsByType {
   banner?: Notification[]
   floating?: Notification[]
+  inline?: Notification[]
+  status?: Notification[]
 }
 
 export interface NotificationsClient {

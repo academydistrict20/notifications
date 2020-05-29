@@ -12,7 +12,18 @@ export interface NotificationsClientConfig {
   storage: Storage
   plugins?: NotificationsPlugin[]
   onUpdate?(payload: NotificationsUpdatePayload): void
-  autoLoad: boolean,
+  autoLoad?: boolean
+  /**
+   * Number of milliseconds to pass before
+   * loading new notifications.
+   *
+   * Not needed for push notifications
+   * or web-socket based plugins.
+   *
+   * @type {number}
+   * @memberof NotificationsPluginConfig
+   */
+  pollInterval?: number
 }
 
 /**
@@ -28,8 +39,8 @@ class NotificationsClient {
     storage: cookieStorage,
     plugins: [],
     autoLoad: true,
+    pollInterval: 0,
   }
-  public loading: boolean = false
 
   private _notifications: Notification[] = []
   private get notifications(): Notification[] {
@@ -41,6 +52,8 @@ class NotificationsClient {
     // update handler so that it can respond.
     this.update()
   }
+
+  private _intervalReference?: NodeJS.Timeout
 
   private _dismissedNotificationIds: string[] = []
   private get dismissedNotificationIds(): string[] {
@@ -147,8 +160,17 @@ class NotificationsClient {
       this._dismissedNotificationIds = JSON.parse(this.config.storage.getItem(this.config.storageKey) || '[]')
     }
 
-    // Load all notifications
+    // Load all notifications if autoLoad is specified
     if (this.config.autoLoad) this.load()
+  }
+
+  /**
+   * Call before deleting the client instance to clean up.
+   *
+   * @memberof NotificationsClient
+   */
+  destroy(): void {
+    if (this._intervalReference) clearInterval(this._intervalReference)
   }
 
   /**
@@ -158,7 +180,11 @@ class NotificationsClient {
    * @memberof NotificationsClient
    */
   async load(): Promise<Notification[]> {
-    this.loading = true
+    // If interval is defined and greater than zero
+    // call the load function after interval is reached
+    if (this.config.pollInterval && !this._intervalReference) {
+      this._intervalReference = setInterval(this.load, this.config.pollInterval)
+    }
     const plugins = this.config.plugins || []
 
     // For every plugin, get notifications in parralel
@@ -167,7 +193,6 @@ class NotificationsClient {
     // Store the combined results
     // This will trigger update()
     this.notifications = results.flat()
-    this.loading = false
     // return the results
     return results.flat()
   }
