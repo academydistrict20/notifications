@@ -55,7 +55,7 @@ function Create(config: Partial<AzureSearchNotificationsPluginConfig>): Notifica
 
   // Create a new instance of JsonNotificationsPlugin passing in azure search api defaults
   const jsonPluginInstance = CreateJsonNotificationsPlugin({
-    endpoint: resolvedConfig.endpoint,
+    endpoint: `${resolvedConfig.endpoint}/indexes/${resolvedConfig.index}/docs/search`,
     requestOptions: {
       method: FetchMethod.POST,
       data: {
