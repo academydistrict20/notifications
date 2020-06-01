@@ -18,6 +18,7 @@ async function run() {
           endpoint: 'https://asd20-search-dev.search.windows.net',
           index: 'messages-index',
           apiKey: '937716815402758ADC2FE799FE288142',
+          apiVersion: '2019-05-06',
           search: 'COVID-19',
           channels: ['News & Stories'],
         }),

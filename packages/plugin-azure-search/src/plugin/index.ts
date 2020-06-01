@@ -37,15 +37,15 @@ export interface AzureSearchNotificationsPluginConfig {
 function Create(config: Partial<AzureSearchNotificationsPluginConfig>): NotificationsPlugin {
   // Allow users to override default config
   const resolvedConfig: AzureSearchNotificationsPluginConfig = {
-    endpoint: '',
-    index: '',
-    apiKey: '',
-    apiVersion: '2019-05-06',
-    filter: '',
-    search: '',
-    orderBy: '',
-    top: 10,
     ...config,
+    endpoint: config.endpoint || '',
+    index: config.index || '',
+    apiKey: config.apiKey || '',
+    apiVersion: config.apiVersion || '2019-05-06',
+    filter: config.filter || '',
+    search: config.search || '*',
+    orderBy: config.orderBy || '',
+    top: config.top || 10,
   }
 
   // Validate config, to check for required options

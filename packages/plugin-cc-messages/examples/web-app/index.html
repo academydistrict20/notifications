@@ -9,47 +9,33 @@
   <!-- Load Vue -->
   <script src="https://unpkg.com/vue"></script>
   <!-- Load the client library -->
-  <script src="../../../dist/asd20-notifications-client.umd.js "></script>
+  <script src="../../../client/dist/asd20-notifications-client.umd.js "></script>
   <!-- load plugin library -->
-  <script src="../../asd20-notification-plugin-cc-messages.umd.js"></script>
+  <script src="../../dist/asd20-notifications-plugin-cc-messages.umd.js"></script>
   <script>
-    
-
-    const config = {
-      onUpdate(payload) {
-        console.log('update', payload)
-      },
-      plugins: [Asd20NotificationsPluginJson.Create({endpoint: '', 
-      requestOptions: {
-            method: 'POST',
-            data: {
-              filter: '',
-            },
-            params: {
-              'api-version': '',
-            },
-            headers: {
-              'content-type': 'application/json',
-              'api-key': '',
-            },
+    async function run() {
+      try {
+        const client = new Asd20NotificationsClient({
+          onUpdate(payload) {
+            console.log('update', payload)
           },
-          dataTransformer(data) {
-            return data.value.map((d) => ({
-              id: d.id,
-              title: d.title,
-              summary: d.description,
-              description: d.description,
-              startDateTime: d.startDateTime,
-              endDateTime: d.endDateTime,
-              categories: d.categories,
-            }))
-          },
-        }
-      )],
-      
+          plugins: [
+            Asd20NotificationsPluginCcMessages.Create({
+              endpoint: 'https://asd20-search-dev.search.windows.net',
+              index: 'messages-index',
+              apiKey: '937716815402758ADC2FE799FE288142',
+              apiVersion: '2019-05-06',
+              search: 'COVID-19',
+              channels: ['News & Stories'],
+            }),
+          ],
+        })
+        console.log(client)
+      } catch (error) {
+        console.log(error)
+      }
     }
-    const myClient = new Asd20NotificationsClient(config)
- 
+    run()
   </script>
 
   
