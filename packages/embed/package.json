@@ -1,6 +1,6 @@
 {
   "name": "@asd20/notifications-embed",
-  "version": "0.4.2",
+  "version": "0.4.7",
   "description": "Simple to use embed script for notifications",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
@@ -46,7 +46,7 @@
     "test": "jest --collect-coverage --passWithNoTests",
     "test:watch": "jest --watch-all --collect-coverage -passWithNoTests",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly:disabled": "npm run build",
     "build": "rollup -c",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/asd20-notifications-embed.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/asd20-notifications-embed.esm.js",
@@ -56,8 +56,8 @@
     "vue": "^2.6.0"
   },
   "dependencies": {
-    "@asd20/notifications-client": "file:../client",
-    "@asd20/notifications-plugin-json": "file:../plugin-json",
+    "@asd20/notifications-client": "^0.4.7",
+    "@asd20/notifications-plugin-json": "^0.4.7",
     "@vue/web-component-wrapper": "^1.2.0",
     "portal-vue": "^2.1.7"
   },
@@ -72,5 +72,6 @@
       "eslint --cache --fix",
       "git add"
     ]
-  }
+  },
+  "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25"
 }
