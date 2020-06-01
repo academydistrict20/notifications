@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example Web App</title>
+</head>
+<body>
+  <!-- Load Vue -->
+  <script src="https://unpkg.com/vue"></script>
+  <!-- Load the client library -->
+  <script src="../../dist/asd20-notifications-client.umd.js "></script>
+  <!-- load plugin library -->
+  <script src="../../../plugin-json/dist/asd20-plugin-json.umd.js"></script>
+  <script>
+    
+    async function run(){
+    const config = {
+      onUpdate(payload) {
+        console.log('client update', payload)
+      },
+      plugins: [Asd20NotificationsPluginJson.Create({endpoint: '', 
+      requestOptions: {
+            method: 'POST',
+            data: {
+              filter: '',
+            },
+            params: {
+              'api-version': '',
+            },
+            headers: {
+              'content-type': 'application/json',
+              'api-key': '',
+            },
+          },
+          dataTransformer(data) {
+            return data.value.map((d) => ({
+              id: d.id,
+              title: d.title,
+              summary: d.description,
+              description: d.description,
+              startDateTime: d.startDateTime,
+              endDateTime: d.endDateTime,
+              categories: d.categories,
+            }))
+          },
+        }
+      )],
+      
+    }
+    const myClient = new Asd20NotificationsClient(config)
+  }
+  run()
+ 
+  </script>
+
+  
+</body>
+</html>

@@ -10,7 +10,7 @@ const defaultCookieOptions: CookieOptions = {
 }
 
 // Use just the domain, to allow for cross-subdomain cookies
-if (location) {
+if (typeof window !== 'undefined') {
   const hostname = location.hostname
   defaultCookieOptions.domain = hostname
     .split('.')

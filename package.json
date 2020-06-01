@@ -29,6 +29,8 @@
     "@babel/core": "7.9.6",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-typescript": "^3.1.1",
     "@types/jest": "25.2.3",
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "2.33.0",
@@ -43,6 +45,7 @@
     "husky": "4.2.5",
     "jest": "26.0.1",
     "jest-fetch-mock": "3.0.3",
+    "jest-localstorage-mock": "^2.4.2",
     "lerna": "3.21.0",
     "lint-staged": "10.2.4",
     "prettier": "2.0.5",
@@ -58,7 +61,13 @@
     }
   },
   "dependencies": {
-    "@asd20/notifications-shared": "file:packages/shared"
+    "@asd20/notifications-client": "file:packages/client",
+    "@asd20/notifications-embed": "file:packages/embed",
+    "@asd20/notifications-plugin-azure-search": "file:packages/plugin-azure-search",
+    "@asd20/notifications-plugin-cc-messages": "file:packages/plugin-cc-messages",
+    "@asd20/notifications-plugin-json": "file:packages/plugin-json",
+    "@asd20/notifications-shared": "file:packages/shared",
+    "@asd20/notifications-ui": "file:packages/ui"
   },
   "auto": {
     "plugins": [

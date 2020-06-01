@@ -34,17 +34,6 @@ export interface NotificationsPluginConfig {
    */
   endpoint?: string
   /**
-   * Number of milliseconds to pass before
-   * loading new notifications.
-   *
-   * Not needed for push notifications
-   * or web-socket based plugins.
-   *
-   * @type {number}
-   * @memberof NotificationsPluginConfig
-   */
-  pollInterval?: number
-  /**
    * Options for request being made
    *
    * @type {FetchRequestOptions}

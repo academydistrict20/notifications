@@ -1,7 +1,7 @@
 {
   "name": "@asd20/notifications-shared",
-  "version": "0.3.1",
-  "description": "Utility functions and other code",
+  "version": "0.1.0",
+  "description": "Utility functions for notifications",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
   "homepage": "https://github.com/academydistrict20/notifications#readme",
@@ -15,11 +15,11 @@
   "bugs": {
     "url": "https://github.com/academydistrict20/notifications/issues"
   },
-  "main": "dist/asd20-notification-shared.cjs.js",
-  "module": "dist/asd20-notification-shared.esm.js",
-  "browser": "dist/asd20-notification-shared.esm.min.js",
-  "unpkg": "dist/asd20-notification-shared.umd.js",
-  "jsdelivr": "dist/asd20-notification-shared.umd.js",
+  "main": "dist/asd20-notifications-shared.cjs.js",
+  "module": "dist/asd20-notifications-shared.esm.js",
+  "browser": "dist/asd20-notifications-shared.esm.min.js",
+  "unpkg": "dist/asd20-notifications-shared.umd.js",
+  "jsdelivr": "dist/asd20-notifications-shared.umd.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/*.js",
@@ -46,19 +46,20 @@
     "test": "jest --collect-coverage --passWithNoTests",
     "test:watch": "jest --watch-all --collect-coverage -passWithNoTests",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "npm run build:esm && npm run build:esm:min && npm run build:cjs && npm run build:cjs:min && npm run build:umd && npm run build:umd:min",
-    "build:esm": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --file-name asd20-notification-shared.esm.js",
-    "build:esm:min": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --minify --file-name asd20-notification-shared.esm.min.js",
-    "build:cjs": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --file-name asd20-notification-shared.cjs.js",
-    "build:cjs:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --minify --file-name asd20-notification-shared.cjs.min.js",
-    "build:umd": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsShared --file-name asd20-notification-shared.umd.js",
-    "build:umd:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsShared --minify --file-name asd20-notification-shared.umd.min.js"
+    "build:esm": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --file-name asd20-notifications-shared.esm.js",
+    "build:esm:min": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --minify --file-name asd20-notifications-shared.esm.min.js",
+    "build:cjs": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --file-name asd20-notifications-shared.cjs.js",
+    "build:cjs:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --minify --file-name asd20-notifications-shared.cjs.min.js",
+    "build:umd": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsShared --file-name asd20-notifications-shared.umd.js",
+    "build:umd:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsShared --minify --file-name asd20-notifications-shared.umd.min.js"
   },
   "peerDependencies": {
     "vue": "^2.6.11"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.151",
     "@vue/web-component-wrapper": "^1.2.0",
     "cookie-storage": "^6.0.0",
     "lodash": "^4.17.15"
@@ -74,8 +75,5 @@
       "eslint --cache --fix",
       "git add"
     ]
-  },
-  "devDependencies": {
-    "@types/lodash": "4.14.151"
   }
 }

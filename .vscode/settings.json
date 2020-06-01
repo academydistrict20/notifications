@@ -6,6 +6,7 @@
   "[typescript]": {
     "editor.formatOnSave": false
   },
+
   "conventionalCommits.scopes": [
     "project",
     "shared",
@@ -26,8 +27,10 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/node_modules": true,
-    "**/_templates": true,
+    "**/_templates": false,
     "**/coverage": true,
-    "**/dist": true,
-  }
+    "**/dist": true
+  },
+
+  "jest.showCoverageOnLoad": true
 }

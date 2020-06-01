@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 import Create from './plugin'
+
 // TODO: Consider if we want to auto load plugins
 // ;(async function (): Promise<void> {
 //   // eslint-disable-next-line @typescript-eslint/no-explicit-any

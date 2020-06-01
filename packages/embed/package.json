@@ -1,0 +1,76 @@
+{
+  "name": "@asd20/notifications-embed",
+  "version": "0.1.0",
+  "description": "Simple to use embed script for notifications",
+  "author": "Academy District 20 <socialmedia@asd20.org>",
+  "license": "MIT",
+  "homepage": "https://github.com/academydistrict20/notifications#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/academydistrict20/notifications.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/academydistrict20/notifications/issues"
+  },
+  "main": "dist/asd20-notifications-embed.cjs.js",
+  "module": "dist/asd20-notifications-embed.esm.js",
+  "browser": "dist/asd20-notifications-embed.umd.js",
+  "unpkg": "dist/asd20-notifications-embed.umd.js",
+  "jsdelivr": "dist/asd20-notifications-embed.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*.js",
+    "dist/index.d.ts",
+    "README.md"
+  ],
+  "browserslist": {
+    "modern": [
+      "> 0.5%",
+      "last 2 versions",
+      "not dead",
+      "not IE 9-11"
+    ],
+    "compat": [
+      "last 2 versions",
+      "> 0.5%",
+      "ie 11"
+    ],
+    "node": [
+      "node 12"
+    ]
+  },
+  "scripts": {
+    "test": "jest --collect-coverage --passWithNoTests",
+    "test:watch": "jest --watch-all --collect-coverage -passWithNoTests",
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "prepublishOnly": "npm run build",
+    "build": "rollup -c",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/asd20-notifications-embed.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/asd20-notifications-embed.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/asd20-notifications-embed.min.js"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.0"
+  },
+  "dependencies": {
+    "@asd20/notifications-client": "file:../client",
+    "@asd20/notifications-plugin-json": "file:../plugin-json",
+    "@vue/web-component-wrapper": "^1.2.0",
+    "portal-vue": "^2.1.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx tsc --noEmit && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --cache --fix",
+      "git add"
+    ]
+  }
+}

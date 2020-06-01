@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example Web App</title>
+</head>
+<body>
+  <div id="header">
+    Header
+  </div>
+  <div id="body">
+    Body Here
+  </div>
+
+  <!-- Load Vue -->
+  <script src="https://unpkg.com/vue"></script>
+  <!-- Load the library -->
+  <script src="../../dist/asd20-notifications-embed.umd.js"></script>
+  <!-- Note: In production, you can use a CDN url
+  <script src="https://unpkg.com/asd20-notifications-embed"></script>
+  -->
+
+  <asd20-notifications-embed id="my-embed" />
+
+  <script>
+    const el = document.getElementById('my-embed')
+    el.config = {}
+    el.groups = {
+      banner: {
+        selector: `#header`,
+      },
+      floating: {
+        selector: `#header`,
+      },
+      inline: {
+        selector: `#body`,
+      }
+    }    
+  </script>
+</body>
+</html>

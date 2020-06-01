@@ -1,26 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Example Web App</title>
-</head>
-<body>
-  <!-- Load Vue -->
-  <script src="https://unpkg.com/vue"></script>
-  <!-- Load the library -->
-  <script src="../../dist/asd20-notification-ui.umd.js"></script>
-  <!-- Note: In production, you can use a CDN url
-  <script src="https://unpkg.com/asd20-notification-ui"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example Web App</title>
+  </head>
+  <body>
+    <!-- Load Vue -->
+    <script src="https://unpkg.com/vue"></script>
+    <!-- Load the library -->
+    <script src="../../dist/asd20-notifications-ui.umd.js"></script>
+    <!-- Note: In production, you can use a CDN url
+  <script src="https://unpkg.com/asd20-notifications-ui"></script>
   -->
 
-  <!-- Example #1: Using a UMD package with global scope -->
-  <script>
-    console.log(Asd20NotificationsUi.sayHello('from global scope'))
-  </script>
+    <!-- Example #2: Using a web component -->
+    <asd20-notification-group type="inline" ></asd20-notification-group>
 
-  <!-- Example #2: Using a web component -->
-  <asd20-say-hello name="from Web Component"/>
-  
-</body>
+    <script>
+      const notifications = [
+        {
+          id: '907307e4-36ef-8640-74ff-c67e324201e7',
+          title: 'Test Notification',
+          icon: 'weather-sun',
+          description: 'Sic gorgiamus allos subjectatos nunc.',
+          callToActionUrl: 'https://www.asd20.org',
+          callToActionLabel: 'Learn more',
+          dismissible: true,
+          color: '',
+          notificationStyle: 'banner',
+          importance: 'emergency',
+        },
+        {
+          id: '907307e4-36ef-8640-74ff-c67e324201e9',
+          title: 'Test Notification',
+          icon: 'weather-snow',
+          description: 'Sic gorgiamus allos subjectatos nunc.',
+          callToActionUrl: 'https://www.asd20.org',
+          callToActionLabel: 'Learn more',
+          dismissible: true,
+          color: 'hsla(200,80%,40%,1)',
+          notificationStyle: 'inline',
+          importance: 'emergency',
+        },
+        {
+          id: '907307e4-36ef-8640-74ff-c67e324201e2',
+          title: 'Test Notification',
+          icon: 'alert',
+          description: 'Sic gorgiamus allos subjectatos nunc.',
+          callToActionUrl: 'https://www.asd20.org',
+          callToActionLabel: 'Learn more',
+          dismissible: true,
+          color: '',
+          notificationStyle: 'inline',
+          importance: 'emergency',
+        },
+      ]      
+      const $q = document.querySelector('asd20-notification-group')
+      $q.notifications = notifications
+    </script>
+  </body>
 </html>
