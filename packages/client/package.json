@@ -60,9 +60,9 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
-    "@asd20/notifications-plugin-json": "file:../plugin-json",
-    "@asd20/notifications-shared": "file:../shared",
-    "@asd20/notifications-ui": "file:../ui",
+    "@asd20/notifications-plugin-json": "^0.4.3",
+    "@asd20/notifications-shared": "^0.4.3",
+    "@asd20/notifications-ui": "^0.4.3",
     "@vue/web-component-wrapper": "^1.2.0"
   },
   "husky": {
@@ -76,5 +76,6 @@
       "eslint --cache --fix",
       "git add"
     ]
-  }
+  },
+  "gitHead": "e41b431dc208066be8212cafe3bfb41bd6a55b40"
 }

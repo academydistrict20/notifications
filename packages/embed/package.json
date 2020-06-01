@@ -56,8 +56,8 @@
     "vue": "^2.6.0"
   },
   "dependencies": {
-    "@asd20/notifications-client": "file:../client",
-    "@asd20/notifications-plugin-json": "file:../plugin-json",
+    "@asd20/notifications-client": "^0.4.3",
+    "@asd20/notifications-plugin-json": "^0.4.3",
     "@vue/web-component-wrapper": "^1.2.0",
     "portal-vue": "^2.1.7"
   },
@@ -72,5 +72,6 @@
       "eslint --cache --fix",
       "git add"
     ]
-  }
+  },
+  "gitHead": "e41b431dc208066be8212cafe3bfb41bd6a55b40"
 }

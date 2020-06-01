@@ -75,5 +75,6 @@
       "eslint --cache --fix",
       "git add"
     ]
-  }
+  },
+  "gitHead": "e41b431dc208066be8212cafe3bfb41bd6a55b40"
 }

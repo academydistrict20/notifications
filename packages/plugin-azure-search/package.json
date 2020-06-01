@@ -68,6 +68,7 @@
     ]
   },
   "dependencies": {
-    "@asd20/notifications-plugin-json": "file:../plugin-json"
-  }
+    "@asd20/notifications-plugin-json": "^0.4.3"
+  },
+  "gitHead": "e41b431dc208066be8212cafe3bfb41bd6a55b40"
 }

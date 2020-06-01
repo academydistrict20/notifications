@@ -68,8 +68,9 @@
     ]
   },
   "dependencies": {
-    "@asd20/notifications-client": "file:../client",
-    "@asd20/notifications-plugin-azure-search": "file:../plugin-azure-search",
-    "@asd20/notifications-shared": "file:../shared"
-  }
+    "@asd20/notifications-client": "^0.4.3",
+    "@asd20/notifications-plugin-azure-search": "^0.4.3",
+    "@asd20/notifications-shared": "^0.4.3"
+  },
+  "gitHead": "e41b431dc208066be8212cafe3bfb41bd6a55b40"
 }

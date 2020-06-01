@@ -68,7 +68,8 @@
     ]
   },
   "dependencies": {
-    "@asd20/notifications-shared": "file:../shared",
+    "@asd20/notifications-shared": "^0.4.3",
     "lodash": "^4.17.15"
-  }
+  },
+  "gitHead": "e41b431dc208066be8212cafe3bfb41bd6a55b40"
 }
