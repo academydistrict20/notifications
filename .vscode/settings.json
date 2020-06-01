@@ -29,7 +29,7 @@
     "**/node_modules": true,
     "**/_templates": false,
     "**/coverage": true,
-    "**/dist": true,
+    "**/dist": true
   },
 
   "jest.showCoverageOnLoad": true
