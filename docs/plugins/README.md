@@ -54,7 +54,7 @@ client.usePlugin(Asd20NotificationsGraphql({
 </html>
 ```
 
-## Creating you own plugins
+## Creating your own plugins
 
 > NOTE: This section is a work-in-progress
 

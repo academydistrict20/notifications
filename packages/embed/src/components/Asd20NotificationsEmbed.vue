@@ -7,15 +7,26 @@
       append
     >
       <!-- NotificaitonGroup -->
-      <div style="border: 2px dashed green; padding: 1rem;">
+      <asd20-notification-group
+        v-for="type of computedGroups"
+        :key="type"
+      >
+
+      <!-- <div style="border: 2px dashed green; padding: 1rem;">
         From Instance Id: {{ _uid }}<br />
-        <pre>{{ group.selector }}</pre>
+        <pre>{{ group.selector }}</pre> -->
         <!-- Notifications -->
-        <div v-for="notification of group.notifications" :key="notification.id">
+        <asd20-notification 
+          v-for="notification of group.notifications" 
+          :key="notification.id"
+          >
+        </asd20-notification>
+        <!-- <div v-for="notification of group.notifications" :key="notification.id">
           {{notification.title}}
           <button @click="onDismiss(notification)">Dismiss</button>
-        </div>
-      </div>
+        </div> -->
+      </asd20-notification-group>
+      <!-- </div> -->
     </MountingPortal>
     <button @click="clear">Clear Dismissions</button>
   </div>
@@ -26,12 +37,16 @@ import { MountingPortal } from 'portal-vue'
 // TODO: Use real client
 import NotificationClient from '@asd20/notifications-client'
 import JsonPlugin from '@asd20/notifications-plugin-json'
+import Asd20Notification from '@asd20/notifications-ui'
+import Asd20NotificationGroup from '@asd20/notifications-ui'
 
 export default {
   name: 'Asd20NotificationsEmbed',
 
   components: {
-    MountingPortal
+    MountingPortal,
+    Asd20NotificationGroup,
+    Asd20Notification
   },
 
   props: {

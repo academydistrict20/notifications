@@ -8,7 +8,7 @@ Use as a dependency to build into your project, or use a CDN and web components 
 
 - [Using plugins](../plugins/README.md) - add new data sources and extend functionality
 
-- UI Components
+- [Using UI Components](../ui/README.md) - find out what data the notification component expects for proper functionality.
 
 - Embedding
 
