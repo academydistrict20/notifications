@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example Web App</title>
+</head>
+<body>
+  <!-- Load Vue -->
+  <script src="https://unpkg.com/vue"></script>
+  <!-- Load the client library -->
+  <script src="../../../client/dist/asd20-notifications-client.umd.js "></script>
+  <!-- load plugin library -->
+  <script src="../../dist/asd20-notifications-plugin-cc-messages.umd.js"></script>
+  <script>
+    async function run() {
+      try {
+        const client = new Asd20NotificationsClient({
+          onUpdate(payload) {
+            console.log('update', payload)
+          },
+          plugins: [
+            Asd20NotificationsPluginCcMessages.Create({
+              endpoint: 'https://asd20-search-dev.search.windows.net',
+              index: 'messages-index',
+              apiKey: '937716815402758ADC2FE799FE288142',
+              apiVersion: '2019-05-06',
+              search: 'COVID-19',
+              channels: ['News & Stories'],
+            }),
+          ],
+        })
+        console.log(client)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    run()
+  </script>
+
+  
+</body>
+</html>

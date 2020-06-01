@@ -21,7 +21,6 @@ function Create(config?: NotificationsPluginConfig): JsonNotificationsPlugin {
       if (!config || !config.endpoint) return []
 
       let data = await request(config.endpoint, config.requestOptions)
-
       if (config.dataTransformer && typeof config.dataTransformer === 'function') {
         data = config.dataTransformer(data)
       }

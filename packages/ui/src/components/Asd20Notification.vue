@@ -11,9 +11,11 @@
       <div class="asd20-notification__title" v-if="title" v-html="title"></div>
       <div
         class="asd20-notification__description"
-        v-if="description"
-        v-html="description"
-      ></div>
+        v-if="description || detailLinkUrl" 
+      >
+        <span v-if="description" v-html="description"></span>
+        <a v-if="detailLinkUrl" :href="detailLinkUrl">{{ detailLinkLabel || detailLinkUrl }}</a>
+      </div>
       <asd20-button
         class="asd20-notification__cta"
         v-if="callToActionUrl"
@@ -54,7 +56,9 @@ export default {
     description: { type: String, default: '' },
     callToActionUrl: { type: String, default: '' },
     callToActionLabel: { type: String, default: '' },
-    dismissible: { type: Boolean, default: true },
+    detailLinkUrl: { type: String, default: '' },
+    detailLinkLabel: { type: String, default: '' },
+    dismissible: { type: Boolean, default: false },
     color: { type: String, default: 'inherit' },
     notificationStyle: { type: String, default: '' },
     importance: { type: String, default: 'info' },

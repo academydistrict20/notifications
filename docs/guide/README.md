@@ -4,7 +4,7 @@ Use as a dependency to build into your project, or use a CDN and web components 
 
 ## Using in your project
 
-- Using the client
+- [Using the client](../client/README.md) - behavior and actions
 
 - [Using plugins](../plugins/README.md) - add new data sources and extend functionality
 

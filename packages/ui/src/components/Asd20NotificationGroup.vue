@@ -47,7 +47,7 @@ export default {
           callToActionUrl: n.callToActionUrl,
           callToActionLabel: n.callToActionLabel,
           dismissible: n.dismissible,
-          notificationStyle: n.notificationStyle || n.style,
+          notificationStyle: this.type,
           importance: n.importance,
           color: n.color || '',
           icon: n.icon || '',

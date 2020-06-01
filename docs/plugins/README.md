@@ -13,22 +13,28 @@ Notifications is built to be a modular, easily extendable system. Using  plugins
 * RSS - Use RSS feeds as notification sources
 * Google Analytics - Generate metrics for notification usage
 
-### Using plugins
+## Using plugins
 
 ### Via imports
 
 ```ts
 import Asd20NotificationsClient from '@asd20/notifications-client'
-import Asd20NotificationsGraphql from '@asd20/notifications-graphql'
+import Asd20NotificationsPluginJson from '@asd20/notifications-graphql'
 
 // Create the client
-const client = Asd20NotificationsClient()
+const myClient = new Asd20NotificationsClient()
 
-// Use the plugin
-client.usePlugin(Asd20NotificationsGraphql({
-  endpoint: 'https://mywebsite.com/graphql'
-  // ...
-}))
+// Use the plugin passing into config
+const myClient = Asd20NotificationsClient({
+  plugins: [
+    // Use the plugin
+    Asd20NotificationsJson({
+      // Configure the plugin...
+      endpoint: 'https://mywebsite.com/endpoint'
+      // ...
+    })
+  ]
+})
 ```
 
 ### Using CDN in HTML/JS
@@ -38,16 +44,19 @@ client.usePlugin(Asd20NotificationsGraphql({
 <body>
 
 <script src="//unpkg.com/@asd20/notifications-client"></script>
-<script src="//unpkg.com/@asd20/notifications-graphql"></script>
+<script src="//unpkg.com/@asd20/notifications-plugin-json"></script>
 <script>
 // Create the client
-const client = Asd20NotificationsClient()
-
-// Use the plugin
-client.usePlugin(Asd20NotificationsGraphql({
-  endpoint: 'https://mywebsite.com/graphql'
-  // ...
-}))
+const myClient = Asd20NotificationsClient({
+  plugins: [
+    // Use the plugin
+    Asd20NotificationsJson({
+      // Configure the plugin...
+      endpoint: 'https://mywebsite.com/endpoint'
+      // ...
+    })
+  ]
+})
 </script>
 
 </body>
@@ -87,20 +96,135 @@ Each plugin should provide a function with returns an object matching the [Notif
 // Example simple component
 export default function MySimplePlugin(config) {
   return {
-    name: 'MySimplePlugin',
-
+    /**
+     * The unique name of the plugin.
+     *
+     * e.g. 'jsonPlugin'
+     *
+     * @type {string}
+     * @memberof NotificationsPlugin
+     */
+    name: 'MyPlugin'
+    /**
+     * Loads notifications.
+     *
+     * @returns {Promise<Notification[]>}
+     * @memberof NotificationsPlugin
+     */
     async load() {
-      // 1. load notifications from your source
-      // 2. Map them to Notifications type
-      // 3. Return them
+      // 1. Load notifications from a source (e.g. API / file, etc.)
+      // 2. Map data to an array notifications
+      // 3. return the array
+    }
+    /**
+     * Given an array of notification,
+     * return notifications grouped by type.
+     *
+     * @param {Notification[]} notifications
+     * @returns {NotificationsByType}
+     * @memberof NotificationsPlugin
+     */
+    groupByType(notifications) {
+      // Return an object with properties for each type of notification
+      return {
+        banner: [],
+        floating: [],
+        inline: [],
+        status: []
+      }
+    },
+    /**
+     * Return false to prevent dismission
+     *
+     * @param {Notification} notification
+     * @returns {boolean}
+     * @memberof NotificationsPlugin
+     */
+    beforeDismiss(notification) {
+      // Your plugin can optionally Decide if it's ok to dismiss a notification
+      return true
+    }
+    /**
+     * Called when a notification has been dismissed
+     *
+     * @param {Notification} notification
+     * @memberof NotificationsPlugin
+     */
+    onDismiss(notification) {
+      // Your plugin could react to a notification being dismissed.
+      // For example, you could trigger an analytics event
+    }
+    /**
+     * Called when a notification has been clicked
+     *
+     * @param {Notification} notification
+     * @memberof NotificationsPlugin
+     */
+    onClick(notification) {
+      // Your plugin could react to a notification being clicked.
+      // For example, you could trigger an analytics event
+    }
+  },
+}
+```
+
+### Plugin Configuration
+
+When using plugins, users can pass in configuration. This can be different for each plugin, but by default it looks something like the following:
+
+
+
+
+```ts
+const jsonPlugin: JsonNotificationsPlugin = {
+    name: 'azureSearchPlugin',
+
+    async load(): Promise<Notification[]> {
+      if (!config || !config.endpoint) return []
+      const config: NotificationsPluginConfig = {
+        ...config,
+        config: {
+          data: {
+            allCategories: ['Weather'],
+            allLocations: ['District'],
+          },
+          endpoint: 'https://asd20-search-dev.search.windows.net/indexes/messages-index/docs/search',
+          requestOptions: {
+            method: 'POST',
+          },
+          dataTransformer(data) {
+            return data.value.map((d) => ({
+              id: d.id,
+              title: d.title,
+              summary: d.description,
+              description: d.description,
+              startDateTime: d.startDateTime,
+              endDateTime: d.endDateTime,
+              categories: d.categories,
+            }))
+          },
+        },
+      }
+
+      let data = await request(config.endpoint, config.requestOptions)
+      if (config.dataTransformer && typeof config.dataTransformer === 'function') {
+        data = config.dataTransformer(data)
+      }
+
+      if (Array.isArray(data)) {
+        data = data.map((d) => mapObjectToNotification(d, config.propertyMap))
+      } else {
+        data = [mapObjectToNotification(data, config.propertyMap)]
+      }
+
+      return data
     },
 
-    groupByType(notifications) {
-      // Optionally group notification into types as you see fit
-      // e.g. Emergency notification into the 'banner' type
+    groupByType(notifications: Notification[]): NotificationsByType {
+      return {
+        banner: notifications.filter((n) => n.categories.includes('Emergency')),
+        floating: notifications.filter((n) => !n.categories.includes('Emergency')),
+      }
     },
-    // Optionally define event handlers like beforeDimiss and onClick
-    // ...
   }
-}
 ```
