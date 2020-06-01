@@ -46,7 +46,7 @@
     "test": "jest --collect-coverage --passWithNoTests",
     "test:watch": "jest --watch-all --collect-coverage -passWithNoTests",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly:disabled": "npm run build",
     "build": "rollup -c",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/asd20-notifications-embed.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/asd20-notifications-embed.esm.js",
@@ -73,5 +73,5 @@
       "git add"
     ]
   },
-  "gitHead": "e41b431dc208066be8212cafe3bfb41bd6a55b40"
+  "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25"
 }
