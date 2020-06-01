@@ -12,6 +12,9 @@
   "bugs": {
     "url": "https://github.com/academydistrict20/notifications/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/asd20-notifications-client.cjs.js",
   "module": "dist/asd20-notifications-client.esm.js",
   "browser": "dist/asd20-notifications-client.esm.min.js",

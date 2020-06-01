@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git+https://github.com/academydistrict20/notifications.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/academydistrict20/notifications/issues"
   },
