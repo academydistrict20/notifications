@@ -62,6 +62,7 @@
   "dependencies": {
     "@asd20/notifications-client": "file:packages/client",
     "@asd20/notifications-embed": "file:packages/embed",
+    "@asd20/notifications-plugin-cc-messages": "file:packages/plugin-cc-messages",
     "@asd20/notifications-plugin-json": "file:packages/plugin-json",
     "@asd20/notifications-shared": "file:packages/shared",
     "@asd20/notifications-ui": "file:packages/ui"
