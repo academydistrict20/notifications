@@ -73,8 +73,5 @@
       "eslint --cache --fix",
       "git add"
     ]
-  },
-  "devDependencies": {
-    "jest-localstorage-mock": "^2.4.2"
   }
 }

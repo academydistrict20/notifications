@@ -15,11 +15,11 @@
   "bugs": {
     "url": "https://github.com/academydistrict20/notifications/issues"
   },
-  "main": "dist/asd20-notifications-client-json.cjs.js",
-  "module": "dist/asd20-notifications-client-json.esm.js",
-  "browser": "dist/asd20-notifications-client-json.esm.min.js",
-  "unpkg": "dist/asd20-notifications-client-json.umd.js",
-  "jsdelivr": "dist/asd20-notifications-client-json.umd.js",
+  "main": "dist/asd20-notifications-plugin-json.cjs.js",
+  "module": "dist/asd20-notifications-plugin-json.esm.js",
+  "browser": "dist/asd20-notifications-plugin-json.esm.min.js",
+  "unpkg": "dist/asd20-notifications-plugin-json.umd.js",
+  "jsdelivr": "dist/asd20-notifications-plugin-json.umd.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/*.js",
@@ -48,12 +48,12 @@
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "prepublishOnly": "npm run build",
     "build": "npm run build:esm && npm run build:esm:min && npm run build:cjs && npm run build:cjs:min && npm run build:umd && npm run build:umd:min",
-    "build:esm": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --file-name asd20-notifications-client-json.esm.js",
-    "build:esm:min": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --minify --file-name asd20-notifications-client-json.esm.min.js",
-    "build:cjs": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --file-name asd20-notifications-client-json.cjs.js",
-    "build:cjs:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --minify --file-name asd20-notifications-client-json.cjs.min.js",
-    "build:umd": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsPluginJson --file-name asd20-notifications-client-json.umd.js",
-    "build:umd:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsPluginJson --minify --file-name asd20-notifications-client-json.umd.min.js"
+    "build:esm": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --file-name asd20-notifications-plugin-json.esm.js",
+    "build:esm:min": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --minify --file-name asd20-notifications-plugin-json.esm.min.js",
+    "build:cjs": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --file-name asd20-notifications-plugin-json.cjs.js",
+    "build:cjs:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --minify --file-name asd20-notifications-plugin-json.cjs.min.js",
+    "build:umd": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsPluginJson --file-name asd20-notifications-plugin-json.umd.js",
+    "build:umd:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsPluginJson --minify --file-name asd20-notifications-plugin-json.umd.min.js"
   },
   "husky": {
     "hooks": {
