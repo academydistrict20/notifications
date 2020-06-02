@@ -2,7 +2,7 @@
 
 This is a plugin is an extension of the Azure Search Plugin specific to Academy District 20. It assumes an infrastructure using Azure Search and a fixed schema. The config adds a few additional fields like channels, categories, locations and tags. Passing those paramiters in results in automatic UI mapping and filtered queries.
 
-## Implemening the Comunication Center Messages Plugin
+## Implementing the Communication Center Messages Plugin
 
 ```js
 const myPlugin =
