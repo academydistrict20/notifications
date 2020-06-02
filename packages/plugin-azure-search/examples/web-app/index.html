@@ -11,26 +11,33 @@
   <!-- Load the client library -->
   <script src="../../../client/dist/asd20-notifications-client.umd.js "></script>
   <!-- load plugin library -->
-  <script src="../../dist/asd20-notifications-plugin-cc-messages.umd.js"></script>
+  <script src="../../dist/asd20-notifications-plugin-azure-search.umd.js"></script>
   <script>
     async function run() {
       try {
         const client = new Asd20NotificationsClient({
           onUpdate(payload) {
-            console.log('cc-messages update', payload)
+            console.log('azure-search-plugin update', payload)
           },
           plugins: [
-            Asd20NotificationsPluginCcMessages.Create({
-              endpoint: 'myEndpoint',
+          Asd20NotificationsPluginAzureSearch.Create({
+              endpoint: '[myEndpoint]',
               index: '[myIndex]',
               apiKey: '[myKey]',
-              apiVersion: '2019-05-06',
-              search: '',
-              channels: ['Notification'],
-              locations: ['District Wide', 'Test Subscription Location'],
-              categories: ['Weather', 'Emergency', 'Tests']
+              search: 'Emergency Test',
             }),
           ],
+          dataTransformer(data) {
+            return data.value.map((d) => ({
+              id: d.id,
+              title: d.title,
+              summary: d.description,
+              description: d.description,
+              startDateTime: d.startDateTime,
+              endDateTime: d.endDateTime,
+              categories: d.categories,
+            }))
+          },
         })
       } catch (error) {
         console.log(error)
