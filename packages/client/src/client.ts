@@ -1,6 +1,4 @@
-import { Notification, NotificationsByType } from '@asd20/notifications-shared/src/types'
-import { NotificationsPlugin } from '@asd20/notifications-shared/src/plugin'
-import { cookieStorage } from '@asd20/notifications-shared/src/storage'
+import { Notification, NotificationsByType, NotificationsPlugin, cookieStorage } from '@asd20/notifications-shared'
 
 export interface NotificationsUpdatePayload {
   dismissedNotifications: Notification[]

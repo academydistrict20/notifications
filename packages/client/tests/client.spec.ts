@@ -7,7 +7,6 @@ const notifications: Notification[] = [
   {
     id: '10000000-0000-0000-0000-000000000000',
     title: 'Notification 1',
-    summary: 'Summary',
     description: 'Description',
     startDateTime: '2020-05-14T21:02:15.716Z',
     endDateTime: '2020-05-14T21:02:15.716Z',
@@ -16,7 +15,6 @@ const notifications: Notification[] = [
   {
     id: '20000000-0000-0000-0000-000000000000',
     title: 'Notification 2',
-    summary: 'Summary',
     description: 'Description',
     startDateTime: '2020-05-14T21:02:15.716Z',
     endDateTime: '2020-05-14T21:02:15.716Z',
