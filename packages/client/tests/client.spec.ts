@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Notification } from '../../shared/src/types'
 import { NotificationsPlugin } from '../../shared/src/plugin'
 import NotificationsClient from '../src/client'
