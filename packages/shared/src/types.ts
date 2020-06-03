@@ -1,6 +1,6 @@
 import { NotificationsPlugin } from './plugin'
 
-export const enum NotificationIimportance {
+export const enum NotificationImportance {
   INFO = 'info',
   ALERT = 'alert',
   EMERGENCY = 'emergency',
@@ -21,7 +21,7 @@ export interface Notification {
   color?: string
   detailLinkUrl?: string
   detailLinkLabel?: string
-  importance?: string | NotificationIimportance
+  importance?: string | NotificationImportance
 }
 
 export function notificationFactory(source: Partial<Notification>): Notification {
@@ -32,6 +32,14 @@ export function notificationFactory(source: Partial<Notification>): Notification
     startDateTime: source.startDateTime || new Date().toISOString(),
     endDateTime: source.endDateTime || new Date().toISOString(),
     categories: source.categories || [],
+    icon: source.icon || '',
+    callToActionUrl: source.callToActionUrl || '',
+    callToActionLabel: source.callToActionLabel || '',
+    dismissible: source.dismissible || true,
+    color: source.color || '',
+    detailLinkUrl: source.detailLinkUrl || '',
+    detailLinkLabel: source.detailLinkLabel || '',
+    importance: source.importance || NotificationImportance.INFO,
   }
 }
 
