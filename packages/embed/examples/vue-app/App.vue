@@ -39,12 +39,12 @@ export default {
       banner: {
         selector: `#header`,
       },
-      // floating: {
-      //   selector: `aside`,
-      // },
-      // inline: {
-      //   selector: `section`,
-      // }
+      floating: {
+        selector: `aside`,
+      },
+      inline: {
+        selector: `section`,
+      }
     }
   })
 }
