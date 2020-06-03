@@ -35,7 +35,7 @@
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "2.33.0",
     "all-contributors-cli": "6.14.2",
-    "auto": "9.36.2",
+    "auto": "9.38.0",
     "babel-jest": "26.0.1",
     "babel-preset-env": "1.7.0",
     "bili": "4.10.0",
