@@ -1,5 +1,5 @@
-import { getNotifications } from './api'
-import { request } from './http'
-import { mapObjectToNotification } from './helpers'
-
-export { getNotifications, request, mapObjectToNotification }
+export { cookieStorage } from './storage'
+export { request } from './http'
+export { mapObjectToNotification } from './helpers'
+export { NotificationsPlugin, NotificationsPluginConfig } from './plugin'
+export { Notification, NotificationImportance, NotificationsByType } from './types'
