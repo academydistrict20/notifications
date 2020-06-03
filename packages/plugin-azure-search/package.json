@@ -1,6 +1,6 @@
 {
   "name": "@asd20/notifications-plugin-azure-search",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "azure search endpoint configuration",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
@@ -46,7 +46,7 @@
     "test": "jest --collect-coverage --passWithNoTests",
     "test:watch": "jest --watch-all --collect-coverage -passWithNoTests",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "prepublish": "npm run build",
+    "prepublishOnly:disabled": "npm run build",
     "build": "npm run build:esm && npm run build:esm:min && npm run build:cjs && npm run build:cjs:min && npm run build:umd && npm run build:umd:min",
     "build:esm": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --file-name asd20-notifications-plugin-azure-search.esm.js",
     "build:esm:min": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --minify --file-name asd20-notifications-plugin-azure-search.esm.min.js",
@@ -68,6 +68,7 @@
     ]
   },
   "dependencies": {
-    "@asd20/notifications-plugin-json": "file:../plugin-json"
-  }
+    "@asd20/notifications-plugin-json": "^0.5.0"
+  },
+  "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@asd20/notifications-ui",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "A UI package",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
@@ -8,6 +8,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/academydistrict20/notifications.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "bugs": {
     "url": "https://github.com/academydistrict20/notifications/issues"
@@ -43,7 +46,7 @@
     "test": "jest --collect-coverage --passWithNoTests",
     "test:watch": "jest --watch-all --collect-coverage -passWithNoTests",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly:disabled": "npm run build",
     "build": "npm run build:esm && npm run build:esm:min && npm run build:cjs && npm run build:cjs:min && npm run build:umd && npm run build:umd:min",
     "build:esm": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --file-name asd20-notifications-ui.esm.js",
     "build:esm:min": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --minify --file-name asd20-notifications-ui.esm.min.js",
@@ -72,5 +75,6 @@
       "eslint --cache --fix",
       "git add"
     ]
-  }
+  },
+  "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25"
 }

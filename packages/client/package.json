@@ -1,6 +1,6 @@
 {
   "name": "@asd20/notifications-client",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Client implementation of notifications, ideal for apps",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
@@ -11,6 +11,9 @@
   },
   "bugs": {
     "url": "https://github.com/academydistrict20/notifications/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "main": "dist/asd20-notifications-client.cjs.js",
   "module": "dist/asd20-notifications-client.esm.js",
@@ -44,7 +47,7 @@
     "test:watch": "jest --watch-all --collect-coverage",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "semantic-release": "semantic-release",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly:disabled": "npm run build",
     "build": "npm run build:esm && npm run build:esm:min && npm run build:cjs && npm run build:cjs:min && npm run build:umd && npm run build:umd:min",
     "build:esm": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --file-name asd20-notifications-client.esm.js",
     "build:esm:min": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --minify --file-name asd20-notifications-client.esm.min.js",
@@ -57,9 +60,9 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
-    "@asd20/notifications-plugin-json": "file:../plugin-json",
-    "@asd20/notifications-shared": "file:../shared",
-    "@asd20/notifications-ui": "file:../ui",
+    "@asd20/notifications-plugin-json": "^0.5.0",
+    "@asd20/notifications-shared": "^0.5.0",
+    "@asd20/notifications-ui": "^0.5.0",
     "@vue/web-component-wrapper": "^1.2.0"
   },
   "husky": {
@@ -74,7 +77,5 @@
       "git add"
     ]
   },
-  "devDependencies": {
-    "jest-localstorage-mock": "^2.4.2"
-  }
+  "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25"
 }
