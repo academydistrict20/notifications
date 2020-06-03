@@ -10,7 +10,8 @@
 
 <script>
 // Embed Component
-import Asd20NotificationsEmbed from '../../src/components/Asd20NotificationsEmbed'
+import Asd20NotificationsEmbed from '@asd20/notifications-embed/src/components/Asd20NotificationsEmbed'
+// import Asd20NotificationsEmbed from '../../src/components/Asd20NotificationsEmbed'
 
 // Plugin
 import { Create as CcMessagesPlugin } from '@asd20/notifications-plugin-cc-messages'
