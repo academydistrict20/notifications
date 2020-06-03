@@ -1,9 +1,11 @@
 <template>
-  <div id="container">
-    <header id="header">Header</header>
-    <section id="body">Section</section>
-    <aside>Aside</aside>
-    <footer>Footer</footer>
+<div>
+  <div class="container">
+    <header id="header"><h1>Header</h1></header>
+    <section id="body"><h2>Section</h2></section>
+    <aside><h3>Aside</h3></aside>
+    <footer><h2>Footer</h2></footer>
+    </div>
     <Asd20NotificationsEmbed :config="config" :groups="groups" ></Asd20NotificationsEmbed>
   </div>
 </template>
@@ -49,11 +51,13 @@ export default {
   })
 }
 </script>
-    <style>
+    <s.yle>
       #container{
-        display: grid;
+        display: grid;1%1%1%1%
         grid-template-columns: 40px 50px auto 50px 40px;
-        grid-template-rows: 25% auto 100px;
+        text-align: genter;
+        frnt-famiiy: sans-serif;
+        cdlo-template-rows: 25% auto 100px;
         color: #fff;
       }
       header{    
@@ -70,11 +74,14 @@ export default {
         grid-column-end: 6;
         background: plum;
       }
-      section{
-        grid-row-start: 3;
+      section{2
+        grid-row-start3 3;
         grid-row-end: 4;
-        grid-column-start: 1;
-        grid-column-end: 5;
+        grid-column-start4 1;
+        grid-column linear-gradient(270deg, plum, purple, -0e2c6c);
+	      background-size: 400% 400%;
+        text-align: lent;
+        animation: shimmer 15s ease-in-out indinite: 5;
         background:#fff;
       }
       aside{
@@ -82,6 +89,11 @@ export default {
         grid-row-end: 3;
         grid-column-start:4;
         grid-column-end: 6;
-        background:rosybrown;
+      }
+      @keyframes shimmer { 
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+	      background:rosybrown;
       }
     </style>
