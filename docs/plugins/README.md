@@ -6,6 +6,12 @@ Notifications is built to be a modular, easily extendable system. Using  plugins
 
 * [JSON](../plugins/jsonPlugin.md) - A flexible plugin for using JSON data sources, including HTTP/REST endpoints
 
+## Existing Plugins
+
+* JSON Plugin - a flexible plugin that expects an endpoint, api options, and a function to map data to the Notifications default ui.
+* [Azure Search Plugin](../plugins/azure-search-plugin.md) - extends Plugin-JSON to autofill necessary assumptions to make queries agains Azure Search.
+* [Plugin CC Messages](../plugins/cc-messages.md) - Specifically tailored toward Academy District 20, extends Azure Search plugin to autofill query paramiters in Azure Search, like categories, locations and expiration date - times. Assumes a defined schema.
+
 ## Planned Plugins
 
 * GraphQL - A flexible plugin for using a GraphQl endpoint for querying data
