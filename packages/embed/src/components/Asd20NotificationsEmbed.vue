@@ -1,44 +1,34 @@
 <template>
   <div :id="`asd20-embed`">
-    <MountingPortal
-      v-for="(group, type) of computedGroups"
-      :key="type"
+    <pre>{{computedGroups}}</pre>
+    <!-- <MountingPortal
+      v-for="group in computedGroups"
+      :key="group.type"
       :mountTo="group.selector"
       append
-    >
+    > -->
       <!-- NotificaitonGroup -->
-      <asd20-notification-group
-        v-for="type of computedGroups"
-        :key="type"
-      >
-
-      <!-- <div style="border: 2px dashed green; padding: 1rem;">
-        From Instance Id: {{ _uid }}<br />
-        <pre>{{ group.selector }}</pre> -->
-        <!-- Notifications -->
-        <asd20-notification 
-          v-for="notification of group.notifications" 
-          :key="notification.id"
-          >
-        </asd20-notification>
-        <!-- <div v-for="notification of group.notifications" :key="notification.id">
-          {{notification.title}}
-          <button @click="onDismiss(notification)">Dismiss</button>
-        </div> -->
-      </asd20-notification-group>
-      <!-- </div> -->
-    </MountingPortal>
+      <!-- <asd20-notification-group></asd20-notification-group> -->
+      <Asd20NotificationGroup></Asd20NotificationGroup>
+      <!-- <Asd20NotificationGroup 
+        :notifications="computedGroups[0].notifications"
+        :type="computedGroups[0].type"
+        @dismiss="onDismiss"
+      ></Asd20NotificationGroup> -->
+    <!-- </MountingPortal> -->
     <button @click="clear">Clear Dismissions</button>
   </div>
 </template>
 
 <script>
-import { MountingPortal } from 'portal-vue'
-// TODO: Use real client
+// Client & Plugins
 import NotificationClient from '@asd20/notifications-client'
-import JsonPlugin from '@asd20/notifications-plugin-json'
-import Asd20Notification from '@asd20/notifications-ui'
-import Asd20NotificationGroup from '@asd20/notifications-ui'
+// import JsonPlugin from '@asd20/notifications-plugin-json'
+// import { Create as CcMessagesPlugin } from '@asd20/notifications-plugin-cc-messages'
+
+// Components
+import { MountingPortal } from 'portal-vue'
+import { Asd20NotificationGroup } from '@asd20/notifications-ui'
 
 export default {
   name: 'Asd20NotificationsEmbed',
@@ -46,16 +36,17 @@ export default {
   components: {
     MountingPortal,
     Asd20NotificationGroup,
-    Asd20Notification
   },
 
   props: {
+    // declare props for config
     config: {
       type: Object,
       // TODO: Update with default configuration
       default: () => ({})
     },
     groups: {
+      // add dom insertion querySelector props
       type: Object,
       default: () => ({}),
       // Make sure the groups pass validation
@@ -72,7 +63,7 @@ export default {
   },
 
   data: () => ({
-    // Store a reference to the client instanec
+    // Store a reference to the client instance
     client: null,
     // Where we will reactively keep track
     // of notifiction data sent from client
@@ -113,15 +104,13 @@ export default {
         // so that the we can update the UI reactively
         onUpdate: this.onUpdate
       })
-    // Innitialize the client
-    this.client.init()
   },
 
   methods: {
     // Asks the client to dismiss a notification
     onDismiss(notification) {
       if (!this.client) return
-      this.client.dismissNotification(notification)
+      this.client.dismiss(notification)
     },
     // Responds to the client updating the notifications
     // e.g. After new notificaitons are loaded, or dismissed
