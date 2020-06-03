@@ -52,6 +52,7 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
     orderBy: 'isFeatured desc, publishDateTime desc',
     tags: resolvedConfig.tags,
     top: resolvedConfig.top || 10,
+    locations: resolvedConfig.locations,
   })
 
   // Create a new instance of JsonNotificationsPlugin passing in Azure =Search api config
@@ -118,7 +119,7 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
       // TODO: This could be fragile, consider handeling case sensitivity
       return {
         banner: notifications.filter((n) => n.categories.includes('Emergency') || n.categories.includes('Urgent')),
-        floating: notifications.filter((n) => !n.categories.includes('Emergency') || !n.categories.includes('Urgent')),
+        floating: notifications.filter((n) => !n.categories.includes('Emergency') && !n.categories.includes('Urgent')),
         inline: [],
         status: [],
       }

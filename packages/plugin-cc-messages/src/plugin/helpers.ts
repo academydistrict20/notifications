@@ -17,6 +17,7 @@ export interface AzureSearchPayload {
  *     search: string
  *     top: number
  *     orderBy: string
+ *     locations: string[]
  *   }} [state={
  *     // Default values
  *     organizationIds: [],
@@ -26,6 +27,7 @@ export interface AzureSearchPayload {
  *     search: '*',
  *     top: 10,
  *     orderBy: 'isDistrictFeatured desc, publishDateTime desc',
+ *     locations: [],
  *   }]
  * @returns {AzureSearchPayload}
  */
@@ -39,6 +41,7 @@ export function generateAzureSearchPayload(
     search: string
     top: number
     orderBy: string
+    locations: string[]
   } = {
     // Default values
     organizationIds: [],
@@ -48,6 +51,7 @@ export function generateAzureSearchPayload(
     search: '*',
     top: 10,
     orderBy: 'isDistrictFeatured desc, publishDateTime desc',
+    locations: [],
   },
 ): AzureSearchPayload {
   const filters: string[] = []
@@ -58,19 +62,22 @@ export function generateAzureSearchPayload(
   )
 
   if (state.organizationIds.length > 0) {
-    filters.push(`search.in(ownerOrganizationId, '${state.organizationIds.join(',')}', ',')`)
+    filters.push(`search.in(ownerOrganizationId, '${state.organizationIds.join('|')}', '|')`)
   }
 
   if (state.categories.length > 0) {
-    filters.push(`categories/any(t: search.in(t, '${state.categories.join(',')}', ',')) `)
+    filters.push(`categories/any(t: search.in(t, '${state.categories.join('|')}', '|')) `)
   }
 
   if (state.channels.length > 0) {
-    filters.push(`channels/any(t: search.in(t, '${state.channels.join(',')}', ',')) `)
+    filters.push(`channels/any(t: search.in(t, '${state.channels.join('|')}', '|')) `)
   }
 
   if (state.tags.length > 0) {
-    filters.push(`tags/any(t: search.in(t, '${state.tags.join(',')}', ',')) `)
+    filters.push(`tags/any(t: search.in(t, '${state.tags.join('|')}', '|')) `)
+  }
+  if (state.locations && state.locations.length > 0) {
+    filters.push(`messageSubscriptionLocations/any(t: search.in(t, '${state.locations.join('|')}', '|')) `)
   }
 
   const payload = {

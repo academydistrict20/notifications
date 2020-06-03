@@ -1,3 +1,72 @@
+# v0.4.0 (Mon Jun 01 2020)
+
+#### 🚀 Enhancement
+
+- chore(deps-dev): bump auto from 9.32.0 to 9.36.2 [#40](https://github.com/academydistrict20/notifications/pull/40) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @auto-it/conventional-commits from 9.32.0 to 9.33.2 [#24](https://github.com/academydistrict20/notifications/pull/24) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`
+  - feature(source-plugins): implement source plugins [#18](https://github.com/academydistrict20/notifications/pull/18) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - feat(ui): Added a UI component package [#17](https://github.com/academydistrict20/notifications/pull/17) ([@Hollendorfer](https://github.com/Hollendorfer))
+
+#### 🐛 Bug Fix
+
+- Update dependency rollup-plugin-vue to v5.1.9 [#51](https://github.com/academydistrict20/notifications/pull/51) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency @babel/core to v7.10.2 [#58](https://github.com/academydistrict20/notifications/pull/58) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency vuepress to v1.5.0 [#53](https://github.com/academydistrict20/notifications/pull/53) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- Pin dependencies [#60](https://github.com/academydistrict20/notifications/pull/60) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Configure Renovate [#44](https://github.com/academydistrict20/notifications/pull/44) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- chore(deps-dev): bump @types/jest from 25.2.2 to 25.2.3 [#26](https://github.com/academydistrict20/notifications/pull/26) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]) david.hayes@asd20.org)
+- chore(deps-dev): bump lint-staged from 10.2.2 to 10.2.4 [#27](https://github.com/academydistrict20/notifications/pull/27) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- docs(plugins): add plugin docs [#20](https://github.com/academydistrict20/notifications/pull/20) (david.hayes@asd20.org)
+- chore(deps-dev): bump @types/jest from 25.2.1 to 25.2.2 [#16](https://github.com/academydistrict20/notifications/pull/16) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-azure-search`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - v0.4.2 [#62](https://github.com/academydistrict20/notifications/pull/62) (david.hayes@asd20.org)
+- `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - Pin dependencies [#45](https://github.com/academydistrict20/notifications/pull/45) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- `@asd20/notifications-shared`
+  - fix(shared): add lodash types [#19](https://github.com/academydistrict20/notifications/pull/19) (david.hayes@asd20.org)
+
+#### ⚠️ Pushed to `master`
+
+- ci(project): let renovate use branch automerge (david.hayes@asd20.org)
+- chore(project): Remove old contributor info (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-azure-search`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - v0.4.7 (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-azure-search`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - v0.4.6 (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-azure-search`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - v0.4.5 (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-azure-search`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - ci: disable prepublish (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-azure-search`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - v0.4.4 (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-azure-search`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - ci(project): update package versions (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-azure-search`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - v0.4.3 (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-azure-search`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - v0.4.1 (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-ui`
+  - ci(release): fix publish access (david.hayes@asd20.org)
+
+#### 🔩 Dependency Updates
+
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-azure-search`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - Feature/client [#39](https://github.com/academydistrict20/notifications/pull/39) (luke.haris@asd20.org david.hayes@asd20.org [@Hollendorfer](https://github.com/Hollendorfer) [@Lukeharris30](https://github.com/Lukeharris30))
+
+#### Authors: 7
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- [@Lukeharris30](https://github.com/Lukeharris30)
+- [@renovate[bot]](https://github.com/renovate[bot])
+- David Hayes ([@altitudems](https://github.com/altitudems))
+- Luke Harris (luke.haris@asd20.org)
+- Paul Hollendorfer ([@Hollendorfer](https://github.com/Hollendorfer))
+- WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.3.1 (Wed May 13 2020)
 
 #### 🐛 Bug Fix

@@ -145,6 +145,7 @@ export default {
   }
 
   &__title {
+    --primary: #0e2c6c;
     font-weight: bold;
     font-size: 1.0625rem;
     color: var(--primary);
@@ -162,6 +163,7 @@ export default {
   }
 
   &__content > a.asd20-notification__cta {
+    --accent-one: #70b4c2;
     font-size: 0.875rem !important;
     margin-top: 0.5rem;
     padding: 0.5rem 0;
@@ -173,6 +175,7 @@ export default {
   }
 
   &--emergency {
+    --emergency: #da2e0b;
     .asd20-notification__title,
     .asd20-notification__cta {
       color: var(--emergency);
@@ -184,6 +187,7 @@ export default {
   }
 
   &--alert {
+    --warning: #f7e06e;
     .asd20-notification__title,
     .asd20-notification__cta {
       color: var(--background-dark);

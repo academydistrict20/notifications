@@ -17,20 +17,21 @@
       try {
         const client = new Asd20NotificationsClient({
           onUpdate(payload) {
-            console.log('update', payload)
+            console.log('cc-messages update', payload)
           },
           plugins: [
             Asd20NotificationsPluginCcMessages.Create({
-              endpoint: 'https://asd20-search-dev.search.windows.net',
-              index: 'messages-index',
-              apiKey: '937716815402758ADC2FE799FE288142',
+              endpoint: 'myEndpoint',
+              index: '[myIndex]',
+              apiKey: '[myKey]',
               apiVersion: '2019-05-06',
-              search: 'COVID-19',
-              channels: ['News & Stories'],
+              search: '',
+              channels: ['Notification'],
+              locations: ['District Wide', 'Test Subscription Location'],
+              categories: ['Weather', 'Emergency', 'Tests']
             }),
           ],
         })
-        console.log(client)
       } catch (error) {
         console.log(error)
       }
