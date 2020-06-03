@@ -9,10 +9,11 @@
 </template>
 
 <script>
+// Embed Component
 import Asd20NotificationsEmbed from '../../src/components/Asd20NotificationsEmbed'
-// import Asd20NotificationsEmbed from '@asd20/notifications-embed'
-// import { Create as CcMessagesPlugin } from '@asd20/notifications-plugin-cc-messages'
 
+// Plugin
+import { Create as CcMessagesPlugin } from '@asd20/notifications-plugin-cc-messages'
 
 export default {
   name: 'MyExampleVueApp',
@@ -22,15 +23,15 @@ export default {
   data: () => ({
     config: {
       plugins: [
-        // CcMessagesPlugin({
-        //   endpoint: 'https://asd20-search-dev.search.windows.net/indexes/',
-        //   index: 'messages-index',
-        //   apiKey: '937716815402758ADC2FE799FE288142',
-        //   apiVersion: '2019-05-06',
-        //   channels: ['Notification'],
-        //   locations: ['District Wide', 'Test Subscription Location'],
-        //   categories: ['Weather', 'Emergency', 'Tests']
-        // }),
+        CcMessagesPlugin({
+          endpoint: 'https://asd20-search-dev.search.windows.net',
+          index: 'messages-index',
+          apiKey: '937716815402758ADC2FE799FE288142',
+          apiVersion: '2019-05-06',
+          channels: ['Notification'],
+          locations: ['District Wide', 'Test Subscription Location'],
+          categories: ['Weather', 'Emergency', 'Tests'],
+        }),
       ],
     },
     groups: {

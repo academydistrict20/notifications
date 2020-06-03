@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Asd20Notification from '../../src/components/Asd20Notification'
 import Asd20NotificationGroup from '@asd20/notifications-ui/src/components/Asd20NotificationGroup'
+import Asd20Notification from '@asd20/notifications-ui/src/components/Asd20Notification'
 
 export default {
   name: 'MyExampleVueApp',

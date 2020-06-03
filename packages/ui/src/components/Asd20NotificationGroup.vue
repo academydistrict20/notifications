@@ -39,7 +39,6 @@ export default {
     },
     computedNotifications() {
       let notifications = this.notifications
-        .filter(n => (n.notificationStyle || n.style).toLowerCase() === this.type.toLowerCase())
         .map(n => ({
           id: n.id,
           title: n.title,
@@ -52,10 +51,6 @@ export default {
           color: n.color || '',
           icon: n.icon || '',
         }))
-
-      // if (this.type === 'banner' && notifications.length > 0) {
-      //   notifications = [notifications[0]]
-      // }
       return notifications
     },
   },
