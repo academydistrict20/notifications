@@ -1,3 +1,39 @@
+# v0.6.0 (Thu Jun 04 2020)
+
+#### 🚀 Enhancement
+
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-ui`
+  - feat(embed): add basic embed script [#30](https://github.com/academydistrict20/notifications/pull/30) (luke.haris@asd20.org david.hayes@asd20.org [@Hollendorfer](https://github.com/Hollendorfer))
+
+#### 🐛 Bug Fix
+
+- Update dependency all-contributors-cli to v6.15.0 [#48](https://github.com/academydistrict20/notifications/pull/48) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency eslint to v7 [#55](https://github.com/academydistrict20/notifications/pull/55) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency ts-jest to v26 [#56](https://github.com/academydistrict20/notifications/pull/56) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency lint-staged to v10.2.7 [#50](https://github.com/academydistrict20/notifications/pull/50) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency lerna to v3.22.0 [#49](https://github.com/academydistrict20/notifications/pull/49) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Update typescript-eslint monorepo to v3 (major) [#57](https://github.com/academydistrict20/notifications/pull/57) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency typescript to v3.9.3 [#52](https://github.com/academydistrict20/notifications/pull/52) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency @auto-it/conventional-commits to v9.38.0 [#46](https://github.com/academydistrict20/notifications/pull/46) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Update dependency auto to v9.38.0 [#59](https://github.com/academydistrict20/notifications/pull/59) ([@renovate-bot](https://github.com/renovate-bot) david.hayes@asd20.org [@renovate[bot]](https://github.com/renovate[bot]))
+- Pin dependency bili to 4.10.0 [#65](https://github.com/academydistrict20/notifications/pull/65) ([@renovate-bot](https://github.com/renovate-bot) [@renovate[bot]](https://github.com/renovate[bot]))
+- `@asd20/notifications-client`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`
+  - refactor(client): cleanup imports [#66](https://github.com/academydistrict20/notifications/pull/66) (david.hayes@asd20.org)
+
+#### ⚠️ Pushed to `master`
+
+- Create CODE_OF_CONDUCT.md (david.hayes@asd20.org)
+
+#### Authors: 5
+
+- [@renovate[bot]](https://github.com/renovate[bot])
+- David Hayes ([@altitudems](https://github.com/altitudems))
+- Luke Harris (luke.haris@asd20.org)
+- Paul Hollendorfer ([@Hollendorfer](https://github.com/Hollendorfer))
+- WhiteSource Renovate ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
 # v0.4.0 (Mon Jun 01 2020)
 
 #### 🚀 Enhancement

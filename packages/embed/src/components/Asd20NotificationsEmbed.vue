@@ -1,6 +1,6 @@
 <template>
   <div :id="`asd20-embed`" v-if="nextTick">
-    <div
+    <MountingPortal
       v-for="(group, type) of groups"
       :key="type"
       :mountTo="group.selector"
@@ -11,7 +11,7 @@
         :type="type"
         @dismiss="onDismiss"
       ></Asd20NotificationGroup>
-    </div>
+    </MountingPortal>
     <button @click="clear">Clear Dismissions</button>
   </div>
 </template>

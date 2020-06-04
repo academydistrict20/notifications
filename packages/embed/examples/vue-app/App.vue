@@ -59,7 +59,7 @@ export default {
         grid-template-columns: 40px 50px auto 50px 40px;
         text-align: center;
         font-family: sans-serif;
-        column-template-rows: 25% auto 100px;
+        grid-template-rows: 25% auto 100px;
         color: #fff;
       }
       header{    
