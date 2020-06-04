@@ -22,13 +22,13 @@
   <script src="https://unpkg.com/asd20-notifications-embed"></script>
   -->
 
-  <asd20-notifications-embed id="my-embed" />
+  <asd20-notifications-embed ></asd20-notifications-embed>
 
   <script>
-    const el = document.getElementById('my-embed')
+    const el = document.querySelector('asd20-notifications-embed')
     el.config = {
       plugins: [
-        Asd20NotificationsPluginCcMessages.client({
+      Asd20NotificationsPluginCcMessages.Create({
           endpoint: 'https://asd20-search-dev.search.windows.net',
           index: 'messages-index',
           apiKey: '937716815402758ADC2FE799FE288142',
@@ -46,9 +46,6 @@
       floating: {
         selector: `#header`,
       },
-      inline: {
-        selector: `#body`,
-      }
     }    
   </script>
 </body>
