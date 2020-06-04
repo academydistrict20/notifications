@@ -64,6 +64,39 @@ describe('storage', () => {
 })
 
 describe('onUpdate', () => {
+  it('is called after load', async () => {
+    const mockOnUpdate = jest.fn()
+
+    instance = new NotificationsClient({
+      autoLoad: false,
+      plugins: [mockPlugin],
+      onUpdate: mockOnUpdate,
+    })
+
+    await instance.load()
+
+    expect(mockOnUpdate).toHaveBeenCalledTimes(1)
+  })
+  it('is called when polling is enabled', async (done) => {
+    const mockOnUpdate = jest.fn()
+
+    instance = new NotificationsClient({
+      autoLoad: false,
+      pollInterval: 1000,
+      plugins: [mockPlugin],
+      onUpdate: mockOnUpdate,
+    })
+
+    // Do first load, to start polling timer
+    await instance.load()
+
+    instance.config.onUpdate = jest.fn(() => done())
+
+    // Fast-forward until timer has been executed
+    jest.useFakeTimers()
+    jest.advanceTimersByTime(1000)
+    jest.useRealTimers()
+  })
   it('returns payload', (done) => {
     const mockOnUpdate = jest.fn((payload) => {
       try {

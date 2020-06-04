@@ -13,7 +13,7 @@ export interface NotificationsPluginConfig {
    *
    * @type {(object | object[])}
    */
-  data?: object | object[]
+  data?: unknown
   /**
    * A function that transforms input data
    * before it is read for notifications.
@@ -24,7 +24,7 @@ export interface NotificationsPluginConfig {
    * @param {(object | object[])} data
    * @returns {(object | object[])}
    */
-  dataTransformer?(data: object | object[]): object | object[]
+  dataTransformer?(data: unknown): Record<string, unknown> | Record<string, unknown>[]
   /**
    * The url or endpoint to make a HTTP request.
    *

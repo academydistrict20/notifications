@@ -44,7 +44,7 @@ const notifications: Notification[] = [
 
 let jsonPlugin = CreatePlugin({
   endpoint: 'https://site.com/my.json',
-  dataTransformer: (d) => d,
+  dataTransformer: (d) => d as Record<string, unknown>,
 })
 
 describe('load', () => {

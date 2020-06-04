@@ -1,8 +1,11 @@
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
-import { Notification, NotificationsByType } from '@asd20/notifications-shared/dist/types'
-import { NotificationsPlugin } from '@asd20/notifications-shared/dist/plugin'
+import {
+  Notification,
+  NotificationsByType,
+  NotificationsPlugin,
+  NotificationsPluginConfig,
+  FetchMethod,
+} from '@asd20/notifications-shared'
 import { Create as CreateJsonNotificationsPlugin } from '@asd20/notifications-plugin-json'
-import { FetchMethod } from '@asd20/notifications-shared/dist/http'
 
 /**
  * A plugin for working with Azure Search data.
@@ -12,8 +15,7 @@ import { FetchMethod } from '@asd20/notifications-shared/dist/http'
  * @extends {NotificationsPlugin}
  */
 
-export interface AzureSearchNotificationsPluginConfig {
-  endpoint: string
+export interface AzureSearchNotificationsPluginConfig extends NotificationsPluginConfig {
   index: string
   apiKey: string
   apiVersion?: string
@@ -21,11 +23,7 @@ export interface AzureSearchNotificationsPluginConfig {
   search?: string
   orderBy?: string
   top?: number
-  propertyMap?: {
-    [P in keyof Notification]?: string
-  }
   groupByType?(notifications: Notification[]): NotificationsByType
-  dataTransformer?(data: object | object[]): object | object[]
 }
 
 /**
@@ -73,12 +71,26 @@ function Create(config: Partial<AzureSearchNotificationsPluginConfig>): Notifica
         'api-key': resolvedConfig.apiKey,
       },
     },
-    // @ts-ignore
-    dataTransformer(data: any) {
+    // The default transformer
+    dataTransformer(data) {
+      let dataArray: Record<string, unknown>[] = []
       // Flatten the response from Azure Search to return the array from response.value
-      if (data && Array.isArray(data.value)) return data.value
+      if (data && typeof data === 'object') {
+        if (
+          (data as Record<string, unknown>).hasOwnProperty('value') &&
+          Array.isArray((data as Record<string, unknown>).value)
+        ) {
+          dataArray = (data as Record<string, unknown>).value as Record<string, unknown>[]
+        } else {
+          dataArray = [data as Record<string, unknown>]
+        }
+      }
       // Return data, optionally mapping it using a provided data transform function
-      return data.map(resolvedConfig.dataTransformer || ((data: object | object[]): object | object[] => data))
+      return dataArray.map(
+        typeof resolvedConfig.dataTransformer === 'function'
+          ? resolvedConfig.dataTransformer
+          : (d: unknown): unknown => d,
+      ) as Record<string, unknown>[]
     },
     propertyMap: resolvedConfig.propertyMap,
   })
