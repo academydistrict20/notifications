@@ -10,6 +10,6 @@ Use as a dependency to build into your project, or use a CDN and web components 
 
 - [Using UI Components](../ui/README.md) - find out what data the notification component expects for proper functionality.
 
-- Embedding
+- [Embedding](../embed/README.md) - embed notifications using Vue.js or HTML web components.
 
 > Interested in helping? Read the [contribution guide](../contributing/README.md).
