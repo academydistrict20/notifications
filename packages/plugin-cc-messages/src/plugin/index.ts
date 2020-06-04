@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-ignore */
 import { Create as CreateAzureSearchPlugin } from '@asd20/notifications-plugin-azure-search'
-import { NotificationsPlugin } from '@asd20/notifications-shared/dist/plugin'
-import { Notification, NotificationsByType } from '@asd20/notifications-shared/dist/types'
+import { NotificationsPlugin, Notification, NotificationsByType } from '@asd20/notifications-shared'
 import { AzureSearchNotificationsPluginConfig } from '@asd20/notifications-plugin-azure-search/dist/plugin'
 import { generateAzureSearchPayload } from './helpers'
 
@@ -11,13 +9,12 @@ export interface CCMessagesPluginConfig extends AzureSearchNotificationsPluginCo
   channels: string[]
   categories: string[]
   tags: string[]
-  search?: string
-  top?: number
-  propertyMap?: {
-    [P in keyof Notification]?: string
-  }
-  groupByType?(notifications: Notification[]): NotificationsByType
-  dataTransformer?(data: object | object[]): object | object[]
+}
+
+interface CcLink {
+  type: string
+  title: string
+  url: string
 }
 
 /**
@@ -27,40 +24,25 @@ export interface CCMessagesPluginConfig extends AzureSearchNotificationsPluginCo
  * @returns {NotificationsPlugin}
  */
 function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
-  // Allow users to override default config
-  const resolvedConfig: CCMessagesPluginConfig = {
-    organizationIds: [],
-    locations: [],
-    channels: [],
-    categories: [],
-    tags: [],
-    endpoint: '',
-    index: '',
-    apiKey: '',
-    search: '*',
-    top: 10,
-    ...config,
-  }
-
-  // TODO: Generate a payload from the config options passed in
+  // Generate a payload from the config options passed in
   const payload = generateAzureSearchPayload({
-    search: resolvedConfig.search || '*',
-    organizationIds: resolvedConfig.organizationIds,
-    categories: resolvedConfig.categories,
-    channels: resolvedConfig.channels,
+    search: config.search || '*',
+    organizationIds: config.organizationIds || [],
+    categories: config.categories || [],
+    channels: config.channels || [],
+    tags: config.tags || [],
+    top: config.top || 10,
+    locations: config.locations || [],
     // Order by featured (pinned), then by publish date/time
     orderBy: 'isFeatured desc, publishDateTime desc',
-    tags: resolvedConfig.tags,
-    top: resolvedConfig.top || 10,
-    locations: resolvedConfig.locations,
   })
 
   // Create a new instance of JsonNotificationsPlugin passing in Azure =Search api config
   const azureSearchPluginInstance = CreateAzureSearchPlugin({
-    endpoint: resolvedConfig.endpoint,
-    index: resolvedConfig.index,
-    apiKey: resolvedConfig.apiKey,
-    apiVersion: resolvedConfig.apiVersion,
+    endpoint: config.endpoint,
+    index: config.index,
+    apiKey: config.apiKey,
+    apiVersion: config.apiVersion,
     search: payload.search,
     filter: payload.filter,
     orderBy: payload.orderby,
@@ -69,13 +51,12 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
     // We need to infer some data from the messages index
     // because not all fields are present there
     dataTransformer(data) {
-      // @ts-ignore
-      const d: any = Array.isArray(data) ? data[0] : data
-      // @ts-ignore
-      const links: any[] = JSON.parse(d.links || '[]') || []
+      // if (typeof data === 'object' && (data as object).values)
+      const d = Array.isArray(data) ? data[0] : data
+      const links: unknown[] = JSON.parse(d.links || '[]') || []
 
-      const detailLink = links.find((l) => l.type === 'Detail Link')
-      const ctaLink = links.find((l) => l.type === 'Call to Action')
+      const detailLink = links.find((l) => (l as CcLink).type === 'Detail Link') as CcLink | undefined
+      const ctaLink = links.find((l) => (l as CcLink).type === 'Call to Action') as CcLink | undefined
 
       const importance = d.categories.includes('Urgent')
         ? 'alert'
@@ -84,7 +65,7 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
         : 'info'
 
       return {
-        ...data,
+        ...d,
         callToActionUrl: ctaLink ? ctaLink.url : '',
         callToActionLabel: ctaLink ? ctaLink.title : '',
         detailLinkUrl: detailLink ? detailLink.url : '',
