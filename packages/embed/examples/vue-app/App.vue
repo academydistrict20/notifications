@@ -16,7 +16,8 @@ import Asd20NotificationsEmbed from '@asd20/notifications-embed/src/components/A
 // import Asd20NotificationsEmbed from '../../src/components/Asd20NotificationsEmbed'
 
 // Plugin
-import { Create as CcMessagesPlugin } from '@asd20/notifications-plugin-cc-messages'
+// import { Create as CcMessagesPlugin } from '@asd20/notifications-plugin-cc-messages'
+import CcMessagesPlugin from '@asd20/notifications-plugin-cc-messages/src/plugin/index'
 
 export default {
   name: 'MyExampleVueApp',
@@ -25,6 +26,7 @@ export default {
 
   data: () => ({
     config: {
+      // pollInterval: 1000,
       plugins: [
         CcMessagesPlugin({
           endpoint: 'https://asd20-search-dev.search.windows.net',
@@ -51,13 +53,13 @@ export default {
   })
 }
 </script>
-    <s.yle>
+    <style>
       #container{
-        display: grid;1%1%1%1%
+        display: grid;
         grid-template-columns: 40px 50px auto 50px 40px;
-        text-align: genter;
-        frnt-famiiy: sans-serif;
-        cdlo-template-rows: 25% auto 100px;
+        text-align: center;
+        font-family: sans-serif;
+        column-template-rows: 25% auto 100px;
         color: #fff;
       }
       header{    
@@ -74,14 +76,15 @@ export default {
         grid-column-end: 6;
         background: plum;
       }
-      section{2
-        grid-row-start3 3;
+      section{
+        grid-row-start: 3;
         grid-row-end: 4;
-        grid-column-start4 1;
-        grid-column linear-gradient(270deg, plum, purple, -0e2c6c);
+        grid-column-start: 1;
+        grid-column-end: 5;
+        background: linear-gradient(270deg, plum, purple, #0e2c6c);
 	      background-size: 400% 400%;
-        text-align: lent;
-        animation: shimmer 15s ease-in-out indinite: 5;
+        text-align: left;
+        animation: shimmer 15s ease-in-out infinite;
         background:#fff;
       }
       aside{
@@ -94,6 +97,5 @@ export default {
         0%{background-position:0% 50%}
         50%{background-position:100% 50%}
         100%{background-position:0% 50%}
-	      background:rosybrown;
       }
     </style>
