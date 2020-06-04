@@ -74,8 +74,6 @@ export default {
           this.notificationStyle.toLowerCase() === 'floating',
         'asd20-notification--inline':
           this.notificationStyle.toLowerCase() === 'inline',
-        'asd20-notification--sticky':
-          this.notificationStyle.toLowerCase() === 'sticky',
         'asd20-notification--status':
           this.notificationStyle.toLowerCase() === 'status',
         'asd20-notification--dismissible': this.dismissible,
@@ -102,8 +100,6 @@ export default {
       switch (this.notificationStyle.toLowerCase()) {
         case 'banner':
           return 'md'
-        case 'sticky':
-          return 'lg'
         default:
           return 'sm'
       }
@@ -133,7 +129,6 @@ export default {
   background: white;
   box-shadow: 0 0 0 1px var(--background-alt);
   color: var(--background-dark);
-
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 
@@ -170,9 +165,9 @@ export default {
     // box-shadow: 0 -1px 0 0 var(--accent-one) inset !important;
   }
 
-  .asd20-icon {
-    margin-right: 0.25rem;
-  }
+  // .asd20-icon {
+  //   margin-right: 0.25rem;
+  // }
 
   &--emergency {
     --emergency: #da2e0b;
@@ -181,7 +176,7 @@ export default {
       color: var(--emergency);
     }
     .asd20-icon {
-      --line-color: #{var(--emergency, -2)};
+      --line-color: #{var(--emergency)};
       --fill-color: #{var(--background-color)};
     }
   }
@@ -211,17 +206,17 @@ export default {
 
   &.asd20-notification--floating {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.125);
-    // .asd20-notification__title {
-    //   font-size: 1.125rem;
-    // }
+    .asd20-notification__title {
+      font-size: 1.125rem;
+    }
 
-    // .asd20-notification__description {
-    //   font-size: 0.875rem;
-    // }
+    .asd20-notification__description {
+      font-size: 0.875rem;
+    }
 
-    // & > a.asd20-notification__cta {
-    //   font-size: 0.875rem !important;
-    // }
+    & > a.asd20-notification__cta {
+      font-size: 0.875rem !important;
+    }
   }
 
   &.asd20-notification--status {
@@ -265,77 +260,77 @@ export default {
     }
   }
 
-  &.asd20-notification--sticky {
-    --background-color: #{var(--accent-one, -2)};
-    padding: 0.5rem;
-    background: var(--background-color);
-    color: white;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.125);
+  // &.asd20-notification--sticky {
+  //   --background-color: #{var(--accent-one, -2)};
+  //   padding: 0.5rem;
+  //   background: var(--background-color);
+  //   color: white;
+  //   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.125);
 
-    &.asd20-notification--dismissible {
-      transform: translateX(calc(100% - #{2.5rem}));
-      transition: transform 0.2s ease-in-out;
-      &:hover {
-        transform: translateX(0);
-      }
-    }
-    .asd20-notification__title {
-      // font-size: 1.25rem;
-      color: white;
-    }
-    .asd20-notification__dismiss {
-      display: none;
-    }
-    a.asd20-notification__cta {
-      color: white;
-      box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.5) inset !important;
-    }
-    .asd20-notification__dismiss .asd20-icon {
-      --line-color: white;
-      --fill-color: white;
-    }
-    .asd20-icon {
-      --line-color: white;
-      --fill-color: rgba(255, 255, 255, 0.25);
-      // align-self: center;
-      width: 1.5rem;
-      height: 1.5rem;
-      // outline: 1px solid red;
-      margin-right: 0.5rem;
-      // margin-top: space(-0.25);
-      // margin-left: space(-0.25);
-    }
-  }
-  &--info.asd20-notification--sticky {
-    background: var(--accent-one);
-  }
-  &--emergency.asd20-notification--sticky {
-    background: var(--emergency);
-  }
-  &--alert.asd20-notification--sticky {
-    background: var(--warning);
-    color: var(--warning);
-    .asd20-notification__title {
-      color: var(--warning);
-    }
-    a.asd20-notification__cta {
-      color: var(--warning);
-      box-shadow: 0 -1px 0 0 #{var(--warning)} inset !important;
-    }
-    .asd20-notification__dismiss .asd20-icon {
-      --line-color: var(--warning);
-      --fill-color: var(--warning);
-    }
+  //   &.asd20-notification--dismissible {
+  //     transform: translateX(calc(100% - #{2.5rem}));
+  //     transition: transform 0.2s ease-in-out;
+  //     &:hover {
+  //       transform: translateX(0);
+  //     }
+  //   }
+  //   .asd20-notification__title {
+  //     // font-size: 1.25rem;
+  //     color: white;
+  //   }
+  //   .asd20-notification__dismiss {
+  //     display: none;
+  //   }
+  //   a.asd20-notification__cta {
+  //     color: white;
+  //     box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.5) inset !important;
+  //   }
+  //   .asd20-notification__dismiss .asd20-icon {
+  //     --line-color: white;
+  //     --fill-color: white;
+  //   }
+  //   .asd20-icon {
+  //     --line-color: white;
+  //     --fill-color: rgba(255, 255, 255, 0.25);
+  //     // align-self: center;
+  //     width: 1.5rem;
+  //     height: 1.5rem;
+  //     // outline: 1px solid red;
+  //     margin-right: 0.5rem;
+  //     // margin-top: space(-0.25);
+  //     // margin-left: space(-0.25);
+  //   }
+  // }
+  // &--info.asd20-notification--sticky {
+  //   background: var(--accent-one);
+  // }
+  // &--emergency.asd20-notification--sticky {
+  //   background: var(--emergency);
+  // }
+  // &--alert.asd20-notification--sticky {
+  //   background: var(--warning);
+  //   color: var(--warning);
+  //   .asd20-notification__title {
+  //     color: var(--warning);
+  //   }
+  //   a.asd20-notification__cta {
+  //     color: var(--warning);
+  //     box-shadow: 0 -1px 0 0 #{var(--warning)} inset !important;
+  //   }
+  //   .asd20-notification__dismiss .asd20-icon {
+  //     --line-color: var(--background-dark);
+  //     --fill-color: var(--);
+  //   }
 
-    .asd20-icon {
-      --line-color: var(--warning);
-      --fill-color: var(--warning);
-    }
-  }
+  //   .asd20-icon {
+  //     --line-color: var(--warning);
+  //     --fill-color: var(--warning);
+  //   }
+  // }
 
-  &--success.asd20-notification--sticky {
-    background: var(--success);
-  }
+  // &--success.asd20-notification--sticky {
+  //   background: var(--success);
+  // }
 
   &.asd20-notification--banner {
     padding: 0.5rem;
@@ -403,15 +398,15 @@ export default {
   }
 }
 
-// @media (min-width: 1024px) {
-//   .asd20-notification {
-//     &__title {
-//       font-size: 1.25rem;
-//     }
+@media (min-width: 1024px) {
+  .asd20-notification {
+    &__title {
+      font-size: 1.25rem;
+    }
 
-//     &__description {
-//       font-size: 1rem;
-//     }
-//   }
-// }
+    &__description {
+      font-size: 1rem;
+    }
+  }
+}
 </style>
