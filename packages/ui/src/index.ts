@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import Asd20Notification from './components/Asd20Notification.vue'
 import Asd20NotificationGroup from './components/Asd20NotificationGroup.vue'

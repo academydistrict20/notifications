@@ -17,6 +17,7 @@
   <script src="https://unpkg.com/vue"></script>
   <!-- Load the library -->
   <script src="../../dist/asd20-notifications-embed.umd.js"></script>
+  <script src="../../../plugin-cc-messages/dist/asd20-notifications-plugin-cc-messages.umd.js"></script>
   <!-- Note: In production, you can use a CDN url
   <script src="https://unpkg.com/asd20-notifications-embed"></script>
   -->
@@ -25,7 +26,19 @@
 
   <script>
     const el = document.getElementById('my-embed')
-    el.config = {}
+    el.config = {
+      plugins: [
+        Asd20NotificationsPluginCcMessages.client({
+          endpoint: 'https://asd20-search-dev.search.windows.net',
+          index: 'messages-index',
+          apiKey: '937716815402758ADC2FE799FE288142',
+          apiVersion: '2019-05-06',
+          channels: ['Notification'],
+          locations: ['District Wide', 'Test Subscription Location'],
+          categories: ['Weather', 'Emergency', 'Tests'],
+        }),
+      ],
+    }
     el.groups = {
       banner: {
         selector: `#header`,

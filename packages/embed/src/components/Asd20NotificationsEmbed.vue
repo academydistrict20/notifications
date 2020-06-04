@@ -1,46 +1,47 @@
 <template>
-  <div :id="`asd20-embed`">
+  <div :id="`asd20-embed`" v-if="nextTick">
     <MountingPortal
-      v-for="(group, type) of computedGroups"
+      v-for="(group, type) of groups"
       :key="type"
       :mountTo="group.selector"
       append
     >
-      <!-- NotificaitonGroup -->
-      <div style="border: 2px dashed green; padding: 1rem;">
-        From Instance Id: {{ _uid }}<br />
-        <pre>{{ group.selector }}</pre>
-        <!-- Notifications -->
-        <div v-for="notification of group.notifications" :key="notification.id">
-          {{notification.title}}
-          <button @click="onDismiss(notification)">Dismiss</button>
-        </div>
-      </div>
+      <Asd20NotificationGroup 
+        :notifications="activeNotificationsByType[type]"
+        :type="type"
+        @dismiss="onDismiss"
+      ></Asd20NotificationGroup>
     </MountingPortal>
     <button @click="clear">Clear Dismissions</button>
   </div>
 </template>
 
 <script>
-import { MountingPortal } from 'portal-vue'
-// TODO: Use real client
+// Client
 import NotificationClient from '@asd20/notifications-client'
-import JsonPlugin from '@asd20/notifications-plugin-json'
+
+// Components
+import { MountingPortal } from 'portal-vue'
+import Asd20NotificationGroup from '@asd20/notifications-ui/src/components/Asd20NotificationGroup'
+
 
 export default {
   name: 'Asd20NotificationsEmbed',
 
   components: {
-    MountingPortal
+    MountingPortal,
+    Asd20NotificationGroup,
   },
 
   props: {
+    // declare props for config
     config: {
       type: Object,
       // TODO: Update with default configuration
       default: () => ({})
     },
     groups: {
+      // add dom insertion querySelector props
       type: Object,
       default: () => ({}),
       // Make sure the groups pass validation
@@ -57,7 +58,7 @@ export default {
   },
 
   data: () => ({
-    // Store a reference to the client instanec
+    // Store a reference to the client instance
     client: null,
     // Where we will reactively keep track
     // of notifiction data sent from client
@@ -66,7 +67,9 @@ export default {
       inline: [],
       floating: [],
       status: []
-    }
+    },
+
+    nextTick: false
   }),
 
   computed: {
@@ -80,12 +83,20 @@ export default {
           selector: this.groups[key].selector,
           notifications: this.activeNotificationsByType[key]
         })
+        console.log(document.querySelectorAll(this.groups[key].selector))
       }
       return outputGroups
     }
   },
 
   mounted() {
+    // We need to wait until next tick to make sure that
+    // all dom elements are mounted before VuePortal attempts to mount
+    this.$nextTick(() => {
+      // This will allow the component to render
+      // Basically deferring until it's surrounding elements are mounted
+      this.nextTick = true
+    })
     // Create a new client instance
     // Pass config, groups, and update callback
     this.client = new NotificationClient(
@@ -98,19 +109,18 @@ export default {
         // so that the we can update the UI reactively
         onUpdate: this.onUpdate
       })
-    // Innitialize the client
-    this.client.init()
   },
 
   methods: {
     // Asks the client to dismiss a notification
     onDismiss(notification) {
       if (!this.client) return
-      this.client.dismissNotification(notification)
+      this.client.dismiss(notification)
     },
     // Responds to the client updating the notifications
     // e.g. After new notificaitons are loaded, or dismissed
     onUpdate({ activeNotificationsByType }) {
+      console.log('update called', activeNotificationsByType)
       this.activeNotificationsByType = activeNotificationsByType
     },
     // Asks the client to undismiss all notifications

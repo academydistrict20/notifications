@@ -1,7 +1,7 @@
 {
   "name": "vue-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "```bash # 1. Install packages npm i # 2. Run dev server npm run dev ```",
   "main": "App.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@asd20/notifications-embed": "file:../..",
+    "@asd20/notifications-plugin-cc-messages": "file:../../../plugin-cc-messages",
     "vue": "^2.6.11"
   },
   "devDependencies": {
