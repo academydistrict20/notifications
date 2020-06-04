@@ -87,7 +87,9 @@ function Create(config: Partial<AzureSearchNotificationsPluginConfig>): Notifica
       }
       // Return data, optionally mapping it using a provided data transform function
       return dataArray.map(
-        typeof resolvedConfig.dataTransformer === 'function' ? resolvedConfig.dataTransformer : (d: unknown) => d,
+        typeof resolvedConfig.dataTransformer === 'function'
+          ? resolvedConfig.dataTransformer
+          : (d: unknown): unknown => d,
       ) as Record<string, unknown>[]
     },
     propertyMap: resolvedConfig.propertyMap,
