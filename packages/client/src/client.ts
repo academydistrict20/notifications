@@ -149,6 +149,9 @@ class NotificationsClient {
    * @memberof NotificationsClient
    */
   constructor(config?: Partial<NotificationsClientConfig>) {
+    // Bind instance to this on async methods
+    this.load = this.load.bind(this)
+
     // Combine default and passed config
     this.config = { ...this.config, ...config }
 
