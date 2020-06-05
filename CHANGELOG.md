@@ -1,3 +1,18 @@
+# v0.6.2 (Fri Jun 05 2020)
+
+#### 🐛 Bug Fix
+
+- `@asd20/notifications-plugin-azure-search`
+  - ci(embed): switch to lerna for build to ensure correct order [#75](https://github.com/academydistrict20/notifications/pull/75) (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-plugin-json`, `@asd20/notifications-shared`, `@asd20/notifications-ui`
+  - ci(project): build before publishing [#74](https://github.com/academydistrict20/notifications/pull/74) (david.hayes@asd20.org)
+
+#### Authors: 1
+
+- David Hayes ([@altitudems](https://github.com/altitudems))
+
+---
+
 # v0.6.1 (Fri Jun 05 2020)
 
 #### 🐛 Bug Fix
