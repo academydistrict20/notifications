@@ -1,6 +1,6 @@
 <template>
   <div :id="`asd20-notifications-embed`" v-if="nextTick">
-    <div
+    <mounting-portal
       v-for="(group, type) of groups"
       :key="type"
       :mountTo="group.selector"
@@ -11,7 +11,7 @@
         :type="type"
         @dismiss="onDismiss"
       ></Asd20NotificationGroup>
-    </div>
+    </mounting-portal>
   </div>
 </template>
 
@@ -23,7 +23,6 @@ import NotificationClient from '@asd20/notifications-client'
 import { MountingPortal } from 'portal-vue'
 import Asd20NotificationGroup from '@asd20/notifications-ui/src/components/Asd20NotificationGroup.vue'
 // import Asd20NotificationGroup from '../../../ui/src/components/Asd20NotificationGroup.vue'
-
 
 export default {
   name: 'Asd20NotificationsEmbed',
