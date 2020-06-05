@@ -46,7 +46,7 @@
     "test": "jest --collect-coverage --passWithNoTests",
     "test:watch": "jest --watch-all --collect-coverage -passWithNoTests",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "prepublishOnly:disabled": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "rollup -c",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/asd20-notifications-embed.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/asd20-notifications-embed.esm.js",
