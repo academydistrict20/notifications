@@ -24,7 +24,8 @@ export default {
       },
     },
   ],
-  external: [...Object.keys(pkg.dependencies || {})],
+  // external: ['vue'],
+  // external: [...Object.keys(pkg.dependencies || {})],
   plugins: [
     vue({
       css: true, // Dynamically inject css as a <style> tag

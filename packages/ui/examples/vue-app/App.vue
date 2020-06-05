@@ -34,7 +34,6 @@
 
 <script>
 import Asd20NotificationGroup from '@asd20/notifications-ui/src/components/Asd20NotificationGroup'
-import Asd20Notification from '@asd20/notifications-ui/src/components/Asd20Notification'
 
 export default {
   name: 'MyExampleVueApp',

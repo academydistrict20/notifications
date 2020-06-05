@@ -152,7 +152,7 @@ export default {
   }
 
   &__dismiss {
-    position: absolute;
+    position: absolute !important;
     top: 0;
     right: 0;
   }

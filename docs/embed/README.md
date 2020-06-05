@@ -60,37 +60,40 @@ The bennefit of a web component is it is an HTML spec supported by all modern br
 
   <!-- Vue -->
   <script src="https://unpkg.com/vue"></script>
-  <!-- Client -->
-  <script src="//unpkg.com/@asd20/notifications-client"></script>
   <!-- Component -->
   <script src="../../dist/asd20-notifications-embed.umd.js"></script>
-  <!-- Plugin -->
-  <script src="../../../plugin-cc-messages/dist/asd20-notifications-plugin-cc-messages.umd.js"></script>
+
+  <asd20-notifications-embed></asd20-notifications-embed>
 
 ```
 
 ### Web Component usage
 
 ```js
- el.config = {
-      plugins: [
-      Asd20NotificationsPluginCcMessages.Create({
-          endpoint: 'https://asd20-search-dev.search.windows.net',
-          index: 'messages-index',
-          apiKey: '937716815402758ADC2FE799FE288142',
-          apiVersion: '2019-05-06',
-          channels: ['Notification'],
-          locations: ['District Wide', 'Test Subscription Location'],
-          categories: ['Weather', 'Emergency', 'Tests'],
-        }),
-      ],
-    }
-    el.groups = {
-      banner: {
-        selector: `#header`,
-      },
-      floating: {
-        selector: `footer`,
-      },
-    }
+const el = document.getElementById('my-embed')
+
+// Alter embed components configuration
+el.config = {
+  plugins: [
+    Asd20NotificationsPluginCcMessages.Create({
+      endpoint: 'https://asd20-search-dev.search.windows.net',
+      index: 'messages-index',
+      apiKey: '937716815402758ADC2FE799FE288142',
+      apiVersion: '2019-05-06',
+      channels: ['Notification'],
+      locations: ['District Wide', 'Test Subscription Location'],
+      categories: ['Weather', 'Emergency', 'Tests'],
+    }),
+  ],
+}
+
+// Configure groups
+el.groups = {
+  banner: {
+    selector: `#header`,
+  },
+  floating: {
+    selector: `footer`,
+  },
+}
 ```

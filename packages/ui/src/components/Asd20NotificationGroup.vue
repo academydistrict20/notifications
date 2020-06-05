@@ -1,7 +1,7 @@
 <template>
-  <div :class="classes">
+  <div :class="classes" v-if="notificationsFromIndex.length > 0">
     <transition-group
-      v-if="isOpen && notificationsFromIndex.length > 0"
+      v-if="isOpen"
       class="notifications"
       name="notifications"
       :enter-active-class="enterActiveClass"
@@ -13,14 +13,15 @@
         v-for="notification of notificationsFromIndex"
         :key="notification.key || notification.title"
         v-bind="notification"
-        :type="type"
+        :notificationStyle="type"
+        @dismiss="$emit('dismiss', notification)"
       >
         
       </asd20-notification>
 
     </transition-group>
 
-    <button class="bell" @click="open = !open">
+    <button v-if="type === 'floating'" class="bell" @click="open = !open">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role>
         <g>
           <path d="M16 7a6 6 0 0 1 6 6v7H10v-7a6 6 0 0 1 6-6z" class="fill"></path>

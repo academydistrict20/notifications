@@ -22,31 +22,62 @@
   <script src="https://unpkg.com/asd20-notifications-embed"></script>
   -->
 
-  <asd20-notifications-embed ></asd20-notifications-embed>
+  <div id="my-embed">
+    <asd20-notifications-embed :config="config" :groups="groups"
+    ></asd20-notifications-embed>
+  </div>
 
   <script>
-    const el = document.querySelector('asd20-notifications-embed')
-    el.config = {
-      plugins: [
-      Asd20NotificationsPluginCcMessages.Create({
-          endpoint: 'https://asd20-search-dev.search.windows.net',
-          index: 'messages-index',
-          apiKey: '937716815402758ADC2FE799FE288142',
-          apiVersion: '2019-05-06',
-          channels: ['Notification'],
-          locations: ['District Wide', 'Test Subscription Location'],
-          categories: ['Weather', 'Emergency', 'Tests'],
-        }),
-      ],
-    }
-    el.groups = {
-      banner: {
-        selector: `#header`,
-      },
-      floating: {
-        selector: `#header`,
-      },
-    }    
+    new Vue({
+      el: '#my-embed',
+      data: function() {
+        return {
+          config: {
+            plugins: [
+            Asd20NotificationsPluginCcMessages.Create({
+                endpoint: 'https://asd20-search-dev.search.windows.net',
+                index: 'messages-index',
+                apiKey: '937716815402758ADC2FE799FE288142',
+                apiVersion: '2019-05-06',
+                channels: ['Notification'],
+                locations: ['*.asd20.org'],
+                categories: ['Weather', 'Emergency', 'Tests'],
+              }),
+            ],
+          },
+          groups: {
+            banner: {
+              selector: `#header`,
+            },
+            floating: {
+              selector: `#header`,
+            },
+          }  
+        }
+      }
+    })
+    // const el = document.querySelector('asd20-notifications-embed')
+    // el.config = {
+    //   plugins: [
+    //   Asd20NotificationsPluginCcMessages.Create({
+    //       endpoint: 'https://asd20-search-dev.search.windows.net',
+    //       index: 'messages-index',
+    //       apiKey: '937716815402758ADC2FE799FE288142',
+    //       apiVersion: '2019-05-06',
+    //       channels: ['Notification'],
+    //       locations: ['*.asd20.org'],
+    //       categories: ['Weather', 'Emergency', 'Tests'],
+    //     }),
+    //   ],
+    // }
+    // el.groups = {
+    //   banner: {
+    //     selector: `#header`,
+    //   },
+    //   floating: {
+    //     selector: `#header`,
+    //   },
+    // }    
   </script>
 </body>
 </html>
