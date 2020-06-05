@@ -1,3 +1,16 @@
+# v0.6.1 (Fri Jun 05 2020)
+
+#### 🐛 Bug Fix
+
+- fix(embed): update example [#73](https://github.com/academydistrict20/notifications/pull/73) (david.hayes@asd20.org)
+- fix(embed): update example (david.hayes@asd20.org)
+
+#### Authors: 1
+
+- David Hayes ([@altitudems](https://github.com/altitudems))
+
+---
+
 # v0.6.0 (Thu Jun 04 2020)
 
 #### 🚀 Enhancement

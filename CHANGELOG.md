@@ -1,3 +1,18 @@
+# v0.6.1 (Fri Jun 05 2020)
+
+#### 🐛 Bug Fix
+
+- `@asd20/notifications-embed`
+  - fix(embed): update example [#73](https://github.com/academydistrict20/notifications/pull/73) (david.hayes@asd20.org)
+- `@asd20/notifications-client`
+  - fix(client): polling not working, fixes #68 [#71](https://github.com/academydistrict20/notifications/pull/71) (david.hayes@asd20.org)
+
+#### Authors: 1
+
+- David Hayes ([@altitudems](https://github.com/altitudems))
+
+---
+
 # v0.6.0 (Thu Jun 04 2020)
 
 #### 🚀 Enhancement
