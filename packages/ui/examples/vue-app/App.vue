@@ -2,6 +2,7 @@
   <div id="app">
     <!-- Embed Code/Component -->
     <Asd20NotificationGroup type="banner" :notifications="notifications.banner"></Asd20NotificationGroup>
+    <Asd20NotificationGroup type="status" :notifications="notifications.status"></Asd20NotificationGroup>
 
     <header>
       <!-- Embed Code/Component -->
@@ -153,6 +154,20 @@ export default {
           dismissible: true,
           color: '',
           notificationStyle: 'floating',
+          importance: 'info',
+        },
+      ],
+      status: [
+        {
+          id: '907307e4-36ef-8640-74ff-c67e324201f5',
+          title: 'Weather Status',
+          icon: 'weather-sun',
+          description: 'Normal',
+          callToActionUrl: 'https://www.asd20.org',
+          callToActionLabel: "",
+          dismissible: true,
+          color: '#3e642b',
+          notificationStyle: 'status',
           importance: 'info',
         },
       ]

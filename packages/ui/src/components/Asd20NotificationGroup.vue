@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" role="region" v-if="notifications">
+  <div :class="classes">
     <transition-group
       v-if="isOpen && notificationsFromIndex.length > 0"
       class="notifications"
@@ -14,7 +14,9 @@
         :key="notification.key || notification.title"
         v-bind="notification"
         :type="type"
-      ></asd20-notification>
+      >
+        
+      </asd20-notification>
 
     </transition-group>
 
@@ -33,7 +35,7 @@
       <span>{{ notifications.length }}</span>
     </button>
 
-    <div v-if="showControls && isOpen" class="pagination">
+    <div v-if="showControls && isOpen && notifications.length > 1" class="pagination">
       <button @click="previous">
         <svg style="width: 16px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
           <path d="M30.83 32.67l-9.17-9.17 9.17-9.17-2.83-2.83-12 12 12 12z"></path>
@@ -52,9 +54,7 @@
 </template>
 
 <script>
-// import Notification from "./Notification.vue";
 import Asd20Notification from './Asd20Notification.vue'
-
 
 export default {
   name: "Asd20NotificationGroup",
@@ -88,8 +88,7 @@ export default {
     },
   },
   created() {
-    this.initNotifications();
-    this.notificationsFromIndex = this.notifications;
+    this.initNotifications(this.notifications);
   },
 
   watch: {
@@ -116,13 +115,8 @@ export default {
         .toString(36)
         .substr(2, 9);
 
-      if (this.type ==="floating") {
         this.enterActiveClass = "";
         this.leaveActiveClass = "stack-out";
-      } else {
-        this.enterActiveClass = "slide-in";
-        this.leaveActiveClass = "";
-      }
 
       // Remove top item
       this.notificationsFromIndex.splice(0, 1);
@@ -134,14 +128,8 @@ export default {
       this.index = newIndex;
     },
     previous() {
-      if (this.type === "floating") {
         this.enterActiveClass = "stack-in";
         this.leaveActiveClass = "fade-out";
-      } else {
-        this.enterActiveClass = "";
-        this.leaveActiveClass = "";
-      }
-
 
       const notifications = this.notifications.map(n => ({
         ...n,
@@ -268,14 +256,16 @@ export default {
     top: calc(100% + 0.5rem);
     right: 0;
     left: auto;
-    max-width: 300px;
+    width: 300px;
     display: flex;
   }
   &--floating .notification {
     transition: transform 0.5s;
     top: 0;
-    transform: translateY(0) scale(1);
+    box-shadow: 5px 5px 20px lightgray;
 
+    // box-shadow: 10px 10px 0px rgb(230,230,230), 20px 20px 0px rgb(210,210,210);
+    transform: translateY(0) scale(1);
     &:first-child {
       z-index: 9;
     }
@@ -284,9 +274,11 @@ export default {
       &:nth-child(#{$i}) {
         position: absolute;
         z-index: #{10 - $i};
+        opacity: 0;
         // top: #{0.75 * ($i - 1)}rem;
-        transform: translateY(#{0.75 * ($i - 1)}rem)
-          scale(#{1 - (($i - 1) * 0.05)});
+        // transform: translateY(#{0.75 * ($i - 1)}rem)
+        //   scale(#{1 - (($i - 1) * 0.05)});
+        transform: translateX(#{4 * ($i - 1)}rem);
       }
     }
   }
@@ -309,16 +301,17 @@ export default {
   &--banner .notification {
     transition: transform 0.5s;
     top: 0;
-    width: 100%;
+    opacity: 1;
     &:first-child {
       z-index: 9;
-  }
+    }
 
-    @for $i from 2 through 10 {
-      &:nth-child(#{$i}) {
+    @for $j from 2 through 10 {
+      &:nth-child(#{$j}) {
         position: absolute;
-        z-index: #{10 - $i};
+        z-index: #{10 - $j};
         transform: translateX(100%);
+        opacity: 0;
       }
     }
   }
@@ -326,8 +319,22 @@ export default {
   &--inline .pagination {
     display: none;
   }
+  &--status .notifications {
+    position: relative;
+    z-index: 299;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background: white;
+    order: -2;
+  }
 }
-.fade-out-to {
+.fade-out {
   opacity: 0;
 }
 
@@ -338,14 +345,6 @@ export default {
 .stack-out {
   animation: stack-out 0.5s;
 }
-
-// .slide-in {
-//   animation: slide-in 0.5s;
-// }
-
-// .slide-out {
-//   animation: slide-out 0.5s;
-// }
 
 @keyframes bounce-in {
   0% {
@@ -361,68 +360,38 @@ export default {
 
 @keyframes stack-in {
   0% {
-    transform: translateX(0) translateY(1rem) scale(0.9);
+    transform: translateX(0) translateY(0) scale(0.9);
     z-index: 0;
-  }
-  50% {
-    transform: translateX(-100%) scale(0.95);
-    z-index: 0;
-  }
-  51% {
-    z-index: 9;
+    opacity: 0;
   }
   100% {
     transform: translateX(0) translateY(0) scale(1);
     z-index: 9;
+    opacity: 1;
   }
 }
 
 @keyframes stack-out {
   0% {
     transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-100%) scale(0.95);
-    z-index: 9;
-  }
-  51% {
-    z-index: 0;
+    opacity: 1;
   }
   100% {
-    transform: translateX(0) translatey(1rem) scale(0.9);
+    transform: translateX(0) translatey(0) scale(0.50);
     z-index: 0;
+    opacity: 0;
   }
 }
 
-// @keyframes slide-in {
-//   0% {
-//     transform: translateX(0);
-//     z-index: 0;
-//   }
-//   50% {
-//     z-index: 0;
-//   }
-
-//   100% {
-//     transform: translateX(100%);
-//     z-index: 9;
-//   }
-// }
-
-// @keyframes slide-out {
-//   0% {
-//     transform: translateX(0);
-//   }
-//   50% {
-//     transform: translateX(-100%) scale(1);
-//     z-index: 0;
-//   }
-//   51% {
-//     z-index: 0;
-//   }
-//   100% {
-//     transform: translateX(0) translatey(0) scale(1);
-//     z-index: 0;
-//   }
-// }
+@media (min-width: 1024px) {
+  .notification-group {
+    &--status .notifications {
+    position: absolute;
+    order: inherit;
+    left: auto;
+    right: 1rem;
+    background: transparent;
+    }
+  }
+}
 </style>
