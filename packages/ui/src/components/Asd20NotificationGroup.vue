@@ -58,7 +58,7 @@
 import Asd20Notification from './Asd20Notification.vue'
 
 export default {
-  name: "Asd20NotificationGroup",
+  name: "asd20-notification-group",
 
   components: { Asd20Notification },
 
