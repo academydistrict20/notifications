@@ -56,8 +56,8 @@
     "vue": "^2.6.0"
   },
   "dependencies": {
-    "@asd20/notifications-client": "^0.6.2",
-    "@asd20/notifications-plugin-json": "^0.6.2",
+    "@asd20/notifications-client": "file:../client",
+    "@asd20/notifications-plugin-json": "file:../plugin-json",
     "@vue/web-component-wrapper": "^1.2.0",
     "portal-vue": "^2.1.7"
   },
@@ -73,8 +73,5 @@
       "git add"
     ]
   },
-  "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25",
-  "devDependencies": {
-    "rollup-plugin-internal": "^1.0.4"
-  }
+  "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25"
 }
