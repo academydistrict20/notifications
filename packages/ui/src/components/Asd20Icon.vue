@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import camelCase from 'lodash-es/camelCase'
 import alert from './icons/Asd20AlertSvg.vue'
 import chevron from './icons/Asd20ChevronSvg.vue'
 import danger from './icons/Asd20DangerSvg.vue'
