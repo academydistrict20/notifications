@@ -1,0 +1,771 @@
+{
+  "version": 1,
+  "tree": {
+    "name": "asd20-notifications-embed.esm.min.js",
+    "children": [
+      {
+        "name": "node_modules",
+        "children": [
+          {
+            "name": "@babel",
+            "children": [
+              {
+                "name": "runtime",
+                "children": [
+                  {
+                    "name": "helpers",
+                    "children": [
+                      {
+                        "name": "defineProperty.js",
+                        "uid": "1e40-0"
+                      },
+                      {
+                        "name": "typeof.js",
+                        "uid": "1e40-2"
+                      },
+                      {
+                        "name": "arrayLikeToArray.js",
+                        "uid": "1e40-3"
+                      },
+                      {
+                        "name": "arrayWithoutHoles.js",
+                        "uid": "1e40-4"
+                      },
+                      {
+                        "name": "iterableToArray.js",
+                        "uid": "1e40-5"
+                      },
+                      {
+                        "name": "unsupportedIterableToArray.js",
+                        "uid": "1e40-6"
+                      },
+                      {
+                        "name": "nonIterableSpread.js",
+                        "uid": "1e40-7"
+                      },
+                      {
+                        "name": "toConsumableArray.js",
+                        "uid": "1e40-8"
+                      },
+                      {
+                        "name": "classCallCheck.js",
+                        "uid": "1e40-9"
+                      },
+                      {
+                        "name": "createClass.js",
+                        "uid": "1e40-10"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "portal-vue",
+            "children": [
+              {
+                "name": "dist",
+                "children": [
+                  {
+                    "name": "portal-vue.esm.js",
+                    "uid": "1e40-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "vue-runtime-helpers",
+            "children": [
+              {
+                "name": "dist",
+                "children": [
+                  {
+                    "name": "normalize-component.mjs",
+                    "uid": "1e40-13"
+                  },
+                  {
+                    "name": "inject-style",
+                    "children": [
+                      {
+                        "name": "browser.mjs",
+                        "uid": "1e40-22"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "packages",
+        "children": [
+          {
+            "name": "client",
+            "children": [
+              {
+                "name": "dist",
+                "children": [
+                  {
+                    "name": "asd20-notifications-client.esm.js",
+                    "uid": "1e40-11"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ui",
+            "children": [
+              {
+                "name": "src",
+                "children": [
+                  {
+                    "name": "components",
+                    "children": [
+                      {
+                        "name": "icons",
+                        "children": [
+                          {
+                            "name": "Asd20AlertSvg.vue",
+                            "uid": "1e40-14"
+                          },
+                          {
+                            "name": "Asd20ChevronSvg.vue",
+                            "uid": "1e40-15"
+                          },
+                          {
+                            "name": "Asd20DangerSvg.vue",
+                            "uid": "1e40-16"
+                          },
+                          {
+                            "name": "Asd20InfoSvg.vue",
+                            "uid": "1e40-17"
+                          },
+                          {
+                            "name": "Asd20CloseSvg.vue",
+                            "uid": "1e40-18"
+                          },
+                          {
+                            "name": "Asd20WeatherSnowSvg.vue",
+                            "uid": "1e40-19"
+                          },
+                          {
+                            "name": "Asd20WeatherSunSvg.vue",
+                            "uid": "1e40-20"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Asd20Icon.vue?rollup-plugin-vue=script.js",
+                        "uid": "1e40-21"
+                      },
+                      {
+                        "name": "Asd20Icon.vue",
+                        "uid": "1e40-23"
+                      },
+                      {
+                        "name": "Asd20Badge.vue?rollup-plugin-vue=script.js",
+                        "uid": "1e40-24"
+                      },
+                      {
+                        "name": "Asd20Badge.vue",
+                        "uid": "1e40-25"
+                      },
+                      {
+                        "name": "Asd20Button.vue?rollup-plugin-vue=script.js",
+                        "uid": "1e40-26"
+                      },
+                      {
+                        "name": "Asd20Button.vue",
+                        "uid": "1e40-27"
+                      },
+                      {
+                        "name": "Asd20Notification.vue?rollup-plugin-vue=script.js",
+                        "uid": "1e40-28"
+                      },
+                      {
+                        "name": "Asd20Notification.vue",
+                        "uid": "1e40-29"
+                      },
+                      {
+                        "name": "Asd20NotificationGroup.vue?rollup-plugin-vue=script.js",
+                        "uid": "1e40-30"
+                      },
+                      {
+                        "name": "Asd20NotificationGroup.vue",
+                        "uid": "1e40-31"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "embed",
+            "children": [
+              {
+                "name": "src",
+                "children": [
+                  {
+                    "name": "components",
+                    "children": [
+                      {
+                        "name": "Asd20NotificationsEmbed.vue?rollup-plugin-vue=script.js",
+                        "uid": "1e40-32"
+                      },
+                      {
+                        "name": "Asd20NotificationsEmbed.vue",
+                        "uid": "1e40-33"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "index.js",
+                    "uid": "1e40-34"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "\u0000commonjsHelpers.js",
+        "uid": "1e40-1"
+      }
+    ]
+  },
+  "nodes": {
+    "1e40-0": {
+      "renderedLength": 293,
+      "gzipLength": 201,
+      "brotliLength": 161,
+      "id": "node_modules/@babel/runtime/helpers/defineProperty.js"
+    },
+    "1e40-1": {
+      "renderedLength": 419,
+      "gzipLength": 428,
+      "brotliLength": 337,
+      "id": "\u0000commonjsHelpers.js"
+    },
+    "1e40-2": {
+      "renderedLength": 568,
+      "gzipLength": 300,
+      "brotliLength": 246,
+      "id": "node_modules/@babel/runtime/helpers/typeof.js"
+    },
+    "1e40-3": {
+      "renderedLength": 240,
+      "gzipLength": 194,
+      "brotliLength": 161,
+      "id": "node_modules/@babel/runtime/helpers/arrayLikeToArray.js"
+    },
+    "1e40-4": {
+      "renderedLength": 137,
+      "gzipLength": 181,
+      "brotliLength": 150,
+      "id": "node_modules/@babel/runtime/helpers/arrayWithoutHoles.js"
+    },
+    "1e40-5": {
+      "renderedLength": 173,
+      "gzipLength": 170,
+      "brotliLength": 131,
+      "id": "node_modules/@babel/runtime/helpers/iterableToArray.js"
+    },
+    "1e40-6": {
+      "renderedLength": 489,
+      "gzipLength": 346,
+      "brotliLength": 278,
+      "id": "node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js"
+    },
+    "1e40-7": {
+      "renderedLength": 237,
+      "gzipLength": 208,
+      "brotliLength": 159,
+      "id": "node_modules/@babel/runtime/helpers/nonIterableSpread.js"
+    },
+    "1e40-8": {
+      "renderedLength": 196,
+      "gzipLength": 240,
+      "brotliLength": 204,
+      "id": "node_modules/@babel/runtime/helpers/toConsumableArray.js"
+    },
+    "1e40-9": {
+      "renderedLength": 200,
+      "gzipLength": 175,
+      "brotliLength": 143,
+      "id": "node_modules/@babel/runtime/helpers/classCallCheck.js"
+    },
+    "1e40-10": {
+      "renderedLength": 597,
+      "gzipLength": 305,
+      "brotliLength": 232,
+      "id": "node_modules/@babel/runtime/helpers/createClass.js"
+    },
+    "1e40-11": {
+      "renderedLength": 20609,
+      "gzipLength": 5819,
+      "brotliLength": 5208,
+      "id": "packages/client/dist/asd20-notifications-client.esm.js"
+    },
+    "1e40-12": {
+      "renderedLength": 14926,
+      "gzipLength": 4050,
+      "brotliLength": 3558,
+      "id": "node_modules/portal-vue/dist/portal-vue.esm.js"
+    },
+    "1e40-13": {
+      "renderedLength": 2449,
+      "gzipLength": 902,
+      "brotliLength": 776,
+      "id": "node_modules/vue-runtime-helpers/dist/normalize-component.mjs"
+    },
+    "1e40-14": {
+      "renderedLength": 1305,
+      "gzipLength": 603,
+      "brotliLength": 523,
+      "id": "packages/ui/src/components/icons/Asd20AlertSvg.vue"
+    },
+    "1e40-15": {
+      "renderedLength": 1012,
+      "gzipLength": 499,
+      "brotliLength": 430,
+      "id": "packages/ui/src/components/icons/Asd20ChevronSvg.vue"
+    },
+    "1e40-16": {
+      "renderedLength": 1372,
+      "gzipLength": 624,
+      "brotliLength": 548,
+      "id": "packages/ui/src/components/icons/Asd20DangerSvg.vue"
+    },
+    "1e40-17": {
+      "renderedLength": 1205,
+      "gzipLength": 574,
+      "brotliLength": 497,
+      "id": "packages/ui/src/components/icons/Asd20InfoSvg.vue"
+    },
+    "1e40-18": {
+      "renderedLength": 1127,
+      "gzipLength": 537,
+      "brotliLength": 460,
+      "id": "packages/ui/src/components/icons/Asd20CloseSvg.vue"
+    },
+    "1e40-19": {
+      "renderedLength": 2257,
+      "gzipLength": 950,
+      "brotliLength": 824,
+      "id": "packages/ui/src/components/icons/Asd20WeatherSnowSvg.vue"
+    },
+    "1e40-20": {
+      "renderedLength": 2257,
+      "gzipLength": 705,
+      "brotliLength": 627,
+      "id": "packages/ui/src/components/icons/Asd20WeatherSunSvg.vue"
+    },
+    "1e40-21": {
+      "renderedLength": 1943,
+      "gzipLength": 789,
+      "brotliLength": 686,
+      "id": "packages/ui/src/components/Asd20Icon.vue?rollup-plugin-vue=script.js"
+    },
+    "1e40-22": {
+      "renderedLength": 1757,
+      "gzipLength": 853,
+      "brotliLength": 673,
+      "id": "node_modules/vue-runtime-helpers/dist/inject-style/browser.mjs"
+    },
+    "1e40-23": {
+      "renderedLength": 1803,
+      "gzipLength": 920,
+      "brotliLength": 826,
+      "id": "packages/ui/src/components/Asd20Icon.vue"
+    },
+    "1e40-24": {
+      "renderedLength": 559,
+      "gzipLength": 247,
+      "brotliLength": 197,
+      "id": "packages/ui/src/components/Asd20Badge.vue?rollup-plugin-vue=script.js"
+    },
+    "1e40-25": {
+      "renderedLength": 2201,
+      "gzipLength": 1026,
+      "brotliLength": 885,
+      "id": "packages/ui/src/components/Asd20Badge.vue"
+    },
+    "1e40-26": {
+      "renderedLength": 1983,
+      "gzipLength": 584,
+      "brotliLength": 475,
+      "id": "packages/ui/src/components/Asd20Button.vue?rollup-plugin-vue=script.js"
+    },
+    "1e40-27": {
+      "renderedLength": 4652,
+      "gzipLength": 1640,
+      "brotliLength": 1371,
+      "id": "packages/ui/src/components/Asd20Button.vue"
+    },
+    "1e40-28": {
+      "renderedLength": 2173,
+      "gzipLength": 578,
+      "brotliLength": 474,
+      "id": "packages/ui/src/components/Asd20Notification.vue?rollup-plugin-vue=script.js"
+    },
+    "1e40-29": {
+      "renderedLength": 7650,
+      "gzipLength": 1815,
+      "brotliLength": 1549,
+      "id": "packages/ui/src/components/Asd20Notification.vue"
+    },
+    "1e40-30": {
+      "renderedLength": 3598,
+      "gzipLength": 1173,
+      "brotliLength": 1004,
+      "id": "packages/ui/src/components/Asd20NotificationGroup.vue?rollup-plugin-vue=script.js"
+    },
+    "1e40-31": {
+      "renderedLength": 8244,
+      "gzipLength": 2283,
+      "brotliLength": 1971,
+      "id": "packages/ui/src/components/Asd20NotificationGroup.vue"
+    },
+    "1e40-32": {
+      "renderedLength": 4386,
+      "gzipLength": 1657,
+      "brotliLength": 1403,
+      "id": "packages/embed/src/components/Asd20NotificationsEmbed.vue?rollup-plugin-vue=script.js"
+    },
+    "1e40-33": {
+      "renderedLength": 1256,
+      "gzipLength": 634,
+      "brotliLength": 559,
+      "id": "packages/embed/src/components/Asd20NotificationsEmbed.vue"
+    },
+    "1e40-34": {
+      "renderedLength": 0,
+      "isEntry": true,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "id": "packages/embed/src/index.js"
+    },
+    "1e40-35": {
+      "renderedLength": 0,
+      "isExternal": true,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "id": "vue"
+    },
+    "1e40-36": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "id": "\u0000/Users/david.hayes/Code/github/@academydistrict20/notifications/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js?commonjs-proxy"
+    },
+    "1e40-37": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "id": "\u0000/Users/david.hayes/Code/github/@academydistrict20/notifications/node_modules/@babel/runtime/helpers/iterableToArray.js?commonjs-proxy"
+    },
+    "1e40-38": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "id": "\u0000/Users/david.hayes/Code/github/@academydistrict20/notifications/node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js?commonjs-proxy"
+    },
+    "1e40-39": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "id": "\u0000/Users/david.hayes/Code/github/@academydistrict20/notifications/node_modules/@babel/runtime/helpers/nonIterableSpread.js?commonjs-proxy"
+    },
+    "1e40-40": {
+      "renderedLength": 0,
+      "gzipLength": 0,
+      "brotliLength": 0,
+      "id": "\u0000/Users/david.hayes/Code/github/@academydistrict20/notifications/node_modules/@babel/runtime/helpers/arrayLikeToArray.js?commonjs-proxy"
+    }
+  },
+  "links": [
+    {
+      "source": "1e40-34",
+      "target": "1e40-33"
+    },
+    {
+      "source": "1e40-33",
+      "target": "1e40-32"
+    },
+    {
+      "source": "1e40-33",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-32",
+      "target": "1e40-0"
+    },
+    {
+      "source": "1e40-32",
+      "target": "1e40-2"
+    },
+    {
+      "source": "1e40-32",
+      "target": "1e40-11"
+    },
+    {
+      "source": "1e40-32",
+      "target": "1e40-12"
+    },
+    {
+      "source": "1e40-32",
+      "target": "1e40-31"
+    },
+    {
+      "source": "1e40-2",
+      "target": "1e40-1"
+    },
+    {
+      "source": "1e40-11",
+      "target": "1e40-8"
+    },
+    {
+      "source": "1e40-11",
+      "target": "1e40-9"
+    },
+    {
+      "source": "1e40-11",
+      "target": "1e40-10"
+    },
+    {
+      "source": "1e40-11",
+      "target": "1e40-2"
+    },
+    {
+      "source": "1e40-12",
+      "target": "1e40-2"
+    },
+    {
+      "source": "1e40-12",
+      "target": "1e40-35"
+    },
+    {
+      "source": "1e40-31",
+      "target": "1e40-30"
+    },
+    {
+      "source": "1e40-31",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-31",
+      "target": "1e40-22"
+    },
+    {
+      "source": "1e40-8",
+      "target": "1e40-4"
+    },
+    {
+      "source": "1e40-8",
+      "target": "1e40-5"
+    },
+    {
+      "source": "1e40-8",
+      "target": "1e40-6"
+    },
+    {
+      "source": "1e40-8",
+      "target": "1e40-7"
+    },
+    {
+      "source": "1e40-8",
+      "target": "1e40-36"
+    },
+    {
+      "source": "1e40-8",
+      "target": "1e40-37"
+    },
+    {
+      "source": "1e40-8",
+      "target": "1e40-38"
+    },
+    {
+      "source": "1e40-8",
+      "target": "1e40-39"
+    },
+    {
+      "source": "1e40-30",
+      "target": "1e40-0"
+    },
+    {
+      "source": "1e40-30",
+      "target": "1e40-29"
+    },
+    {
+      "source": "1e40-4",
+      "target": "1e40-3"
+    },
+    {
+      "source": "1e40-4",
+      "target": "1e40-40"
+    },
+    {
+      "source": "1e40-6",
+      "target": "1e40-3"
+    },
+    {
+      "source": "1e40-6",
+      "target": "1e40-40"
+    },
+    {
+      "source": "1e40-36",
+      "target": "1e40-4"
+    },
+    {
+      "source": "1e40-37",
+      "target": "1e40-5"
+    },
+    {
+      "source": "1e40-38",
+      "target": "1e40-6"
+    },
+    {
+      "source": "1e40-39",
+      "target": "1e40-7"
+    },
+    {
+      "source": "1e40-29",
+      "target": "1e40-28"
+    },
+    {
+      "source": "1e40-29",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-29",
+      "target": "1e40-22"
+    },
+    {
+      "source": "1e40-40",
+      "target": "1e40-3"
+    },
+    {
+      "source": "1e40-28",
+      "target": "1e40-23"
+    },
+    {
+      "source": "1e40-28",
+      "target": "1e40-27"
+    },
+    {
+      "source": "1e40-23",
+      "target": "1e40-21"
+    },
+    {
+      "source": "1e40-23",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-23",
+      "target": "1e40-22"
+    },
+    {
+      "source": "1e40-27",
+      "target": "1e40-26"
+    },
+    {
+      "source": "1e40-27",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-27",
+      "target": "1e40-22"
+    },
+    {
+      "source": "1e40-21",
+      "target": "1e40-14"
+    },
+    {
+      "source": "1e40-21",
+      "target": "1e40-15"
+    },
+    {
+      "source": "1e40-21",
+      "target": "1e40-16"
+    },
+    {
+      "source": "1e40-21",
+      "target": "1e40-17"
+    },
+    {
+      "source": "1e40-21",
+      "target": "1e40-18"
+    },
+    {
+      "source": "1e40-21",
+      "target": "1e40-19"
+    },
+    {
+      "source": "1e40-21",
+      "target": "1e40-20"
+    },
+    {
+      "source": "1e40-26",
+      "target": "1e40-25"
+    },
+    {
+      "source": "1e40-26",
+      "target": "1e40-23"
+    },
+    {
+      "source": "1e40-14",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-15",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-16",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-17",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-18",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-19",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-20",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-25",
+      "target": "1e40-24"
+    },
+    {
+      "source": "1e40-25",
+      "target": "1e40-13"
+    },
+    {
+      "source": "1e40-25",
+      "target": "1e40-22"
+    }
+  ],
+  "env": {
+    "rollup": "2.15.0",
+    "rollup-plugin-visualizer": "4.0.4"
+  },
+  "options": {
+    "gzip": true,
+    "brotli": true
+  }
+}

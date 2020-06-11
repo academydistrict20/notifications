@@ -16,23 +16,17 @@
   <!-- Load Vue -->
   <script src="https://unpkg.com/vue"></script>
   <!-- Load the library -->
-  <script src="../../dist/asd20-notifications-embed.umd.js"></script>
+  <script src="../../dist/asd20-notifications-embed.web-components.umd.js"></script>
   <script src="../../../plugin-cc-messages/dist/asd20-notifications-plugin-cc-messages.umd.js"></script>
+  <link rel="stylesheet" href="../../../ui/dist/asd20-notifications-ui.css">
   <!-- Note: In production, you can use a CDN url
   <script src="https://unpkg.com/asd20-notifications-embed"></script>
   -->
 
-  <div id="my-embed">
-    <asd20-notifications-embed :config="config" :groups="groups"
-    ></asd20-notifications-embed>
-  </div>
+  <asd20-notifications-embed></asd20-notifications-embed>
 
   <script>
-    new Vue({
-      el: '#my-embed',
-      data: function() {
-        return {
-          config: {
+    const config = {
             plugins: [
             Asd20NotificationsPluginCcMessages.Create({
                 endpoint: 'https://asd20-search-dev.search.windows.net',
@@ -44,8 +38,8 @@
                 categories: ['Weather', 'Emergency', 'Tests'],
               }),
             ],
-          },
-          groups: {
+          }
+    const groups = {
             banner: {
               selector: `#header`,
             },
@@ -53,6 +47,8 @@
               selector: `#header`,
             },
           }  
-        }
-      }
-    })
+    
+    const el = document.querySelector('asd20-notifications-embed')
+    el.groups = groups
+    el.config = config
+  </script>

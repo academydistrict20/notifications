@@ -69,7 +69,7 @@ export default [
         plugins: [terser()],
       },
     ],
-    plugins: [vue({ css: true, template: { isProduction: true } }), css(), resolve()],
+    plugins: [vue({ css: false, template: { isProduction: true } }), css(), resolve()],
     external: ['vue'],
   },
   // Browser compatability build.
