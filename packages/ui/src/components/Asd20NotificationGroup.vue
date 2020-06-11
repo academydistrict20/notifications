@@ -1,5 +1,6 @@
 <template>
   <div :class="classes" v-if="notificationsFromIndex.length > 0">
+    <transition name="cards">
     <transition-group
       v-if="isOpen"
       class="notifications"
@@ -16,10 +17,9 @@
         :notificationStyle="type"
         @dismiss="$emit('dismiss', notification)"
       >
-        
       </asd20-notification>
-
     </transition-group>
+    </transition>
 
     <button v-if="type === 'floating'" class="bell" @click="open = !open">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role>
@@ -72,8 +72,8 @@ export default {
       index: 0,
       open: true,
       notificationsFromIndex: [],
-      enterActiveClass: "stack-in",
-      leaveActiveClass: "stack-out"
+      enterActiveClass: "fade-in",
+      leaveActiveClass: "fade-out"
     };
   },
 
@@ -82,7 +82,7 @@ export default {
       return ["notification-group", `notification-group--${this.type}`];
     },
     showControls() {
-      return this.notifications.length > 0;
+      return this.notifications.length > 1;
     },
     isOpen() {
       return this.open || this.type !== "floating";
@@ -116,8 +116,13 @@ export default {
         .toString(36)
         .substr(2, 9);
 
+      if (this.type === "banner") {
+        this.enterActiveClass = "";
+        this.leaveActiveClass = "slide-up";
+      } else {
         this.enterActiveClass = "";
         this.leaveActiveClass = "stack-out";
+      }
 
       // Remove top item
       this.notificationsFromIndex.splice(0, 1);
@@ -129,8 +134,13 @@ export default {
       this.index = newIndex;
     },
     previous() {
+      if (this.type === "banner") {
+        this.enterActiveClass = "slide-down";
+        this.leaveActiveClass = "slide-up";
+      } else {
         this.enterActiveClass = "stack-in";
         this.leaveActiveClass = "fade-out";
+      }
 
       const notifications = this.notifications.map(n => ({
         ...n,
@@ -148,6 +158,7 @@ export default {
 
       // Remove old item
       notifications.splice(replacementIndex, 1);
+
       // Add top item to top
       notifications.unshift(newItem);
 
@@ -182,7 +193,7 @@ export default {
     z-index: 1000;
     flex-direction: row;
     margin-right: 0.25rem;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
   }
 
@@ -230,11 +241,12 @@ export default {
     justify-content: flex-end;
     align-items: center;
     font-size: 0.75rem;
+    z-index: 15;
     button {
       appearance: none;
       background: transparent;
       padding: 0;
-      border: 0;
+      border: none;
       font-size: 1.5em;
       font-weight: bold;
       line-height: 0;
@@ -244,6 +256,7 @@ export default {
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      outline: none;
     }
   }
 
@@ -261,25 +274,32 @@ export default {
     display: flex;
   }
   &--floating .notification {
-    transition: transform 0.5s;
+    transition: all 0.5s;
     top: 0;
-    box-shadow: 5px 5px 20px lightgray;
-
-    // box-shadow: 10px 10px 0px rgb(230,230,230), 20px 20px 0px rgb(210,210,210);
     transform: translateY(0) scale(1);
     &:first-child {
       z-index: 9;
+      .asd20-notification__content, g {
+        transition: all 0.5s;
+        opacity: 1;
+        align-self: initial !important;
+      }
     }
 
     @for $i from 2 through 10 {
       &:nth-child(#{$i}) {
+        transition: all 0.5s;
         position: absolute;
         z-index: #{10 - $i};
-        opacity: 0;
-        // top: #{0.75 * ($i - 1)}rem;
-        // transform: translateY(#{0.75 * ($i - 1)}rem)
-        //   scale(#{1 - (($i - 1) * 0.05)});
-        transform: translateX(#{4 * ($i - 1)}rem);
+        bottom: -0.125rem;
+        // height: 87%;
+        overflow-y: hidden;
+        transform: translateY(#{0.75 * ($i - 1)}rem)
+          scale(#{1 - (($i - 1) * 0.05)});
+        .asd20-notification__content, g {
+          transition: all 0.5s;
+          opacity: 0.5;
+        }
       }
     }
   }
@@ -289,6 +309,10 @@ export default {
     z-index: 100;
     right: 0.5rem;
     bottom: 0.5rem;
+    color: white;
+    button {
+      fill: white;
+    }
   }
   &--banner .notifications {
     // flex-direction: column;
@@ -300,8 +324,10 @@ export default {
     // display: flex;
   }
   &--banner .notification {
-    transition: transform 0.5s;
+    transition: all 0.25s;
     top: 0;
+    // width: 100%;
+    transform: translateY(0);
     opacity: 1;
     &:first-child {
       z-index: 9;
@@ -311,8 +337,8 @@ export default {
       &:nth-child(#{$j}) {
         position: absolute;
         z-index: #{10 - $j};
-        transform: translateX(100%);
         opacity: 0;
+        transform: translateY(-100%);
       }
     }
   }
@@ -335,8 +361,20 @@ export default {
     order: -2;
   }
 }
-.fade-out {
+
+.cards-enter-active {
+  animation: swoop-in 0.5s;
+}
+.cards-leave-active {
+  animation: swoop-in 0.5s reverse;
+}
+
+.fade-out-to {
   opacity: 0;
+}
+
+.bounce-in {
+  animation: bounce-in 0.5s;
 }
 
 .stack-in {
@@ -347,40 +385,101 @@ export default {
   animation: stack-out 0.5s;
 }
 
+.slide-up {
+  animation: slide-up 0.25s;
+}
+
+.slide-down {
+  animation: slide-down 0.5s;
+}
+
 @keyframes bounce-in {
   0% {
     transform: scale(1);
+    opacity: 50%;
   }
   50% {
     transform: scale(1.1);
   }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
 @keyframes stack-in {
   0% {
-    transform: translateX(0) translateY(0) scale(0.9);
+    transform: translateX(0) translateY(1rem) scale(0.9);
     z-index: 0;
-    opacity: 0;
+  }
+  50% {
+    transform: translateX(-100%) scale(0.95);
+    z-index: 0;
+  }
+  51% {
+    z-index: 9;
   }
   100% {
     transform: translateX(0) translateY(0) scale(1);
     z-index: 9;
-    opacity: 1;
   }
 }
 
 @keyframes stack-out {
   0% {
     transform: translateX(0);
+    z-index: 9;
+  }
+  50% {
+    transform: translateX(-100%) scale(0.95);
+    z-index: 9;
+  }
+  51% {
+    z-index: 0;
+  }
+  100% {
+    transform: translateX(0) translatey(1rem) scale(0.9);
+    z-index: 0;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateX(0) translateY(0);
     opacity: 1;
   }
   100% {
-    transform: translateX(0) translatey(0) scale(0.50);
-    z-index: 0;
+    transform: translateX(0) translateY(-100%);
     opacity: 0;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateX(0) translateY(-100%);
+    opacity: 0;
+    width: 100%;
+  }
+  50% {
+    transform: translateX(0) translateY(-100%);
+    opacity: 0;
+    width: 100%;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes swoop-in {
+  0% {
+    transform: translateX(50%) translateY(-50%) scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
   }
 }
 
