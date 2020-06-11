@@ -21,6 +21,7 @@
         v-if="callToActionUrl"
         horizontal
         transparent
+        bordered
         size="xs"
         :label="callToActionLabel || callToActionUrl"
         :link="callToActionUrl"
@@ -118,10 +119,12 @@ export default {
   --background-dark: #062137;
   --primary: #0e2c6c;
   --accent-one: #70b4c2;
+  --accent-dark: #4b757e;
   --emergency: #da2e0b;
   --warning: #f7e06e;
+  --warning-dark: #cfb02d;
   --normal: #4d7d36;
-  --warning-dark: #9b870c;
+  // --warning-dark: #9b870c;
 
   position: relative;
   display: flex;
@@ -129,15 +132,21 @@ export default {
   padding: 0.5rem;
   background: white;
   box-shadow: 0 0 0 1px var(--background-alt);
-  color: var(--background-dark);
+  color: #1e1e1e;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1.0rem;
+  a {
+    color: #282828;
+    // font-weight: 700;
+  }
 
   &__content {
     display: flex;
     flex-direction: column;
-    align-self: center;
-    padding: 0 0.5rem;
+    // align-self: center;
+    margin-left: 0.5rem;
+    padding-right: 1rem;
   }
 
   &__title {
@@ -160,7 +169,7 @@ export default {
   &__content > a.asd20-notification__cta {
     font-size: 0.875rem !important;
     margin-top: 0.5rem;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     // box-shadow: 0 -1px 0 0 var(--accent-one) inset !important;
   }
 
@@ -168,6 +177,8 @@ export default {
     .asd20-notification__title,
     .asd20-notification__cta {
       color: var(--emergency);
+      border-color: var(--emergency);
+
     }
     .asd20-icon {
       --line-color: var(--emergency);
@@ -187,6 +198,7 @@ export default {
     .asd20-notification__title,
     .asd20-notification__cta {
       color: var(--warning-dark);
+      border-color: var(--warning-dark);
     }
     .asd20-icon {
       --line-color: var(--background-dark);
@@ -264,32 +276,40 @@ export default {
 
   &.asd20-notification--banner {
     padding: 0.5rem;
-    background: var(--accent-one);
-    color: var(--background-dark);
+    background: var(--accent-dark);
+    color: white;
+    margin-bottom: 0;
+    a {
+      color: white;
+    }
     .asd20-notification__title {
       font-size: 1.25rem;
     }
     .asd20-notification__title,
     .asd20-notification__cta {
-      color: var(--background-dark);
+      color: white;
+      border-color: white !important;
     }
     .asd20-notification__dismiss .asd20-icon {
-      --line-color: var(--background-dark);
-      --fill-color: var(--background-dark);
+      --line-color: white;
+      --fill-color: white;
     }
     .asd20-icon {
-      --line-color: var(--background-dark);
+      --line-color: white;
       --fill-color: var(--accent-one);
-      margin-right: 0.5rem;
     }
   }
 
   &--emergency.asd20-notification--banner {
     background: var(--emergency);
     color: white;
+    a {
+      color: white;
+    }
     .asd20-notification__title,
     .asd20-notification__cta {
       color: white;
+      border-color: white !important;
     }
     .asd20-icon {
       --line-color: var(--background-color);
@@ -297,45 +317,50 @@ export default {
     }
   }
   &--alert.asd20-notification--banner {
-    background: var(--warning);
-    color: var(--background-dark);
-    .asd20-notification__title,
-    .asd20-notification__cta {
-      color: var(--background-dark);
-    }
-    .asd20-notification__dismiss .asd20-icon {
-      --line-color: var(--background-dark);
-      --fill-color: var(--background-dark);
-    }
-
-    .asd20-icon {
-      --line-color: var(--background-dark);
-      --fill-color: var(--warning);
-    }
-  }
-
-  &--success.asd20-notification--banner {
-    background: var(--success);
+    background: var(--warning-dark);
     color: white;
     .asd20-notification__title,
     .asd20-notification__cta {
       color: white;
     }
+    .asd20-notification__dismiss .asd20-icon {
+      --line-color: white;
+      --fill-color: white;
+    }
+
     .asd20-icon {
       --line-color: white;
-      --fill-color: var(--success);
+      --fill-color: var(--warning);
     }
   }
+
+  // &--success.asd20-notification--banner {
+  //   background: var(--success);
+  //   color: white;
+  //   .asd20-notification__title,
+  //   .asd20-notification__cta {
+  //     color: white;
+  //   }
+  //   .asd20-icon {
+  //     --line-color: white;
+  //     --fill-color: var(--success);
+  //   }
+  // }
 }
 
 @media (min-width: 1024px) {
   .asd20-notification {
+    padding: 1.5rem !important;
+
     &__title {
       font-size: 1.25rem;
     }
 
     &__description {
       font-size: 1rem;
+    }
+    &__content > a.asd20-notification__cta {
+      margin-top: 1rem;
     }
   }
 }
