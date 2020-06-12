@@ -106,19 +106,20 @@ $sizes: (
 
 $button-border-width: 2px;
 $button-border-color: var(--accent-one);
-$button-background-color: var(--accent-one, 8);
-$button-background-color-hover: var(--background-alt, 4);
+$button-background-color: var(--accent-one);
+$button-background-color-hover: var(--background-alt);
 $button-accent-color: var(--accent-one);
 $button-text-color: var(--primary);
 
 $button-reversed-border-color: var(--background-alt);
 $button-reversed-background-color: var(--primary);
-$button-reversed-background-color-hover: var(--primary, -2);
+$button-reversed-background-color-hover: var(--primary);
 $button-reversed-accent-color: var(--accent-one);
-$button-reversed-text-color: var(--accent-one, 10);
+$button-reversed-text-color: var(--accent-one);
 
 .asd20-button {
     --accent-one: #70b4c2;
+    --accent-dark: #4b757e;
     --background-color: white;
     --background-alt: #e3e6e8;
     --background-dark: #062137;
@@ -126,6 +127,7 @@ $button-reversed-text-color: var(--accent-one, 10);
     --primary: #0e2c6c;
     --success: #4d7d36;
     --warning: #f7e06e;
+    --warning-dark: #cfb02d;
   border: none;
   padding: 0.5rem;
   margin: 0;
