@@ -3,13 +3,14 @@
     <mounting-portal
       v-for="(group, type) of groups"
       :key="type"
-      :mountTo="group.selector"
+      :mountTo="groupTargetSelectors[type]"
       append
     >
       <Asd20NotificationGroup 
         :notifications="activeNotificationsByType[type]"
         :type="type"
         @dismiss="onDismiss"
+        :position="group.position"
       ></Asd20NotificationGroup>
     </mounting-portal>
   </div>
@@ -42,7 +43,17 @@ export default {
     groups: {
       // add dom insertion querySelector props
       type: Object,
-      default: () => ({}),
+      default: () => ({
+        banner: {
+          selector: 'body',
+          prepend: true
+        },
+        floating: {
+          selector: 'body',
+          prepend: true,
+          position: 'bottom-right'
+        },
+      }),
       // Make sure the groups pass validation
       validator: function (value) {
         // Must be an object
@@ -68,6 +79,8 @@ export default {
       status: []
     },
 
+    groupTargetSelectors: {},
+
     nextTick: false
   }),
 
@@ -79,8 +92,8 @@ export default {
       for(const key in this.groups) {
         outputGroups.push({
           type: key,
-          selector: this.groups[key].selector,
-          notifications: this.activeNotificationsByType[key]
+          selector: this.groupTargetSelectors[key],
+          notifications: this.activeNotificationsByType[key],
         })
       }
       return outputGroups
@@ -102,7 +115,13 @@ export default {
   watch: {
     config: function(val) {
       this.initializeClient()
-    }
+    },
+    groups: {
+      handler: function(val) {
+        this.updateGroupTargetElements()
+      },
+      immediate: true
+    },
   },
 
   methods: {
@@ -114,13 +133,44 @@ export default {
     // Responds to the client updating the notifications
     // e.g. After new notificaitons are loaded, or dismissed
     onUpdate({ activeNotificationsByType }) {
-      console.log('update called', activeNotificationsByType)
       this.activeNotificationsByType = activeNotificationsByType
     },
     // Asks the client to undismiss all notifications
     clear() {
       if (!this.client) return
       this.client.clearDismissions()
+    },
+
+    updateGroupTargetElements() {
+      this.groupTargetSelectors = {}
+
+      for (const groupKey in this.groups) {
+        let targetEl = null
+        let selector = this.groups[groupKey].selector
+        const containerEl = document.querySelector(selector)
+        if (containerEl) {
+          // The user wants this group prepended instead of appended
+          if (this.groups[groupKey].prepend) {
+            // Try to find existing top-level target elenent
+            targetEl = containerEl.querySelector('.asd20-embed-container-top')
+            // If not found, insert one
+            if (!targetEl) {
+              // Create an empty div
+              targetEl = document.createElement('div')
+              targetEl.className = 'asd20-embed-container-top'
+              // Add new div to top of container
+              containerEl.prepend(targetEl)
+            }
+            // Set the selector to the new value
+            selector = `${selector} .asd20-embed-container-top`
+          } else {
+            targetEl = containerEl
+          }
+
+          // Add resolved targetEl selector
+          this.groupTargetSelectors[groupKey] = selector
+        }
+      }
     },
 
     initializeClient() {

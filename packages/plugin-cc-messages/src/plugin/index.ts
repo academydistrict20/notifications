@@ -99,10 +99,19 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
     groupByType(notifications: Notification[]): NotificationsByType {
       // TODO: This could be fragile, consider handeling case sensitivity
       return {
-        banner: notifications.filter((n) => n.categories.includes('Emergency') || n.categories.includes('Urgent')),
-        floating: notifications.filter((n) => !n.categories.includes('Emergency') && !n.categories.includes('Urgent')),
+        banner: notifications.filter(
+          (n) =>
+            n.categories.includes('Emergency') ||
+            (n.categories.includes('Urgent') && !n.categories.includes('Weather')),
+        ),
+        floating: notifications.filter(
+          (n) =>
+            !n.categories.includes('Emergency') &&
+            !n.categories.includes('Urgent') &&
+            !n.categories.includes('Weather'),
+        ),
         inline: [],
-        status: [],
+        status: notifications.filter((n) => n.categories.includes('Weather')),
       }
     },
   })

@@ -21,7 +21,7 @@
     </transition-group>
     </transition>
 
-    <button v-if="type === 'floating'" class="bell" @click="open = !open">
+    <button v-if="type === 'floating'" class="bell" :class="{ 'open': open }" @click="open = !open">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role>
         <g>
           <path d="M16 7a6 6 0 0 1 6 6v7H10v-7a6 6 0 0 1 6-6z" class="fill"></path>
@@ -64,6 +64,7 @@ export default {
 
   props: {
     type: { type: String, default: "inline" },
+    position: { type: String, default: "static" },
     notifications: { type: Array, default: () => [] }
   },
 
@@ -79,7 +80,7 @@ export default {
 
   computed: {
     classes() {
-      return ["notification-group", `notification-group--${this.type}`];
+      return ["notification-group", `notification-group--${this.type}`, `notification-group--${this.position}`];
     },
     showControls() {
       return this.notifications.length > 1;
@@ -213,6 +214,12 @@ export default {
     font-size: 1rem;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.0625);
     border-radius: 50%;
+    cursor: pointer;
+
+    &.open {
+      box-shadow: none;
+    }
+
     svg {
       width: 100%;
       height: 100%;
@@ -242,12 +249,15 @@ export default {
     align-items: center;
     font-size: 0.75rem;
     z-index: 15;
+
+    font-family: sans-serif;
+
     button {
       appearance: none;
       background: transparent;
       padding: 0;
       border: none;
-      font-size: 1.5em;
+      font-size: 1.5rem;
       font-weight: bold;
       line-height: 0;
       width: 1rem;
@@ -257,11 +267,25 @@ export default {
       align-items: center;
       cursor: pointer;
       outline: none;
+      border-radius: 100%;
+      background: rgba(0,0,0, 0.125);
+    }
+    span {
+      margin: 0 0.25rem;
     }
   }
 
   &--floating .pagination {
     margin-right: 0.25rem;
+    background: rgba(255,255,255,0.85);
+    align-self: stretch;
+    margin-right: -2rem;
+    z-index: -1;
+    padding-right: 2rem;
+    padding-left: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.0625);
+
   }
 
   &--floating .notifications {
@@ -302,6 +326,51 @@ export default {
         }
       }
     }
+  }
+
+
+  
+  &--floating.notification-group--bottom-left .notifications {
+    top: auto;
+    bottom: calc(100% + .5rem);
+    left: 0;
+    right: auto;
+  }
+
+  &--floating.notification-group--bottom-right .notifications {
+    top: auto;
+    bottom: calc(100% + .5rem);
+  }
+
+  &--floating.notification-group--top-left .notifications {
+    left: 0;
+    right: auto;
+  }
+  
+  
+  &--bottom-right {
+    position: fixed;
+    bottom: .5rem;
+    right: .5rem;
+  }
+
+  &--top-right {
+    position: fixed;
+    top: .5rem;
+    right: .5rem;
+  }
+
+    
+  &--bottom-left {
+    position: fixed;
+    bottom: .5rem;
+    left: .5rem;
+  }
+
+   &--top-left {
+    position: fixed;
+    top: .5rem;
+    left: .5rem;
   }
 
   &--banner .pagination {
