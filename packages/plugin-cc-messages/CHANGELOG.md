@@ -1,3 +1,19 @@
+# v0.7.0 (Wed Jun 24 2020)
+
+#### 🚀 Enhancement
+
+- feat(plugins): use display rules in cc-messages plugin, closes #102 [#103](https://github.com/academydistrict20/notifications/pull/103) (david.hayes@asd20.org)
+
+#### 🐛 Bug Fix
+
+- fix(embed): fix embed script (david.hayes@asd20.org)
+
+#### Authors: 1
+
+- David Hayes ([@altitudems](https://github.com/altitudems))
+
+---
+
 # v0.6.2 (Fri Jun 05 2020)
 
 #### 🐛 Bug Fix
