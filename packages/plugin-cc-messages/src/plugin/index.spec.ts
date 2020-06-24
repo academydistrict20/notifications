@@ -1,10 +1,23 @@
 import fetchMock from 'jest-fetch-mock'
 import CreatePlugin from './index'
 import mockSearchResult from '../../tests/mocks/mock-search-result'
+import { NotificationImportance, NotificationTypes } from '@asd20/notifications-shared'
 
 const jsonPlugin = CreatePlugin({
   endpoint: 'https://site.com/my.json',
   apiKey: '123123',
+  displayRules: [
+    {
+      keywords: 'weather urgent',
+      importance: NotificationImportance.ALERT,
+      type: NotificationTypes.BANNER,
+    },
+    {
+      keywords: 'Emergency',
+      importance: NotificationImportance.EMERGENCY,
+      type: NotificationTypes.BANNER,
+    },
+  ],
 })
 
 describe('load', () => {
