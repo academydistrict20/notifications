@@ -1,3 +1,16 @@
+# v0.8.0 (Thu Jun 25 2020)
+
+#### 🚀 Enhancement
+
+- `@asd20/notifications-plugin-cc-messages`
+  - feat(plugins): support multi-word display rule terms [#106](https://github.com/academydistrict20/notifications/pull/106) (david.hayes@asd20.org)
+
+#### Authors: 1
+
+- David Hayes ([@altitudems](https://github.com/altitudems))
+
+---
+
 # v0.7.0 (Wed Jun 24 2020)
 
 #### 🚀 Enhancement
