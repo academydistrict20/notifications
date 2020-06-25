@@ -8,12 +8,12 @@ const jsonPlugin = CreatePlugin({
   apiKey: '123123',
   displayRules: [
     {
-      keywords: 'weather urgent',
+      terms: ['weather', 'urgent'],
       importance: NotificationImportance.ALERT,
       type: NotificationTypes.BANNER,
     },
     {
-      keywords: 'Emergency',
+      terms: ['Emergency'],
       importance: NotificationImportance.EMERGENCY,
       type: NotificationTypes.BANNER,
     },

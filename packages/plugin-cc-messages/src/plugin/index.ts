@@ -10,7 +10,7 @@ import { AzureSearchNotificationsPluginConfig } from '@asd20/notifications-plugi
 import { generateAzureSearchPayload } from './helpers'
 
 export interface DisplayRule {
-  keywords: string
+  terms: string[]
   type: NotificationTypes
   importance?: NotificationImportance
   icon?: string
@@ -74,13 +74,13 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
       const ctaLink = links.find((l) => (l as CcLink).type === 'Call to Action') as CcLink | undefined
 
       const matchingRule = (config.displayRules || []).find((r) => {
-        const keywords = r.keywords.toLowerCase().trim().split(' ')
+        const terms = r.terms.join('|').toLowerCase().trim().split('|')
         let matches = 0
-        for (const keyword of keywords) {
-          if ((d.categories || []).join(' ').toLowerCase().includes(keyword)) matches++
-          if (d.title.toLowerCase().includes(keyword)) matches++
+        for (const term of terms) {
+          if ((d.categories || []).join(' ').toLowerCase().includes(term)) matches++
+          if (d.title.toLowerCase().includes(term)) matches++
         }
-        return matches >= keywords.length
+        return matches >= terms.length
       })
 
       return {
