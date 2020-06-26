@@ -65,7 +65,7 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
 
     // We need to infer some data from the messages index
     // because not all fields are present there
-    dataTransformer(data) {
+    dataTransformer(data: unknown[]) {
       // if (typeof data === 'object' && (data as object).values)
       const d = Array.isArray(data) ? data[0] : data
       const links: unknown[] = JSON.parse(d.links || '[]') || []
