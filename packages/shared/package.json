@@ -75,8 +75,5 @@
       "git add"
     ]
   },
-  "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25",
-  "devDependencies": {
-    "@types/lodash": "^4.14.155"
-  }
+  "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25"
 }
