@@ -21,14 +21,24 @@
           },
           plugins: [
             Asd20NotificationsPluginCcMessages.Create({
-              endpoint: 'myEndpoint',
-              index: '[myIndex]',
-              apiKey: '[myKey]',
+              endpoint: 'https://asd20-search-dev.search.windows.net',
+              index: 'messages-index',
+              apiKey: '937716815402758ADC2FE799FE288142',
               apiVersion: '2019-05-06',
+              // endpoint: 'myEndpoint',
+              // index: '[myIndex]',
+              // apiKey: '[myKey]',
+              // apiVersion: '2019-05-06',
               search: '',
               channels: ['Notification'],
-              locations: ['District Wide', 'Test Subscription Location'],
-              categories: ['Weather', 'Emergency', 'Tests']
+              locations: ['District Wide'],
+              categories: [],
+              displayRules: [
+                {
+                  keywords: 'weather',
+                  type: 'status',
+                }
+              ]
             }),
           ],
         })

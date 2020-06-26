@@ -28,7 +28,7 @@
       ></asd20-button>
       <asd20-button
         class="asd20-notification__dismiss"
-        v-if="dismissible"
+        v-if="dismissible && this.notificationStyle.toLowerCase() !== 'banner'"
         transparent
         size="xs"
         icon="close"

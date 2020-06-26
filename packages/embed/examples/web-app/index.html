@@ -4,13 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Example Web App</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    .container {
+      margin: 0 auto;
+      max-width: 960px;
+      background: #eee;
+    }
+
+    .container div {
+      padding: 2rem;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
   <div id="header">
-    Header
+    <h1>Header</h1>
   </div>
   <div id="body">
     Body Here
+
+    Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.
+
+Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.
+
+Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus.
+
+Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.
+
+
+Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.
+
+Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.
+
+Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus.
+
+Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.
+
+Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.
+
+Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.
+
+Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus.
+
+Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.
+
+Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.
+
+Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.
+
+Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus.
+
+Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.
+
+Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.
+
+Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.
+
+Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus.
+
+Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.
+  </div>
   </div>
 
   <!-- Load Vue -->
@@ -27,6 +84,7 @@
 
   <script>
     const config = {
+            storage: localStorage,
             plugins: [
             Asd20NotificationsPluginCcMessages.Create({
                 endpoint: 'https://asd20-search-dev.search.windows.net',
@@ -34,17 +92,20 @@
                 apiKey: '937716815402758ADC2FE799FE288142',
                 apiVersion: '2019-05-06',
                 channels: ['Notification'],
-                locations: ['*.asd20.org'],
-                categories: ['Weather', 'Emergency', 'Tests'],
+                locations: ['*.asd20.org', 'District Website'],
+                categories: ['Weather', 'Emergency', 'Tests', 'Choice', 'Information', 'Urgent'],
               }),
             ],
           }
-    const groups = {
+   const groups = {
             banner: {
-              selector: `#header`,
+              selector: `body`,
+              prepend: true
             },
             floating: {
-              selector: `#header`,
+              selector: `body`,
+              prepend: true,
+              position: 'top-left'
             },
           }  
     

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { Notification } from '../../shared/src/types'
-import { NotificationsPlugin } from '../../shared/src/plugin'
+import { Notification, NotificationsPlugin } from '@asd20/notifications-shared'
 import NotificationsClient from '../src/client'
 
 const notifications: Notification[] = [

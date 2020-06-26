@@ -1,7 +1,21 @@
 import { Create as CreateAzureSearchPlugin } from '@asd20/notifications-plugin-azure-search'
-import { NotificationsPlugin, Notification, NotificationsByType } from '@asd20/notifications-shared'
+import {
+  NotificationsPlugin,
+  Notification,
+  NotificationsByType,
+  NotificationImportance,
+  NotificationTypes,
+} from '@asd20/notifications-shared'
 import { AzureSearchNotificationsPluginConfig } from '@asd20/notifications-plugin-azure-search/dist/plugin'
 import { generateAzureSearchPayload } from './helpers'
+
+export interface DisplayRule {
+  terms: string[]
+  type: NotificationTypes
+  importance?: NotificationImportance
+  icon?: string
+  color?: string
+}
 
 export interface CCMessagesPluginConfig extends AzureSearchNotificationsPluginConfig {
   organizationIds: string[]
@@ -9,6 +23,7 @@ export interface CCMessagesPluginConfig extends AzureSearchNotificationsPluginCo
   channels: string[]
   categories: string[]
   tags: string[]
+  displayRules: DisplayRule[]
 }
 
 interface CcLink {
@@ -58,11 +73,15 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
       const detailLink = links.find((l) => (l as CcLink).type === 'Detail Link') as CcLink | undefined
       const ctaLink = links.find((l) => (l as CcLink).type === 'Call to Action') as CcLink | undefined
 
-      const importance = d.categories.includes('Urgent')
-        ? 'alert'
-        : d.categories.includes('Emergency')
-        ? 'emergency'
-        : 'info'
+      const matchingRule = (config.displayRules || []).find((r) => {
+        const terms = r.terms.join('|').toLowerCase().trim().split('|')
+        let matches = 0
+        for (const term of terms) {
+          if ((d.categories || []).join(' ').toLowerCase().includes(term)) matches++
+          if (d.title.toLowerCase().includes(term)) matches++
+        }
+        return matches >= terms.length
+      })
 
       return {
         ...d,
@@ -71,11 +90,12 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
         detailLinkUrl: detailLink ? detailLink.url : '',
         detailLinkLabel: detailLink ? detailLink.title : '',
         // Could be 'info, alert, emergency, success'
-        importance, // infer from categories ()
+        importance: matchingRule && matchingRule.importance ? matchingRule.importance : 'info',
         // Inferred from importance if you don't specify
-        icon: '', // infer from categories
+        icon: matchingRule && matchingRule.icon ? matchingRule.icon : '',
         // Inferred from importance if you don't specify
-        color: '', // infer from categories (what about weather status?)
+        color: matchingRule && matchingRule.color ? matchingRule.color : '',
+        type: matchingRule && matchingRule.type ? matchingRule.type : '',
       }
     },
     // Provide map from search index data (after dataTransformer)
@@ -92,17 +112,17 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
       callToActionLabel: 'callToActionLabel',
       detailLinkUrl: 'detailLinkUrl',
       detailLinkLabel: 'detailLinkLabel',
+      type: 'type',
       icon: 'icon',
       color: 'color',
       importance: 'importance',
     },
     groupByType(notifications: Notification[]): NotificationsByType {
-      // TODO: This could be fragile, consider handeling case sensitivity
       return {
-        banner: notifications.filter((n) => n.categories.includes('Emergency') || n.categories.includes('Urgent')),
-        floating: notifications.filter((n) => !n.categories.includes('Emergency') && !n.categories.includes('Urgent')),
-        inline: [],
-        status: [],
+        banner: notifications.filter((n) => n.type === NotificationTypes.BANNER),
+        inline: notifications.filter((n) => n.type === NotificationTypes.INLINE),
+        status: notifications.filter((n) => n.type === NotificationTypes.STATUS),
+        floating: notifications.filter((n) => n.type === NotificationTypes.FLOATING || !n.type),
       }
     },
   })

@@ -1,3 +1,18 @@
+# v0.7.0 (Wed Jun 24 2020)
+
+#### 🐛 Bug Fix
+
+- fix(embed): fix embed script (david.hayes@asd20.org)
+- style(ui): updated styles for notification animations - Closes #85 [#95](https://github.com/academydistrict20/notifications/pull/95) ([@Hollendorfer](https://github.com/Hollendorfer))
+- style(ui): updated styles for notification animations ([@Hollendorfer](https://github.com/Hollendorfer))
+
+#### Authors: 2
+
+- David Hayes (david.hayes@asd20.org)
+- Paul Hollendorfer ([@Hollendorfer](https://github.com/Hollendorfer))
+
+---
+
 # v0.6.2 (Fri Jun 05 2020)
 
 #### 🐛 Bug Fix

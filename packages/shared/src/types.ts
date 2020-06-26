@@ -7,6 +7,13 @@ export const enum NotificationImportance {
   SUCCESS = 'success',
 }
 
+export const enum NotificationTypes {
+  BANNER = 'banner',
+  FLOATING = 'floating',
+  INLINE = 'inline',
+  STATUS = 'status',
+}
+
 export interface Notification {
   id: string
   title: string
@@ -22,6 +29,7 @@ export interface Notification {
   detailLinkUrl?: string
   detailLinkLabel?: string
   importance?: string | NotificationImportance
+  type?: NotificationTypes
 }
 
 export function notificationFactory(source: Partial<Notification>): Notification {
@@ -40,6 +48,7 @@ export function notificationFactory(source: Partial<Notification>): Notification
     detailLinkUrl: source.detailLinkUrl || '',
     detailLinkLabel: source.detailLinkLabel || '',
     importance: source.importance || NotificationImportance.INFO,
+    type: source.type || NotificationTypes.FLOATING,
   }
 }
 

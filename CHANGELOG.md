@@ -1,3 +1,37 @@
+# v0.8.0 (Thu Jun 25 2020)
+
+#### 🚀 Enhancement
+
+- `@asd20/notifications-plugin-cc-messages`
+  - feat(plugins): support multi-word display rule terms [#106](https://github.com/academydistrict20/notifications/pull/106) (david.hayes@asd20.org)
+
+#### Authors: 1
+
+- David Hayes ([@altitudems](https://github.com/altitudems))
+
+---
+
+# v0.7.0 (Wed Jun 24 2020)
+
+#### 🚀 Enhancement
+
+- `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-shared`
+  - feat(plugins): use display rules in cc-messages plugin, closes #102 [#103](https://github.com/academydistrict20/notifications/pull/103) (david.hayes@asd20.org)
+
+#### 🐛 Bug Fix
+
+- `@asd20/notifications-embed`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-ui`
+  - fix(embed): fix embed script (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - style(ui): updated styles for notification animations - Closes #85 [#95](https://github.com/academydistrict20/notifications/pull/95) ([@Hollendorfer](https://github.com/Hollendorfer))
+
+#### Authors: 2
+
+- David Hayes ([@altitudems](https://github.com/altitudems))
+- Paul Hollendorfer ([@Hollendorfer](https://github.com/Hollendorfer))
+
+---
+
 # v0.6.2 (Fri Jun 05 2020)
 
 #### 🐛 Bug Fix
