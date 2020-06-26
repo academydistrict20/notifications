@@ -15,50 +15,39 @@
   "bugs": {
     "url": "https://github.com/academydistrict20/notifications/issues"
   },
-  "main": "dist/asd20-notifications-ui.cjs.js",
+  "main": "dist/asd20-notifications-ui.js",
   "module": "dist/asd20-notifications-ui.esm.js",
   "browser": "dist/asd20-notifications-ui.esm.min.js",
-  "unpkg": "dist/asd20-notifications-ui.umd.js",
-  "jsdelivr": "dist/asd20-notifications-ui.umd.js",
+  "unpkg": "dist/asd20-notifications-ui.web-components.umd.min.js",
+  "jsdelivr": "dist/asd20-notifications-ui.web-components.umd.min.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/*.js",
+    "dist/*.map",
+    "dist/*.css",
     "dist/index.d.ts",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
-  "browserslist": {
-    "modern": [
-      "> 0.5%",
-      "last 2 versions",
-      "not dead",
-      "not IE 9-11"
-    ],
-    "compat": [
-      "last 2 versions",
-      "> 0.5%",
-      "ie 11"
-    ],
-    "node": [
-      "node 12"
-    ]
-  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
   "scripts": {
     "test": "jest --collect-coverage --passWithNoTests",
     "test:watch": "jest --watch-all --collect-coverage -passWithNoTests",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "prepublishOnly": "npm run build",
-    "build": "npm run build:esm && npm run build:esm:min && npm run build:cjs && npm run build:cjs:min && npm run build:umd && npm run build:umd:min",
-    "build:esm": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --file-name asd20-notifications-ui.esm.js",
-    "build:esm:min": "export BROWSERSLIST_ENV=modern && bili --banner -t browser --format esm --input.index src/index.ts --bundle-node-modules --minify --file-name asd20-notifications-ui.esm.min.js",
-    "build:cjs": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --file-name asd20-notifications-ui.cjs.js",
-    "build:cjs:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format cjs --input.index src/index.ts --minify --file-name asd20-notifications-ui.cjs.min.js",
-    "build:umd": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsUi --file-name asd20-notifications-ui.umd.js",
-    "build:umd:min": "export BROWSERSLIST_ENV=compat && bili --banner -t browser --format umd --input.index src/index.ts --bundle-node-modules --module-name Asd20NotificationsUi --minify --file-name asd20-notifications-ui.umd.min.js"
+    "build": "rollup -c --environment BUILD:production",
+    "stats": "rollup-plugin-visualizer stats.json && npx http-server . -o stats.html"
   },
   "peerDependencies": {
     "vue": "^2.6.11"
   },
   "dependencies": {
+    "@babel/runtime": "^7.10.2",
     "@vue/web-component-wrapper": "^1.2.0",
     "lodash-es": "^4.17.15",
     "vue": "^2.6.11",

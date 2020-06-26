@@ -26,7 +26,7 @@ import Asd20NotificationGroup from '@asd20/notifications-ui/src/components/Asd20
 // import Asd20NotificationGroup from '../../../ui/src/components/Asd20NotificationGroup.vue'
 
 export default {
-  name: 'Asd20NotificationsEmbed',
+  name: 'asd20-notifications-embed',
 
   components: {
     MountingPortal,

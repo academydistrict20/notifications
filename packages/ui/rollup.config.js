@@ -13,21 +13,21 @@ export default [
     output: [
       {
         format: 'esm',
-        file: 'dist/asd20-notifications-embed.esm.js',
+        file: 'dist/asd20-notifications-ui.esm.js',
         plugins: [],
       },
       {
         format: 'esm',
-        file: 'dist/asd20-notifications-embed.esm.min.js',
+        file: 'dist/asd20-notifications-ui.esm.min.js',
         plugins: [terser()],
       },
     ],
     plugins: [
-      css(),
       vue({
         css: true,
         template: { isProduction: true },
       }),
+      css(),
       commonjs(),
       resolve(),
       babel({ babelHelpers: 'runtime' }),
@@ -40,9 +40,9 @@ export default [
     input: 'src/index.js',
     output: {
       format: 'cjs',
-      file: 'dist/asd20-notifications-embed.ssr.js',
+      file: 'dist/asd20-notifications-ui.ssr.js',
     },
-    plugins: [vue({ template: { optimizeSSR: true, isProduction: true } }), css(), resolve()],
+    plugins: [vue({ css: true, template: { optimizeSSR: true, isProduction: true } }), css(), resolve()],
     external: ['vue'],
   },
   // Browser build.
@@ -51,8 +51,8 @@ export default [
     output: [
       {
         format: 'iife',
-        file: 'dist/asd20-notifications-embed.js',
-        name: 'Asd20NotificationsEmbed',
+        file: 'dist/asd20-notifications-ui.js',
+        name: 'Asd20NotificationsUi',
         sourcemap: false,
         globals: {
           vue: 'Vue',
@@ -60,8 +60,8 @@ export default [
       },
       {
         format: 'iife',
-        file: 'dist/asd20-notifications-embed.min.js',
-        name: 'Asd20NotificationsEmbed',
+        file: 'dist/asd20-notifications-ui.min.js',
+        name: 'Asd20NotificationsUi',
         sourcemap: false,
         globals: {
           vue: 'Vue',
@@ -69,7 +69,7 @@ export default [
         plugins: [terser()],
       },
     ],
-    plugins: [vue({ css: true, template: { isProduction: true } }), css(), resolve()],
+    plugins: [vue({ css: false, template: { isProduction: true } }), css(), resolve()],
     external: ['vue'],
   },
   // Browser compatability build.
@@ -78,8 +78,8 @@ export default [
     output: [
       {
         format: 'iife',
-        file: 'dist/asd20-notifications-embed.compat.js',
-        name: 'Asd20NotificationsEmbed',
+        file: 'dist/asd20-notifications-ui.compat.js',
+        name: 'Asd20NotificationsUi',
         sourcemap: false,
         globals: {
           vue: 'Vue',
@@ -87,8 +87,8 @@ export default [
       },
       {
         format: 'iife',
-        file: 'dist/asd20-notifications-embed.compat.min.js',
-        name: 'Asd20NotificationsEmbed',
+        file: 'dist/asd20-notifications-ui.compat.min.js',
+        name: 'Asd20NotificationsUi',
         sourcemap: true,
         globals: {
           vue: 'Vue',
@@ -111,13 +111,13 @@ export default [
     output: [
       {
         format: 'umd',
-        file: 'dist/asd20-notifications-embed.web-components.umd.js',
+        file: 'dist/asd20-notifications-ui.web-components.umd.js',
         sourcemap: false,
         globals: { vue: 'Vue' },
       },
       {
         format: 'umd',
-        file: 'dist/asd20-notifications-embed.web-components.umd.min.js',
+        file: 'dist/asd20-notifications-ui.web-components.umd.min.js',
         sourcemap: true,
         globals: { vue: 'Vue' },
         plugins: [terser()],

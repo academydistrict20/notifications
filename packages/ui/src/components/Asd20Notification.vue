@@ -46,7 +46,7 @@ import Asd20Icon from './Asd20Icon.vue'
 import Asd20Button from './Asd20Button.vue'
 
 export default {
-  name: 'Asd20Notification',
+  name: 'asd20-notification',
 
   components: { Asd20Icon, Asd20Button },
 
