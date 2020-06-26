@@ -17,6 +17,9 @@
     .container div {
       padding: 2rem;
     }
+    button {
+      background: red !important;
+    }
   </style>
 </head>
 <body>
@@ -73,7 +76,9 @@ Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Lorem ip
   <!-- Load Vue -->
   <script src="https://unpkg.com/vue"></script>
   <!-- Load the library -->
+  <script src="../../../ui/dist/asd20-notifications-ui.web-components.umd.js"></script>
   <script src="../../dist/asd20-notifications-embed.web-components.umd.js"></script>
+
   <script src="../../../plugin-cc-messages/dist/asd20-notifications-plugin-cc-messages.umd.js"></script>
   <link rel="stylesheet" href="../../../ui/dist/asd20-notifications-ui.css">
   <!-- Note: In production, you can use a CDN url
@@ -84,32 +89,73 @@ Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Lorem ip
 
   <script>
     const config = {
-            storage: localStorage,
-            plugins: [
-            Asd20NotificationsPluginCcMessages.Create({
-                endpoint: 'https://asd20-search-dev.search.windows.net',
-                index: 'messages-index',
-                apiKey: '937716815402758ADC2FE799FE288142',
-                apiVersion: '2019-05-06',
-                channels: ['Notification'],
-                locations: ['*.asd20.org', 'District Website'],
-                categories: ['Weather', 'Emergency', 'Tests', 'Choice', 'Information', 'Urgent'],
-              }),
-            ],
-          }
+      storage: localStorage,
+      plugins: [
+      Asd20NotificationsPluginCcMessages.Create({
+        endpoint: 'https://asd20-search-dev.search.windows.net',
+        index: 'messages-index',
+        apiKey: '937716815402758ADC2FE799FE288142',
+        apiVersion: '2019-05-06',
+        channels: ['Notification'],
+        locations: ['*.asd20.org', 'District Website'],
+        categories: ['Weather', 'Emergency', 'Tests', 'Choice', 'Information', 'Urgent'],
+        displayRules: [
+          {
+            terms: ['weather', 'status normal'],
+            type: 'status',
+            importance: 'success',
+            icon: 'weather-sun'
+          },
+          {
+            terms: ['weather status', 'delay'],
+            type: 'status',
+            importance: 'info',
+            icon: 'weather-snow',
+            color: '#8BB2BE'
+          },
+          {
+            terms: ['weather', 'status closed'],
+            type: 'status',
+            importance: 'info',
+            icon: 'weather-snow',
+            color: '#8BB2BE'
+          },
+          {
+            terms: ['weather closure'],
+            type: 'banner',
+            importance: 'alert',
+            icon: 'weather-snow'
+          },
+          {
+            terms: ['urgent'],
+            type: 'banner',
+            importance: 'alert'
+          },
+          {
+            terms: ['emergency'],
+            type: 'banner',
+            importance: 'emergency'
+          },
+        ]
+        }),
+      ],
+      
+    }
    const groups = {
-            banner: {
-              selector: `body`,
-              prepend: true
-            },
-            floating: {
-              selector: `body`,
-              prepend: true,
-              position: 'top-left'
-            },
-          }  
+    banner: {
+      selector: `body`,
+      prepend: true
+    },
+    floating: {
+      selector: `body`,
+      prepend: true,
+      position: 'top-right'
+    },
+  }
+  
     
     const el = document.querySelector('asd20-notifications-embed')
     el.groups = groups
     el.config = config
+    // document.body.appendChild(el)
   </script>

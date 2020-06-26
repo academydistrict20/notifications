@@ -1,36 +1,60 @@
-<template>
-  <div :id="`asd20-notifications-embed`" v-if="nextTick">
-    <mounting-portal
-      v-for="(group, type) of groups"
-      :key="type"
-      :mountTo="groupTargetSelectors[type]"
-      append
-    >
-      <Asd20NotificationGroup 
-        :notifications="activeNotificationsByType[type]"
-        :type="type"
-        @dismiss="onDismiss"
-        :position="group.position"
-      ></Asd20NotificationGroup>
-    </mounting-portal>
-  </div>
-</template>
-
 <script>
 // Client
 import NotificationClient from '@asd20/notifications-client'
 
 // Components
 import { MountingPortal } from 'portal-vue'
-import Asd20NotificationGroup from '@asd20/notifications-ui/src/components/Asd20NotificationGroup.vue'
-// import Asd20NotificationGroup from '../../../ui/src/components/Asd20NotificationGroup.vue'
 
 export default {
+  render(h) {
+    const mountingPortalNodes = []
+
+    for (const [type, group] of Object.entries(this.groups)) {
+      console.log('group', group, 'type', type)
+      mountingPortalNodes.push(h(
+        'mounting-portal',
+        {
+          props: {
+            key: type,
+            mountTo: this.groupTargetSelectors[type],
+            append: true
+          }
+        },
+        [
+          h(
+            'asd20-notification-group',
+            {
+              domProps: {
+                notifications: this.activeNotificationsByType[type],
+                grouptype: 'testString',
+                position: group.position
+              },
+              nativeOn: {
+                dismiss: this.onDismiss
+              }
+            }
+          )
+        ]
+      ))
+    }
+
+    if (this.nextTick) {
+      return h(
+        'div', // Tag name
+        {      // Options
+          attrs: {
+            id: 'asd20-notifications-embed'
+          }
+        },
+        mountingPortalNodes
+      )
+    }
+  },
+
   name: 'asd20-notifications-embed',
 
   components: {
-    MountingPortal,
-    Asd20NotificationGroup,
+    MountingPortal
   },
 
   props: {
@@ -126,7 +150,8 @@ export default {
 
   methods: {
     // Asks the client to dismiss a notification
-    onDismiss(notification) {
+    onDismiss(event) {
+      const notification = event.detail[0]
       if (!this.client) return
       this.client.dismiss(notification)
     },
