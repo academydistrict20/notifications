@@ -26,10 +26,12 @@ export default {
             {
               domProps: {
                 notifications: this.activeNotificationsByType[type],
-                grouptype: 'testString',
+              },
+              attrs: {
+                grouptype: type, 
                 position: group.position
               },
-              nativeOn: {
+              on: {
                 dismiss: this.onDismiss
               }
             }
@@ -152,6 +154,7 @@ export default {
     // Asks the client to dismiss a notification
     onDismiss(event) {
       const notification = event.detail[0]
+      console.log('dismissed', notification)
       if (!this.client) return
       this.client.dismiss(notification)
     },
