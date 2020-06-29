@@ -81,7 +81,7 @@ export function generateAzureSearchPayload(
     filters.push(`tags/any(t: search.in(t, '${state.tags.join('|')}', '|')) `)
   }
   if (state.locations && state.locations.length > 0) {
-    filters.push(`messageSubscriptionLocations/any(t: search.in(t, '${state.locations.join('|')}', '|')) `)
+    filters.push(`destinations/any(t: search.in(t, '${state.locations.join('|')}', '|')) `)
   }
 
   const payload = {

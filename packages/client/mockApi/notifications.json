@@ -17,7 +17,7 @@
       "bodyJson": "",
       "tags": [],
       "categories": [],
-      "messageSubscriptionLocations": [],
+      "destinations": [],
       "messageSubscriptionLocationDomains": [],
       "links": null,
       "channels": [],
@@ -52,7 +52,7 @@
       "bodyJson": "",
       "tags": [],
       "categories": [],
-      "messageSubscriptionLocations": [],
+      "destinations": [],
       "messageSubscriptionLocationDomains": [],
       "links": null,
       "channels": [
