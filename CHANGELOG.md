@@ -1,3 +1,15 @@
+# v0.10.1 (Mon Jul 06 2020)
+
+#### 🐛 Bug Fix
+
+- refactor(plugins): breaking change: update search field messageSubscr… [#110](https://github.com/academydistrict20/notifications/pull/110) (luke.haris@asd20.org)
+
+#### Authors: 1
+
+- Luke Harris ([@Lukeharris30](https://github.com/Lukeharris30))
+
+---
+
 # v0.8.0 (Thu Jun 25 2020)
 
 #### 🚀 Enhancement
