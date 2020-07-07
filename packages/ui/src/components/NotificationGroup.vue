@@ -1,4 +1,5 @@
 <template>
+<!-- Can we delet this component? -->
   <div :class="classes">
     <transition-group
       v-if="isOpen && notificationsFromIndex.length > 0"
@@ -93,13 +94,30 @@ export default {
     }
   },
   methods: {
-    initNotifications(value) {
-      this.notificationsFromIndex = (value || []).map(n => ({
-        ...n,
-        key: Math.random()
-          .toString(36)
-          .substr(2, 9)
-      }));
+    initNotifications(newNotifications) {
+      this.notificationsFromIndex = (newNotifications || []).map(incomingNotification => {
+        // First, figure out if the notification is new or not based on its id
+        // Store either undefined (not found), or the old notification object (found)
+        const existingNotification = this.notificationsFromIndex.find(o => o.id === incomingNotification.id)
+
+        // If not found, return incoming notification, with new key
+        // to trigger an enter animation
+        if (!existingNotification) {
+          return {
+          ...incomingNotification,
+          key: Math.random()
+            .toString(36)
+            .substr(2, 9)
+          }
+        // If it already was present, return new data,
+        // but with same key, to avoid an enter animation
+        } else {
+          return {
+            ...incomingNotification,
+            key: existingNotification.key
+          }
+        }
+      });
     },
     next() {
       const newIndex =

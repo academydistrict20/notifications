@@ -19,7 +19,7 @@ export interface DisplayRule {
 
 export interface CCMessagesPluginConfig extends AzureSearchNotificationsPluginConfig {
   organizationIds: string[]
-  locations: string[]
+  destinations: string[]
   channels: string[]
   categories: string[]
   tags: string[]
@@ -47,7 +47,7 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
     channels: config.channels || [],
     tags: config.tags || [],
     top: config.top || 10,
-    locations: config.locations || [],
+    destinations: config.destinations || [],
     // Order by featured (pinned), then by publish date/time
     orderBy: 'isFeatured desc, publishDateTime desc',
   })

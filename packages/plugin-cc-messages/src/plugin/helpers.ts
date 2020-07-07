@@ -17,7 +17,7 @@ export interface AzureSearchPayload {
  *     search: string
  *     top: number
  *     orderBy: string
- *     locations: string[]
+ *     destinations: string[]
  *   }} [state={
  *     // Default values
  *     organizationIds: [],
@@ -27,7 +27,7 @@ export interface AzureSearchPayload {
  *     search: '*',
  *     top: 10,
  *     orderBy: 'isDistrictFeatured desc, publishDateTime desc',
- *     locations: [],
+ *     destinations: [],
  *   }]
  * @returns {AzureSearchPayload}
  */
@@ -41,7 +41,7 @@ export function generateAzureSearchPayload(
     search: string
     top: number
     orderBy: string
-    locations: string[]
+    destinations: string[]
   } = {
     // Default values
     organizationIds: [],
@@ -51,15 +51,15 @@ export function generateAzureSearchPayload(
     search: '*',
     top: 10,
     orderBy: 'isDistrictFeatured desc, publishDateTime desc',
-    locations: [],
+    destinations: [],
   },
 ): AzureSearchPayload {
   const filters: string[] = []
   const now = new Date().toISOString()
-  // get domain and add it to the locations
-  if (typeof window !== 'undefined') {
-    state.locations.push(window.location.host)
-  }
+  // get domain and add it to the destinations
+  // if (typeof window !== 'undefined') {
+  //   state.destinations.push(window.location.host)
+  // }
 
   filters.push(
     `status eq 'Published' and ${now} ge publishDateTime  and (expireDateTime eq null or expireDateTime gt ${now})`,
@@ -80,8 +80,8 @@ export function generateAzureSearchPayload(
   if (state.tags.length > 0) {
     filters.push(`tags/any(t: search.in(t, '${state.tags.join('|')}', '|')) `)
   }
-  if (state.locations && state.locations.length > 0) {
-    filters.push(`destinations/any(t: search.in(t, '${state.locations.join('|')}', '|')) `)
+  if (state.destinations && state.destinations.length > 0) {
+    filters.push(`destinations/any(t: search.in(t, '${state.destinations.join('|')}', '|')) `)
   }
 
   const payload = {

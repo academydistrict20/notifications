@@ -99,13 +99,30 @@ export default {
     }
   },
   methods: {
-    initNotifications(value) {
-      this.notificationsFromIndex = (value || []).map(n => ({
-        ...n,
-        key: Math.random()
-          .toString(36)
-          .substr(2, 9)
-      }));
+     initNotifications(incomingNotifications) {
+      // filter out old notifications that are no longer present in incoming notifications
+      this.notificationsFromIndex = this.notificationsFromIndex.filter(n => incomingNotifications.find(n2 => n2.id === n.id))
+      // take care of notifications that did not previously exist and give them a key
+      const newNotifications = incomingNotifications
+        .filter(n => !this.notificationsFromIndex.find(n2 => n2.id === n.id))
+        .map(newN => ({
+          ...newN, 
+          key: Math.random().toString(36).substr(2, 9)
+        }))
+      // take care of notifications that match and keep their existing key value to prevent animations from occurring
+      for(const [oldIndex, oldNotification] of Object.entries(this.notificationsFromIndex)){
+        const matchingUpdatedNotification = (incomingNotifications || []).find(n => n.id === oldNotification.id)
+        if(matchingUpdatedNotification) {
+          this.notificationsFromIndex[oldIndex] = {
+            ...matchingUpdatedNotification,
+            key: this.notificationsFromIndex[oldIndex].key
+          }
+        }
+      }
+      // put new notifications at the beginning of the array
+      this.notificationsFromIndex = newNotifications.concat(this.notificationsFromIndex)
+      // if(this.index > this.notificationsFromIndex.length -1 ){
+        this.index = 0
     },
     next() {
       const newIndex =
@@ -214,6 +231,7 @@ export default {
     font-size: 1rem;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.0625);
     border-radius: 50%;
+    z-index:9;
     cursor: pointer;
 
     &.open {
@@ -280,7 +298,8 @@ export default {
     background: rgba(255,255,255,0.85);
     align-self: stretch;
     margin-right: -2rem;
-    z-index: -1;
+    // z-index: -1;
+    z-index: 8;
     padding-right: 2rem;
     padding-left: 0.5rem;
     border-radius: 1rem;
@@ -294,13 +313,13 @@ export default {
     top: calc(100% + 0.5rem);
     right: 0;
     left: auto;
-    width: 300px;
     display: flex;
   }
   &--floating .notification {
     transition: all 0.5s;
     top: 0;
     transform: translateY(0) scale(1);
+    min-width: 300px;
     &:first-child {
       z-index: 9;
       .asd20-notification__content, g {
