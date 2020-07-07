@@ -36,14 +36,14 @@
       <span>{{ notifications.length }}</span>
     </button>
 
-    <div v-if="showControls && isOpen && notifications.length > 1" class="pagination">
+    <div v-if="showControls && isOpen && notificationsFromIndex.length > 1" class="pagination">
       <button @click="previous">
         <svg style="width: 16px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
           <path d="M30.83 32.67l-9.17-9.17 9.17-9.17-2.83-2.83-12 12 12 12z"></path>
           <path d="M0-.5h48v48h-48z" fill="none"></path>
         </svg>
       </button>
-      <span>{{ index + 1 }} of {{ notifications.length }}</span>
+      <span>{{ index + 1 }} of {{ notificationsFromIndex.length }}</span>
       <button @click="next">
         <svg style="width: 16px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path>
@@ -121,8 +121,10 @@ export default {
       }
       // put new notifications at the beginning of the array
       this.notificationsFromIndex = newNotifications.concat(this.notificationsFromIndex)
-      // if(this.index > this.notificationsFromIndex.length -1 ){
+      // if(this.index > this.notificationsFromIndex.length -1 )
+      if(newNotifications.length > 0 || this.notificationsFromIndex.length > incomingNotifications.length || this.index > this.notificationsFromIndex.length -1 ){
         this.index = 0
+      }
     },
     next() {
       const newIndex =

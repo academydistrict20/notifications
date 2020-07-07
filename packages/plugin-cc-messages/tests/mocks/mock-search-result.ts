@@ -23,7 +23,7 @@ export default {
       destinations: ['District Wide', '*asd20.org'],
       links:
         '[{"type":"Detail Link","title":"Learn More","url":"https://www.asd20.org"}, {"type":"Call to Action","title":"Take Action","url":"https://www.asd20.org/action"}]',
-      channels: ['Notification'],
+      channels: ['Notifications'],
       audiences: [],
       ownerOrganizationId: '26eaf390-d8ab-11e9-a3a8-5de5bba4f125',
       images: 'null',
