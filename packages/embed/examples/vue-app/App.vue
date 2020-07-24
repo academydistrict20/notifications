@@ -34,7 +34,7 @@ export default {
           apiKey: '937716815402758ADC2FE799FE288142',
           apiVersion: '2019-05-06',
           channels: ['Notification'],
-          locations: ['*.asd20.org'],
+          destinations: ['*.asd20.org'],
           categories: ['Weather', 'Emergency', 'Tests'],
         }),
       ],

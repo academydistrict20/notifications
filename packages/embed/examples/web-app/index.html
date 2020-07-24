@@ -90,15 +90,16 @@ Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Lorem ip
   <script>
     const config = {
       storage: localStorage,
+      pollInterval: 30000,
       plugins: [
       Asd20NotificationsPluginCcMessages.Create({
         endpoint: 'https://asd20-search-dev.search.windows.net',
         index: 'messages-index',
         apiKey: '937716815402758ADC2FE799FE288142',
         apiVersion: '2019-05-06',
-        channels: ['Notification'],
-        locations: ['*.asd20.org', 'District Website'],
-        categories: ['Weather', 'Emergency', 'Tests', 'Choice', 'Information', 'Urgent'],
+        channels: ['Notifications'],
+        destinations: [],
+        categories: [],
         displayRules: [
           {
             terms: ['weather', 'status normal'],

@@ -60,7 +60,7 @@ export async function request(
   // Create a newe URL instance
   const _url = new URL(url)
   // Provide default fetch options
-  const fetchOptions: RequestInit = { method: FetchMethod.GET }
+  const fetchOptions: RequestInit = { method: FetchMethod.GET, cache: 'no-store' }
 
   // If options were provided, apply them
   if (options) {
