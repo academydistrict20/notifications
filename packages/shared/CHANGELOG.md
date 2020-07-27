@@ -1,3 +1,15 @@
+# v0.8.2 (Mon Jul 27 2020)
+
+#### 🐛 Bug Fix
+
+- Bump version to: v0.8.1 \[skip ci\] (socialmedia@asd20.org)
+
+#### Authors: 1
+
+- Academy District 20 (socialmedia@asd20.org)
+
+---
+
 # v0.7.0 (Wed Jun 24 2020)
 
 #### 🚀 Enhancement

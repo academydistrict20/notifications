@@ -1,3 +1,17 @@
+# v0.10.1 (Mon Jul 27 2020)
+
+#### 🐛 Bug Fix
+
+- Docs/typo [#115](https://github.com/academydistrict20/notifications/pull/115) (luke.haris@asd20.org david.hayes@asd20.org)
+- refactor(plugins): breaking change: update search field messageSubscr… [#110](https://github.com/academydistrict20/notifications/pull/110) (luke.haris@asd20.org)
+
+#### Authors: 2
+
+- David Hayes (david.hayes@asd20.org)
+- Luke Harris ([@Lukeharris30](https://github.com/Lukeharris30))
+
+---
+
 # v0.10.1 (Mon Jul 06 2020)
 
 #### 🐛 Bug Fix
