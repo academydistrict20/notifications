@@ -4,7 +4,7 @@ You can embed notifications into an html page using native web components or by 
 
 ## Embedding with Vue
 
-To embed notifications into a vue component you need to import the component  and the relevant plugin you want to use into your vue file.
+To embed notifications into a vue component you need to import the component and the relevant plugin you want to use into your vue file.
 
 ```js
 // Compontent
