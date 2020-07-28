@@ -1,6 +1,6 @@
 {
   "name": "@asd20/notifications-plugin-cc-messages",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "Plugin for Academy District 20 CommCenter messages.",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
@@ -68,7 +68,7 @@
     ]
   },
   "dependencies": {
-    "@asd20/notifications-client": "^0.8.2",
+    "@asd20/notifications-client": "^0.8.3",
     "@asd20/notifications-plugin-azure-search": "^0.8.2",
     "@asd20/notifications-shared": "^0.8.2"
   },
