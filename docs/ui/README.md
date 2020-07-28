@@ -30,16 +30,14 @@
         importance: 'alert',
       },
 
-
 ## Notification styles
 
-* Banner - a colored strip appears at the top of the page, preceeding all other page content
-* In-line - uses the html body tag to position itself after page headers, but in-line with other page content
-
+* Banner - notification content is placed inside a large container, normally placed at the top of the page
+* Inline - notification content is placed in a container that is inline with other page content
+* Floating - notifiation content is placed in floating containers above page content
 
 ## Notification importance
 
 * Emergency - red; banner background will be solid red background with white text, in-line will have a white background with a red icon
 * Alert - yellow; banner background will be solid yellow background with dark text, in-line will have a white background with a yellow icon
 * Info - blue/green; banner background will be solid blue/green background with white text, in-line will have a white background with a blue/green icon
-
