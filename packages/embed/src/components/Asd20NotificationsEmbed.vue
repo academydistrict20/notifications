@@ -10,7 +10,6 @@ export default {
     const mountingPortalNodes = []
 
     for (const [type, group] of Object.entries(this.groups)) {
-      console.log('group', group, 'type', type)
       mountingPortalNodes.push(h(
         'mounting-portal',
         {
@@ -28,7 +27,7 @@ export default {
                 notifications: this.activeNotificationsByType[type],
               },
               attrs: {
-                grouptype: type, 
+                groupType: type, 
                 position: group.position
               },
               on: {
@@ -154,7 +153,6 @@ export default {
     // Asks the client to dismiss a notification
     onDismiss(event) {
       const notification = event.detail[0]
-      console.log('dismissed', notification)
       if (!this.client) return
       this.client.dismiss(notification)
     },

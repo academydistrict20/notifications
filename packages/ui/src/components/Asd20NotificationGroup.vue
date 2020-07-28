@@ -14,14 +14,14 @@
         v-for="notification of notificationsFromIndex"
         :key="notification.key || notification.title"
         v-bind="notification"
-        :notificationStyle="grouptype"
+        :notificationStyle="groupType"
         @dismiss="$emit('dismiss', notification)"
       >
       </asd20-notification>
     </transition-group>
     </transition>
 
-    <button v-if="grouptype === 'floating'" class="bell" :class="{ 'open': open }" @click="open = !open">
+    <button v-if="groupType === 'floating'" class="bell" :class="{ 'open': open }" @click="open = !open">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role>
         <g>
           <path d="M16 7a6 6 0 0 1 6 6v7H10v-7a6 6 0 0 1 6-6z" class="fill"></path>
@@ -63,7 +63,7 @@ export default {
   components: { Asd20Notification },
 
   props: {
-    grouptype: { type: String, default: "default" },
+    groupType: { type: String, default: "default" },
     position: { type: String, default: "static" },
     notifications: { type: Array, default: () => [] }
   },
@@ -80,13 +80,13 @@ export default {
 
   computed: {
     classes() {
-      return ["notification-group", `notification-group--${this.grouptype}`, `notification-group--${this.position}`];
+      return ["notification-group", `notification-group--${this.groupType}`, `notification-group--${this.position}`];
     },
     showControls() {
       return this.notifications.length > 1;
     },
     isOpen() {
-      return this.open || this.grouptype !== "floating";
+      return this.open || this.groupType !== "floating";
     },
   },
   created() {
@@ -136,7 +136,7 @@ export default {
         .toString(36)
         .substr(2, 9);
 
-      if (this.grouptype === "banner") {
+      if (this.groupType === "banner") {
         this.enterActiveClass = "";
         this.leaveActiveClass = "slide-up";
       } else {
@@ -154,7 +154,7 @@ export default {
       this.index = newIndex;
     },
     previous() {
-      if (this.grouptype === "banner") {
+      if (this.groupType === "banner") {
         this.enterActiveClass = "slide-down";
         this.leaveActiveClass = "slide-up";
       } else {
