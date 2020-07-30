@@ -1,3 +1,23 @@
+# v0.8.5 (Thu Jul 30 2020)
+
+#### 🐛 Bug Fix
+
+- fix(ui): fix case on wc attribute [#119](https://github.com/academydistrict20/notifications/pull/119) (luke.haris@asd20.org)
+- Bump version to: v0.8.4 \[skip ci\] (socialmedia@asd20.org)
+- v0.8.3 (david.hayes@asd20.org)
+- chore(ui): correct case on groupType prop (david.hayes@asd20.org)
+- Bump version to: v0.8.2 \[skip ci\] (socialmedia@asd20.org)
+- Update CHANGELOG.md \[skip ci\] (socialmedia@asd20.org)
+- Bump version to: v0.8.1 \[skip ci\] (socialmedia@asd20.org)
+
+#### Authors: 3
+
+- Academy District 20 (socialmedia@asd20.org)
+- David Hayes (david.hayes@asd20.org)
+- Luke Harris ([@Lukeharris30](https://github.com/Lukeharris30))
+
+---
+
 # v0.8.2 (Mon Jul 27 2020)
 
 #### 🐛 Bug Fix
