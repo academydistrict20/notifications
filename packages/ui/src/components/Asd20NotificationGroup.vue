@@ -1,24 +1,24 @@
 <template>
-  <div :class="classes" v-if="notificationsFromIndex.length > 0">
+  <div :class="classes">
     <transition name="cards">
-    <transition-group
-      v-if="isOpen"
-      class="notifications"
-      name="notifications"
-      :enter-active-class="enterActiveClass"
-      :leave-active-class="leaveActiveClass"
-      tag="div"
-    >
-      <asd20-notification
-        class="notification"
-        v-for="notification of notificationsFromIndex"
-        :key="notification.key || notification.title"
-        v-bind="notification"
-        :notificationStyle="groupType"
-        @dismiss="$emit('dismiss', notification)"
+      <transition-group
+        v-if="isOpen && notificationsFromIndex.length > 0"
+        class="notifications"
+        name="notifications"
+        :enter-active-class="enterActiveClass"
+        :leave-active-class="leaveActiveClass"
+        tag="div"
       >
-      </asd20-notification>
-    </transition-group>
+        <asd20-notification
+          class="notification"
+          v-for="notification of notificationsFromIndex"
+          :key="notification.key || notification.title"
+          v-bind="notification"
+          :notificationStyle="groupType"
+          @dismiss="$emit('dismiss', notification)"
+        >
+        </asd20-notification>
+      </transition-group>
     </transition>
 
     <button v-if="groupType === 'floating'" class="bell" :class="{ 'open': open }" @click="open = !open">
