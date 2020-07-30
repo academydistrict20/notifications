@@ -27,7 +27,7 @@ export default {
                 notifications: this.activeNotificationsByType[type],
               },
               attrs: {
-                groupType: type, 
+                "group-type": type, 
                 position: group.position
               },
               on: {
