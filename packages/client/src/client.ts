@@ -234,11 +234,15 @@ class NotificationsClient {
    *
    */
   dismissAll(): void {
-    // TODO: consider more elaborate dismissal
-    // for (const notification of this.activeNotifications) {
-    //   this.dismiss(notification)
-    // }
     this.dismissedNotificationIds = this.activeNotifications.map((n) => n.id)
+  }
+
+  dismissFloating(): void {
+    if (this.activeNotificationsByType.floating) {
+      this.dismissedNotificationIds = this.dismissedNotificationIds.concat(
+        this.activeNotificationsByType.floating.map((n) => n.id),
+      )
+    }
   }
 
   /**

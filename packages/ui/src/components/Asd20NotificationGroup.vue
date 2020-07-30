@@ -1,8 +1,8 @@
 <template>
-  <div :class="classes">
+  <div :class="classes" v-if="totalDismissedNotifications || notifications.length > 0">
     <transition name="cards">
       <transition-group
-        v-if="isOpen && notificationsFromIndex.length > 0"
+        v-if="notificationsFromIndex.length > 0"
         class="notifications"
         name="notifications"
         :enter-active-class="enterActiveClass"
@@ -21,7 +21,7 @@
       </transition-group>
     </transition>
 
-    <button v-if="groupType === 'floating'" class="bell" :class="{ 'open': open }" @click="open = !open">
+    <button v-if="groupType === 'floating'" class="bell" :class="{ 'open': open }" @click="$emit('toggle-all', notification)">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role>
         <g>
           <path d="M16 7a6 6 0 0 1 6 6v7H10v-7a6 6 0 0 1 6-6z" class="fill"></path>
@@ -33,10 +33,10 @@
           <path fill="currentColor" d="M8 21h16v1H8zM18 24a4 4 0 0 1-8 0z" class="line"></path>
         </g>
       </svg>
-      <span>{{ notifications.length }}</span>
+      <span>{{ totalDismissedNotifications }}</span>
     </button>
 
-    <div v-if="showControls && isOpen && notificationsFromIndex.length > 1" class="pagination">
+    <div v-if="showControls && notificationsFromIndex.length > 1" class="pagination">
       <button @click="previous">
         <svg style="width: 16px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
           <path d="M30.83 32.67l-9.17-9.17 9.17-9.17-2.83-2.83-12 12 12 12z"></path>
@@ -65,7 +65,8 @@ export default {
   props: {
     groupType: { type: String, default: "default" },
     position: { type: String, default: "static" },
-    notifications: { type: Array, default: () => [] }
+    notifications: { type: Array, default: () => [] },
+    totalDismissedNotifications: { type: Number, default: 0 },
   },
 
   data() {
@@ -84,10 +85,7 @@ export default {
     },
     showControls() {
       return this.notifications.length > 1;
-    },
-    isOpen() {
-      return this.open || this.groupType !== "floating";
-    },
+    }
   },
   created() {
     this.initNotifications(this.notifications);

@@ -25,13 +25,15 @@ export default {
             {
               domProps: {
                 notifications: this.activeNotificationsByType[type],
+                totalDismissedNotifications: this.dismissedNotifications.length
               },
               attrs: {
-                "group-type": type, 
+                'group-type': type, 
                 position: group.position
               },
               on: {
-                dismiss: this.onDismiss
+                dismiss: this.onDismiss,
+                'toggle-all': this.onToggleAll
               }
             }
           )
@@ -104,6 +106,8 @@ export default {
       status: []
     },
 
+    dismissedNotifications: [],
+
     groupTargetSelectors: {},
 
     nextTick: false
@@ -156,10 +160,21 @@ export default {
       if (!this.client) return
       this.client.dismiss(notification)
     },
+
+    // Asks the client to dismiss a notification
+    onToggleAll() {
+      if (!this.client) return
+      if (this.dismissedNotifications.length > 0) {
+        this.client.clearDismissions()
+      } else {
+        this.client.dismissFloating()
+      }
+    },
     // Responds to the client updating the notifications
     // e.g. After new notificaitons are loaded, or dismissed
-    onUpdate({ activeNotificationsByType }) {
+    onUpdate({ activeNotificationsByType, dismissedNotifications }) {
       this.activeNotificationsByType = activeNotificationsByType
+      this.dismissedNotifications = dismissedNotifications
     },
     // Asks the client to undismiss all notifications
     clear() {
