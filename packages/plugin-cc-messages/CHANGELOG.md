@@ -1,3 +1,22 @@
+# v0.8.6 (Thu Jul 30 2020)
+
+#### 🐛 Bug Fix
+
+- fix(ui): floaating notification group bell dissapears when all notifications are dismissed [#121](https://github.com/academydistrict20/notifications/pull/121) (david.hayes@asd20.org)
+- Bump version to: v0.8.5 \[skip ci\] (socialmedia@asd20.org)
+- Bump version to: v0.8.4 \[skip ci\] (socialmedia@asd20.org)
+- v0.8.3 (david.hayes@asd20.org)
+- Bump version to: v0.8.2 \[skip ci\] (socialmedia@asd20.org)
+- Update CHANGELOG.md \[skip ci\] (socialmedia@asd20.org)
+- Bump version to: v0.8.1 \[skip ci\] (socialmedia@asd20.org)
+
+#### Authors: 2
+
+- Academy District 20 (socialmedia@asd20.org)
+- David Hayes ([@altitudems](https://github.com/altitudems))
+
+---
+
 # v0.8.2 (Mon Jul 27 2020)
 
 #### 🐛 Bug Fix

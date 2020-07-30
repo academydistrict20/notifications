@@ -5,6 +5,32 @@
 - docs(ui): update style descriptions [#116](https://github.com/academydistrict20/notifications/pull/116) (david.hayes@asd20.org)
 - Docs/typo [#115](https://github.com/academydistrict20/notifications/pull/115) (luke.haris@asd20.org david.hayes@asd20.org)
 - refactor(plugins): breaking change: update search field messageSubscr… [#110](https://github.com/academydistrict20/notifications/pull/110) (luke.haris@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): floaating notification group bell dissapears when all notifications are dismissed [#121](https://github.com/academydistrict20/notifications/pull/121) (david.hayes@asd20.org)
+- `@asd20/notifications-embed`
+  - fix(ui): fix case on wc attribute [#119](https://github.com/academydistrict20/notifications/pull/119) (luke.haris@asd20.org)
+
+#### ⚠️ Pushed to `master`
+
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-ui`
+  - v0.8.3 (david.hayes@asd20.org)
+- `@asd20/notifications-embed`, `@asd20/notifications-ui`
+  - chore(ui): correct case on groupType prop (david.hayes@asd20.org)
+
+#### Authors: 2
+
+- David Hayes ([@altitudems](https://github.com/altitudems))
+- Luke Harris ([@Lukeharris30](https://github.com/Lukeharris30))
+
+---
+
+# v0.10.1 (Thu Jul 30 2020)
+
+#### 🐛 Bug Fix
+
+- docs(ui): update style descriptions [#116](https://github.com/academydistrict20/notifications/pull/116) (david.hayes@asd20.org)
+- Docs/typo [#115](https://github.com/academydistrict20/notifications/pull/115) (luke.haris@asd20.org david.hayes@asd20.org)
+- refactor(plugins): breaking change: update search field messageSubscr… [#110](https://github.com/academydistrict20/notifications/pull/110) (luke.haris@asd20.org)
 - `@asd20/notifications-embed`
   - fix(ui): fix case on wc attribute [#119](https://github.com/academydistrict20/notifications/pull/119) (luke.haris@asd20.org)
 
