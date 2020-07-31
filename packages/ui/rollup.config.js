@@ -69,6 +69,7 @@ export default [
         plugins: [terser()],
       },
     ],
+    // css: true may be needed for SSR support
     plugins: [vue({ css: true, template: { isProduction: true } }), css(), resolve()],
     external: ['vue'],
   },
