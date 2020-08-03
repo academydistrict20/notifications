@@ -21,7 +21,7 @@
       </transition-group>
     </transition>
 
-    <button v-if="groupType === 'floating'" class="bell" :class="{ 'open': open }" @click="$emit('toggle-all', notification)">
+    <button v-if="groupType === 'floating'" class="bell" :class="{ 'open': open }" @click="$emit('toggle-all')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role>
         <g>
           <path d="M16 7a6 6 0 0 1 6 6v7H10v-7a6 6 0 0 1 6-6z" class="fill"></path>
