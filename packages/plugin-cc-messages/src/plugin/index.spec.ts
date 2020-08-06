@@ -19,31 +19,24 @@ const jsonPlugin = CreatePlugin({
       type: NotificationTypes.BANNER,
     },
     {
-      terms: ['weather', 'status', 'normal'],
+      terms: ['weather status normal'],
       importance: NotificationImportance.INFO,
       type: NotificationTypes.STATUS,
       icon: 'weather-sun',
     },
     {
-      terms: ['weather', 'status', 'delayed'],
+      terms: ['weather status delayed'],
       importance: NotificationImportance.ALERT,
       type: NotificationTypes.STATUS,
       icon: 'weather-snow',
       color: 'blue',
     },
     {
-      terms: ['weather', 'status', 'closed'],
+      terms: ['weather status closed'],
       importance: NotificationImportance.ALERT,
       type: NotificationTypes.STATUS,
       icon: 'weather-snow',
       color: 'red',
-    },
-    {
-      terms: ['important notice'],
-      importance: NotificationImportance.INFO,
-      type: NotificationTypes.FLOATING,
-      icon: '',
-      color: '',
     },
   ],
 })
@@ -68,6 +61,8 @@ describe('load', () => {
     const items = await jsonPlugin.load()
     expect(items[0].importance).toEqual('alert')
     expect(items[1].importance).toEqual('emergency')
+    expect(items[0].type).toEqual('banner')
+    expect(items[1].type).toEqual('banner')
   })
 
   it('normal status displayRules apply correctly', async () => {

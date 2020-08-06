@@ -77,21 +77,26 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
         .map((r) => {
           const terms = r.terms.join('|').toLowerCase().trim().split('|')
           const categories = (d.categories || []).join('|').toLowerCase().split('|')
-          const title = d.title.toLowerCase()
-          const summary = d.summary.toLowerCase()
+          const tags = (d.tags || []).join('|').toLowerCase().split('|')
 
           let matches = 0
+
           // Loop through each term
           for (const term of terms) {
-            if (categories.includes(term)) matches += 10
-            if (title.includes(term)) matches += 5
-            if (summary.includes(term)) matches++
+            if (categories.includes(term)) {
+              matches++
+            }
+            if (tags.includes(term)) {
+              matches++
+            }
           }
 
-          // Make sure that th number of matched for all terms
-          // is at least the same amount aas there are terms
+          // Make sure that the number of matched for all terms
+          // is at least the same amount as there are terms
           return { matches, rule: r }
         })
+        .filter((r) => r.matches > 0 && r.matches >= r.rule.terms.length)
+        // Put the hisest scoring match at the top
         .sort((a, b) => {
           if (a.matches > b.matches) return -1
           if (a.matches < b.matches) return 1
