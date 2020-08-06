@@ -57,9 +57,9 @@ export function generateAzureSearchPayload(
   const filters: string[] = []
   const now = new Date().toISOString()
   // get domain and add it to the destinations
-  // if (typeof window !== 'undefined') {
-  //   state.destinations.push(window.location.host)
-  // }
+  if (typeof window !== 'undefined') {
+    state.destinations.push(window.location.host)
+  }
 
   filters.push(
     `status eq 'Published' and ${now} ge publishDateTime  and (expireDateTime eq null or expireDateTime gt ${now})`,
