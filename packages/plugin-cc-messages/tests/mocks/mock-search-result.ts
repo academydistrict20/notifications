@@ -87,8 +87,8 @@ export default {
       summary: 'Normal',
       bodyHtml: '',
       bodyJson: '',
-      tags: [],
-      categories: ['Weather', 'Delays and Closures'],
+      tags: ['weather status normal'],
+      categories: ['Delays and Closures'],
       destinations: ['District Wide', '*asd20.org'],
       links:
         '[{"type":"Detail Link","title":"Learn More","url":"https://www.asd20.org"}, {"type":"Call to Action","title":"Take Action","url":"https://www.asd20.org/action"}]',
@@ -122,8 +122,8 @@ export default {
       summary: 'Delayed',
       bodyHtml: '',
       bodyJson: '',
-      tags: [],
-      categories: ['Weather', 'Delays and Closures'],
+      tags: ['weather status delayed'],
+      categories: ['Delays and Closures'],
       destinations: ['District Wide', '*asd20.org'],
       links:
         '[{"type":"Detail Link","title":"Learn More","url":"https://www.asd20.org"}, {"type":"Call to Action","title":"Take Action","url":"https://www.asd20.org/action"}]',
@@ -157,8 +157,8 @@ export default {
       summary: 'Closed',
       bodyHtml: '',
       bodyJson: '',
-      tags: [],
-      categories: ['Weather', 'Delays and Closures'],
+      tags: ['weather status closed'],
+      categories: ['Delays and Closures'],
       destinations: ['District Wide', '*asd20.org'],
       links:
         '[{"type":"Detail Link","title":"Learn More","url":"https://www.asd20.org"}, {"type":"Call to Action","title":"Take Action","url":"https://www.asd20.org/action"}]',
