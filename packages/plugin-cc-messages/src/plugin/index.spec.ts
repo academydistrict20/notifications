@@ -11,11 +11,39 @@ const jsonPlugin = CreatePlugin({
       terms: ['weather', 'urgent'],
       importance: NotificationImportance.ALERT,
       type: NotificationTypes.BANNER,
+      icon: 'somthing',
     },
     {
       terms: ['Emergency'],
       importance: NotificationImportance.EMERGENCY,
       type: NotificationTypes.BANNER,
+    },
+    {
+      terms: ['weather', 'status', 'normal'],
+      importance: NotificationImportance.INFO,
+      type: NotificationTypes.STATUS,
+      icon: 'weather-sun',
+    },
+    {
+      terms: ['weather', 'status', 'delayed'],
+      importance: NotificationImportance.ALERT,
+      type: NotificationTypes.STATUS,
+      icon: 'weather-snow',
+      color: 'blue',
+    },
+    {
+      terms: ['weather', 'status', 'closed'],
+      importance: NotificationImportance.ALERT,
+      type: NotificationTypes.STATUS,
+      icon: 'weather-snow',
+      color: 'red',
+    },
+    {
+      terms: ['important notice'],
+      importance: NotificationImportance.INFO,
+      type: NotificationTypes.FLOATING,
+      icon: '',
+      color: '',
     },
   ],
 })
@@ -32,7 +60,7 @@ describe('load', () => {
   it('data is transformed', async () => {
     fetchMock.mockResponseOnce(JSON.stringify(mockSearchResult))
     const items = await jsonPlugin.load()
-    expect(items.length).toEqual(2)
+    expect(items.length).toEqual(7)
   })
 
   it('importance is assigned', async () => {
@@ -40,6 +68,50 @@ describe('load', () => {
     const items = await jsonPlugin.load()
     expect(items[0].importance).toEqual('alert')
     expect(items[1].importance).toEqual('emergency')
+  })
+
+  it('normal status displayRules apply correctly', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify(mockSearchResult))
+    const items = await jsonPlugin.load()
+    expect(items[2].importance).toEqual('info')
+    expect(items[2].icon).toEqual('weather-sun')
+    expect(items[2].type).toEqual('status')
+  })
+
+  it('delay status displayRules apply correctly', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify(mockSearchResult))
+    const items = await jsonPlugin.load()
+    expect(items[3].importance).toEqual('alert')
+    expect(items[3].icon).toEqual('weather-snow')
+    expect(items[3].type).toEqual('status')
+    expect(items[3].color).toEqual('blue')
+  })
+
+  it('closed status displayRules apply correctly', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify(mockSearchResult))
+    const items = await jsonPlugin.load()
+    expect(items[4].importance).toEqual('alert')
+    expect(items[4].icon).toEqual('weather-snow')
+    expect(items[4].type).toEqual('status')
+    expect(items[4].color).toEqual('red')
+  })
+
+  it('important notice displayRules apply correctly', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify(mockSearchResult))
+    const items = await jsonPlugin.load()
+    expect(items[5].importance).toEqual('info')
+    expect(items[5].icon).toEqual('')
+    expect(items[5].type).toEqual('floating')
+    expect(items[5].color).toEqual('')
+  })
+
+  it('displayRules field matches are weighted correctly', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify(mockSearchResult))
+    const items = await jsonPlugin.load()
+    expect(items[6].importance).toEqual('info')
+    expect(items[6].icon).toEqual('')
+    expect(items[6].type).toEqual('floating')
+    expect(items[6].color).toEqual('')
   })
 
   it('links to be evaluated', async () => {
