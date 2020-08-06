@@ -73,15 +73,32 @@ function Create(config: Partial<CCMessagesPluginConfig>): NotificationsPlugin {
       const detailLink = links.find((l) => (l as CcLink).type === 'Detail Link') as CcLink | undefined
       const ctaLink = links.find((l) => (l as CcLink).type === 'Call to Action') as CcLink | undefined
 
-      const matchingRule = (config.displayRules || []).find((r) => {
-        const terms = r.terms.join('|').toLowerCase().trim().split('|')
-        let matches = 0
-        for (const term of terms) {
-          if ((d.categories || []).join(' ').toLowerCase().includes(term)) matches++
-          if (d.title.toLowerCase().includes(term)) matches++
-        }
-        return matches >= terms.length
-      })
+      const matchingRules = (config.displayRules || [])
+        .map((r) => {
+          const terms = r.terms.join('|').toLowerCase().trim().split('|')
+          const categories = (d.categories || []).join('|').toLowerCase().split('|')
+          const title = d.title.toLowerCase()
+          const summary = d.summary.toLowerCase()
+
+          let matches = 0
+          // Loop through each term
+          for (const term of terms) {
+            if (categories.includes(term)) matches += 10
+            if (title.includes(term)) matches += 5
+            if (summary.includes(term)) matches++
+          }
+
+          // Make sure that th number of matched for all terms
+          // is at least the same amount aas there are terms
+          return { matches, rule: r }
+        })
+        .sort((a, b) => {
+          if (a.matches > b.matches) return -1
+          if (a.matches < b.matches) return 1
+          return 0
+        })
+
+      const matchingRule = matchingRules.length > 0 ? matchingRules[0].rule : null
 
       return {
         ...d,
