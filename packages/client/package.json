@@ -1,6 +1,6 @@
 {
   "name": "@asd20/notifications-client",
-  "version": "0.8.13",
+  "version": "0.8.14",
   "description": "Client implementation of notifications, ideal for apps",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
@@ -60,9 +60,9 @@
     "vue": "^2.6.11"
   },
   "dependencies": {
-    "@asd20/notifications-plugin-json": "^0.8.13",
-    "@asd20/notifications-shared": "^0.8.13",
-    "@asd20/notifications-ui": "^0.8.13",
+    "@asd20/notifications-plugin-json": "^0.8.14",
+    "@asd20/notifications-shared": "^0.8.14",
+    "@asd20/notifications-ui": "^0.8.14",
     "@vue/web-component-wrapper": "^1.2.0"
   },
   "husky": {
