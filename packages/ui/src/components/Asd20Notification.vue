@@ -157,7 +157,7 @@ export default {
 
   &__description {
     font-size: 0.875rem;
-    margin-top: 0.25rem;
+    margin: 0.25rem 0 1rem 0;
   }
 
   &__dismiss {
@@ -358,6 +358,7 @@ export default {
 
     &__description {
       font-size: 1rem;
+      margin: 0.5rem 0 0 0;
     }
     &__content > a.asd20-notification__cta {
       margin-top: 1rem;
