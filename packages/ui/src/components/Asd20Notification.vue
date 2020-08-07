@@ -121,7 +121,7 @@ export default {
   --accent-one: #70b4c2;
   --accent-dark: #4b757e;
   --emergency: #da2e0b;
-  --warning: #f7e06e;
+  --warning: #B99C27;
   --warning-dark: #cfb02d;
   --normal: #4d7d36;
   // --warning-dark: #9b870c;
@@ -209,11 +209,11 @@ export default {
   &--status {
     .asd20-notification__title,
     .asd20-notification__cta {
-      color: var(--normal);
+      color: var(--background-color);
     }
     .asd20-icon {
       --line-color: var(--background-dark);
-      --fill-color: var(--normal);
+      --fill-color: var(--background-color);
     }
   }
 
@@ -244,22 +244,22 @@ export default {
       align-items: center;
     }
     .asd20-icon {
-      --line-color: var(--normal);
-      --fill-color: var(--normal);
+      --line-color: var(--background-color);
+      --fill-color: var(--background-color);
       .fill {
         opacity: 0.25;
       }
     }
     .asd20-notification__title {
       font-size: 0.875rem;
-      color: var(--normal);
+      color: var(--background-color);
       &::after {
         content: ': ';
       }
     }
     .asd20-notification__description {
       // font-size: 0.875rem;
-      color: var(--normal);
+      color: var(--background-color);
       margin: 0 0 0 0.25rem;
     }
     .asd20-notification__dismiss {
