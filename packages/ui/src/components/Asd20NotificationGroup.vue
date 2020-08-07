@@ -196,7 +196,7 @@ export default {
   flex-direction: column;
 
   &--inline {
-    margin-bottom: 1rem;
+    margin: 2rem 2rem 0 2rem;
   }
 
   .bell {
@@ -574,11 +574,15 @@ export default {
 @media (min-width: 1024px) {
   .notification-group {
     &--status .notifications {
-    position: absolute;
-    order: inherit;
-    left: auto;
-    right: 1rem;
-    background: transparent;
+      position: absolute;
+      order: inherit;
+      left: auto;
+      right: 1rem;
+      background: transparent;
+    }
+    &--inline {
+      margin: 2rem 5rem 0 5rem;
+
     }
   }
 }

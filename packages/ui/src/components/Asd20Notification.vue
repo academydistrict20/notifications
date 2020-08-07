@@ -13,8 +13,8 @@
         class="asd20-notification__description"
         v-if="description || detailLinkUrl" 
       >
-        <span v-if="description" v-html="description"></span>
-        <a v-if="detailLinkUrl" :href="detailLinkUrl">{{ detailLinkLabel || detailLinkUrl }}</a>
+        <span v-if="description" v-html="description"> </span> 
+        <a v-if="detailLinkUrl" :href="detailLinkUrl">{{ detailLinkLabel || detailLinkUrl }} </a>
       </div>
       <asd20-button
         class="asd20-notification__cta"
