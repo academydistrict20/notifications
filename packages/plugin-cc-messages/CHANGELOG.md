@@ -1,3 +1,35 @@
+# v0.8.13 (Fri Aug 07 2020)
+
+#### 🐛 Bug Fix
+
+- Bump version to: v0.8.12 \[skip ci\] (socialmedia@asd20.org)
+- Update CHANGELOG.md \[skip ci\] (socialmedia@asd20.org)
+- fix(plugins): made display rules only search categories and tags [#128](https://github.com/academydistrict20/notifications/pull/128) (david.hayes@asd20.org)
+- fix(plugins): made display rules only search categories and tags (david.hayes@asd20.org)
+- Bump version to: v0.8.11 \[skip ci\] (socialmedia@asd20.org)
+- fix(plugins): fix weighting of rules so the best rule is applied [#127](https://github.com/academydistrict20/notifications/pull/127) (david.hayes@asd20.org)
+- fix(plugins): fix weighting of rules so the best rule is applied (david.hayes@asd20.org)
+- Bump version to: v0.8.10 \[skip ci\] (socialmedia@asd20.org)
+- fix(plugin): add back the auto destination for hostname [#126](https://github.com/academydistrict20/notifications/pull/126) (david.hayes@asd20.org)
+- fix(plugin): add back the auto destination for hostname (david.hayes@asd20.org)
+- Bump version to: v0.8.9 \[skip ci\] (socialmedia@asd20.org)
+- Bump version to: v0.8.8 \[skip ci\] (socialmedia@asd20.org)
+- Bump version to: v0.8.7 \[skip ci\] (socialmedia@asd20.org)
+- Bump version to: v0.8.6 \[skip ci\] (socialmedia@asd20.org)
+- fix(ui): floaating notification group bell dissapears when all notifications are dismissed [#121](https://github.com/academydistrict20/notifications/pull/121) (david.hayes@asd20.org)
+- Bump version to: v0.8.5 \[skip ci\] (socialmedia@asd20.org)
+- Bump version to: v0.8.4 \[skip ci\] (socialmedia@asd20.org)
+- v0.8.3 (david.hayes@asd20.org)
+- Bump version to: v0.8.2 \[skip ci\] (socialmedia@asd20.org)
+- Bump version to: v0.8.1 \[skip ci\] (socialmedia@asd20.org)
+
+#### Authors: 2
+
+- Academy District 20 (socialmedia@asd20.org)
+- David Hayes ([@altitudems](https://github.com/altitudems))
+
+---
+
 # v0.8.12 (Thu Aug 06 2020)
 
 #### 🐛 Bug Fix
