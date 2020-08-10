@@ -195,10 +195,6 @@ export default {
   display: flex;
   flex-direction: column;
 
-  &--inline {
-    margin: 2rem 2rem 0 2rem;
-  }
-
   .bell {
     display: none;
   }
@@ -579,10 +575,6 @@ export default {
       left: auto;
       right: 1rem;
       background: transparent;
-    }
-    &--inline {
-      margin: 2rem 5rem 0 5rem;
-
     }
   }
 }
