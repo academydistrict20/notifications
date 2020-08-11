@@ -1,3 +1,52 @@
+# v0.10.1 (Tue Aug 11 2020)
+
+#### 🐛 Bug Fix
+
+- docs(ui): update style descriptions [#116](https://github.com/academydistrict20/notifications/pull/116) (david.hayes@asd20.org)
+- Docs/typo [#115](https://github.com/academydistrict20/notifications/pull/115) ([@Lukeharris30](https://github.com/Lukeharris30) david.hayes@asd20.org)
+- refactor(plugins): breaking change: update search field messageSubscr… [#110](https://github.com/academydistrict20/notifications/pull/110) ([@Lukeharris30](https://github.com/Lukeharris30))
+- `@asd20/notifications-ui`
+  - style: remove margin from inline notification components [#132](https://github.com/academydistrict20/notifications/pull/132) ([@Hollendorfer](https://github.com/Hollendorfer) david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - Fix/styling [#130](https://github.com/academydistrict20/notifications/pull/130) (david.hayes@asd20.org [@Hollendorfer](https://github.com/Hollendorfer) [@Lukeharris30](https://github.com/Lukeharris30))
+- `@asd20/notifications-ui`
+  - fix(ui): styling tweaks [#129](https://github.com/academydistrict20/notifications/pull/129) (david.hayes@asd20.org [@Hollendorfer](https://github.com/Hollendorfer))
+- `@asd20/notifications-plugin-cc-messages`
+  - fix(plugins): made display rules only search categories and tags [#128](https://github.com/academydistrict20/notifications/pull/128) (david.hayes@asd20.org)
+- `@asd20/notifications-plugin-cc-messages`
+  - fix(plugins): fix weighting of rules so the best rule is applied [#127](https://github.com/academydistrict20/notifications/pull/127) (david.hayes@asd20.org)
+- `@asd20/notifications-plugin-cc-messages`
+  - fix(plugin): add back the auto destination for hostname [#126](https://github.com/academydistrict20/notifications/pull/126) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): correct toggle event emitter [#125](https://github.com/academydistrict20/notifications/pull/125) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - Fix/ssr support [#123](https://github.com/academydistrict20/notifications/pull/123) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): ssr compatible build [#122](https://github.com/academydistrict20/notifications/pull/122) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): ssr compatible build (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-ui`
+  - fix(ui): correct bell behavior (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): floaating notification group bell dissapears when all notifications are dismissed [#121](https://github.com/academydistrict20/notifications/pull/121) (david.hayes@asd20.org)
+- `@asd20/notifications-embed`
+  - fix(ui): fix case on wc attribute [#119](https://github.com/academydistrict20/notifications/pull/119) ([@Lukeharris30](https://github.com/Lukeharris30))
+
+#### ⚠️ Pushed to `master`
+
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-ui`
+  - v0.8.3 (david.hayes@asd20.org)
+- `@asd20/notifications-embed`, `@asd20/notifications-ui`
+  - chore(ui): correct case on groupType prop (david.hayes@asd20.org)
+
+#### Authors: 3
+
+- David Hayes ([@altitudems](https://github.com/altitudems))
+- Luke Harris ([@Lukeharris30](https://github.com/Lukeharris30))
+- Paul Hollendorfer ([@Hollendorfer](https://github.com/Hollendorfer))
+
+---
+
 # v0.10.1 (Fri Aug 07 2020)
 
 #### 🐛 Bug Fix
