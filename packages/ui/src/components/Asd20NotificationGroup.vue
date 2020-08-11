@@ -570,16 +570,4 @@ export default {
     opacity: 1;
   }
 }
-
-@media (min-width: 1024px) {
-  .notification-group {
-    &--status .notifications {
-      position: absolute;
-      order: inherit;
-      left: auto;
-      right: 1rem;
-      background: transparent;
-    }
-  }
-}
 </style>
