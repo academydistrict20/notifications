@@ -290,7 +290,7 @@ export default {
   }
 
   &--floating .pagination {
-    margin-right: 0.25rem;
+    margin-right: 0.5rem;
     background: rgba(255,255,255,0.85);
     align-self: stretch;
     margin-right: -2rem;
@@ -453,12 +453,30 @@ export default {
   animation: swoop-in 0.5s reverse;
 }
 
-.fade-out-to {
-  opacity: 0;
+.notification-group--top-left .cards-enter-active,
+.notification-group--top-left .cards-leave-active {
+  transform-origin: top left;
 }
 
-.bounce-in {
-  animation: bounce-in 0.5s;
+.notification-group--static .cards-enter-active,
+.notification-group--static .cards-leave-active,
+.notification-group--top-right .cards-enter-active,
+.notification-group--top-right .cards-leave-active {
+  transform-origin: top right;
+}
+
+.notification-group--bottom-right .cards-enter-active,
+.notification-group--bottom-right .cards-leave-active {
+  transform-origin: bottom right;
+}
+
+.notification-group--bottom-left .cards-enter-active,
+.notification-group--bottom-left .cards-leave-active {
+  transform-origin: bottom left;
+}
+
+.fade-out-to {
+  opacity: 0;
 }
 
 .stack-in {
@@ -466,7 +484,7 @@ export default {
 }
 
 .stack-out {
-  animation: stack-out 0.5s;
+  animation: stack-in 0.5s reverse;
 }
 
 .slide-up {
@@ -475,20 +493,6 @@ export default {
 
 .slide-down {
   animation: slide-down 0.5s;
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(1);
-    opacity: 50%;
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 @keyframes stack-in {
@@ -558,11 +562,11 @@ export default {
 
 @keyframes swoop-in {
   0% {
-    transform: translateX(50%) translateY(-50%) scale(0.1);
+    transform: scale(0.0);
     opacity: 0;
   }
   100% {
-    transform: translateX(0) translateY(0) scale(1);
+    transform: scale(1.0);
     opacity: 1;
   }
 }
