@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Example Web App</title>
+    
   </head>
-  <body>
+  <body style="background: #eee;">
     <!-- Load Vue -->
     <script src="https://unpkg.com/vue"></script>
     <!-- Load the library -->
@@ -15,7 +16,16 @@
   -->
 
     <!-- Example #2: Using a web component -->
-    <asd20-notification-group type="inline" ></asd20-notification-group>
+    <div style="border: 1px dashed gray; padding: 1rem; margin: 2rem; padding-left: auto;">
+      <asd20-notification-group group-type="floating" position="bottom-right" ></asd20-notification-group>
+    </div>
+
+    <div style="position: fixed; left: 50%; top: 50%;">
+      <button id="btnPosition">Toggle Position</button>
+      <button id="btnToggleNotifications">Toggle All Notifications</button>
+    </div>
+
+    
 
     <script>
       const notifications = [
@@ -56,8 +66,35 @@
           importance: 'emergency',
         },
       ]      
-      const $q = document.querySelector('asd20-notification-group')
-      $q.notifications = notifications
+      const group = document.querySelector('asd20-notification-group')
+      group.notifications = notifications
+      group.totalDismissedNotifications = notifications.length
+
+      const pos = document.getElementById('btnPosition')
+      pos.addEventListener('click', function () {
+        const options = ['static', 'top-left', 'top-right', 'bottom-right', 'bottom-left']
+        const current = options.indexOf(group.position)
+        console.log(group, current)
+        if (current < 0 || current >= options.length - 1 ) {
+          group.position = options[0]
+        } else {
+          group.position = options[current + 1]
+        }
+      })
+
+      const toggle = document.getElementById('btnToggleNotifications')
+
+      toggle.addEventListener('click', function () {
+        
+        if (group.notifications.length > 0) {
+          group.notifications = []
+        } else {
+          group.notifications = notifications
+        }
+      })
+
     </script>
+
+    
   </body>
 </html>
