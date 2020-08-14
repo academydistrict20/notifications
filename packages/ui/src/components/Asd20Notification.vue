@@ -1,7 +1,7 @@
 <template>
   <div
     :class="classes"
-    role="alert"
+    role="status"
     :style="{ '--background-color': this.color }"
   >
     <asd20-icon v-if="iconName" :name="iconName" :size="iconSize"></asd20-icon>
