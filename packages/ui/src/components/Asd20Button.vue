@@ -169,8 +169,11 @@ $button-reversed-text-color: var(--accent-one);
     }
   }
   &:focus {
-    box-shadow: 0 0 0 2px $button-border-color inset;
-    outline: none;
+    // box-shadow: 0 0 0 2px $button-border-color inset;
+    // outline: none;
+    box-shadow: 0 0 0 3px white, 0 0 10px 0 $button-border-color;
+    outline: 3px solid $button-border-color;
+    outline-offset: 7px;
   }
 
   &--horizontal {
@@ -213,7 +216,10 @@ $button-reversed-text-color: var(--accent-one);
       }
     }
     &:focus {
-      box-shadow: 0 0 0 $button-border-width $button-reversed-border-color inset;
+      // box-shadow: 0 0 0 $button-border-width $button-reversed-border-color inset;
+      box-shadow: 0 0 0 3px white, 0 0 10px 0 $button-border-color;
+      outline: 3px solid $button-border-color;
+      outline-offset: 7px;
     }
     .asd20-button--transparent:hover,
     .asd20-button--transparent:focus {
@@ -227,7 +233,9 @@ $button-reversed-text-color: var(--accent-one);
     }
     &:focus {
       box-shadow: 0 0 0 5px rgba(var(--accent-one), 0.25) inset;
-      outline: none;
+      // outline: none;
+      outline: 3px solid $button-border-color;
+      outline-offset: 7px;
       background: rgba(var(--background-alt), 0.5);
     }
   }
@@ -241,9 +249,12 @@ $button-reversed-text-color: var(--accent-one);
       background: none;
     }
     &:focus {
-      box-shadow: 0 0 0 5px rgba(var(--accent-one), 0.125) inset;
-      outline: none;
-      background: none;
+      // box-shadow: 0 0 0 5px rgba(var(--accent-one), 0.125) inset;
+      // outline: none;
+      // background: none;
+      box-shadow: 0 0 0 3px white, 0 0 10px 0 $button-border-color;
+      outline: 3px solid $button-border-color;
+      outline-offset: 7px;
     }
   }
   &--disabled {
