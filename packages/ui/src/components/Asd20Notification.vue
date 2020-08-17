@@ -14,7 +14,10 @@
         v-if="description || detailLinkUrl" 
       >
         <span v-if="description" v-html="description"> </span> 
-        <a v-if="detailLinkUrl" :href="detailLinkUrl">{{ detailLinkLabel || detailLinkUrl }} </a>
+        <a 
+          v-if="detailLinkUrl" 
+          :tabindex="focusDisabled ? '-1' : undefined"
+          :href="detailLinkUrl">{{ detailLinkLabel || detailLinkUrl }}</a>
       </div>
       <asd20-button
         class="asd20-notification__cta"
@@ -25,6 +28,7 @@
         size="xs"
         :label="callToActionLabel || callToActionUrl"
         :link="callToActionUrl"
+        :tabindex="focusDisabled ? '-1' : undefined"
       ></asd20-button>
       <asd20-button
         class="asd20-notification__dismiss"
@@ -34,6 +38,7 @@
         icon="close"
         label="Dismiss"
         hide-label
+        :tabindex="focusDisabled ? '-1' : undefined"
         @click.native="$emit('dismiss')"
       ></asd20-button>
       <slot></slot>
@@ -63,6 +68,7 @@ export default {
     color: { type: String, default: 'inherit' },
     notificationStyle: { type: String, default: '' },
     importance: { type: String, default: 'info' },
+    focusDisabled: { type: Boolean, default: false }
   },
 
   computed: {

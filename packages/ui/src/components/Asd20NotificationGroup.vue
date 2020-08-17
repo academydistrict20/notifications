@@ -11,17 +11,24 @@
       >
         <asd20-notification
           class="notification"
-          v-for="notification of notificationsFromIndex"
+          v-for="(notification, index) of notificationsFromIndex"
           :key="notification.key || notification.title"
           v-bind="notification"
           :notificationStyle="groupType"
+          :aria-hidden="index ? true : undefined"
+          :focus-disabled="index ? true : false"
           @dismiss="$emit('dismiss', notification)"
         >
         </asd20-notification>
       </transition-group>
     </transition>
 
-    <button v-if="groupType === 'floating'" class="bell" :class="{ 'open': open }" @click="$emit('toggle-all')">
+    <button 
+      v-if="groupType === 'floating'" 
+      class="bell" 
+      :class="{ 'open': open }"
+      :title="totalDismissedNotifications ? 'Dismiss all notifications' : 'Show all notifications'" 
+      @click="$emit('toggle-all')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role>
         <g>
           <path d="M16 7a6 6 0 0 1 6 6v7H10v-7a6 6 0 0 1 6-6z" class="fill"></path>
@@ -33,18 +40,22 @@
           <path fill="currentColor" d="M8 21h16v1H8zM18 24a4 4 0 0 1-8 0z" class="line"></path>
         </g>
       </svg>
-      <span>{{ totalDismissedNotifications }}</span>
+      <span aria-hidden="true">{{ totalDismissedNotifications }}</span>
     </button>
 
     <div v-if="showControls && notificationsFromIndex.length > 1" class="pagination">
-      <button @click="previous">
+      <button
+        :title="prevTitle"
+        @click="previous">
         <svg style="width: 16px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
           <path d="M30.83 32.67l-9.17-9.17 9.17-9.17-2.83-2.83-12 12 12 12z"></path>
           <path d="M0-.5h48v48h-48z" fill="none"></path>
         </svg>
       </button>
       <span>{{ index + 1 }} of {{ notificationsFromIndex.length }}</span>
-      <button @click="next">
+      <button 
+        :title="nextTitle"
+        @click="next">
         <svg style="width: 16px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"></path>
           <path d="M0-.25h48v48h-48z" fill="none"></path>
@@ -85,6 +96,12 @@ export default {
     },
     showControls() {
       return this.notifications.length > 1;
+    },
+    nextTitle () {
+      return `Go to notification ${this.index + 1 > this.notificationsFromIndex.length -1 ? 1 : this.index + 2} of ${this.notificationsFromIndex.length}`
+    },
+    prevTitle () {
+      return `Go to notification ${this.index -1 < 0 ? this.notificationsFromIndex.length : this.index} of ${this.notificationsFromIndex.length}`
     }
   },
   created() {
@@ -105,7 +122,8 @@ export default {
         .filter(n => !this.notificationsFromIndex.find(n2 => n2.id === n.id))
         .map(newN => ({
           ...newN, 
-          key: Math.random().toString(36).substr(2, 9)
+          key: Math.random().toString(36).substr(2, 9),
+          ariaHidden: true
         }))
       // take care of notifications that match and keep their existing key value to prevent animations from occurring
       for(const [oldIndex, oldNotification] of Object.entries(this.notificationsFromIndex)){
@@ -133,7 +151,7 @@ export default {
       topItem.key = Math.random()
         .toString(36)
         .substr(2, 9);
-
+      
       if (this.groupType === "banner") {
         this.enterActiveClass = "";
         this.leaveActiveClass = "slide-up";
@@ -172,7 +190,7 @@ export default {
         key: Math.random()
           .toString(36)
           .substr(2, 9)
-      };
+        };
 
       // Remove old item
       notifications.splice(replacementIndex, 1);
@@ -283,6 +301,11 @@ export default {
       outline: none;
       border-radius: 100%;
       background: rgba(0,0,0, 0.125);
+      &:focus {
+        box-shadow: 0 0 0 3px white, 0 0 10px 0 #477e88;
+        outline: 3px solid #477e88;
+        outline-offset: 7px;
+      }
     }
     span {
       margin: 0 0.25rem;
