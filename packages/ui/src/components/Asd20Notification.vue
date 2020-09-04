@@ -2,7 +2,7 @@
   <div
     :class="classes"
     role="status"
-    :style="{ '--background-color': this.color }"
+    :style="{ '--background-color': this.color || 'currentColor' }"
   >
     <asd20-icon v-if="iconName" :name="iconName" :size="iconSize"></asd20-icon>
     <!-- <pre>{{ $props }}</pre> -->
@@ -65,7 +65,7 @@ export default {
     detailLinkUrl: { type: String, default: '' },
     detailLinkLabel: { type: String, default: '' },
     dismissible: { type: Boolean, default: false },
-    color: { type: String, default: 'inherit' },
+    color: { type: String, default: 'currentColor' },
     notificationStyle: { type: String, default: '' },
     importance: { type: String, default: 'info' },
     focusDisabled: { type: Boolean, default: false }
@@ -130,21 +130,17 @@ export default {
   --warning: #B99C27;
   --warning-dark: #cfb02d;
   --normal: #4d7d36;
-  // --warning-dark: #9b870c;
 
   position: relative;
   display: flex;
   flex-direction: row;
-  padding: 0.5rem;
+  padding: 1rem;
   background: white;
-  box-shadow: 0 0 0 1px var(--background-alt);
   color: #1e1e1e;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 1.0rem;
   a {
     color: #282828;
-    // font-weight: 700;
   }
 
   &__content {
@@ -176,7 +172,6 @@ export default {
     font-size: 0.875rem !important;
     margin-top: 0.5rem;
     padding: 0.5rem;
-    // box-shadow: 0 -1px 0 0 var(--accent-one) inset !important;
   }
 
   &--emergency {
@@ -246,8 +241,9 @@ export default {
       display: flex;
       flex-direction: row;
       align-self: center;
-      flex-wrap: none;
+      flex-wrap: nowrap;
       align-items: center;
+      justify-content: center;
     }
     .asd20-icon {
       --line-color: var(--background-color);
@@ -258,21 +254,23 @@ export default {
     }
     .asd20-notification__title {
       font-size: 0.875rem;
-      color: var(--background-color);
+      // color: var(--background-color);
+      white-space: nowrap;
       &::after {
         content: ': ';
       }
     }
     .asd20-notification__description {
-      // font-size: 0.875rem;
+      font-size: 0.875rem;
       color: var(--background-color);
       margin: 0 0 0 0.25rem;
+      white-space: nowrap;
     }
     .asd20-notification__dismiss {
       position: relative;
       padding: 0;
       display: none;
-      color: var(--background-color);
+      // color: var(--background-color);
       box-shadow: none !important;
     }
     a.asd20-notification__cta {
@@ -280,8 +278,12 @@ export default {
     }
   }
 
+  &.asd20-notification--inline {
+    box-shadow: 0 0 0 1px var(--background-alt);
+  }
+
+
   &.asd20-notification--banner {
-    padding: 0.5rem;
     background: var(--accent-dark);
     color: white;
     margin-bottom: 0;
@@ -339,25 +341,10 @@ export default {
       --fill-color: var(--warning);
     }
   }
-
-  // &--success.asd20-notification--banner {
-  //   background: var(--success);
-  //   color: white;
-  //   .asd20-notification__title,
-  //   .asd20-notification__cta {
-  //     color: white;
-  //   }
-  //   .asd20-icon {
-  //     --line-color: white;
-  //     --fill-color: var(--success);
-  //   }
-  // }
 }
 
 @media (min-width: 1024px) {
   .asd20-notification {
-    padding: 1.5rem !important;
-
     &__title {
       font-size: 1.25rem;
     }

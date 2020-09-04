@@ -6,25 +6,26 @@
     <title>Example Web App</title>
     
   </head>
-  <body style="background: #eee;">
+  <body style="background: #ccc; margin: 0;">
     <!-- Load Vue -->
     <script src="https://unpkg.com/vue"></script>
     <!-- Load the library -->
     <script src="../../dist/asd20-notifications-ui.web-components.umd.js"></script>
     <!-- Note: In production, you can use a CDN url
-  <script src="https://unpkg.com/asd20-notifications-ui"></script>
-  -->
+      <script src="https://unpkg.com/asd20-notifications-ui"></script>
+    -->
 
     <!-- Example #2: Using a web component -->
     <div style="border: 1px dashed gray; padding: 1rem; margin: 2rem; padding-left: auto;">
-      <asd20-notification-group group-type="floating" position="bottom-right" ></asd20-notification-group>
+      <asd20-notification-group group-type="status" position="static" ></asd20-notification-group>
     </div>
 
     <div style="position: fixed; left: 50%; top: 50%;">
+      <button id="btnToggleType">Toggle Type</button>
       <button id="btnPosition">Toggle Position</button>
       <button id="btnToggleNotifications">Toggle All Notifications</button>
     </div>
-
+    
     
 
     <script>
@@ -74,11 +75,21 @@
       pos.addEventListener('click', function () {
         const options = ['static', 'top-left', 'top-right', 'bottom-right', 'bottom-left']
         const current = options.indexOf(group.position)
-        console.log(group, current)
         if (current < 0 || current >= options.length - 1 ) {
           group.position = options[0]
         } else {
           group.position = options[current + 1]
+        }
+      })
+
+      const type = document.getElementById('btnToggleType')
+      type.addEventListener('click', function () {
+        const options = ['banner', 'inline', 'floating', 'status']
+        const current = options.indexOf(group.groupType)
+        if (current < 0 || current >= options.length - 1 ) {
+          group.groupType = options[0]
+        } else {
+          group.groupType = options[current + 1]
         }
       })
 

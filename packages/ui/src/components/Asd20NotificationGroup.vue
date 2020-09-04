@@ -453,19 +453,32 @@ export default {
   &--inline .pagination {
     display: none;
   }
+
+  &--inline .notification:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+
+  &--status .pagination {
+    display: none;
+  }
+
+  &--banner .notification {
+    margin-bottom: 1rem;
+  }
+
   &--status .notifications {
     position: relative;
     z-index: 299;
     top: 0;
     left: 0;
     right: 0;
-    padding: 0.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    background: white;
+    flex-wrap: wrap;
     order: -2;
+    background: white;
   }
 }
 
