@@ -462,10 +462,6 @@ export default {
     display: none;
   }
 
-  &--banner .notification {
-    margin-bottom: 1rem;
-  }
-
   &--status .notifications {
     position: relative;
     z-index: 299;
