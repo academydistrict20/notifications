@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" v-if="totalDismissedNotifications || notifications.length > 0">
+  <div :class="classes" v-show="totalDismissedNotifications || notifications.length > 0">
     <transition name="cards">
       <transition-group
         v-if="notificationsFromIndex.length > 0"
