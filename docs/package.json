@@ -19,6 +19,6 @@
   "devDependencies": {
     "vuepress": "1.5.0",
     "hash-sum": "2.0.0",
-    "vue": "2.6.11"
+    "vue": "2.6.14"
   }
 }

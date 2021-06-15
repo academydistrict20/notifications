@@ -62,7 +62,7 @@
     "rollup-plugin-vue": "^5.1.9",
     "ts-jest": "26.1.0",
     "typescript": "3.9.3",
-    "vue-template-compiler": "2.6.11"
+    "vue-template-compiler": "2.6.14"
   },
   "husky": {
     "hooks": {
