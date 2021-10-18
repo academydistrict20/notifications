@@ -46,7 +46,7 @@
     "eslint": "7.1.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.3",
-    "husky": "4.2.5",
+    "husky": "4.3.7",
     "jest": "26.0.1",
     "jest-fetch-mock": "3.0.3",
     "jest-localstorage-mock": "2.4.2",
