@@ -58,4 +58,24 @@ const config = {
 const client = new Asd20NotificationsClient(config)
 ```
 
+## Client Methods
+
+The client has useful methods to help provide basic functionality. Pugins, can overwite that default behavior with their own desired behavior, like providing their own dismiss function.
+
+### Dismiss Method
+
+The default or client dismiss method allows you to dismiss a notification, which will call the onUpdate callback if you have provided it, otherwise it will run the default update method.
+
+### Update Method
+
+The update method returns a payload of dismissedNotifications, activeNotifications and activeNotificationsByType. If dimissed notifications are changed, this also sets the storage.
+
+### Dismiss All
+
+Dismisses all notifications, sets them in storage.
+
+### Clear Dismissions
+
+Clear all the dismissed notifications so they all show up.
+
 To specify api endpoints and map data to ui, [see plugins](../plugins)
