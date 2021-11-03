@@ -32,7 +32,7 @@
       ></asd20-button>
       <asd20-button
         class="asd20-notification__dismiss"
-        v-if="dismissible && this.notificationStyle.toLowerCase() === 'floating'"
+        v-if="dismissible"
         transparent
         size="xs"
         icon="close"
