@@ -42,7 +42,7 @@ jobs:
           npx lerna run build
           npx auto shipit
   automerge:
-    needs: build
+    needs: release
     runs-on: ubuntu-latest
     steps:
       - uses: fastify/github-action-merge-dependabot@v2.1.1

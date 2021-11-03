@@ -5,8 +5,7 @@
     :style="{ '--background-color': this.color || 'currentColor' }"
   >
     <asd20-icon v-if="iconName" :name="iconName" :size="iconSize"></asd20-icon>
-    <!-- <pre>{{ $props }}</pre> -->
-    <!-- HELLO -->
+
     <div class="asd20-notification__content">
       <div class="asd20-notification__title" v-if="title" v-html="title"></div>
       <div
@@ -32,7 +31,7 @@
       ></asd20-button>
       <asd20-button
         class="asd20-notification__dismiss"
-        v-if="dismissible && this.notificationStyle.toLowerCase() === 'floating'"
+        v-if="dismissible"
         transparent
         size="xs"
         icon="close"
