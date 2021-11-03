@@ -41,10 +41,3 @@ jobs:
           npx lerna bootstrap --ci
           npx lerna run build
           npx auto shipit
-  automerge:
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: fastify/github-action-merge-dependabot@v2.1.1
-        with:
-          github-token: ${{ secrets.GH_TOKEN }}
