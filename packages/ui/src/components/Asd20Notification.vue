@@ -5,8 +5,7 @@
     :style="{ '--background-color': this.color || 'currentColor' }"
   >
     <asd20-icon v-if="iconName" :name="iconName" :size="iconSize"></asd20-icon>
-    <!-- <pre>{{ $props }}</pre> -->
-    <!-- HELLO -->
+
     <div class="asd20-notification__content">
       <div class="asd20-notification__title" v-if="title" v-html="title"></div>
       <div
