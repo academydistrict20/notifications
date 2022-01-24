@@ -56,7 +56,7 @@
     "rollup": "^2.15.0",
     "rollup-plugin-css-only": "^2.1.0",
     "rollup-plugin-internal": "^1.0.4",
-    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "0.27.1",
     "rollup-plugin-visualizer": "^4.0.4",
     "rollup-plugin-vue": "^5.1.9",
