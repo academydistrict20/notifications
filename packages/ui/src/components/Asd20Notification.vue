@@ -278,7 +278,7 @@ export default {
   }
 
   &.asd20-notification--inline {
-    box-shadow: 0 0 0 5px var(--background-alt);
+    box-shadow: 0 0 0 5px var(--accent-one);
   }
 
 
