@@ -18,6 +18,7 @@
           :tabindex="focusDisabled ? '-1' : undefined"
           :href="detailLinkUrl">{{ detailLinkLabel || detailLinkUrl }}</a>
       </div>
+      
       <asd20-button
         class="asd20-notification__cta"
         v-if="callToActionUrl"
