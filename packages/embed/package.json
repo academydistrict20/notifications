@@ -1,6 +1,6 @@
 {
   "name": "@asd20/notifications-embed",
-  "version": "0.8.23",
+  "version": "0.9.0",
   "description": "Simple to use embed script for notifications",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
@@ -54,8 +54,8 @@
     "vue": "^2.6.0"
   },
   "dependencies": {
-    "@asd20/notifications-client": "^0.8.23",
-    "@asd20/notifications-plugin-json": "^0.8.23",
+    "@asd20/notifications-client": "^0.9.0",
+    "@asd20/notifications-plugin-json": "^0.9.0",
     "@vue/web-component-wrapper": "^1.2.0",
     "portal-vue": "^2.1.7"
   },
