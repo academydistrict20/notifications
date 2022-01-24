@@ -281,7 +281,6 @@ export default {
     box-shadow: 0 0 0 5px var(--accent-one);
   }
 
-
   &.asd20-notification--banner {
     background: var(--accent-dark);
     color: white;
