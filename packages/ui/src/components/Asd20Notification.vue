@@ -122,13 +122,13 @@ export default {
 .asd20-notification {
   --background-color: white;
   --background-alt: #e3e6e8;
-  --background-dark: #062137;
+  --background-dark: #000000;
   --primary: #0e2c6c;
   --accent-one: #70b4c2;
   --accent-dark: #4b757e;
   --emergency: #da2e0b;
-  --warning: #B99C27;
-  --warning-dark: #cfb02d;
+  --warning: #dabf50;
+  --warning-dark: #dabf50;
   --normal: #4d7d36;
 
   position: relative;
@@ -283,9 +283,10 @@ export default {
   }
 
   &.asd20-notification--banner {
-    background: var(--accent-dark);
+    background: var(--background-dark);
     color: white;
     margin-bottom: 0;
+    border-left: 25px solid var(--accent-dark);
     a {
       color: white;
     }
@@ -308,8 +309,9 @@ export default {
   }
 
   &--emergency.asd20-notification--banner {
-    background: var(--emergency);
+    background: var(--background-dark);
     color: white;
+    border-left: 25px solid var(--emergency);
     a {
       color: white;
     }
@@ -324,8 +326,9 @@ export default {
     }
   }
   &--alert.asd20-notification--banner {
-    background: var(--warning-dark);
+    background: var(--background-dark);
     color: white;
+    border-left: 25px solid var(--warning-dark);
     .asd20-notification__title,
     .asd20-notification__cta {
       color: white;
