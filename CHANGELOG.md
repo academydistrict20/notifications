@@ -1,3 +1,96 @@
+# v0.9.0 (Thu Feb 16 2023)
+
+#### 🚀 Enhancement
+
+- `@asd20/notifications-ui`
+  - feat: bump version and release [#239](https://github.com/academydistrict20/notifications/pull/239) (phollendorfer@hotmail.com)
+- `@asd20/notifications-ui`
+  - Feat: Make in-line notices more visible [#188](https://github.com/academydistrict20/notifications/pull/188) (phollendorfer@hotmail.com)
+
+#### 🐛 Bug Fix
+
+- fix: update github token in git actions [#237](https://github.com/academydistrict20/notifications/pull/237) (phollendorfer@hotmail.com)
+- fix: fix expired github token [#235](https://github.com/academydistrict20/notifications/pull/235) (phollendorfer@hotmail.com)
+- fix: node 12 is depricated, use 16 [#233](https://github.com/academydistrict20/notifications/pull/233) (phollendorfer@hotmail.com)
+- docs: add client methods [#174](https://github.com/academydistrict20/notifications/pull/174) (luke.haris@asd20.org)
+- ci: add auto merge [#168](https://github.com/academydistrict20/notifications/pull/168) (david.hayes@asd20.org)
+- Fix/ci [#167](https://github.com/academydistrict20/notifications/pull/167) (david.hayes@asd20.org)
+- docs(ui): update style descriptions [#116](https://github.com/academydistrict20/notifications/pull/116) (david.hayes@asd20.org)
+- Docs/typo [#115](https://github.com/academydistrict20/notifications/pull/115) (luke.haris@asd20.org david.hayes@asd20.org)
+- refactor(plugins): breaking change: update search field messageSubscr… [#110](https://github.com/academydistrict20/notifications/pull/110) (luke.haris@asd20.org)
+- `@asd20/notifications-ui`
+  - fix: bump version in order to release [#231](https://github.com/academydistrict20/notifications/pull/231) (phollendorfer@hotmail.com)
+- `@asd20/notifications-ui`
+  - fix: fixes #228 [#229](https://github.com/academydistrict20/notifications/pull/229) (phollendorfer@hotmail.com)
+- `@asd20/notifications-ui`
+  - Fix: Move to version 9 [#192](https://github.com/academydistrict20/notifications/pull/192) (phollendorfer@hotmail.com)
+- `@asd20/notifications-ui`
+  - Fix: Make in-line notices even more visible [#190](https://github.com/academydistrict20/notifications/pull/190) (phollendorfer@hotmail.com)
+- `@asd20/notifications-ui`
+  - Merge pull request #174 from academydistrict20/docs/client-methods [#185](https://github.com/academydistrict20/notifications/pull/185) (phollendorfer@hotmail.com)
+- `@asd20/notifications-ui`
+  - fix: don't hard code dismiss button to notification type [#166](https://github.com/academydistrict20/notifications/pull/166) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix: don't hard code dismiss button to notification type (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix: ssr compat [#142](https://github.com/academydistrict20/notifications/pull/142) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix: ssr compattability for the notification group component (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix: styles [#140](https://github.com/academydistrict20/notifications/pull/140) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): status styles [#139](https://github.com/academydistrict20/notifications/pull/139) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): accessibility to notifications [#138](https://github.com/academydistrict20/notifications/pull/138) (phollendorfer@hotmail.com)
+- `@asd20/notifications-ui`
+  - fix: change notification aria role to status [#135](https://github.com/academydistrict20/notifications/pull/135) (phollendorfer@hotmail.com)
+- `@asd20/notifications-ui`
+  - fix(ui): remove status styling that forced status notifications to be absolute [#133](https://github.com/academydistrict20/notifications/pull/133) (phollendorfer@hotmail.com david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - style: remove margin from inline notification components [#132](https://github.com/academydistrict20/notifications/pull/132) (phollendorfer@hotmail.com david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - Fix/styling [#130](https://github.com/academydistrict20/notifications/pull/130) (david.hayes@asd20.org phollendorfer@hotmail.com luke.haris@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): styling tweaks [#129](https://github.com/academydistrict20/notifications/pull/129) (david.hayes@asd20.org phollendorfer@hotmail.com)
+- `@asd20/notifications-plugin-cc-messages`
+  - fix(plugins): made display rules only search categories and tags [#128](https://github.com/academydistrict20/notifications/pull/128) (david.hayes@asd20.org)
+- `@asd20/notifications-plugin-cc-messages`
+  - fix(plugins): fix weighting of rules so the best rule is applied [#127](https://github.com/academydistrict20/notifications/pull/127) (david.hayes@asd20.org)
+- `@asd20/notifications-plugin-cc-messages`
+  - fix(plugin): add back the auto destination for hostname [#126](https://github.com/academydistrict20/notifications/pull/126) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): correct toggle event emitter [#125](https://github.com/academydistrict20/notifications/pull/125) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - Fix/ssr support [#123](https://github.com/academydistrict20/notifications/pull/123) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): ssr compatible build [#122](https://github.com/academydistrict20/notifications/pull/122) (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): ssr compatible build (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-ui`
+  - fix(ui): correct bell behavior (david.hayes@asd20.org)
+- `@asd20/notifications-ui`
+  - fix(ui): floaating notification group bell dissapears when all notifications are dismissed [#121](https://github.com/academydistrict20/notifications/pull/121) (david.hayes@asd20.org)
+- `@asd20/notifications-embed`
+  - fix(ui): fix case on wc attribute [#119](https://github.com/academydistrict20/notifications/pull/119) (luke.haris@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-plugin-cc-messages`
+  - refactor(plugins): breaking change: update search field messageSubscr… [#109](https://github.com/academydistrict20/notifications/pull/109) (luke.haris@asd20.org)
+
+#### ⚠️ Pushed to `master`
+
+- ci: enable dependabot automerge (david.hayes@asd20.org)
+- `@asd20/notifications-client`, `@asd20/notifications-embed`, `@asd20/notifications-plugin-cc-messages`, `@asd20/notifications-ui`
+  - v0.8.3 (david.hayes@asd20.org)
+- `@asd20/notifications-embed`, `@asd20/notifications-ui`
+  - chore(ui): correct case on groupType prop (david.hayes@asd20.org)
+
+#### Authors: 3
+
+- David Hayes ([@altitudems](https://github.com/altitudems))
+- Luke Harris ([@Lukeharris30](https://github.com/Lukeharris30))
+- Paul Hollendorfer ([@Hollendorfer](https://github.com/Hollendorfer))
+
+---
+
 # v0.11.0 (Mon Jan 24 2022)
 
 #### 🚀 Enhancement
