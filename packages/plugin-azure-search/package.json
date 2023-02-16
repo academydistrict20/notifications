@@ -1,6 +1,6 @@
 {
   "name": "@asd20/notifications-plugin-azure-search",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "azure search endpoint configuration",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
@@ -68,7 +68,7 @@
     ]
   },
   "dependencies": {
-    "@asd20/notifications-plugin-json": "^0.9.0"
+    "@asd20/notifications-plugin-json": "^0.10.0"
   },
   "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25"
 }
