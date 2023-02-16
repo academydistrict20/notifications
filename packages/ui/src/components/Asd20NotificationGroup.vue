@@ -246,7 +246,7 @@ export default {
     font-size: 1rem;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.0625);
     border-radius: 50%;
-    z-index:9;
+    z-index:99;
     cursor: pointer;
 
     &.open {
