@@ -1,3 +1,16 @@
+# v0.11.1 (Thu Feb 16 2023)
+
+#### 🐛 Bug Fix
+
+- `@asd20/notifications-ui`
+  - fix: fix notification bell not showing on ios devices [#241](https://github.com/academydistrict20/notifications/pull/241) (phollendorfer@hotmail.com)
+
+#### Authors: 1
+
+- Paul Hollendorfer ([@Hollendorfer](https://github.com/Hollendorfer))
+
+---
+
 # v0.9.0 (Thu Feb 16 2023)
 
 #### 🚀 Enhancement
