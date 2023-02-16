@@ -243,7 +243,7 @@ export default {
     align-items: center;
     background: white;
     color: black;
-    font-size: 1rem;
+    font-size: 0.375rem;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.0625);
     border-radius: 50%;
     z-index:99;
