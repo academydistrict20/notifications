@@ -366,8 +366,6 @@ export default {
       }
     }
   }
-
-
   
   &--floating.notification-group--bottom-left .notifications {
     top: auto;
