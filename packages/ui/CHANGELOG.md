@@ -1,3 +1,16 @@
+# v0.11.3 (Fri Mar 17 2023)
+
+#### 🐛 Bug Fix
+
+- fix: correct banner color accents [#247](https://github.com/academydistrict20/notifications/pull/247) (phollendorfer@hotmail.com)
+- correct banner color accents (phollendorfer@hotmail.com)
+
+#### Authors: 1
+
+- Paul Hollendorfer ([@Hollendorfer](https://github.com/Hollendorfer))
+
+---
+
 # v0.11.2 (Fri Mar 17 2023)
 
 #### 🐛 Bug Fix
