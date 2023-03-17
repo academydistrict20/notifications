@@ -346,10 +346,12 @@ export default {
   }
 }
 @media (min-width: 768px) {
+  .asd20-notification {
     &.asd20-notification--banner {
       border-left: 30px solid var(--accent-dark);
       border-bottom: none;
     }
+  }
 }
 
 
