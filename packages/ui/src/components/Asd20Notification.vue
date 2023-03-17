@@ -286,7 +286,8 @@ export default {
     background: var(--background-dark);
     color: white;
     margin-bottom: 0;
-    border-left: 25px solid var(--accent-dark);
+    border-bottom: 30px solid var(--accent-dark);
+    border-left: none;
     a {
       color: white;
     }
@@ -344,6 +345,13 @@ export default {
     }
   }
 }
+@media (min-width: 768px) {
+    &.asd20-notification--banner {
+      border-left: 30px solid var(--accent-dark);
+      border-bottom: none;
+    }
+}
+
 
 @media (min-width: 1024px) {
   .asd20-notification {
