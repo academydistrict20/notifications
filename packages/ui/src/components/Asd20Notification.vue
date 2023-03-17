@@ -1,24 +1,16 @@
 <template>
-  <div
-    :class="classes"
-    role="status"
-    :style="{ '--background-color': this.color || 'currentColor' }"
-  >
+  <div :class="classes" role="status" :style="{ '--background-color': this.color || 'currentColor' }">
     <asd20-icon v-if="iconName" :name="iconName" :size="iconSize"></asd20-icon>
 
     <div class="asd20-notification__content">
       <div class="asd20-notification__title" v-if="title" v-html="title"></div>
-      <div
-        class="asd20-notification__description"
-        v-if="description || detailLinkUrl" 
-      >
-        <span v-if="description" v-html="description"> </span> 
-        <a 
-          v-if="detailLinkUrl" 
-          :tabindex="focusDisabled ? '-1' : undefined"
-          :href="detailLinkUrl">{{ detailLinkLabel || detailLinkUrl }}</a>
+      <div class="asd20-notification__description" v-if="description || detailLinkUrl">
+        <span v-if="description" v-html="description"> </span>
+        <a v-if="detailLinkUrl" :tabindex="focusDisabled ? '-1' : undefined" :href="detailLinkUrl">{{
+          detailLinkLabel || detailLinkUrl
+        }}</a>
       </div>
-      
+
       <asd20-button
         class="asd20-notification__cta"
         v-if="callToActionUrl"
@@ -68,21 +60,17 @@ export default {
     color: { type: String, default: 'currentColor' },
     notificationStyle: { type: String, default: '' },
     importance: { type: String, default: 'info' },
-    focusDisabled: { type: Boolean, default: false }
+    focusDisabled: { type: Boolean, default: false },
   },
 
   computed: {
     classes() {
       let classes = {
         'asd20-notification': true,
-        'asd20-notification--banner':
-          this.notificationStyle.toLowerCase() === 'banner',
-        'asd20-notification--floating':
-          this.notificationStyle.toLowerCase() === 'floating',
-        'asd20-notification--inline':
-          this.notificationStyle.toLowerCase() === 'inline',
-        'asd20-notification--status':
-          this.notificationStyle.toLowerCase() === 'status',
+        'asd20-notification--banner': this.notificationStyle.toLowerCase() === 'banner',
+        'asd20-notification--floating': this.notificationStyle.toLowerCase() === 'floating',
+        'asd20-notification--inline': this.notificationStyle.toLowerCase() === 'inline',
+        'asd20-notification--status': this.notificationStyle.toLowerCase() === 'status',
         'asd20-notification--dismissible': this.dismissible,
       }
 
@@ -115,7 +103,7 @@ export default {
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 // @import '../../../design/_variables.scss';
 // @import '../../../design/_mixins.scss';
 
@@ -172,6 +160,7 @@ export default {
     font-size: 0.875rem !important;
     margin-top: 0.5rem;
     padding: 0.5rem;
+    line-height: 1.1;
   }
 
   &--emergency {
@@ -230,6 +219,7 @@ export default {
 
     & > a.asd20-notification__cta {
       font-size: 0.875rem !important;
+      line-height: 1.1;
     }
   }
 
@@ -312,7 +302,8 @@ export default {
   &--emergency.asd20-notification--banner {
     background: var(--background-dark);
     color: white;
-    border-left: 25px solid var(--emergency);
+    border-bottom: 30px solid var(--emergency);
+    border-left: none;
     a {
       color: white;
     }
@@ -329,7 +320,8 @@ export default {
   &--alert.asd20-notification--banner {
     background: var(--background-dark);
     color: white;
-    border-left: 25px solid var(--warning-dark);
+    border-bottom: 30px solid var(--warning-dark);
+    border-left: none;
     .asd20-notification__title,
     .asd20-notification__cta {
       color: white;
@@ -349,6 +341,14 @@ export default {
   .asd20-notification {
     &.asd20-notification--banner {
       border-left: 30px solid var(--accent-dark);
+      border-bottom: none;
+    }
+    &--emergency.asd20-notification--banner {
+      border-left: 30px solid var(--emergency);
+      border-bottom: none;
+    }
+    &--alert.asd20-notification--banner {
+      border-left: 30px solid var(--warning-dark);
       border-bottom: none;
     }
   }
