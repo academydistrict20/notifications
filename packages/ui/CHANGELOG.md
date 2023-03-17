@@ -1,3 +1,18 @@
+# v0.11.2 (Fri Mar 17 2023)
+
+#### 🐛 Bug Fix
+
+- fix: correct media query css for banner [#245](https://github.com/academydistrict20/notifications/pull/245) (phollendorfer@hotmail.com)
+- correct media query css for banner (phollendorfer@hotmail.com)
+- fix: move banner color accent on mobile devices [#243](https://github.com/academydistrict20/notifications/pull/243) (phollendorfer@hotmail.com)
+- fix: move banner color accent on mobile devices (phollendorfer@hotmail.com)
+
+#### Authors: 1
+
+- Paul Hollendorfer ([@Hollendorfer](https://github.com/Hollendorfer))
+
+---
+
 # v0.11.1 (Thu Feb 16 2023)
 
 #### 🐛 Bug Fix
