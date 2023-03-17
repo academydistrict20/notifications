@@ -1,6 +1,6 @@
 {
   "name": "@asd20/notifications-plugin-json",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "description": "A plugin for sourcing notifications from JSON files at a endpoint/url",
   "author": "Academy District 20 <socialmedia@asd20.org>",
   "license": "MIT",
@@ -68,7 +68,7 @@
     ]
   },
   "dependencies": {
-    "@asd20/notifications-shared": "^0.11.2",
+    "@asd20/notifications-shared": "^0.11.3",
     "lodash": "^4.17.15"
   },
   "gitHead": "42c70e88883d1e818582c016f46d9527082e7b25"
