@@ -1,6 +1,5 @@
 <template>
-<!-- Can we delet this component? -->
-  <div :class="classes">
+  <div role="region" aria-label="Notification" :class="classes">
     <transition-group
       v-if="isOpen && notificationsFromIndex.length > 0"
       class="notifications"

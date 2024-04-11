@@ -94,9 +94,9 @@ export default {
     iconSize() {
       switch (this.notificationStyle.toLowerCase()) {
         case 'banner':
-          return 'md'
+          return 'xl'
         default:
-          return 'sm'
+          return 'xl'
       }
     },
   },
@@ -121,7 +121,7 @@ export default {
 
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 1rem;
   background: white;
   color: #1e1e1e;
@@ -130,18 +130,23 @@ export default {
   a {
     color: #282828;
   }
+  .asd20-icon--xl {
+    height: 48px;
+    width: 48px;
+  }
 
   &__content {
     display: flex;
     flex-direction: column;
-    // align-self: center;
-    margin-left: 0.5rem;
+    margin: 0.5rem;
     padding-right: 1rem;
+    padding-top: 0.5rem;
+    border-top: 2px solid var(--accent-one);
   }
 
   &__title {
     font-weight: bold;
-    font-size: 1.0625rem;
+    font-size: 1.25rem;
     color: var(--primary);
   }
 
@@ -182,6 +187,9 @@ export default {
         --line-color: white;
       }
     }
+    .asd20-notification__content {
+      border-top: 2px solid var(--emergency);
+    }
   }
 
   &--alert {
@@ -193,6 +201,9 @@ export default {
     .asd20-icon {
       --line-color: var(--background-dark);
       --fill-color: var(--warning);
+    }
+    .asd20-notification__content {
+      border-top: 2px solid var(--warning-dark);
     }
   }
 
@@ -211,6 +222,7 @@ export default {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.125);
     .asd20-notification__title {
       font-size: 1.125rem;
+      padding-top: 0.5rem;
     }
 
     .asd20-notification__description {
@@ -276,7 +288,7 @@ export default {
     background: var(--background-dark);
     color: white;
     margin-bottom: 0;
-    border-bottom: 30px solid var(--accent-dark);
+    border-bottom: 30px solid var(--accent-one);
     border-left: none;
     a {
       color: white;
@@ -339,8 +351,39 @@ export default {
 }
 @media (min-width: 768px) {
   .asd20-notification {
+    flex-direction: row;
+    .asd20-icon--xl {
+      height: 64px;
+      width: 64px;
+    }
+    &__content {
+      margin-top: .375rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--accent-one);
+      border-top: none;
+      padding-top: 0;
+    }
+    &--emergency {
+      .asd20-notification__content {
+        border-left: 2px solid var(--emergency);
+        border-top: none;
+      }
+    }
+    &--alert {
+      .asd20-notification__content {
+        border-left: 2px solid var(--warning-dark);
+        border-top: none;
+      }
+    }
+    &.asd20-notification--floating {
+      flex-direction: column;
+      .asd20-notification__content {
+        border-top: 2px solid var(--emergency);
+        border-left: none;
+      }
+    }
     &.asd20-notification--banner {
-      border-left: 30px solid var(--accent-dark);
+      border-left: 30px solid var(--accent-one);
       border-bottom: none;
     }
     &--emergency.asd20-notification--banner {
@@ -358,7 +401,7 @@ export default {
 @media (min-width: 1024px) {
   .asd20-notification {
     &__title {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
 
     &__description {
