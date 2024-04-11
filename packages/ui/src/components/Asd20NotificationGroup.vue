@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" v-show="totalDismissedNotifications || notifications.length > 0">
+  <div role="region" aria-label="Notification" :class="classes" v-show="totalDismissedNotifications || notifications.length > 0">
     <!-- v-show is SSR compatible -->
     <transition name="cards">
       <transition-group
